@@ -1,111 +1,159 @@
-<p align="center">
-  <img src="docs/teaser.png" alt="STS2 MCP" width="90%" />
-</p>
+# STS2 Advisor
 
-<p align="center"><em>An Experimental Research Project to Fully-Automate your Slay the Spire 2 Runs</em></p>
+A lightweight, **read-only** mod for [Slay the Spire 2](https://store.steampowered.com/app/2868840/Slay_the_Spire_2/) that exposes game state via a simple HTTP API. Designed for AI advisors to read current state without taking control of gameplay.
 
-A mod for [**Slay the Spire 2**](https://store.steampowered.com/app/2868840/Slay_the_Spire_2/) that lets AI agents play the game. Exposes game state and actions via a localhost REST API, with an optional MCP server for Claude Desktop / Claude Code integration.
+## Features
 
-Singleplayer and multiplayer (co-op) supported. Tested against STS2 `v0.99.1`.
+- 🔒 **Read-only** - No game manipulation, just state observation
+- ⚡ **Lightweight** - Minimal overhead, focused endpoints
+- 🎯 **Advisory focused** - Get exactly the info needed for deck/combat advice
+- 🏷️ **Multiplayer safe** - `affects_gameplay: false` means no multiplayer restrictions
 
-> [!warning]
-> This mod allows external programs to read and control your game via a localhost API. Use at your own risk with runs you care less about.
+## Installation
 
-> [!caution]
-> Multiplayer support is in **beta** — expect bugs. Any multiplayer issues encountered with this mod installed are very likely caused by the mod, not the game. Please disable the mod and verify the issue persists before reporting bugs to the STS2 developers.
+1. Download `STS2Advisor.dll` and `STS2Advisor.json` from releases
+2. Copy to your game's `mods/STS2Advisor/` folder:
+   - **Windows**: `C:\Program Files (x86)\Steam\steamapps\common\Slay the Spire 2\mods\STS2Advisor\`
+   - **macOS**: `~/Library/Application Support/Steam/steamapps/common/Slay the Spire 2/SlayTheSpire2.app/Contents/MacOS/mods/STS2Advisor/`
+   - **Linux**: `~/.steam/steam/steamapps/common/Slay the Spire 2/mods/STS2Advisor/`
+3. Launch the game and enable mods in Settings → Mod Settings
 
-## For Players
+## API Endpoints
 
-### 1. Install the Mod
+All endpoints are **GET only** and return JSON.
 
-Grab the [latest release](https://github.com/Gennadiyev/STS2MCP/releases/latest) and follow the instructions:
+| Endpoint | Description |
+|----------|-------------|
+| `GET /` | API info and available endpoints |
+| `GET /state` | Full game state snapshot |
+| `GET /combat` | Combat state: hand, enemies, energy, status effects |
+| `GET /deck` | Current deck with card breakdown |
+| `GET /shop` | Shop inventory (when in shop) |
+| `GET /card-reward` | Card reward options (when picking cards) |
+| `GET /relics` | Current relics |
+| `GET /map` | Map state and next options |
 
-1. Copy `STS2_MCP.dll` and `STS2_MCP.json` to `<game_install>/mods/`
-2. Launch the game and enable mods in settings (a consent dialog appears on first launch)
-3. The mod starts an HTTP server on `localhost:15526` automatically
+Default port: `15526` (configurable via `STS2Advisor.conf`)
 
-### 2. Give Your AI Instructions to Interact with the Game
+## Example Usage
 
-**Clone or download the repository**, then:
+```bash
+# Get current combat state
+curl http://localhost:15526/combat
 
-| I prefer a skill | I prefer an MCP Server |
-|---|---|
-| Tell AI to reference docs/raw-*.md. Sit back, and watch it play. | Requires [Python 3.11+](https://www.python.org/) and [uv](https://docs.astral.sh/uv/). Follow the instructions below ⬇️ |
+# Get card reward options
+curl http://localhost:15526/card-reward
+
+# Get shop inventory
+curl http://localhost:15526/shop
+```
+
+### Example Response: Card Reward
 
 ```json
 {
-  "mcpServers": {
-    "sts2": {
-      "command": "uv",
-      "args": ["run", "--directory", "/path/to/STS2_MCP/mcp", "python", "server.py"]
+  "cards": [
+    {
+      "name": "Pommel Strike+",
+      "type": "Attack",
+      "rarity": "Common",
+      "energy_cost": "1",
+      "description": "Deal 10 damage. Draw 2 cards.",
+      "is_upgraded": true,
+      "keywords": ["Draw"]
+    },
+    {
+      "name": "Shrug It Off",
+      "type": "Skill",
+      "rarity": "Common",
+      "energy_cost": "1",
+      "description": "Gain 8 Block. Draw 1 card.",
+      "is_upgraded": false,
+      "keywords": ["Block", "Draw"]
     }
-  }
+  ],
+  "can_skip": true
 }
 ```
 
-**Claude Code**: add to your project's `.mcp.json`:
-**Claude Desktop**: add to `claude_desktop_config.json` with the same config as above.
-*Other agents should have similar config options for custom MCP servers.*
+### Example Response: Combat
 
-The MCP server accepts `--host` and `--port` options if you need non-default settings.
-
-Flag `--no-trust-env` can be used to disable `requests` from picking up proxy settings from the environment, which can cause connection issues if you are running the server in a container.
-
-## For Developers
-
-### Build & Install
-
-Requires [.NET 9 SDK](https://dotnet.microsoft.com/download/dotnet/9.0) and the base game.
-
-**PowerShell** (recommended):
-
-```powershell
-# Pass game path directly:
-.\build.ps1 -GameDir "D:\SteamLibrary\steamapps\common\Slay the Spire 2"
-
-# Or set it once and forget:
-$env:STS2_GAME_DIR = "D:\SteamLibrary\steamapps\common\Slay the Spire 2"
-.\build.ps1
+```json
+{
+  "round": 2,
+  "turn": "player",
+  "is_play_phase": true,
+  "energy": 3,
+  "max_energy": 3,
+  "hp": 65,
+  "max_hp": 80,
+  "block": 5,
+  "hand": [
+    {
+      "index": 0,
+      "name": "Strike",
+      "type": "Attack",
+      "energy_cost": "1",
+      "target": "AnyEnemy",
+      "can_play": true
+    }
+  ],
+  "enemies": [
+    {
+      "id": "jaw_worm_0",
+      "name": "Jaw Worm",
+      "hp": 32,
+      "max_hp": 44,
+      "block": 0,
+      "intents": ["Attack 12"]
+    }
+  ],
+  "draw_pile_count": 5,
+  "discard_pile_count": 3
+}
 ```
 
-The script builds `STS2_MCP.dll` into `out/STS2_MCP/`. Copy it along with the manifest JSON to `<game_install>/mods/` to install:
+## Configuration
 
+Create `STS2Advisor.conf` in the mod folder to change the port:
+
+```json
+{
+  "port": 15526
+}
 ```
-out/STS2_MCP/STS2_MCP.dll           ->  <game_install>/mods/STS2_MCP.dll
-mod_manifest.json                   ->  <game_install>/mods/STS2_MCP.json
+
+## Building from Source
+
+Requires:
+- [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
+- Slay the Spire 2 installed
+
+```bash
+# Update paths in STS2Advisor.csproj for your system, then:
+dotnet build STS2Advisor.csproj
+```
+
+The DLL will be copied to your mods folder automatically.
+
+## Integration with AI Assistants
+
+This mod is designed to work with AI assistants like Claude. The AI can poll these endpoints to understand your current game state and provide deck-building advice, combat suggestions, and card pick recommendations—without taking control of your game.
+
+### OpenClaw Skill Example
+
+```yaml
+# In your SKILL.md
+commands:
+  - curl http://localhost:15526/combat   # Get combat state
+  - curl http://localhost:15526/card-reward  # Get card choices
+  - curl http://localhost:15526/shop  # Get shop items
 ```
 
 ## License
 
 MIT
 
-## FAQ
+## Credits
 
-### Why let the AI play the game for me?
-
-I start building this mod with the hope that I can co-op with an AI player. Singleplayer is originally just built for validation.
-
-### You did not answer the question!
-
-First of all, I play lots of games, including service games that has daily/weekly tasks. I really hoped that modern AI could save me from the grind, which, if you have tried one or more of the GUI agents, never really materialized. Let's face it: modern AI is still pretty bad at gaming because no one cares.
-
-About my intention, as a researcher that loves playing games, the purpose of STS2MCP is to test AI models and agents in a rarely explored (we call it out-of-distribution) domain. Ultimately, this might turn into a benchmark for evaluating the reasoning and decision-making capabilities of different language models.
-
-STS2 is just an example to show how good (or bad) current AI agents are at playing such games. **I have no intention to replace human players with AI, and I would definitely rather play STS2 myself** as a big fan of the game.
-
-### Is this a cheat mod?
-
-It can be, but it doesn't have to be. The mod itself does not alter the gameplay. It is just an interface that allows external programs to interact with the game. What you do with that interface is up to you.
-
-### How many tokens do a run consume?
-
-I evaluated on the Ironclad. Claude Sonnet 4.6 uses slightly more than 8M tokens (counting both input, output and tool responses) for a full run. GPT-5.4 averages 7.34M tokens. Depending on your prompt and model choice, it can be more or less.
-
-### Do you have a roadmap for future features?
-
-The project is still too early to have a clear roadmap. My current focus is to make sure the core features are stable and well-documented. However, I am open to suggestions and contributions from the community.
-
-- Solidifying multiplayer features and fixing bugs is a priority
-- Add support for in-game communication in multiplayer runs when collaborating with an AI agent
-- Self-reflection and learning from past runs to improve future performance
-- Benchmarking different models and agents is also on my mind
+Based on [STS2MCP](https://github.com/Gennadiyev/STS2MCP) by Gennadiyev. Stripped down to read-only advisory functionality.
