@@ -124,8 +124,8 @@ public partial class AdvisorOverlay : CanvasLayer
         _hotkeyHint.AddChild(hintLabel);
         
         AddChild(_hotkeyHint);
-        // Position in top right with some padding
-        _hotkeyHint.Position = new Vector2(viewportSize.X - 420, 10);
+        // Position in top right area, but left of menu buttons
+        _hotkeyHint.Position = new Vector2(viewportSize.X - 580, 10);
         
         // ========== Main advice panel (moved up to avoid card selection) ==========
         _panel = new PanelContainer();
