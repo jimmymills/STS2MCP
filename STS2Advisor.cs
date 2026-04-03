@@ -24,7 +24,7 @@ namespace STS2Advisor;
 public static partial class Advisor
 {
     public const string Version = "1.0.0";
-    public const int DefaultPort = 15526;
+    public const int DefaultPort = 27015;  // Changed from 15526 due to binding issues
     private const string ConfigFileName = "STS2Advisor.conf";
 
     private static HttpListener? _listener;
@@ -93,7 +93,8 @@ public static partial class Advisor
             var prefixes = new[]
             {
                 $"http://*:{port}/",           // All interfaces (requires admin/urlacl)
-                $"http://localhost:{port}/",   // Localhost only (fallback)
+                $"http://127.0.0.1:{port}/",   // Loopback IP
+                $"http://localhost:{port}/",   // Localhost name (fallback)
             };
             
             foreach (var prefix in prefixes)
