@@ -16,7 +16,9 @@ namespace STS2Advisor;
 /// Configure via STS2Advisor.conf (same folder as DLL):
 ///   port=15526
 ///   openclaw_url=https://openclaw.tail0ddab.ts.net
-///   openclaw_token=your-hook-token
+///   openclaw_token=your-gateway-auth-token
+///
+/// The token is your gateway.auth.token from OpenClaw config.
 /// </summary>
 public partial class AdvisorOverlay : CanvasLayer
 {
@@ -244,18 +246,6 @@ public partial class AdvisorOverlay : CanvasLayer
                 _ => $"STS2 Game State:\n{stateResponse}"
             };
             
-            // Package for OpenClaw /hooks/agent endpoint
-            var payload = new
-            {
-                message = prompt,
-                name = $"STS2-{adviceType}",
-                model = "anthropic/claude-sonnet-4-5",  // Use Sonnet for speed
-                timeoutSeconds = 30
-            };
-
-            var json = JsonSerializer.Serialize(payload, Advisor.JsonOptions);
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
-            
             // Check if OpenClaw is configured
             if (string.IsNullOrEmpty(_openclawBaseUrl) || string.IsNullOrEmpty(_openclawHookToken))
             {
@@ -263,9 +253,24 @@ public partial class AdvisorOverlay : CanvasLayer
                 return;
             }
             
+            // Package for OpenClaw /v1/chat/completions endpoint (OpenAI-compatible, synchronous)
+            var payload = new
+            {
+                model = "openclaw/default",
+                messages = new[]
+                {
+                    new { role = "user", content = prompt }
+                },
+                stream = false
+            };
+
+            var json = JsonSerializer.Serialize(payload, Advisor.JsonOptions);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            
             // Set up request with auth header
-            var request = new HttpRequestMessage(HttpMethod.Post, $"{_openclawBaseUrl}/hooks/agent");
+            var request = new HttpRequestMessage(HttpMethod.Post, $"{_openclawBaseUrl}/v1/chat/completions");
             request.Headers.Add("Authorization", $"Bearer {_openclawHookToken}");
+            request.Headers.Add("x-openclaw-model", "anthropic/claude-sonnet-4-5"); // Use Sonnet for speed
             request.Content = content;
             
             try
@@ -276,23 +281,24 @@ public partial class AdvisorOverlay : CanvasLayer
                 {
                     var responseText = await response.Content.ReadAsStringAsync();
                     
-                    // Parse the OpenClaw response
+                    // Parse the OpenAI-compatible response
                     try
                     {
                         var responseJson = JsonSerializer.Deserialize<JsonElement>(responseText);
                         
-                        // OpenClaw returns { output: "..." } or similar
-                        if (responseJson.TryGetProperty("output", out var output))
+                        // OpenAI format: { choices: [{ message: { content: "..." } }] }
+                        if (responseJson.TryGetProperty("choices", out var choices))
                         {
-                            SetText(output.GetString() ?? responseText);
-                        }
-                        else if (responseJson.TryGetProperty("result", out var result))
-                        {
-                            SetText(result.GetString() ?? responseText);
-                        }
-                        else if (responseJson.TryGetProperty("message", out var message))
-                        {
-                            SetText(message.GetString() ?? responseText);
+                            var firstChoice = choices[0];
+                            if (firstChoice.TryGetProperty("message", out var message) &&
+                                message.TryGetProperty("content", out var contentProp))
+                            {
+                                SetText(contentProp.GetString() ?? responseText);
+                            }
+                            else
+                            {
+                                SetText(responseText);
+                            }
                         }
                         else
                         {
