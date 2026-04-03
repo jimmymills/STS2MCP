@@ -92,7 +92,7 @@ public static partial class Advisor
             _listener = new HttpListener();
             _listener.Prefixes.Add($"http://localhost:{port}/");
             _listener.Prefixes.Add($"http://127.0.0.1:{port}/");
-            _listener.Prefixes.Add($"http://+:{port}/");  // Bind to all interfaces for remote access
+            _listener.Prefixes.Add($"http://100.65.10.110:{port}/");  // Tailnet access
             _listener.Start();
 
             _serverThread = new Thread(ServerLoop)
