@@ -566,19 +566,8 @@ public static class StateBuilder
         result["is_ancient"] = isAncient;
         result["body"] = SafeGetText(() => eventModel.Description);
 
-        // Check dialogue state for ancients
-        bool inDialogue = false;
+        // Get UI room for option buttons
         var uiRoom = NEventRoom.Instance;
-        if (isAncient && uiRoom != null)
-        {
-            var ancientLayout = FindFirst<NAncientEventLayout>(uiRoom);
-            if (ancientLayout != null)
-            {
-                var hitbox = ancientLayout.GetNodeOrNull<NClickableControl>("%DialogueHitbox");
-                inDialogue = hitbox != null && hitbox.Visible && hitbox.IsEnabled;
-            }
-        }
-        result["in_dialogue"] = inDialogue;
 
         // Options from UI
         var options = new List<Dictionary<string, object?>>();
