@@ -17,8 +17,10 @@ namespace STS2Advisor;
 ///   port=15526
 ///   openclaw_url=https://openclaw.tail0ddab.ts.net
 ///   openclaw_token=your-hooks-token
+///   callback_host=100.65.10.110
 ///
 /// The token is your hooks.token from OpenClaw config (for /hooks/wake endpoint).
+/// callback_host should be your machine's IP that OpenClaw can reach (e.g., Tailscale IP).
 /// </summary>
 public partial class AdvisorOverlay : CanvasLayer
 {
@@ -34,6 +36,7 @@ public partial class AdvisorOverlay : CanvasLayer
     // Loaded from config file or defaults
     private static string _openclawBaseUrl = "";
     private static string _openclawHookToken = "";
+    private static string _callbackHost = "localhost"; // Can be set to Tailscale IP for remote access
     private static bool _configLoaded = false;
     
     // Session key for persistent context during a run
@@ -95,6 +98,9 @@ public partial class AdvisorOverlay : CanvasLayer
                         break;
                     case "openclaw_token":
                         _openclawHookToken = value;
+                        break;
+                    case "callback_host":
+                        _callbackHost = value;
                         break;
                 }
             }
@@ -313,7 +319,7 @@ public partial class AdvisorOverlay : CanvasLayer
             
             // Register a callback request ID
             var requestId = Advisor.RegisterAdviceRequest();
-            var callbackUrl = $"http://localhost:{Advisor.DefaultPort}/advice";
+            var callbackUrl = $"http://{_callbackHost}:{Advisor.DefaultPort}/advice";
             
             // Build the wake message for OpenClaw main session
             // This triggers the main agent which has access to STS2 skill and tier lists
