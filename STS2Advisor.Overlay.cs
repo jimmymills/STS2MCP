@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
@@ -11,6 +12,11 @@ namespace STS2Advisor;
 /// <summary>
 /// In-game overlay for displaying AI advisor responses.
 /// Hotkeys trigger advice requests, responses display on screen.
+/// 
+/// Configure via STS2Advisor.conf (same folder as DLL):
+///   port=15526
+///   openclaw_url=https://openclaw.tail0ddab.ts.net
+///   openclaw_token=your-hook-token
 /// </summary>
 public partial class AdvisorOverlay : CanvasLayer
 {
@@ -22,8 +28,10 @@ public partial class AdvisorOverlay : CanvasLayer
     private Button? _closeButton;
     private static readonly System.Net.Http.HttpClient _httpClient = new() { Timeout = TimeSpan.FromSeconds(30) };
     
-    // Configure your OpenClaw webhook URL here
-    private const string OPENCLAW_WEBHOOK_URL = "http://localhost:19000/webhook/sts2-advisor";
+    // Loaded from config file or defaults
+    private static string _openclawBaseUrl = "";
+    private static string _openclawHookToken = "";
+    private static bool _configLoaded = false;
     
     private bool _isVisible = false;
     private string _currentAdviceType = "";
@@ -33,10 +41,61 @@ public partial class AdvisorOverlay : CanvasLayer
         _instance = this;
         Layer = 100; // On top of everything
         
+        LoadConfig();
         CreateUI();
         Hide();
         
         GD.Print("[STS2 Advisor] Overlay ready. Hotkeys: F1=Card, F2=Shop, F3=Event, F4=Combat, F5=Hide");
+        if (!string.IsNullOrEmpty(_openclawBaseUrl))
+        {
+            GD.Print($"[STS2 Advisor] OpenClaw configured: {_openclawBaseUrl}");
+        }
+        else
+        {
+            GD.Print("[STS2 Advisor] OpenClaw not configured - will show raw state. Add openclaw_url and openclaw_token to STS2Advisor.conf");
+        }
+    }
+
+    private static void LoadConfig()
+    {
+        if (_configLoaded) return;
+        _configLoaded = true;
+        
+        try
+        {
+            string? modDir = Path.GetDirectoryName(
+                System.Reflection.Assembly.GetExecutingAssembly().Location);
+            if (modDir == null) return;
+
+            string configPath = Path.Combine(modDir, "STS2Advisor.conf");
+            if (!File.Exists(configPath)) return;
+
+            foreach (var line in File.ReadAllLines(configPath))
+            {
+                var trimmed = line.Trim();
+                if (string.IsNullOrEmpty(trimmed) || trimmed.StartsWith("#")) continue;
+                
+                var parts = trimmed.Split('=', 2);
+                if (parts.Length != 2) continue;
+                
+                var key = parts[0].Trim().ToLowerInvariant();
+                var value = parts[1].Trim();
+                
+                switch (key)
+                {
+                    case "openclaw_url":
+                        _openclawBaseUrl = value;
+                        break;
+                    case "openclaw_token":
+                        _openclawHookToken = value;
+                        break;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            GD.PrintErr($"[STS2 Advisor] Failed to load overlay config: {ex.Message}");
+        }
     }
 
     private void CreateUI()
@@ -161,7 +220,7 @@ public partial class AdvisorOverlay : CanvasLayer
 
         try
         {
-            // First, get the current game state from local API
+            // Get the current game state from local API
             string endpoint = adviceType switch
             {
                 "card" => "/card-reward",
@@ -172,33 +231,64 @@ public partial class AdvisorOverlay : CanvasLayer
             };
 
             var stateResponse = await _httpClient.GetStringAsync($"http://localhost:{Advisor.DefaultPort}{endpoint}");
+            var deckResponse = await _httpClient.GetStringAsync($"http://localhost:{Advisor.DefaultPort}/deck");
+            var relicsResponse = await _httpClient.GetStringAsync($"http://localhost:{Advisor.DefaultPort}/relics");
             
-            // Package it up for OpenClaw
+            // Build the prompt for OpenClaw
+            string prompt = adviceType switch
+            {
+                "card" => $"STS2 Card Reward - give me a quick recommendation.\n\nCard choices:\n{stateResponse}\n\nMy deck:\n{deckResponse}\n\nMy relics:\n{relicsResponse}\n\nGive a brief recommendation (2-3 sentences max). Format: recommend one card or skip, with a one-line reason.",
+                "shop" => $"STS2 Shop - what should I buy?\n\nShop items:\n{stateResponse}\n\nMy deck:\n{deckResponse}\n\nMy relics:\n{relicsResponse}\n\nGive a brief recommendation (2-3 sentences max). What's worth buying?",
+                "event" => $"STS2 Event - which option should I choose?\n\nEvent:\n{stateResponse}\n\nMy deck:\n{deckResponse}\n\nMy relics:\n{relicsResponse}\n\nGive a brief recommendation (2-3 sentences max). Which option and why?",
+                "combat" => $"STS2 Combat - what's my play?\n\nCombat state:\n{stateResponse}\n\nMy deck:\n{deckResponse}\n\nMy relics:\n{relicsResponse}\n\nGive a brief tactical suggestion (2-3 sentences max).",
+                _ => $"STS2 Game State:\n{stateResponse}"
+            };
+            
+            // Package for OpenClaw /hooks/agent endpoint
             var payload = new
             {
-                type = adviceType,
-                state = stateResponse
+                message = prompt,
+                name = $"STS2-{adviceType}",
+                model = "anthropic/claude-sonnet-4-5",  // Use Sonnet for speed
+                timeoutSeconds = 30
             };
 
             var json = JsonSerializer.Serialize(payload, Advisor.JsonOptions);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
             
-            // Try to send to OpenClaw webhook
+            // Check if OpenClaw is configured
+            if (string.IsNullOrEmpty(_openclawBaseUrl) || string.IsNullOrEmpty(_openclawHookToken))
+            {
+                SetText("[color=yellow]OpenClaw not configured[/color]\n\nAdd to STS2Advisor.conf:\n  openclaw_url=https://your-openclaw-url\n  openclaw_token=your-hook-token\n\n[i]Showing raw state:[/i]\n\n" + FormatStateAsText(adviceType, stateResponse));
+                return;
+            }
+            
+            // Set up request with auth header
+            var request = new HttpRequestMessage(HttpMethod.Post, $"{_openclawBaseUrl}/hooks/agent");
+            request.Headers.Add("Authorization", $"Bearer {_openclawHookToken}");
+            request.Content = content;
+            
             try
             {
-                var response = await _httpClient.PostAsync(OPENCLAW_WEBHOOK_URL, content);
+                var response = await _httpClient.SendAsync(request);
                 
                 if (response.IsSuccessStatusCode)
                 {
                     var responseText = await response.Content.ReadAsStringAsync();
                     
-                    // Try to parse as JSON with an "advice" field, or use raw text
+                    // Parse the OpenClaw response
                     try
                     {
                         var responseJson = JsonSerializer.Deserialize<JsonElement>(responseText);
-                        if (responseJson.TryGetProperty("advice", out var advice))
+                        
+                        // OpenClaw returns { output: "..." } or similar
+                        if (responseJson.TryGetProperty("output", out var output))
                         {
-                            SetText(advice.GetString() ?? responseText);
+                            SetText(output.GetString() ?? responseText);
+                        }
+                        else if (responseJson.TryGetProperty("result", out var result))
+                        {
+                            SetText(result.GetString() ?? responseText);
                         }
                         else if (responseJson.TryGetProperty("message", out var message))
                         {
@@ -216,14 +306,14 @@ public partial class AdvisorOverlay : CanvasLayer
                 }
                 else
                 {
-                    // Webhook failed, show raw state as fallback
-                    SetText(FormatStateAsText(adviceType, stateResponse));
+                    var errorText = await response.Content.ReadAsStringAsync();
+                    SetText($"[color=yellow]OpenClaw returned {response.StatusCode}[/color]\n\n{errorText}\n\n[i]Showing raw state:[/i]\n\n" + FormatStateAsText(adviceType, stateResponse));
                 }
             }
-            catch (HttpRequestException)
+            catch (HttpRequestException ex)
             {
-                // No webhook configured, show raw state
-                SetText(FormatStateAsText(adviceType, stateResponse));
+                // No webhook configured or network error, show raw state
+                SetText($"[color=yellow]Could not reach OpenClaw[/color]\n{ex.Message}\n\n[i]Showing raw state:[/i]\n\n" + FormatStateAsText(adviceType, stateResponse));
             }
         }
         catch (Exception ex)
