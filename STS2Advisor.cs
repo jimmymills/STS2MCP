@@ -92,7 +92,18 @@ public static partial class Advisor
             _listener = new HttpListener();
             _listener.Prefixes.Add($"http://localhost:{port}/");
             _listener.Prefixes.Add($"http://127.0.0.1:{port}/");
-            _listener.Prefixes.Add($"http://100.65.10.110:{port}/");  // Tailnet access
+            
+            // Try to bind to all interfaces for remote access (requires admin or URL reservation)
+            try
+            {
+                _listener.Prefixes.Add($"http://*:{port}/");
+            }
+            catch (Exception ex)
+            {
+                GD.Print($"[STS2 Advisor] Could not bind to all interfaces: {ex.Message}");
+                GD.Print($"[STS2 Advisor] Remote access unavailable. Run as admin or: netsh http add urlacl url=http://*:{port}/ user=Everyone");
+            }
+            
             _listener.Start();
 
             _serverThread = new Thread(ServerLoop)
