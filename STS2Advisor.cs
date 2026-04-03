@@ -211,7 +211,8 @@ public static partial class Advisor
                             "GET /shop - Shop inventory (when in shop)",
                             "GET /card-reward - Card reward options (when picking cards)",
                             "GET /relics - Current relics",
-                            "GET /map - Map state and options"
+                            "GET /map - Map state and options",
+                            "GET /event - Event choices (when in event)"
                         }
                     });
                     break;
@@ -242,6 +243,10 @@ public static partial class Advisor
                     
                 case "/map":
                     HandleGetMap(response);
+                    break;
+                    
+                case "/event":
+                    HandleGetEvent(response);
                     break;
                     
                 default:
@@ -352,6 +357,20 @@ public static partial class Advisor
         catch (Exception ex)
         {
             SendError(response, 500, $"Failed to read map state: {ex.Message}");
+        }
+    }
+
+    private static void HandleGetEvent(HttpListenerResponse response)
+    {
+        try
+        {
+            var stateTask = RunOnMainThread(() => StateBuilder.BuildEventState());
+            var state = stateTask.GetAwaiter().GetResult();
+            SendJson(response, state);
+        }
+        catch (Exception ex)
+        {
+            SendError(response, 500, $"Failed to read event state: {ex.Message}");
         }
     }
 

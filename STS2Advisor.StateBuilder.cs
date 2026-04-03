@@ -525,6 +525,136 @@ public static class StateBuilder
     
     #endregion
 
+    #region Event State
+    
+    public static Dictionary<string, object?> BuildEventState()
+    {
+        var result = new Dictionary<string, object?>{};
+
+        if (!RunManager.Instance.IsInProgress)
+        {
+            result["error"] = "No run in progress";
+            return result;
+        }
+
+        var runState = RunManager.Instance.DebugOnlyGetState();
+        if (runState == null)
+        {
+            result["error"] = "Run state unavailable";
+            return result;
+        }
+
+        var currentRoom = runState.CurrentRoom;
+        if (currentRoom == null)
+        {
+            result["error"] = "No current room";
+            return result;
+        }
+
+        result["room_type"] = currentRoom.GetType().Name;
+
+        // Try to get event info via reflection since we don't know the exact API
+        try
+        {
+            // Look for an Event property on the room
+            var eventProp = currentRoom.GetType().GetProperty("Event");
+            if (eventProp != null)
+            {
+                var eventObj = eventProp.GetValue(currentRoom);
+                if (eventObj != null)
+                {
+                    // Try to get event name/title
+                    var titleProp = eventObj.GetType().GetProperty("Title");
+                    if (titleProp != null)
+                    {
+                        result["event_name"] = SafeGetText(() => titleProp.GetValue(eventObj));
+                    }
+                    
+                    var idProp = eventObj.GetType().GetProperty("Id");
+                    if (idProp != null)
+                    {
+                        var idVal = idProp.GetValue(eventObj);
+                        result["event_id"] = idVal?.ToString();
+                    }
+
+                    // Try to get choices/options
+                    var choicesProp = eventObj.GetType().GetProperty("Choices");
+                    if (choicesProp != null)
+                    {
+                        var choicesObj = choicesProp.GetValue(eventObj);
+                        if (choicesObj is System.Collections.IEnumerable choices)
+                        {
+                            var choiceList = new List<Dictionary<string, object?>>{};
+                            int idx = 0;
+                            foreach (var choice in choices)
+                            {
+                                var choiceDict = new Dictionary<string, object?>
+                                {
+                                    ["index"] = idx++
+                                };
+                                
+                                // Try to get choice text
+                                var textProp = choice.GetType().GetProperty("Text");
+                                if (textProp != null)
+                                {
+                                    choiceDict["text"] = SafeGetText(() => textProp.GetValue(choice));
+                                }
+                                
+                                var labelProp = choice.GetType().GetProperty("Label");
+                                if (labelProp != null)
+                                {
+                                    choiceDict["label"] = SafeGetText(() => labelProp.GetValue(choice));
+                                }
+                                
+                                var descProp = choice.GetType().GetProperty("Description");
+                                if (descProp != null)
+                                {
+                                    choiceDict["description"] = SafeGetText(() => descProp.GetValue(choice));
+                                }
+                                
+                                choiceList.Add(choiceDict);
+                            }
+                            result["choices"] = choiceList;
+                        }
+                    }
+                }
+            }
+            
+            // Also try to find any visible buttons/choices in the UI
+            var overlayStack = NOverlayStack.Instance;
+            if (overlayStack != null)
+            {
+                var topOverlay = overlayStack.Peek();
+                if (topOverlay != null)
+                {
+                    result["overlay_type"] = topOverlay.GetType().Name;
+                    
+                    // Look for buttons in the overlay
+                    var buttons = FindAll<Godot.Button>(topOverlay);
+                    if (buttons.Count > 0)
+                    {
+                        var buttonTexts = buttons
+                            .Where(b => b.Visible && !string.IsNullOrWhiteSpace(b.Text))
+                            .Select(b => b.Text)
+                            .ToList();
+                        if (buttonTexts.Count > 0)
+                        {
+                            result["visible_buttons"] = buttonTexts;
+                        }
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            result["reflection_error"] = ex.Message;
+        }
+
+        return result;
+    }
+    
+    #endregion
+
     #region Helper Methods
     
     private static Dictionary<string, object?> BuildPlayerSummary(Player player)
