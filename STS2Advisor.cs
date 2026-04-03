@@ -24,7 +24,7 @@ namespace STS2Advisor;
 public static partial class Advisor
 {
     public const string Version = "1.0.0";
-    public const int DefaultPort = 27015;  // Changed from 15526 due to binding issues
+    public const int DefaultPort = 15526;
     private const string ConfigFileName = "STS2Advisor.conf";
 
     private static HttpListener? _listener;
