@@ -629,17 +629,20 @@ public static class StateBuilder
                 {
                     result["overlay_type"] = topOverlay.GetType().Name;
                     
-                    // Look for buttons in the overlay
-                    var buttons = FindAll<Godot.Button>(topOverlay);
-                    if (buttons.Count > 0)
+                    // Look for buttons in the overlay (cast to Node if possible)
+                    if (topOverlay is Node overlayNode)
                     {
-                        var buttonTexts = buttons
-                            .Where(b => b.Visible && !string.IsNullOrWhiteSpace(b.Text))
-                            .Select(b => b.Text)
-                            .ToList();
-                        if (buttonTexts.Count > 0)
+                        var buttons = FindAll<Godot.Button>(overlayNode);
+                        if (buttons.Count > 0)
                         {
-                            result["visible_buttons"] = buttonTexts;
+                            var buttonTexts = buttons
+                                .Where(b => b.Visible && !string.IsNullOrWhiteSpace(b.Text))
+                                .Select(b => b.Text)
+                                .ToList();
+                            if (buttonTexts.Count > 0)
+                            {
+                                result["visible_buttons"] = buttonTexts;
+                            }
                         }
                     }
                 }
