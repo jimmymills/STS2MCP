@@ -89,8 +89,6 @@ public static partial class Advisor
 
             int port = LoadPort();
 
-            _listener = new HttpListener();
-            
             // Try binding options in order of preference
             var prefixes = new[]
             {
@@ -98,25 +96,24 @@ public static partial class Advisor
                 $"http://localhost:{port}/",   // Localhost only (fallback)
             };
             
-            bool started = false;
             foreach (var prefix in prefixes)
             {
                 try
                 {
-                    _listener.Prefixes.Clear();
+                    _listener = new HttpListener();
                     _listener.Prefixes.Add(prefix);
                     _listener.Start();
                     GD.Print($"[STS2 Advisor] Bound to {prefix}");
-                    started = true;
                     break;
                 }
                 catch (HttpListenerException ex)
                 {
                     GD.Print($"[STS2 Advisor] Could not bind to {prefix}: {ex.Message}");
+                    _listener = null;
                 }
             }
             
-            if (!started)
+            if (_listener == null)
             {
                 throw new Exception("Could not bind to any address");
             }
