@@ -50,7 +50,7 @@ public partial class AdvisorOverlay : CanvasLayer
         
         LoadConfig();
         CreateUI();
-        Hide();
+        _panel?.Hide();  // Start with advice panel hidden, but hotkey hint visible
         
         GD.Print("[STS2 Advisor] Overlay ready. Hotkeys: F1=Card, F3=Event, F4=Combat, F5=Shop, F7=Hide, F8=Reset");
         if (!string.IsNullOrEmpty(_openclawBaseUrl))
@@ -232,13 +232,13 @@ public partial class AdvisorOverlay : CanvasLayer
     public void ShowOverlay()
     {
         _isVisible = true;
-        Show();
+        _panel?.Show();
     }
 
     public void HideOverlay()
     {
         _isVisible = false;
-        Hide();
+        _panel?.Hide();
     }
 
     public void ResetSession()
