@@ -9,6 +9,10 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Potions;
 using MegaCrit.Sts2.Core.Entities.Merchant;
+using MegaCrit.Sts2.Core.Events;
+using MegaCrit.Sts2.Core.Models.Events;
+using MegaCrit.Sts2.Core.Nodes.Events;
+using MegaCrit.Sts2.Core.Nodes.Events.Custom;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.MonsterMoves.Intents;
@@ -545,113 +549,64 @@ public static class StateBuilder
         }
 
         var currentRoom = runState.CurrentRoom;
-        if (currentRoom == null)
+        if (currentRoom is not EventRoom eventRoom)
         {
-            result["error"] = "No current room";
+            result["error"] = "Not in an event room";
+            result["room_type"] = currentRoom?.GetType().Name;
             return result;
         }
 
-        result["room_type"] = currentRoom.GetType().Name;
+        var eventModel = eventRoom.CanonicalEvent;
+        bool isAncient = eventModel is AncientEventModel;
+        
+        result["event_id"] = eventModel.Id.Entry;
+        result["event_name"] = SafeGetText(() => eventModel.Title);
+        result["is_ancient"] = isAncient;
+        result["body"] = SafeGetText(() => eventModel.Description);
 
-        // Try to get event info via reflection since we don't know the exact API
-        try
+        // Check dialogue state for ancients
+        bool inDialogue = false;
+        var uiRoom = NEventRoom.Instance;
+        if (isAncient && uiRoom != null)
         {
-            // Look for an Event property on the room
-            var eventProp = currentRoom.GetType().GetProperty("Event");
-            if (eventProp != null)
+            var ancientLayout = FindFirst<NAncientEventLayout>(uiRoom);
+            if (ancientLayout != null)
             {
-                var eventObj = eventProp.GetValue(currentRoom);
-                if (eventObj != null)
-                {
-                    // Try to get event name/title
-                    var titleProp = eventObj.GetType().GetProperty("Title");
-                    if (titleProp != null)
-                    {
-                        result["event_name"] = SafeGetText(() => titleProp.GetValue(eventObj));
-                    }
-                    
-                    var idProp = eventObj.GetType().GetProperty("Id");
-                    if (idProp != null)
-                    {
-                        var idVal = idProp.GetValue(eventObj);
-                        result["event_id"] = idVal?.ToString();
-                    }
-
-                    // Try to get choices/options
-                    var choicesProp = eventObj.GetType().GetProperty("Choices");
-                    if (choicesProp != null)
-                    {
-                        var choicesObj = choicesProp.GetValue(eventObj);
-                        if (choicesObj is System.Collections.IEnumerable choices)
-                        {
-                            var choiceList = new List<Dictionary<string, object?>>{};
-                            int idx = 0;
-                            foreach (var choice in choices)
-                            {
-                                var choiceDict = new Dictionary<string, object?>
-                                {
-                                    ["index"] = idx++
-                                };
-                                
-                                // Try to get choice text
-                                var textProp = choice.GetType().GetProperty("Text");
-                                if (textProp != null)
-                                {
-                                    choiceDict["text"] = SafeGetText(() => textProp.GetValue(choice));
-                                }
-                                
-                                var labelProp = choice.GetType().GetProperty("Label");
-                                if (labelProp != null)
-                                {
-                                    choiceDict["label"] = SafeGetText(() => labelProp.GetValue(choice));
-                                }
-                                
-                                var descProp = choice.GetType().GetProperty("Description");
-                                if (descProp != null)
-                                {
-                                    choiceDict["description"] = SafeGetText(() => descProp.GetValue(choice));
-                                }
-                                
-                                choiceList.Add(choiceDict);
-                            }
-                            result["choices"] = choiceList;
-                        }
-                    }
-                }
-            }
-            
-            // Also try to find any visible buttons/choices in the UI
-            var overlayStack = NOverlayStack.Instance;
-            if (overlayStack != null)
-            {
-                var topOverlay = overlayStack.Peek();
-                if (topOverlay != null)
-                {
-                    result["overlay_type"] = topOverlay.GetType().Name;
-                    
-                    // Look for buttons in the overlay (cast to Node if possible)
-                    if (topOverlay is Node overlayNode)
-                    {
-                        var buttons = FindAll<Godot.Button>(overlayNode);
-                        if (buttons.Count > 0)
-                        {
-                            var buttonTexts = buttons
-                                .Where(b => b.Visible && !string.IsNullOrWhiteSpace(b.Text))
-                                .Select(b => b.Text)
-                                .ToList();
-                            if (buttonTexts.Count > 0)
-                            {
-                                result["visible_buttons"] = buttonTexts;
-                            }
-                        }
-                    }
-                }
+                var hitbox = ancientLayout.GetNodeOrNull<NClickableControl>("%DialogueHitbox");
+                inDialogue = hitbox != null && hitbox.Visible && hitbox.IsEnabled;
             }
         }
-        catch (Exception ex)
+        result["in_dialogue"] = inDialogue;
+
+        // Options from UI
+        var options = new List<Dictionary<string, object?>>();
+        if (uiRoom != null)
         {
-            result["reflection_error"] = ex.Message;
+            var buttons = FindAll<NEventOptionButton>(uiRoom);
+            int index = 0;
+            foreach (var button in buttons)
+            {
+                var opt = button.Option;
+                var optData = new Dictionary<string, object?>
+                {
+                    ["index"] = index,
+                    ["title"] = SafeGetText(() => opt.Title),
+                    ["description"] = SafeGetText(() => opt.Description),
+                    ["is_locked"] = opt.IsLocked,
+                    ["is_proceed"] = opt.IsProceed,
+                    ["was_chosen"] = opt.WasChosen
+                };
+                if (opt.Relic != null)
+                {
+                    optData["relic_name"] = SafeGetText(() => opt.Relic.Title);
+                    optData["relic_description"] = SafeGetText(() => opt.Relic.DynamicDescription);
+                }
+                optData["keywords"] = BuildKeywords(opt.HoverTips);
+                options.Add(optData);
+                index++;
+            }
         }
+        result["options"] = options;
 
         return result;
     }
@@ -854,6 +809,20 @@ public static class StateBuilder
         if (GodotObject.IsInstanceValid(start))
             FindAllRecursive(start, list);
         return list;
+    }
+
+    private static T? FindFirst<T>(Node start) where T : Node
+    {
+        if (!GodotObject.IsInstanceValid(start))
+            return null;
+        if (start is T result)
+            return result;
+        foreach (var child in start.GetChildren())
+        {
+            var val = FindFirst<T>(child);
+            if (val != null) return val;
+        }
+        return null;
     }
 
     private static List<T> FindAllSortedByPosition<T>(Node start) where T : Control
