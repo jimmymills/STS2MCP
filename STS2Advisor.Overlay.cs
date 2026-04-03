@@ -16,9 +16,9 @@ namespace STS2Advisor;
 /// Configure via STS2Advisor.conf (same folder as DLL):
 ///   port=15526
 ///   openclaw_url=https://openclaw.tail0ddab.ts.net
-///   openclaw_token=your-gateway-auth-token
+///   openclaw_token=your-hooks-token
 ///
-/// The token is your gateway.auth.token from OpenClaw config.
+/// The token is your hooks.token from OpenClaw config (for /hooks/wake endpoint).
 /// </summary>
 public partial class AdvisorOverlay : CanvasLayer
 {
@@ -291,13 +291,16 @@ public partial class AdvisorOverlay : CanvasLayer
             var deckResponse = await _httpClient.GetStringAsync($"http://localhost:{Advisor.DefaultPort}/deck");
             var relicsResponse = await _httpClient.GetStringAsync($"http://localhost:{Advisor.DefaultPort}/relics");
             
+            // Get character for tier list context
+            var character = runState.TryGetProperty("character", out var charProp) ? charProp.GetString() ?? "Unknown" : "Unknown";
+            
             // Build the prompt for OpenClaw
             string prompt = adviceType switch
             {
-                "card" => $"STS2 Card Reward - give me a quick recommendation.\n\nCard choices:\n{stateResponse}\n\nMy deck:\n{deckResponse}\n\nMy relics:\n{relicsResponse}\n\nGive a brief recommendation (2-3 sentences max). Format: recommend one card or skip, with a one-line reason.",
-                "shop" => $"STS2 Shop - what should I buy?\n\nShop items:\n{stateResponse}\n\nMy deck:\n{deckResponse}\n\nMy relics:\n{relicsResponse}\n\nGive a brief recommendation (2-3 sentences max). What's worth buying?",
-                "event" => $"STS2 Event - which option should I choose?\n\nEvent:\n{stateResponse}\n\nMy deck:\n{deckResponse}\n\nMy relics:\n{relicsResponse}\n\nGive a brief recommendation (2-3 sentences max). Which option and why?",
-                "combat" => $"STS2 Combat - what's my play?\n\nCombat state:\n{stateResponse}\n\nMy deck:\n{deckResponse}\n\nMy relics:\n{relicsResponse}\n\nGive a brief tactical suggestion (2-3 sentences max).",
+                "card" => $"Card choices:\n{stateResponse}\n\nMy deck:\n{deckResponse}\n\nMy relics:\n{relicsResponse}\n\nRecommend one card or skip, with a one-line reason.",
+                "shop" => $"Shop items:\n{stateResponse}\n\nMy deck:\n{deckResponse}\n\nMy relics:\n{relicsResponse}\n\nWhat's worth buying? Brief recommendation.",
+                "event" => $"Event:\n{stateResponse}\n\nMy deck:\n{deckResponse}\n\nMy relics:\n{relicsResponse}\n\nWhich option and why? Brief recommendation.",
+                "combat" => $"Combat state:\n{stateResponse}\n\nMy deck:\n{deckResponse}\n\nMy relics:\n{relicsResponse}\n\nBrief tactical suggestion.",
                 _ => $"STS2 Game State:\n{stateResponse}"
             };
             
@@ -308,28 +311,40 @@ public partial class AdvisorOverlay : CanvasLayer
                 return;
             }
             
-            // Package for OpenClaw /v1/chat/completions endpoint (OpenAI-compatible, synchronous)
+            // Register a callback request ID
+            var requestId = Advisor.RegisterAdviceRequest();
+            var callbackUrl = $"http://localhost:{Advisor.DefaultPort}/advice";
+            
+            // Build the wake message for OpenClaw main session
+            // This triggers the main agent which has access to STS2 skill and tier lists
+            var wakeText = $@"STS2 Advisor Request (request_id: {requestId})
+
+Type: {adviceType}
+Character: {character}
+
+{prompt}
+
+After analyzing, POST your advice to: {callbackUrl}
+Body: {{""request_id"": ""{requestId}"", ""advice"": ""your advice here""}}
+
+Use your STS2 skill knowledge and tier lists. Keep advice brief (2-3 sentences).";
+            
+            // Package for OpenClaw /hooks/wake endpoint (triggers main session with skill access)
             var payload = new
             {
-                model = "openclaw/default",
-                messages = new[]
-                {
-                    new { role = "user", content = prompt }
-                },
-                stream = false
+                text = wakeText,
+                mode = "now"
             };
 
             var json = JsonSerializer.Serialize(payload, Advisor.JsonOptions);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
             
-            // Set up request with auth header and session key for persistent context
-            var request = new HttpRequestMessage(HttpMethod.Post, $"{_openclawBaseUrl}/v1/chat/completions");
+            // Set up request with hook auth
+            var request = new HttpRequestMessage(HttpMethod.Post, $"{_openclawBaseUrl}/hooks/wake");
             request.Headers.Add("Authorization", $"Bearer {_openclawHookToken}");
-            request.Headers.Add("x-openclaw-model", "anthropic/claude-sonnet-4-5"); // Use Sonnet for speed
-            request.Headers.Add("x-openclaw-session-key", _sessionKey); // Persist conversation across requests
             request.Content = content;
             
-            GD.Print($"[STS2 Advisor] Sending {adviceType} request with session: {_sessionKey}");
+            GD.Print($"[STS2 Advisor] Sending {adviceType} wake request: {requestId}");
             
             try
             {
@@ -337,36 +352,12 @@ public partial class AdvisorOverlay : CanvasLayer
                 
                 if (response.IsSuccessStatusCode)
                 {
-                    var responseText = await response.Content.ReadAsStringAsync();
+                    // Wake sent - now wait for the callback
+                    SetText($"[i]Analyzing {adviceType}...[/i]\n\nWaiting for advice (request: {requestId})");
                     
-                    // Parse the OpenAI-compatible response
-                    try
-                    {
-                        var responseJson = JsonSerializer.Deserialize<JsonElement>(responseText);
-                        
-                        // OpenAI format: { choices: [{ message: { content: "..." } }] }
-                        if (responseJson.TryGetProperty("choices", out var choices))
-                        {
-                            var firstChoice = choices[0];
-                            if (firstChoice.TryGetProperty("message", out var message) &&
-                                message.TryGetProperty("content", out var contentProp))
-                            {
-                                SetText(contentProp.GetString() ?? responseText);
-                            }
-                            else
-                            {
-                                SetText(responseText);
-                            }
-                        }
-                        else
-                        {
-                            SetText(responseText);
-                        }
-                    }
-                    catch
-                    {
-                        SetText(responseText);
-                    }
+                    // Wait for the advice to come back via callback
+                    var advice = await Advisor.WaitForAdvice(requestId, 30000);
+                    SetText(advice);
                 }
                 else
                 {
