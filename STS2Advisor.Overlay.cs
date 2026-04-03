@@ -35,6 +35,10 @@ public partial class AdvisorOverlay : CanvasLayer
     private static string _openclawHookToken = "";
     private static bool _configLoaded = false;
     
+    // Session key for persistent context during a run
+    // Generated once per game session, reset when game restarts
+    private static string? _sessionKey = null;
+    
     private bool _isVisible = false;
     private string _currentAdviceType = "";
 
@@ -47,7 +51,7 @@ public partial class AdvisorOverlay : CanvasLayer
         CreateUI();
         Hide();
         
-        GD.Print("[STS2 Advisor] Overlay ready. Hotkeys: F1=Card, F2=Shop, F3=Event, F4=Combat, F5=Hide");
+        GD.Print("[STS2 Advisor] Overlay ready. Hotkeys: F1=Card, F2=Shop, F3=Event, F4=Combat, F5=Hide, F6=Reset Session");
         if (!string.IsNullOrEmpty(_openclawBaseUrl))
         {
             GD.Print($"[STS2 Advisor] OpenClaw configured: {_openclawBaseUrl}");
@@ -156,7 +160,7 @@ public partial class AdvisorOverlay : CanvasLayer
         
         // Hotkey hints at bottom
         var hints = new Label();
-        hints.Text = "F1:Card | F2:Shop | F3:Event | F4:Combat | F5/ESC:Hide";
+        hints.Text = "F1:Card | F2:Shop | F3:Event | F4:Combat | F5:Hide | F6:Reset";
         hints.AddThemeColorOverride("font_color", new Color(0.6f, 0.6f, 0.6f));
         hints.HorizontalAlignment = HorizontalAlignment.Center;
         vbox.AddChild(hints);
@@ -193,6 +197,9 @@ public partial class AdvisorOverlay : CanvasLayer
                 case Key.Escape when _isVisible:
                     HideOverlay();
                     break;
+                case Key.F6:
+                    ResetSession();
+                    break;
             }
         }
     }
@@ -214,6 +221,14 @@ public partial class AdvisorOverlay : CanvasLayer
         Hide();
     }
 
+    public void ResetSession()
+    {
+        _sessionKey = null;
+        GD.Print("[STS2 Advisor] Session reset - next request will start fresh context");
+        ShowOverlay();
+        SetText("[color=green]Session reset![/color]\n\nNext advice request will start with fresh context.\nThis happens automatically when you start a new run.");
+    }
+
     private async void RequestAdvice(string adviceType)
     {
         _currentAdviceType = adviceType;
@@ -222,6 +237,26 @@ public partial class AdvisorOverlay : CanvasLayer
 
         try
         {
+            // Get run state first to establish session key
+            var runStateResponse = await _httpClient.GetStringAsync($"http://localhost:{Advisor.DefaultPort}/state");
+            var runState = JsonSerializer.Deserialize<JsonElement>(runStateResponse);
+            
+            // Generate session key from run_id if available (persists context for this run)
+            if (runState.TryGetProperty("run_id", out var runIdProp))
+            {
+                var runId = runIdProp.GetString();
+                if (!string.IsNullOrEmpty(runId))
+                {
+                    _sessionKey = $"sts2-run-{runId}";
+                }
+            }
+            
+            // Fallback: generate a session key if none exists
+            if (string.IsNullOrEmpty(_sessionKey))
+            {
+                _sessionKey = $"sts2-session-{Guid.NewGuid():N}";
+            }
+            
             // Get the current game state from local API
             string endpoint = adviceType switch
             {
@@ -267,11 +302,14 @@ public partial class AdvisorOverlay : CanvasLayer
             var json = JsonSerializer.Serialize(payload, Advisor.JsonOptions);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
             
-            // Set up request with auth header
+            // Set up request with auth header and session key for persistent context
             var request = new HttpRequestMessage(HttpMethod.Post, $"{_openclawBaseUrl}/v1/chat/completions");
             request.Headers.Add("Authorization", $"Bearer {_openclawHookToken}");
             request.Headers.Add("x-openclaw-model", "anthropic/claude-sonnet-4-5"); // Use Sonnet for speed
+            request.Headers.Add("x-openclaw-session-key", _sessionKey); // Persist conversation across requests
             request.Content = content;
+            
+            GD.Print($"[STS2 Advisor] Sending {adviceType} request with session: {_sessionKey}");
             
             try
             {
