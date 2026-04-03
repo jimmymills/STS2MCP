@@ -20,7 +20,7 @@ public partial class AdvisorOverlay : CanvasLayer
     private PanelContainer? _panel;
     private RichTextLabel? _label;
     private Button? _closeButton;
-    private static readonly HttpClient _httpClient = new() { Timeout = TimeSpan.FromSeconds(30) };
+    private static readonly System.Net.Http.HttpClient _httpClient = new() { Timeout = TimeSpan.FromSeconds(30) };
     
     // Configure your OpenClaw webhook URL here
     private const string OPENCLAW_WEBHOOK_URL = "http://localhost:19000/webhook/sts2-advisor";
