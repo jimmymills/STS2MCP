@@ -31,6 +31,8 @@ public partial class AdvisorOverlay : CanvasLayer
     private RichTextLabel? _label;
     private Button? _closeButton;
     private PanelContainer? _hotkeyHint; // Always-visible hotkey reminder
+    private LineEdit? _chatInput; // Text input for follow-up messages
+    private Button? _sendButton;
     private static readonly System.Net.Http.HttpClient _httpClient = new() { Timeout = TimeSpan.FromSeconds(30) };
     
     // Loaded from config file or defaults
@@ -124,7 +126,7 @@ public partial class AdvisorOverlay : CanvasLayer
         _hotkeyHint.AddThemeStyleboxOverride("panel", hintStyle);
         
         var hintLabel = new Label();
-        hintLabel.Text = "🎮 F1:Card | F3:Event | F4:Combat | F5:Shop | F8:Reset";
+        hintLabel.Text = "🎮 F1:Card | F3:Event | F4:Combat | F5:Shop | F7:Hide | F8:Reset";
         hintLabel.AddThemeFontSizeOverride("font_size", 14);
         hintLabel.AddThemeColorOverride("font_color", new Color(0.8f, 0.8f, 0.9f));
         _hotkeyHint.AddChild(hintLabel);
@@ -184,9 +186,26 @@ public partial class AdvisorOverlay : CanvasLayer
         scroll.AddChild(_label);
         vbox.AddChild(scroll);
         
+        // Chat input for follow-up messages
+        var inputRow = new HBoxContainer();
+        inputRow.SizeFlagsHorizontal = Control.SizeFlags.ExpandFill;
+        
+        _chatInput = new LineEdit();
+        _chatInput.PlaceholderText = "Type follow-up question or clarification...";
+        _chatInput.SizeFlagsHorizontal = Control.SizeFlags.ExpandFill;
+        _chatInput.TextSubmitted += OnChatSubmitted;
+        inputRow.AddChild(_chatInput);
+        
+        _sendButton = new Button();
+        _sendButton.Text = "Send";
+        _sendButton.Pressed += OnSendPressed;
+        inputRow.AddChild(_sendButton);
+        
+        vbox.AddChild(inputRow);
+        
         // Hotkey hints at bottom of panel
         var hints = new Label();
-        hints.Text = "F1:Card | F3:Event | F4:Combat | F5:Shop | F7:Hide | F8:Reset";
+        hints.Text = "F1:Card | F3:Event | F4:Combat | F5:Shop | F7:Hide | F8:Reset | Enter:Send";
         hints.AddThemeColorOverride("font_color", new Color(0.6f, 0.6f, 0.6f));
         hints.HorizontalAlignment = HorizontalAlignment.Center;
         vbox.AddChild(hints);
@@ -253,6 +272,88 @@ public partial class AdvisorOverlay : CanvasLayer
         GD.Print("[STS2 Advisor] Session reset - next request will start fresh context");
         ShowOverlay();
         SetText("[color=green]Session reset![/color]\n\nNext advice request will start with fresh context.\nThis happens automatically when you start a new run.");
+    }
+
+    private void OnChatSubmitted(string text)
+    {
+        if (!string.IsNullOrWhiteSpace(text))
+        {
+            SendFollowUp(text);
+        }
+    }
+
+    private void OnSendPressed()
+    {
+        if (_chatInput != null && !string.IsNullOrWhiteSpace(_chatInput.Text))
+        {
+            SendFollowUp(_chatInput.Text);
+        }
+    }
+
+    private async void SendFollowUp(string message)
+    {
+        if (_chatInput != null)
+        {
+            _chatInput.Text = "";
+        }
+        
+        SetText($"[i]Sending: {message}...[/i]");
+        
+        // Check if OpenClaw is configured
+        if (string.IsNullOrEmpty(_openclawBaseUrl) || string.IsNullOrEmpty(_openclawHookToken))
+        {
+            SetText("[color=yellow]OpenClaw not configured[/color]");
+            return;
+        }
+        
+        // Ensure we have a session key
+        if (string.IsNullOrEmpty(_sessionKey))
+        {
+            _sessionKey = $"sts2-session-{Guid.NewGuid():N}";
+        }
+        
+        // Register callback
+        var requestId = Advisor.RegisterAdviceRequest();
+        var callbackUrl = $"http://{_callbackHost}:{Advisor.DefaultPort}/advice";
+        
+        // Build wake message with the follow-up
+        var wakeText = $@"STS2 Advisor Follow-up (request_id: {requestId})
+
+Player message: {message}
+
+This is a follow-up to the previous advice. The player needs clarification or has additional context.
+
+After responding, POST your advice to: {callbackUrl}
+Body: {{""request_id"": ""{requestId}"", ""advice"": ""your response here""}}
+
+Keep response brief and helpful.";
+        
+        var payload = new { text = wakeText, mode = "now" };
+        var json = JsonSerializer.Serialize(payload, Advisor.JsonOptions);
+        var content = new StringContent(json, Encoding.UTF8, "application/json");
+        
+        var request = new HttpRequestMessage(HttpMethod.Post, $"{_openclawBaseUrl}/hooks/wake");
+        request.Headers.Add("Authorization", $"Bearer {_openclawHookToken}");
+        request.Content = content;
+        
+        try
+        {
+            var response = await _httpClient.SendAsync(request);
+            if (response.IsSuccessStatusCode)
+            {
+                SetText($"[i]Waiting for response...[/i]");
+                var advice = await Advisor.WaitForAdvice(requestId, 30000);
+                SetText(advice);
+            }
+            else
+            {
+                SetText($"[color=yellow]Error: {response.StatusCode}[/color]");
+            }
+        }
+        catch (Exception ex)
+        {
+            SetText($"[color=red]Error: {ex.Message}[/color]");
+        }
     }
 
     private async void RequestAdvice(string adviceType)
