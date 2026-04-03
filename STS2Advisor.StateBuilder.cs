@@ -220,12 +220,8 @@ public static class StateBuilder
             return result;
         }
 
-        // Auto-open inventory if needed
-        var merchUI = NMerchantRoom.Instance;
-        if (merchUI?.Inventory != null && !merchUI.Inventory.IsOpen)
-        {
-            merchUI.OpenInventory();
-        }
+        // Note: Auto-open inventory removed - NMerchantRoom may not exist in current API
+        // If shop isn't showing items, player may need to interact with merchant first
 
         var inventory = merchantRoom.Inventory;
         if (inventory == null)
@@ -387,7 +383,7 @@ public static class StateBuilder
         }
 
         var cards = new List<Dictionary<string, object?>>();
-        foreach (var card in player.Deck)
+        foreach (var card in player.Deck.Cards)
         {
             cards.Add(new Dictionary<string, object?>
             {
@@ -539,7 +535,7 @@ public static class StateBuilder
             ["hp"] = player.Creature.CurrentHp,
             ["max_hp"] = player.Creature.MaxHp,
             ["gold"] = player.Gold,
-            ["deck_size"] = player.Deck.Count(),
+            ["deck_size"] = player.Deck.Cards.Count,
             ["relic_count"] = player.Relics.Count(),
             ["potion_count"] = player.PotionSlots.Count(p => p != null)
         };
@@ -623,7 +619,7 @@ public static class StateBuilder
             {
                 ["name"] = SafeGetText(() => power.Title),
                 ["amount"] = power.Amount,
-                ["is_debuff"] = power.IsDebuff
+                ["is_debuff"] = IsDebuff(power)
             });
         }
         return powers;
@@ -644,6 +640,33 @@ public static class StateBuilder
         }
         catch { }
         return keywords;
+    }
+
+    // Try to determine if a power is a debuff - fallback heuristics since API may vary
+    private static bool IsDebuff(PowerModel power)
+    {
+        try
+        {
+            // Try accessing IsDebuff property via reflection in case it exists
+            var prop = power.GetType().GetProperty("IsDebuff");
+            if (prop != null) return (bool)(prop.GetValue(power) ?? false);
+            
+            // Try PowerType enum
+            var typeProp = power.GetType().GetProperty("PowerType");
+            if (typeProp != null)
+            {
+                var val = typeProp.GetValue(power)?.ToString() ?? "";
+                return val.Contains("Debuff");
+            }
+            
+            // Fallback: common debuff names
+            var name = SafeGetText(() => power.Title)?.ToLower() ?? "";
+            return name.Contains("weak") || name.Contains("vulnerable") || 
+                   name.Contains("frail") || name.Contains("poison") ||
+                   name.Contains("wound") || name.Contains("burn") ||
+                   name.Contains("dazed") || name.Contains("slime");
+        }
+        catch { return false; }
     }
 
     private static string GetCostDisplay(CardModel card)
