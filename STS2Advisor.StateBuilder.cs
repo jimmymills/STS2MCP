@@ -330,7 +330,55 @@ public static class StateBuilder
         var result = new Dictionary<string, object?>();
 
         var topOverlay = NOverlayStack.Instance?.Peek();
-        if (topOverlay is not NCardRewardSelectionScreen cardScreen)
+        
+        // Debug: Log overlay type to help identify event card screens
+        if (topOverlay != null)
+        {
+            result["_debug_overlay_type"] = topOverlay.GetType().FullName;
+        }
+        
+        // Try NCardRewardSelectionScreen first (normal card rewards)
+        NCardRewardSelectionScreen? cardScreen = topOverlay as NCardRewardSelectionScreen;
+        
+        // If not found, check if it's a different card selection screen
+        // Some events use different screen types - try to find card holders anyway
+        if (cardScreen == null && topOverlay != null)
+        {
+            // Try to find card holders in whatever overlay is active
+            var cardHolders = FindAllSortedByPosition<NCardHolder>(topOverlay);
+            if (cardHolders.Count > 0)
+            {
+                // Found cards in a non-standard screen - use it
+                var cards = new List<Dictionary<string, object?>>();
+                foreach (var holder in cardHolders)
+                {
+                    var card = holder.CardModel;
+                    if (card == null) continue;
+
+                    cards.Add(new Dictionary<string, object?>
+                    {
+                        ["name"] = SafeGetText(() => card.Title),
+                        ["type"] = card.Type.ToString(),
+                        ["rarity"] = card.Rarity.ToString(),
+                        ["energy_cost"] = GetCostDisplay(card),
+                        ["star_cost"] = GetStarCostDisplay(card),
+                        ["description"] = SafeGetCardDescription(card),
+                        ["is_upgraded"] = card.IsUpgraded,
+                        ["keywords"] = BuildKeywords(card.HoverTips)
+                    });
+                }
+                
+                if (cards.Count > 0)
+                {
+                    result["cards"] = cards;
+                    result["can_skip"] = true; // Assume skippable for event cards
+                    result["_source"] = "event_card_selection";
+                    return result;
+                }
+            }
+        }
+        
+        if (cardScreen == null)
         {
             result["error"] = "No card reward screen active";
             return result;
