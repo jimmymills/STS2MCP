@@ -28,6 +28,7 @@ public partial class AdvisorOverlay : CanvasLayer
     private PanelContainer? _panel;
     private RichTextLabel? _label;
     private Button? _closeButton;
+    private PanelContainer? _hotkeyHint; // Always-visible hotkey reminder
     private static readonly System.Net.Http.HttpClient _httpClient = new() { Timeout = TimeSpan.FromSeconds(30) };
     
     // Loaded from config file or defaults
@@ -51,7 +52,7 @@ public partial class AdvisorOverlay : CanvasLayer
         CreateUI();
         Hide();
         
-        GD.Print("[STS2 Advisor] Overlay ready. Hotkeys: F1=Card, F2=Shop, F3=Event, F4=Combat, F5=Hide, F6=Reset Session");
+        GD.Print("[STS2 Advisor] Overlay ready. Hotkeys: F1=Card, F3=Event, F4=Combat, F5=Shop, F7=Hide, F8=Reset");
         if (!string.IsNullOrEmpty(_openclawBaseUrl))
         {
             GD.Print($"[STS2 Advisor] OpenClaw configured: {_openclawBaseUrl}");
@@ -106,10 +107,29 @@ public partial class AdvisorOverlay : CanvasLayer
 
     private void CreateUI()
     {
-        // Main panel
+        var viewportSize = GetViewport().GetVisibleRect().Size;
+        
+        // ========== Always-visible hotkey hint (top right) ==========
+        _hotkeyHint = new PanelContainer();
+        var hintStyle = new StyleBoxFlat();
+        hintStyle.BgColor = new Color(0.1f, 0.1f, 0.15f, 0.8f);
+        hintStyle.SetCornerRadiusAll(5);
+        hintStyle.SetContentMarginAll(8);
+        _hotkeyHint.AddThemeStyleboxOverride("panel", hintStyle);
+        
+        var hintLabel = new Label();
+        hintLabel.Text = "🎮 F1:Card | F3:Event | F4:Combat | F5:Shop | F8:Reset";
+        hintLabel.AddThemeFontSizeOverride("font_size", 14);
+        hintLabel.AddThemeColorOverride("font_color", new Color(0.8f, 0.8f, 0.9f));
+        _hotkeyHint.AddChild(hintLabel);
+        
+        AddChild(_hotkeyHint);
+        // Position in top right with some padding
+        _hotkeyHint.Position = new Vector2(viewportSize.X - 420, 10);
+        
+        // ========== Main advice panel (moved up to avoid card selection) ==========
         _panel = new PanelContainer();
-        _panel.SetAnchorsPreset(Control.LayoutPreset.Center);
-        _panel.CustomMinimumSize = new Vector2(600, 400);
+        _panel.CustomMinimumSize = new Vector2(600, 350);
         
         // Add a semi-transparent background style
         var styleBox = new StyleBoxFlat();
@@ -146,21 +166,21 @@ public partial class AdvisorOverlay : CanvasLayer
         // Scrollable content area
         var scroll = new ScrollContainer();
         scroll.SizeFlagsVertical = Control.SizeFlags.ExpandFill;
-        scroll.CustomMinimumSize = new Vector2(0, 300);
+        scroll.CustomMinimumSize = new Vector2(0, 250);
         
         _label = new RichTextLabel();
         _label.BbcodeEnabled = true;
         _label.FitContent = true;
         _label.SizeFlagsHorizontal = Control.SizeFlags.ExpandFill;
         _label.SizeFlagsVertical = Control.SizeFlags.ExpandFill;
-        _label.Text = "Press a hotkey to get advice:\n\n[b]F1[/b] - Card Reward\n[b]F2[/b] - Shop\n[b]F3[/b] - Event\n[b]F4[/b] - Combat\n[b]F5[/b] - Hide";
+        _label.Text = "Press a hotkey to get advice:\n\n[b]F1[/b] - Card Reward\n[b]F3[/b] - Event\n[b]F4[/b] - Combat\n[b]F5[/b] - Shop\n[b]F7[/b] - Hide\n[b]F8[/b] - Reset Session";
         
         scroll.AddChild(_label);
         vbox.AddChild(scroll);
         
-        // Hotkey hints at bottom
+        // Hotkey hints at bottom of panel
         var hints = new Label();
-        hints.Text = "F1:Card | F2:Shop | F3:Event | F4:Combat | F5:Hide | F6:Reset";
+        hints.Text = "F1:Card | F3:Event | F4:Combat | F5:Shop | F7:Hide | F8:Reset";
         hints.AddThemeColorOverride("font_color", new Color(0.6f, 0.6f, 0.6f));
         hints.HorizontalAlignment = HorizontalAlignment.Center;
         vbox.AddChild(hints);
@@ -168,10 +188,10 @@ public partial class AdvisorOverlay : CanvasLayer
         _panel.AddChild(vbox);
         AddChild(_panel);
         
-        // Center the panel
+        // Position panel in upper portion of screen (moved up from center)
         _panel.Position = new Vector2(
-            (GetViewport().GetVisibleRect().Size.X - _panel.CustomMinimumSize.X) / 2,
-            (GetViewport().GetVisibleRect().Size.Y - _panel.CustomMinimumSize.Y) / 2
+            (viewportSize.X - _panel.CustomMinimumSize.X) / 2,
+            80  // Near top, below the hotkey hint
         );
     }
 
@@ -184,9 +204,6 @@ public partial class AdvisorOverlay : CanvasLayer
                 case Key.F1:
                     RequestAdvice("card");
                     break;
-                case Key.F2:
-                    RequestAdvice("shop");
-                    break;
                 case Key.F3:
                     RequestAdvice("event");
                     break;
@@ -194,10 +211,13 @@ public partial class AdvisorOverlay : CanvasLayer
                     RequestAdvice("combat");
                     break;
                 case Key.F5:
+                    RequestAdvice("shop");
+                    break;
+                case Key.F7:
                 case Key.Escape when _isVisible:
                     HideOverlay();
                     break;
-                case Key.F6:
+                case Key.F8:
                     ResetSession();
                     break;
             }
