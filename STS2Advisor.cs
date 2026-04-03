@@ -126,7 +126,11 @@ public static partial class Advisor
             };
             _serverThread.Start();
 
+            // Create the overlay UI
+            CreateOverlay();
+
             GD.Print($"[STS2 Advisor] v{Version} started on http://localhost:{port}/");
+            GD.Print($"[STS2 Advisor] Hotkeys: F1=Card, F2=Shop, F3=Event, F4=Combat, F5=Hide");
         }
         catch (Exception ex)
         {
@@ -142,6 +146,22 @@ public static partial class Advisor
             try { action(); }
             catch (Exception ex) { GD.PrintErr($"[STS2 Advisor] Main thread action error: {ex}"); }
             processed++;
+        }
+    }
+
+    private static void CreateOverlay()
+    {
+        try
+        {
+            var tree = (SceneTree)Engine.GetMainLoop();
+            var overlay = new AdvisorOverlay();
+            overlay.Name = "STS2AdvisorOverlay";
+            tree.Root.CallDeferred("add_child", overlay);
+            GD.Print("[STS2 Advisor] Overlay created");
+        }
+        catch (Exception ex)
+        {
+            GD.PrintErr($"[STS2 Advisor] Failed to create overlay: {ex}");
         }
     }
 
