@@ -6,23 +6,33 @@
     <RootNamespace>STS2Advisor</RootNamespace>
     <AssemblyName>STS2Advisor</AssemblyName>
     
-    <!-- Paths - Update these for your system -->
-    <GodotPath Condition="$([MSBuild]::IsOSPlatform('Windows'))">C:\Program Files\Godot</GodotPath>
-    <GodotPath Condition="$([MSBuild]::IsOSPlatform('OSX'))">/Applications/Godot.app/Contents/MacOS</GodotPath>
-    <GodotPath Condition="$([MSBuild]::IsOSPlatform('Linux'))">$(HOME)/.local/share/godot</GodotPath>
+    <!--
+      ============================================================
+      CONFIGURE YOUR PATHS HERE
+      ============================================================
+      Set STS2_GAME_DIR environment variable, or edit Sts2Path below.
+      
+      Example paths:
+        Windows: C:\Program Files (x86)\Steam\steamapps\common\Slay the Spire 2
+        macOS:   ~/Library/Application Support/Steam/steamapps/common/Slay the Spire 2
+        Linux:   ~/.steam/steam/steamapps/common/Slay the Spire 2
+    -->
     
-    <SteamLibraryPath Condition="$([MSBuild]::IsOSPlatform('Windows'))">C:\Program Files (x86)\Steam\steamapps\common</SteamLibraryPath>
-    <SteamLibraryPath Condition="$([MSBuild]::IsOSPlatform('OSX'))">$(HOME)/Library/Application Support/Steam/steamapps/common</SteamLibraryPath>
-    <SteamLibraryPath Condition="$([MSBuild]::IsOSPlatform('Linux'))">$(HOME)/.steam/steam/steamapps/common</SteamLibraryPath>
+    <!-- Use environment variable if set, otherwise use default paths -->
+    <Sts2Path Condition="'$(STS2_GAME_DIR)' != ''">$(STS2_GAME_DIR)</Sts2Path>
     
-    <Sts2Path>$(SteamLibraryPath)/Slay the Spire 2</Sts2Path>
+    <!-- Default paths per platform (override above or set STS2_GAME_DIR) -->
+    <Sts2Path Condition="'$(Sts2Path)' == '' AND $([MSBuild]::IsOSPlatform('Windows'))">D:\SteamLibrary\steamapps\common\Slay the Spire 2</Sts2Path>
+    <Sts2Path Condition="'$(Sts2Path)' == '' AND $([MSBuild]::IsOSPlatform('OSX'))">$(HOME)/Library/Application Support/Steam/steamapps/common/Slay the Spire 2</Sts2Path>
+    <Sts2Path Condition="'$(Sts2Path)' == '' AND $([MSBuild]::IsOSPlatform('Linux'))">$(HOME)/.steam/steam/steamapps/common/Slay the Spire 2</Sts2Path>
+    
     <ModsPath>$(Sts2Path)/mods/STS2Advisor</ModsPath>
   </PropertyGroup>
 
   <ItemGroup>
-    <!-- Reference game assemblies -->
+    <!-- Reference game assembly (sts2.dll) -->
     <Reference Include="sts2">
-      <HintPath Condition="$([MSBuild]::IsOSPlatform('Windows'))">$(Sts2Path)/data_sts2_windows_x86_64/sts2.dll</HintPath>
+      <HintPath Condition="$([MSBuild]::IsOSPlatform('Windows'))">$(Sts2Path)\data_sts2_windows_x86_64\sts2.dll</HintPath>
       <HintPath Condition="$([MSBuild]::IsOSPlatform('OSX'))">$(Sts2Path)/SlayTheSpire2.app/Contents/Resources/data_sts2_macos/sts2.dll</HintPath>
       <HintPath Condition="$([MSBuild]::IsOSPlatform('Linux'))">$(Sts2Path)/data_sts2_linux_x86_64/sts2.dll</HintPath>
       <Private>false</Private>
@@ -32,6 +42,11 @@
   <ItemGroup>
     <PackageReference Include="Lib.Harmony" Version="2.3.*" />
   </ItemGroup>
+
+  <!-- Show resolved path for debugging -->
+  <Target Name="ShowPaths" BeforeTargets="Build">
+    <Message Importance="High" Text="STS2 Game Path: $(Sts2Path)" />
+  </Target>
 
   <!-- Copy DLL to mods folder on build -->
   <Target Name="CopyToMods" AfterTargets="Build">
