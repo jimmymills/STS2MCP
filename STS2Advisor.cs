@@ -90,21 +90,36 @@ public static partial class Advisor
             int port = LoadPort();
 
             _listener = new HttpListener();
-            _listener.Prefixes.Add($"http://localhost:{port}/");
-            _listener.Prefixes.Add($"http://127.0.0.1:{port}/");
             
-            // Try to bind to all interfaces for remote access (requires admin or URL reservation)
-            try
+            // Try binding options in order of preference
+            var prefixes = new[]
             {
-                _listener.Prefixes.Add($"http://*:{port}/");
-            }
-            catch (Exception ex)
+                $"http://*:{port}/",           // All interfaces (requires admin/urlacl)
+                $"http://localhost:{port}/",   // Localhost only (fallback)
+            };
+            
+            bool started = false;
+            foreach (var prefix in prefixes)
             {
-                GD.Print($"[STS2 Advisor] Could not bind to all interfaces: {ex.Message}");
-                GD.Print($"[STS2 Advisor] Remote access unavailable. Run as admin or: netsh http add urlacl url=http://*:{port}/ user=Everyone");
+                try
+                {
+                    _listener.Prefixes.Clear();
+                    _listener.Prefixes.Add(prefix);
+                    _listener.Start();
+                    GD.Print($"[STS2 Advisor] Bound to {prefix}");
+                    started = true;
+                    break;
+                }
+                catch (HttpListenerException ex)
+                {
+                    GD.Print($"[STS2 Advisor] Could not bind to {prefix}: {ex.Message}");
+                }
             }
             
-            _listener.Start();
+            if (!started)
+            {
+                throw new Exception("Could not bind to any address");
+            }
 
             _serverThread = new Thread(ServerLoop)
             {
