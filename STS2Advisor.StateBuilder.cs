@@ -342,20 +342,20 @@ public static class StateBuilder
         
         // If not found, check if it's a different card selection screen
         // Some events use different screen types - try to find card holders anyway
-        if (cardScreen == null && topOverlay != null)
+        if (cardScreen == null && topOverlay is Godot.Node overlayNode)
         {
             // Try to find card holders in whatever overlay is active
-            var cardHolders = FindAllSortedByPosition<NCardHolder>(topOverlay);
-            if (cardHolders.Count > 0)
+            var eventCardHolders = FindAllSortedByPosition<NCardHolder>(overlayNode);
+            if (eventCardHolders.Count > 0)
             {
                 // Found cards in a non-standard screen - use it
-                var cards = new List<Dictionary<string, object?>>();
-                foreach (var holder in cardHolders)
+                var eventCards = new List<Dictionary<string, object?>>();
+                foreach (var holder in eventCardHolders)
                 {
                     var card = holder.CardModel;
                     if (card == null) continue;
 
-                    cards.Add(new Dictionary<string, object?>
+                    eventCards.Add(new Dictionary<string, object?>
                     {
                         ["name"] = SafeGetText(() => card.Title),
                         ["type"] = card.Type.ToString(),
@@ -368,9 +368,9 @@ public static class StateBuilder
                     });
                 }
                 
-                if (cards.Count > 0)
+                if (eventCards.Count > 0)
                 {
-                    result["cards"] = cards;
+                    result["cards"] = eventCards;
                     result["can_skip"] = true; // Assume skippable for event cards
                     result["_source"] = "event_card_selection";
                     return result;
