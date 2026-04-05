@@ -1,0 +1,289 @@
+name,id,rarity,character,description,pool
+Akabeko,AKABEKO,Uncommon Relic,Shared,"At the start of each combat, gain [blue]8[/blue] [gold]Vigor[/gold].",shared
+Alchemical Coffer,ALCHEMICAL_COFFER,Ancient Relic,Shared,"Upon pickup, gain [blue]4[/blue] potion slots filled with random potions.",shared
+Amethyst Aubergine,AMETHYST_AUBERGINE,Common Relic,Shared,Enemies drop [blue]10[/blue] additional [gold]Gold[/gold].,shared
+Anchor,ANCHOR,Common Relic,Shared,Start each combat with [blue]10[/blue] [gold]Block[/gold].,shared
+Anchor???,FAKE_ANCHOR,Event Relic,Shared,Start each combat with [blue]4[/blue] [gold]Block[/gold].,shared
+Arcane Scroll,ARCANE_SCROLL,Ancient Relic,Shared,"Upon pickup, obtain a random [gold]Rare Card[/gold] to add to your [gold]Deck[/gold].",shared
+Archaic Tooth,ARCHAIC_TOOTH,Ancient Relic,Shared,"Upon pickup, [gold]Transform[/gold] a starter card with an ancient version.",shared
+Art of War,ART_OF_WAR,Rare Relic,Shared,"If you do not play any Attacks during your turn, gain an additional [energy:1] next turn.",shared
+Astrolabe,ASTROLABE,Ancient Relic,Shared,"Upon pickup, [gold]Transform[/gold] [blue]3[/blue] cards, then [gold]Upgrade[/gold] them.",shared
+Bag of Marbles,BAG_OF_MARBLES,Uncommon Relic,Shared,"At the start of each combat, apply [blue]1[/blue] [gold]Vulnerable[/gold] to ALL enemies.",shared
+Bag of Preparation,BAG_OF_PREPARATION,Common Relic,Shared,"At the start of each combat, draw [blue]2[/blue] additional cards.",shared
+Beating Remnant,BEATING_REMNANT,Rare Relic,Shared,You cannot lose more than [blue]20[/blue] HP in a single turn.,shared
+Beautiful Bracelet,BEAUTIFUL_BRACELET,Ancient Relic,Shared,"Upon pickup, choose [blue]3[/blue] cards in your [gold]Deck[/gold]. [gold]Enchant[/gold] them with [purple]Swift[/purple] [blue]3[/blue].",shared
+Bellows,BELLOWS,Uncommon Relic,Shared,The first [gold]Hand[/gold] you draw each combat is [gold]Upgraded[/gold].,shared
+Belt Buckle,BELT_BUCKLE,Shop Relic,Shared,"While you have no potions, you have [blue]2[/blue] additional [gold]Dexterity[/gold].",shared
+Big Hat,BIG_HAT,Rare Relic,Shared,"At the start of each combat, add [blue]2[/blue] random [gold]Ethereal[/gold] cards into your [gold]Hand[/gold].",necrobinder
+Big Mushroom,BIG_MUSHROOM,Event Relic,Shared,"Upon pickup, raise your Max HP by [blue]20[/blue]. At the start of each combat, draw [blue]2[/blue] fewer cards.",shared
+Biiig Hug,BIIIG_HUG,Ancient Relic,Shared,"Upon pickup, remove [blue]4[/blue] cards from your [gold]Deck[/gold]. Whenever you shuffle your [gold]Draw Pile[/gold], add a [gold]Soot[/gold] into your [gold]Draw Pile[/gold].",shared
+Bing Bong,BING_BONG,Event Relic,Shared,"Whenever you add a card to your [gold]Deck[/gold], add one additional copy.",shared
+Black Blood,BLACK_BLOOD,Starter Relic,Shared,"At the end of combat, heal [green]12[/green] HP.",ironclad
+Black Star,BLACK_STAR,Ancient Relic,Shared,[gold]Elites[/gold] drop an additional Relic when defeated.,shared
+Blessed Antler,BLESSED_ANTLER,Ancient Relic,Shared,"Gain [energy:1] at the start of each turn. At the start of each combat, shuffle [blue]3[/blue] [gold]Dazed[/gold] into your [gold]Draw Pile[/gold].",shared
+Blood Vial,BLOOD_VIAL,Common Relic,Shared,"At the start of each combat, heal [green]2[/green] HP.",shared
+Blood Vial???,FAKE_BLOOD_VIAL,Event Relic,Shared,"At the start of each combat, heal [green]1[/green] HP.",shared
+Blood-Soaked Rose,BLOOD_SOAKED_ROSE,Ancient Relic,Shared,"Upon pickup, add [blue]1[/blue] [red]Enthralled[/red] to your [gold]Deck[/gold]. Gain [energy:1] at the start of each turn.",shared
+Bone Flute,BONE_FLUTE,Common Relic,Shared,"Whenever [gold]Osty[/gold] attacks, gain [blue]2[/blue] [gold]Block[/gold].",necrobinder
+Bone Tea,BONE_TEA,Event Relic,Shared,"At the start of the next [blue]2[/blue] combats, [gold]Upgrade[/gold] your starting hand.",shared
+Book Repair Knife,BOOK_REPAIR_KNIFE,Uncommon Relic,Shared,"Whenever a non-Minion enemy dies to [gold]Doom[/gold], heal [green]3[/green] HP.",necrobinder
+Book of Five Rings,BOOK_OF_FIVE_RINGS,Common Relic,Shared,"Every [blue]5[/blue] cards you add to your [gold]Deck[/gold], heal [green]15[/green] HP.",shared
+Bookmark,BOOKMARK,Rare Relic,Shared,"At the end of each turn, lower the cost of a random [gold]Retained[/gold] card by [blue]1[/blue] until played.",necrobinder
+Booming Conch,BOOMING_CONCH,Ancient Relic,Shared,"At the start of [gold]Elite[/gold] combats, draw [blue]2[/blue] additional cards.",shared
+Bound Phylactery,BOUND_PHYLACTERY,Starter Relic,Shared,"At the start of your turn, [gold]Summon[/gold] [blue]1[/blue].",necrobinder
+Bowler Hat,BOWLER_HAT,Uncommon Relic,Shared,Gain [blue]20%[/blue] additional [gold]Gold[/gold].,shared
+Bread,BREAD,Shop Relic,Shared,"At the start of your first turn, lose [energy:2]. At the start of all other turns, gain [energy:1].",shared
+Brilliant Scarf,BRILLIANT_SCARF,Ancient Relic,Shared,The [blue]5th[/blue] card you play each turn is free.,shared
+Brimstone,BRIMSTONE,Shop Relic,Shared,"At the start of your turn, gain [blue][SelfStrength][/blue] [gold]Strength[/gold] and ALL enemies gain [blue][EnemyStrength][/blue] [gold]Strength[/gold].",ironclad
+Bronze Scales,BRONZE_SCALES,Common Relic,Shared,Start each combat with [blue]3[/blue] [gold]Thorns[/gold].,shared
+Burning Blood,BURNING_BLOOD,Starter Relic,Shared,"At the end of combat, heal [green]6[/green] HP.",ironclad
+Burning Sticks,BURNING_STICKS,Shop Relic,Shared,"The first time each combat you [gold]Exhaust[/gold] a Skill, add a copy of it into your [gold]Hand[/gold].",shared
+Byrdpip,BYRDPIP,Event Relic,Shared,"Upon pickup, gain the card [gold]Byrd Swoop[/gold]. A [gold]Byrdpip[/gold] will accompany you in battles.",shared
+Calling Bell,CALLING_BELL,Ancient Relic,Shared,"Upon pickup, obtain a unique [red]Curse[/red] and [blue]3[/blue] [gold]Relics[/gold].",shared
+Candelabra,CANDELABRA,Uncommon Relic,Shared,"At the start of your [blue]2nd[/blue] turn, gain [energy:2].",shared
+Captain's Wheel,CAPTAINS_WHEEL,Rare Relic,Shared,"At the start of your [blue]3rd[/blue] turn, gain [blue]18[/blue] [gold]Block[/gold].",shared
+Cauldron,CAULDRON,Shop Relic,Shared,"Upon pickup, brews [blue]5[/blue] random potions.",shared
+Centennial Puzzle,CENTENNIAL_PUZZLE,Common Relic,Shared,"The first time you lose HP each combat, draw [blue]3[/blue] cards.",shared
+Chandelier,CHANDELIER,Rare Relic,Shared,"At the start of your [blue]3rd[/blue] turn, gain [energy:3].",shared
+Charon's Ashes,CHARONS_ASHES,Rare Relic,Shared,"Whenever you [gold]Exhaust[/gold] a card, deal [blue]3[/blue] damage to ALL enemies.",ironclad
+Chemical X,CHEMICAL_X,Shop Relic,Shared,The effects of your cost [blue]X[/blue] cards are increased by [blue]2[/blue].,shared
+Choices Paradox,CHOICES_PARADOX,Ancient Relic,Shared,"At the start of each combat, add [blue]1[/blue] of [blue]5[/blue] random cards into your [gold]Hand[/gold]. Add [gold]Retain[/gold] to the chosen card.",shared
+Circlet,CIRCLET,None,Shared,It's a circlet.,shared
+Claws,CLAWS,Ancient Relic,Shared,"Upon pickup, [gold]Transform[/gold] up to [blue]6[/blue] cards into [gold]Maul[/gold].",shared
+Cloak Clasp,CLOAK_CLASP,Rare Relic,Shared,"At the end of your turn, gain [blue]1[/blue] [gold]Block[/gold] for each card in your [gold]Hand[/gold].",shared
+Cracked Core,CRACKED_CORE,Starter Relic,Shared,"At the start of each combat, [gold]Channel[/gold] [blue]1[/blue] [gold]Lightning[/gold].",defect
+Crossbow,CROSSBOW,Ancient Relic,Shared,"At the start of your turn, add a random [gold]Attack[/gold] into your [gold]Hand[/gold]. It costs [blue]0[/blue][energy:1] this turn.",shared
+Cursed Pearl,CURSED_PEARL,Ancient Relic,Shared,"Upon pickup, receive [red]Greed[/red]. Gain [blue]333[/blue] [gold]Gold[/gold].",shared
+Darkstone Periapt,DARKSTONE_PERIAPT,Event Relic,Shared,"Whenever you obtain a [red]Curse[/red], raise your Max HP by [blue]6[/blue].",shared
+Data Disk,DATA_DISK,Common Relic,Shared,Start each combat with [blue]1[/blue] [gold]Focus[/gold].,defect
+Daughter of the Wind,DAUGHTER_OF_THE_WIND,Event Relic,Shared,"Whenever you play an Attack, gain [blue]1[/blue] [gold]Block[/gold].",shared
+Delicate Frond,DELICATE_FROND,Ancient Relic,Shared,"At the start of each combat, fill all empty potion slots with random potions.",shared
+Demon Tongue,DEMON_TONGUE,Rare Relic,Shared,"The first time you lose HP on your turn, heal HP equal to the amount lost.",ironclad
+Diamond Diadem,DIAMOND_DIADEM,Ancient Relic,Shared,"Whenever you play [blue]2[/blue] or fewer cards in a turn, take half damage from enemies.",shared
+Dingy Rug,DINGY_RUG,Shop Relic,Shared,Card rewards can now contain Colorless cards.,shared
+Distinguished Cape,DISTINGUISHED_CAPE,Ancient Relic,Shared,"Upon pickup, lose [red]9[/red] Max HP. Add [blue]3[/blue] [gold]Apparitions[/gold] to your [gold]Deck[/gold].",shared
+Divine Destiny,DIVINE_DESTINY,Starter Relic,Shared,"At the start of each combat, gain [star:6].",regent
+Divine Right,DIVINE_RIGHT,Starter Relic,Shared,"At the start of each combat, gain [star:3].",regent
+Dolly's Mirror,DOLLYS_MIRROR,Shop Relic,Shared,"Upon pickup, obtain an additional copy of a card in your [gold]Deck[/gold].",shared
+Dragon Fruit,DRAGON_FRUIT,Shop Relic,Shared,"Whenever you gain [gold]Gold[/gold], raise your Max HP by [blue]1[/blue].",shared
+Dream Catcher,DREAM_CATCHER,Event Relic,Shared,"Whenever you [gold]Rest[/gold], you may add a card to your [gold]Deck[/gold].",shared
+Driftwood,DRIFTWOOD,Ancient Relic,Shared,You may reroll each card reward once.,shared
+Dusty Tome,DUSTY_TOME,Ancient Relic,Shared,"Upon pickup, obtain an [gold]Ancient Card[/gold].",shared
+Ectoplasm,ECTOPLASM,Ancient Relic,Shared,You can no longer gain [gold]Gold[/gold]. Gain [energy:1] at the start of each turn.,shared
+Electric Shrymp,ELECTRIC_SHRYMP,Ancient Relic,Shared,"Upon pickup, [gold]Enchant[/gold] a Skill with [purple]Imbued[/purple].",shared
+Ember Tea,EMBER_TEA,Event Relic,Shared,"At the start of the next [blue]2[/blue] combats, gain [blue]2[/blue] [gold]Strength[/gold].",shared
+Emotion Chip,EMOTION_CHIP,Rare Relic,Shared,"If you lost HP during the previous turn, trigger the passive ability of all Orbs at the start of your turn.",defect
+Empty Cage,EMPTY_CAGE,Ancient Relic,Shared,"Upon pickup, remove [blue]2[/blue] cards from your [gold]Deck[/gold].",shared
+Eternal Feather,ETERNAL_FEATHER,Uncommon Relic,Shared,"For every [blue]5[/blue] cards in your [gold]Deck[/gold], heal [green]3[/green] HP whenever you enter a [gold]Rest Site[/gold].",shared
+Fencing Manual,FENCING_MANUAL,Common Relic,Shared,"At the start of each combat, [gold]Forge[/gold] [blue]10[/blue].",regent
+Festive Popper,FESTIVE_POPPER,Common Relic,Shared,"At the start of each combat, deal [blue]9[/blue] damage to ALL enemies.",shared
+Fiddle,FIDDLE,Ancient Relic,Shared,"At the start of each turn, draw [blue]2[/blue] additional cards. You may not draw cards during your turn.",shared
+Forgotten Soul,FORGOTTEN_SOUL,Event Relic,Shared,"Whenever you [gold]Exhaust[/gold] a card, deal [blue]1[/blue] damage to a random enemy.",shared
+Fragrant Mushroom,FRAGRANT_MUSHROOM,Event Relic,Shared,"Upon pickup, lose [red]15[/red] HP and [gold]Upgrade[/gold] [blue]3[/blue] random cards.",shared
+Fresnel Lens,FRESNEL_LENS,Event Relic,Shared,"Whenever you add a card that gains [gold]Block[/gold] to your [gold]Deck[/gold], [gold]Enchant[/gold] it with [purple]Nimble[/purple] [blue]2[/blue].",shared
+Frozen Egg,FROZEN_EGG,Rare Relic,Shared,"Whenever you add a Power into your [gold]Deck[/gold], [gold]Upgrade[/gold] it.",shared
+Funerary Mask,FUNERARY_MASK,Uncommon Relic,Shared,"At the start of each combat, add [blue]3[/blue] [gold]Souls[/gold] into your [gold]Draw Pile[/gold].",necrobinder
+Fur Coat,FUR_COAT,Ancient Relic,Shared,"Upon pickup, mark [blue]7[/blue] random combats. Enemies in those rooms have [blue]1[/blue] HP.",shared
+Galactic Dust,GALACTIC_DUST,Uncommon Relic,Shared,"For every [blue]10[/blue] [star:1] spent, gain [blue]10[/blue] [gold]Block[/gold].",regent
+Gambling Chip,GAMBLING_CHIP,Rare Relic,Shared,"At the start of each combat, discard any number of cards then draw that many.",shared
+Game Piece,GAME_PIECE,Rare Relic,Shared,"Whenever you play a Power, draw [blue]1[/blue] card.",shared
+Ghost Seed,GHOST_SEED,Shop Relic,Shared,[gold]Strikes[/gold] and [gold]Defends[/gold] gain [gold]Ethereal[/gold].,shared
+Girya,GIRYA,Rare Relic,Shared,You can now gain [gold]Strength[/gold] at [gold]Rest Sites[/gold]. ([blue]3[/blue] times max),shared
+Glass Eye,GLASS_EYE,Ancient Relic,Shared,"Upon pickup, obtain [blue]2[/blue] [gold]Common[/gold] cards, [blue]2[/blue] [gold]Uncommon[/gold] cards, and [blue]1[/blue] [gold]Rare[/gold] card.",shared
+Glitter,GLITTER,Ancient Relic,Shared,[gold]Enchant[/gold] all card rewards with [purple]Glam[/purple].,shared
+Gnarled Hammer,GNARLED_HAMMER,Shop Relic,Shared,"Upon pickup, [gold]Enchant[/gold] up to [blue]3[/blue] Attacks with [purple]Sharp[/purple] [blue]3[/blue].",shared
+Gold-Plated Cables,GOLD_PLATED_CABLES,Uncommon Relic,Shared,Your rightmost Orb triggers its passive an additional time.,defect
+Golden Compass,GOLDEN_COMPASS,Ancient Relic,Shared,"Upon pickup, replace the [gold]Act[/gold] [blue]2[/blue] Map with a single special path.",shared
+Golden Pearl,GOLDEN_PEARL,Ancient Relic,Shared,"Upon pickup, gain [blue]150[/blue] [gold]Gold[/gold].",shared
+Gorget,GORGET,Common Relic,Shared,"At the start of each combat, gain [blue]4[/blue] [gold]Plating[/gold].",shared
+Gremlin Horn,GREMLIN_HORN,Uncommon Relic,Shared,"Whenever an enemy dies, gain [energy:1] and draw [blue]1[/blue] card.",shared
+Hand Drill,HAND_DRILL,Event Relic,Shared,"Whenever you break an enemy's [gold]Block[/gold], apply [blue]2[/blue] [gold]Vulnerable[/gold].",shared
+Happy Flower,HAPPY_FLOWER,Common Relic,Shared,"Every [blue]3[/blue] turns, gain [energy:1].",shared
+Happy Flower???,FAKE_HAPPY_FLOWER,Event Relic,Shared,"Every [blue]5[/blue] turns, gain [energy:1].",shared
+Helical Dart,HELICAL_DART,Rare Relic,Shared,"Whenever you play a [gold]Shiv[/gold], gain [blue]1[/blue] [gold]Dexterity[/gold] this turn.",silent
+History Course,HISTORY_COURSE,Event Relic,Shared,"At the start of your turn, play a copy of your last played Attack or Skill.",shared
+Horn Cleat,HORN_CLEAT,Uncommon Relic,Shared,"At the start of your [blue]2nd[/blue] turn, gain [blue]14[/blue] [gold]Block[/gold].",shared
+Ice Cream,ICE_CREAM,Rare Relic,Shared,Energy is now conserved between turns.,shared
+Infused Core,INFUSED_CORE,Starter Relic,Shared,"At the start of each combat, [gold]Channel[/gold] [blue]3[/blue] [gold]Lightning[/gold].",defect
+Intimidating Helmet,INTIMIDATING_HELMET,Rare Relic,Shared,"Whenever you play a card that costs [energy:2] or more, gain [blue]4[/blue] [gold]Block[/gold].",shared
+Iron Club,IRON_CLUB,Ancient Relic,Shared,"Every [blue]4[/blue] cards you play, draw [blue]1[/blue] card.",shared
+Ivory Tile,IVORY_TILE,Rare Relic,Shared,"Whenever you play a card that costs [energy:3] or more, gain [energy:1].",necrobinder
+Jeweled Mask,JEWELED_MASK,Ancient Relic,Shared,"At the start of combat put a random Power from your [gold]Draw Pile[/gold] into your [gold]Hand[/gold], it's free to play.",shared
+Jewelry Box,JEWELRY_BOX,Ancient Relic,Shared,"Upon pickup, add [blue]1[/blue] [gold]Apotheosis[/gold] to your [gold]Deck[/gold].",shared
+Joss Paper,JOSS_PAPER,Uncommon Relic,Shared,"Every [blue]5[/blue] times you [gold]Exhaust[/gold] a card, draw [blue]1[/blue] card.",shared
+Juzu Bracelet,JUZU_BRACELET,Common Relic,Shared,Regular enemy combats are no longer encountered in [gold]?[/gold] rooms.,shared
+Kifuda,KIFUDA,Shop Relic,Shared,"Upon pickup, [gold]Enchant[/gold] up to [blue]3[/blue] cards with [purple]Adroit[/purple].",shared
+Kunai,KUNAI,Rare Relic,Shared,"Every time you play [blue]3[/blue] Attacks in a single turn, gain [blue]1[/blue] [gold]Dexterity[/gold].",shared
+Kusarigama,KUSARIGAMA,Uncommon Relic,Shared,"Every time you play [blue]3[/blue] Attacks in a single turn, deal [blue]6[/blue] damage to a random enemy.",shared
+Lantern,LANTERN,Common Relic,Shared,Start each combat with an additional [energy:1].,shared
+Large Capsule,LARGE_CAPSULE,Ancient Relic,Shared,"Upon pickup, obtain [blue]2[/blue] random [gold]Relics[/gold]. Add an additional [gold]Strike[/gold] and [gold]Defend[/gold] to your [gold]Deck[/gold].",shared
+Lasting Candy,LASTING_CANDY,Rare Relic,Shared,"Every other combat, your card rewards gain an additional Power.",shared
+Lava Lamp,LAVA_LAMP,Shop Relic,Shared,"At the end of combat, [gold]Upgrade[/gold] all card rewards if you took no damage.",shared
+Lava Rock,LAVA_ROCK,Ancient Relic,Shared,The Act 1 Boss drops [blue]2[/blue] [gold]Relics[/gold].,shared
+Lead Paperweight,LEAD_PAPERWEIGHT,Ancient Relic,Shared,"Upon pickup, choose [blue]1[/blue] of [blue]2[/blue] Colorless cards to add to your [gold]Deck[/gold].",shared
+Leafy Poultice,LEAFY_POULTICE,Ancient Relic,Shared,"Upon pickup, [gold]Transform[/gold] [blue]1[/blue] of your [gold]Strikes[/gold] and [blue]1[/blue] of your [gold]Defends[/gold] and lose [blue]10[/blue] Max HP.",shared
+Lee's Waffle,LEES_WAFFLE,Shop Relic,Shared,"Upon pickup, raise your Max HP by [blue]7[/blue] and heal all of your HP.",shared
+Lee's Waffle???,FAKE_LEES_WAFFLE,Event Relic,Shared,"Upon pickup, heal [green]10%[/green] of your HP.",shared
+Letter Opener,LETTER_OPENER,Uncommon Relic,Shared,"Every time you play [blue]3[/blue] Skills in a single turn, deal [blue]5[/blue] damage to ALL enemies.",shared
+Lizard Tail,LIZARD_TAIL,Rare Relic,Shared,"When you would die, heal to [green]50%[/green] of your Max HP instead (works once).",shared
+Looming Fruit,LOOMING_FRUIT,Ancient Relic,Shared,"Upon pickup, raise your Max HP by [blue]31[/blue].",shared
+Lord's Parasol,LORDS_PARASOL,Ancient Relic,Shared,"When you encounter the [gold]Merchant[/gold], immediately obtain EVERYTHING he sells.",shared
+Lost Coffer,LOST_COFFER,Ancient Relic,Shared,"Upon pickup, gain [blue]1[/blue] card reward and procure [blue]1[/blue] random potion.",shared
+Lost Wisp,LOST_WISP,Event Relic,Shared,"Whenever you play a [gold]Power[/gold], deal [blue]8[/blue] damage to ALL enemies.",shared
+Lucky Fysh,LUCKY_FYSH,Uncommon Relic,Shared,"Whenever you add a card to your [gold]Deck[/gold], gain [blue]15[/blue] [gold]Gold[/gold].",shared
+Lunar Pastry,LUNAR_PASTRY,Rare Relic,Shared,"At the end of your turn, gain [star:1].",regent
+Mango,MANGO,Rare Relic,Shared,"Upon pickup, raise your Max HP by [blue]14[/blue].",shared
+Mango???,FAKE_MANGO,Event Relic,Shared,"Upon pickup, raise your Max HP by [blue]3[/blue].",shared
+Massive Scroll,MASSIVE_SCROLL,Ancient Relic,Shared,"Upon pickup, choose [blue]1[/blue] of [blue]3[/blue] [gold]Multiplayer Colorless Cards[/gold] to add to your [gold]Deck[/gold].",shared
+Maw Bank,MAW_BANK,Event Relic,Shared,"Whenever you climb a floor, gain [blue]12[/blue] [gold]Gold[/gold]. No longer works when you spend any [gold]Gold[/gold] at the shop.",shared
+Meal Ticket,MEAL_TICKET,Common Relic,Shared,"Whenever you enter a shop room, heal [green]15[/green] HP.",shared
+Meat Cleaver,MEAT_CLEAVER,Ancient Relic,Shared,You may [gold]Cook[/gold] at Rest Sites.,shared
+Meat on the Bone,MEAT_ON_THE_BONE,Rare Relic,Shared,"If your HP is at or below [blue]50%[/blue] at the end of combat, heal [green]12[/green] HP.",shared
+Membership Card,MEMBERSHIP_CARD,Shop Relic,Shared,[blue]50%[/blue] discount on all products!,shared
+Mercury Hourglass,MERCURY_HOURGLASS,Uncommon Relic,Shared,"At the start of your turn, deal [blue]3[/blue] damage to ALL enemies.",shared
+Metronome,METRONOME,Rare Relic,Shared,"The first time you [gold]Channel[/gold] [blue]7[/blue] [gold]Orbs[/gold] each combat, deal [blue]30[/blue] damage to ALL enemies.",defect
+Mini Regent,MINI_REGENT,Rare Relic,Shared,"The first time you spend [star:1] each turn, gain [blue]1[/blue] [gold]Strength[/gold].",regent
+Miniature Cannon,MINIATURE_CANNON,Uncommon Relic,Shared,[gold]Upgraded[/gold] Attacks deal [blue]3[/blue] additional damage.,shared
+Miniature Tent,MINIATURE_TENT,Shop Relic,Shared,You may choose any number of options at [gold]Rest Sites[/gold].,shared
+Molten Egg,MOLTEN_EGG,Rare Relic,Shared,"Whenever you add an Attack card to your [gold]Deck[/gold], [gold]Upgrade[/gold] it.",shared
+Mr. Struggles,MR_STRUGGLES,Event Relic,Shared,"At the start of your turn, deal damage equal to the turn number to ALL enemies.",shared
+Mummified Hand,MUMMIFIED_HAND,Rare Relic,Shared,"Whenever you play a Power, a random card in your [gold]Hand[/gold] is free to play that turn.",shared
+Music Box,MUSIC_BOX,Ancient Relic,Shared,Create an [gold]Ethereal[/gold] copy of the first Attack you play each turn.,shared
+Mystic Lighter,MYSTIC_LIGHTER,Shop Relic,Shared,[gold]Enchanted[/gold] Attacks deal [blue]9[/blue] additional damage.,shared
+Neow's Torment,NEOWS_TORMENT,Ancient Relic,Shared,"Upon pickup, add [blue]1[/blue] [gold]Neow's Fury[/gold] to your [gold]Deck[/gold].",shared
+New Leaf,NEW_LEAF,Ancient Relic,Shared,"Upon pickup, [gold]Transform[/gold] [blue]1[/blue] card.",shared
+Ninja Scroll,NINJA_SCROLL,Shop Relic,Shared,"At the start of each combat, add [blue]3[/blue] [gold]Shivs[/gold] into your [gold]Hand[/gold].",silent
+Nunchaku,NUNCHAKU,Uncommon Relic,Shared,"Every time you play [blue]10[/blue] Attacks, gain [energy:1].",shared
+Nutritious Oyster,NUTRITIOUS_OYSTER,Ancient Relic,Shared,"Upon pickup, raise your Max HP by [blue]11[/blue].",shared
+Nutritious Soup,NUTRITIOUS_SOUP,Ancient Relic,Shared,"Upon pickup, [gold]Enchant[/gold] all [gold]Strikes[/gold] in your [gold]Deck[/gold] with [purple]Tezcatara's Ember[/purple].",shared
+Oddly Smooth Stone,ODDLY_SMOOTH_STONE,Common Relic,Shared,Start each combat with [blue]1[/blue] [gold]Dexterity[/gold].,shared
+Old Coin,OLD_COIN,Rare Relic,Shared,"Upon pickup, gain [blue]300[/blue] [gold]Gold[/gold].",shared
+Orange Dough,ORANGE_DOUGH,Rare Relic,Shared,"At the start of each combat, add [blue]2[/blue] random Colorless cards into your [gold]Hand[/gold].",regent
+Orichalcum,ORICHALCUM,Uncommon Relic,Shared,"If you end your turn without [gold]Block[/gold], gain [blue]6[/blue] [gold]Block[/gold].",shared
+Orichalcum???,FAKE_ORICHALCUM,Event Relic,Shared,"If you end your turn without [gold]Block[/gold], gain [blue]3[/blue] [gold]Block[/gold].",shared
+Ornamental Fan,ORNAMENTAL_FAN,Uncommon Relic,Shared,"Every time you play [blue]3[/blue] Attacks in a single turn, gain [blue]4[/blue] [gold]Block[/gold].",shared
+Orrery,ORRERY,Shop Relic,Shared,"Upon pickup, gain [blue]5[/blue] card rewards.",shared
+Pael's Blood,PAELS_BLOOD,Ancient Relic,Shared,"At the start of your turn, draw [blue]1[/blue] additional card.",shared
+Pael's Claw,PAELS_CLAW,Ancient Relic,Shared,"Upon pickup, [gold]Enchant[/gold] all [gold]Defends[/gold] with [purple][EnchantmentName][/purple].",shared
+Pael's Eye,PAELS_EYE,Ancient Relic,Shared,"The first time each combat you end your turn without playing cards, [gold]Exhaust[/gold] your [gold]Hand[/gold], and take an extra turn.",shared
+Pael's Flesh,PAELS_FLESH,Ancient Relic,Shared,"Gain an additional [energy:1] at the start of your [blue]3rd[/blue] turn, and every turn after that.",shared
+Pael's Growth,PAELS_GROWTH,Ancient Relic,Shared,"Upon pickup, [gold]Enchant[/gold] a card with [purple][EnchantmentName][/purple].",shared
+Pael's Horn,PAELS_HORN,Ancient Relic,Shared,"Upon pickup, add [blue]2[/blue] [gold]Relax[/gold] to your [gold]Deck[/gold].",shared
+Pael's Legion,PAELS_LEGION,Ancient Relic,Shared,"Doubles [gold]Block[/gold] gained from a card, then goes to sleep for [blue]2[/blue] turns.",shared
+Pael's Tears,PAELS_TEARS,Ancient Relic,Shared,"If you end your turn with unspent [energy:1], gain an additional [energy:2] next turn.",shared
+Pael's Tooth,PAELS_TOOTH,Ancient Relic,Shared,"Upon pickup, remove [blue]5[/blue] cards from your [gold]Deck[/gold]. After each combat, randomly add [blue]1[/blue] back [gold]Upgraded[/gold].",shared
+Pael's Wing,PAELS_WING,Ancient Relic,Shared,"You may sacrifice card rewards to Pael. Every [blue]2[/blue] sacrifices, obtain a [gold]Relic[/gold].",shared
+Pandora's Box,PANDORAS_BOX,Ancient Relic,Shared,[gold]Transform[/gold] ALL [gold]Strikes[/gold] and [gold]Defends[/gold].,shared
+Pantograph,PANTOGRAPH,Uncommon Relic,Shared,"At the start of each [gold]Boss[/gold] combat, heal [green]25[/green] HP.",shared
+Paper Krane,PAPER_KRANE,Rare Relic,Shared,Enemies with [gold]Weak[/gold] deal [blue]40%[/blue] less damage to you rather than [blue]25%[/blue].,silent
+Paper Phrog,PAPER_PHROG,Uncommon Relic,Shared,Enemies with [gold]Vulnerable[/gold] take [blue]75%[/blue] more damage rather than [blue]50%[/blue].,ironclad
+Parrying Shield,PARRYING_SHIELD,Uncommon Relic,Shared,"If you end a turn with at least [blue]10[/blue] [gold]Block[/gold], deal [blue]6[/blue] damage to a random enemy.",shared
+Pear,PEAR,Uncommon Relic,Shared,"Upon pickup, raise your Max HP by [blue]10[/blue].",shared
+Pen Nib,PEN_NIB,Uncommon Relic,Shared,Every [blue]10th[/blue] Attack you play deals double damage.,shared
+Pendulum,PENDULUM,Common Relic,Shared,"Whenever you shuffle your [gold]Draw Pile[/gold], draw a card.",shared
+Permafrost,PERMAFROST,Common Relic,Shared,"The first time you play a Power each combat, gain [blue]6[/blue] [gold]Block[/gold].",shared
+Petrified Toad,PETRIFIED_TOAD,Uncommon Relic,Shared,"At the start of each combat, procure a [gold]Potion-Shaped Rock[/gold].",shared
+Philosopher's Stone,PHILOSOPHERS_STONE,Ancient Relic,Shared,Gain [energy:1] at the start of each turn. ALL enemies start combat with [blue]1[/blue] [gold]Strength[/gold].,shared
+Phylactery Unbound,PHYLACTERY_UNBOUND,Starter Relic,Shared,"At the start of each combat, [gold]Summon[/gold] [blue]5[/blue]. At the start of your turn, [gold]Summon[/gold] [blue]2[/blue].",necrobinder
+Planisphere,PLANISPHERE,Uncommon Relic,Shared,"Whenever you enter a [gold]?[/gold] room, heal [green]4[/green] HP.",shared
+Pocketwatch,POCKETWATCH,Rare Relic,Shared,"Whenever you play [blue]3[/blue] or fewer cards during your turn, draw [blue]3[/blue] additional cards at the start of your next turn.",shared
+Pollinous Core,POLLINOUS_CORE,Event Relic,Shared,"Every [blue]4[/blue] turns, draw [blue]2[/blue] additional cards.",shared
+Pomander,POMANDER,Ancient Relic,Shared,"Upon pickup, [gold]Upgrade[/gold] a card.",shared
+Potion Belt,POTION_BELT,Common Relic,Shared,"Upon pickup, gain [blue]2[/blue] potion slots.",shared
+Power Cell,POWER_CELL,Rare Relic,Shared,"At the start of each combat, add [blue]2[/blue] zero-cost cards from your [gold]Draw Pile[/gold] into your [gold]Hand[/gold].",defect
+Prayer Wheel,PRAYER_WHEEL,Rare Relic,Shared,Normal enemies drop an additional card reward.,shared
+Precarious Shears,PRECARIOUS_SHEARS,Ancient Relic,Shared,"Upon pickup, remove [blue]2[/blue] cards from your [gold]Deck[/gold] and take [red]13[/red] damage.",shared
+Precise Scissors,PRECISE_SCISSORS,Ancient Relic,Shared,"Upon pickup, remove [blue]1[/blue] card from your [gold]Deck[/gold].",shared
+Preserved Fog,PRESERVED_FOG,Ancient Relic,Shared,"Upon pickup, remove [blue]5[/blue] cards from your [gold]Deck[/gold]. Add [red]Folly[/red] to your [gold]Deck[/gold].",shared
+Prismatic Gem,PRISMATIC_GEM,Ancient Relic,Shared,Gain [energy:1] at the start of each turn. Card rewards now contain cards from other colors.,shared
+Pumpkin Candle,PUMPKIN_CANDLE,Ancient Relic,Shared,Gain [energy:1] at the start of each turn. Extinguishes at the start of [gold]Act[/gold] [blue]3[/blue].,shared
+Punch Dagger,PUNCH_DAGGER,Shop Relic,Shared,"Upon pickup, [gold]Enchant[/gold] an Attack with [purple]Momentum[/purple] [blue]5[/blue].",shared
+Radiant Pearl,RADIANT_PEARL,Ancient Relic,Shared,"At the start of each combat, add [blue]1[/blue] [gold]Luminesce[/gold] into your [gold]Hand[/gold].",shared
+Rainbow Ring,RAINBOW_RING,Rare Relic,Shared,"The first time you play an Attack, Skill, and Power each turn, gain [blue]1[/blue] [gold]Strength[/gold] and [blue]1[/blue] [gold]Dexterity[/gold].",shared
+Razor Tooth,RAZOR_TOOTH,Rare Relic,Shared,"Every time you play an Attack or Skill, [gold]Upgrade[/gold] it for the remainder of combat.",shared
+Red Mask,RED_MASK,Uncommon Relic,Shared,"At the start of each combat, apply [blue]1[/blue] [gold]Weak[/gold] to ALL enemies.",shared
+Red Skull,RED_SKULL,Common Relic,Shared,"While your HP is at or below [blue]50%[/blue], you have [blue]3[/blue] additional [gold]Strength[/gold].",ironclad
+Regal Pillow,REGAL_PILLOW,Common Relic,Shared,"Whenever you [gold]Rest[/gold], heal an additional [blue]15[/blue] HP.",shared
+Regalite,REGALITE,Uncommon Relic,Shared,"Whenever you create a Colorless card, gain [blue]2[/blue] [gold]Block[/gold].",regent
+Reptile Trinket,REPTILE_TRINKET,Uncommon Relic,Shared,"Whenever you use a potion, gain [blue]3[/blue] [gold]Strength[/gold] this turn.",shared
+Ring of the Drake,RING_OF_THE_DRAKE,Starter Relic,Shared,"At the start of your first [blue]3[/blue] turns, draw [blue]2[/blue] additional cards.",silent
+Ring of the Snake,RING_OF_THE_SNAKE,Starter Relic,Shared,"At the start of each combat, draw [blue]2[/blue] additional cards.",silent
+Ringing Triangle,RINGING_TRIANGLE,Shop Relic,Shared,[gold]Retain[/gold] your [gold]Hand[/gold] on the first turn of combat.,shared
+Ripple Basin,RIPPLE_BASIN,Uncommon Relic,Shared,"If you did not play any Attacks during your turn, gain [blue]4[/blue] [gold]Block[/gold].",shared
+Royal Poison,ROYAL_POISON,Event Relic,Shared,"At the start of each combat, lose [blue]4[/blue] HP.",shared
+Royal Stamp,ROYAL_STAMP,Shop Relic,Shared,"Upon pickup, choose an Attack or Skill in your [gold]Deck[/gold] to [gold]Enchant[/gold] with [purple][Enchantment][/purple].",shared
+Ruined Helmet,RUINED_HELMET,Rare Relic,Shared,"The first time you gain [gold]Strength[/gold] each combat, double the amount gained.",ironclad
+Runic Capacitor,RUNIC_CAPACITOR,Shop Relic,Shared,Start each combat with [blue]3[/blue] additional [gold]Orb Slots[/gold].,defect
+Runic Pyramid,RUNIC_PYRAMID,Ancient Relic,Shared,"At the end of your turn, you no longer discard your [gold]Hand[/gold].",shared
+Sai,SAI,Ancient Relic,Shared,"At the start of your turn, gain [blue]7[/blue] [gold]Block[/gold].",shared
+Sand Castle,SAND_CASTLE,Ancient Relic,Shared,"Upon pickup, [gold]Upgrade[/gold] [blue]6[/blue] random cards.",shared
+Screaming Flagon,SCREAMING_FLAGON,Shop Relic,Shared,"If you end your turn with no cards in your [gold]Hand[/gold], deal [blue]20[/blue] damage to ALL enemies.",shared
+Scroll Boxes,SCROLL_BOXES,Ancient Relic,Shared,"Upon pickup, lose all [gold]Gold[/gold] and choose [blue]1[/blue] of [blue]2[/blue] packs of cards to add to your [gold]Deck[/gold].",shared
+Sea Glass,SEA_GLASS,Ancient Relic,Shared,See [blue]15[/blue] cards from another character. Choose any number of them to add to your [gold]Deck[/gold].,shared
+Seal of Gold,SEAL_OF_GOLD,Ancient Relic,Shared,"At the start of your turn, spend [blue]5[/blue] [gold]Gold[/gold] to gain [energy:1].",shared
+Self-Forming Clay,SELF_FORMING_CLAY,Uncommon Relic,Shared,"Whenever you lose HP in combat, gain [blue]3[/blue] [gold]Block[/gold] next turn.",ironclad
+Sere Talon,SERE_TALON,Ancient Relic,Shared,"Upon pickup, add [blue]2[/blue] random [red]Curses[/red] and [blue]3[/blue] [purple]Wishes[/purple] to your [gold]Deck[/gold].",shared
+Shovel,SHOVEL,Rare Relic,Shared,You can now dig at [gold]Rest Sites[/gold] to obtain a random [gold]Relic[/gold].,shared
+Shuriken,SHURIKEN,Rare Relic,Shared,"Every time you play [blue]3[/blue] Attacks in a single turn, gain [blue]1[/blue] [gold]Strength[/gold].",shared
+Signet Ring,SIGNET_RING,Ancient Relic,Shared,"Upon pickup, gain [blue]999[/blue] [gold]Gold[/gold].",shared
+Silver Crucible,SILVER_CRUCIBLE,Ancient Relic,Shared,The first [blue]3[/blue] card rewards you see are [gold]Upgraded[/gold]. The first Treasure Chest you open is [red]empty[/red].,shared
+Sling of Courage,SLING_OF_COURAGE,Shop Relic,Shared,Start each [gold]Elite[/gold] combat with [blue]2[/blue] [gold]Strength[/gold].,shared
+Small Capsule,SMALL_CAPSULE,Ancient Relic,Shared,"Upon pickup, obtain a random [gold]Relic[/gold].",shared
+Snecko Eye,SNECKO_EYE,Ancient Relic,Shared,"At the start of your turn, draw [blue]2[/blue] additional cards. Start each combat [red]Confused[/red].",shared
+Snecko Eye???,FAKE_SNECKO_EYE,Event Relic,Shared,Start each combat [red]Confused[/red].,shared
+Snecko Skull,SNECKO_SKULL,Common Relic,Shared,"Whenever you apply [gold]Poison[/gold], apply an additional [blue]1[/blue] [gold]Poison[/gold].",silent
+Sozu,SOZU,Ancient Relic,Shared,Gain [energy:1] at the start of each turn. You can no longer obtain potions.,shared
+Sparkling Rouge,SPARKLING_ROUGE,Uncommon Relic,Shared,"At the start of your [blue]3rd[/blue] turn, gain [blue]1[/blue] [gold]Strength[/gold] and [blue]1[/blue] [gold]Dexterity[/gold].",shared
+Spiked Gauntlets,SPIKED_GAUNTLETS,Ancient Relic,Shared,Gain [energy:1] at the start of each turn. Powers cost [blue]1[/blue] more [energy:1].,shared
+Stone Calendar,STONE_CALENDAR,Rare Relic,Shared,"At the end of turn [blue]7[/blue], deal [blue]52[/blue] damage to ALL enemies.",shared
+Stone Cracker,STONE_CRACKER,Uncommon Relic,Shared,"At the start of [gold]Boss[/gold] combats, [gold]Upgrade[/gold] [blue]3[/blue] random cards in your [gold]Draw Pile[/gold] for the rest of combat.",shared
+Stone Humidifier,STONE_HUMIDIFIER,Ancient Relic,Shared,"Whenever you [gold]Rest[/gold] at a [gold]Rest Site[/gold], raise your Max HP by [blue]5[/blue].",shared
+Storybook,STORYBOOK,Ancient Relic,Shared,"Upon pickup, add [blue]1[/blue] [gold]Brightest Flame[/gold] to your [gold]Deck[/gold].",shared
+Strawberry,STRAWBERRY,Common Relic,Shared,"Upon pickup, raise your Max HP by [blue]7[/blue].",shared
+Strike Dummy,STRIKE_DUMMY,Common Relic,Shared,Cards containing “Strike” deal [blue]3[/blue] additional damage.,shared
+Strike Dummy???,FAKE_STRIKE_DUMMY,Event Relic,Shared,Cards containing “Strike” deal [blue]1[/blue] additional damage.,shared
+Sturdy Clamp,STURDY_CLAMP,Rare Relic,Shared,Up to [blue]10[/blue] [gold]Block[/gold] persists across turns.,shared
+Sword of Jade,SWORD_OF_JADE,Event Relic,Shared,Start each combat with [blue]3[/blue] [gold]Strength[/gold].,shared
+Sword of Stone,SWORD_OF_STONE,Event Relic,Shared,Transforms into a powerful [gold]Relic[/gold] after defeating [blue]5[/blue] [gold]Elites[/gold].,shared
+Symbiotic Virus,SYMBIOTIC_VIRUS,Uncommon Relic,Shared,"At the start of each combat, [gold]Channel[/gold] [blue]1[/blue] [gold]Dark[/gold].",defect
+Tanx's Whistle,TANXS_WHISTLE,Ancient Relic,Shared,"Upon pickup, add [blue]1[/blue] [gold]Whistle[/gold] to your [gold]Deck[/gold].",shared
+Tea of Discourtesy,TEA_OF_DISCOURTESY,Event Relic,Shared,"At the start of the next combat, shuffle [blue]2[/blue] [gold]Dazed[/gold] into your [gold]Draw Pile[/gold].",shared
+The Abacus,THE_ABACUS,Shop Relic,Shared,"Whenever you shuffle your [gold]Draw Pile[/gold], gain [blue]6[/blue] [gold]Block[/gold].",shared
+The Boot,THE_BOOT,Event Relic,Shared,"Whenever you would deal [blue]4[/blue] or less unblocked attack damage, increase it to [blue]5[/blue].",shared
+The Chosen Cheese,CHOSEN_CHEESE,Event Relic,Shared,"At the end of combat, gain [blue]1[/blue] Max HP.",shared
+The Courier,THE_COURIER,Rare Relic,Shared,"The merchant no longer runs out of cards, relics, or potions and his prices are reduced by [blue]20%[/blue].",shared
+The Merchant's Rug???,FAKE_MERCHANTS_RUG,Event Relic,Shared,Poor imitation. Does nothing.,shared
+Throwing Axe,THROWING_AXE,Ancient Relic,Shared,The first card you play each combat is played an extra time.,shared
+Tingsha,TINGSHA,Uncommon Relic,Shared,"Whenever you discard a card during your turn, deal [blue]3[/blue] damage to a random enemy for each card discarded.",silent
+Tiny Mailbox,TINY_MAILBOX,Common Relic,Shared,"Whenever you [gold]Rest[/gold], procure a random potion.",shared
+Toasty Mittens,TOASTY_MITTENS,Ancient Relic,Shared,"At the start of your turn, [gold]Exhaust[/gold] the top card of your [gold]Draw Pile[/gold] and gain [blue]1[/blue] [gold]Strength[/gold].",shared
+Toolbox,TOOLBOX,Shop Relic,Shared,"At the start of each combat, choose [blue]1[/blue] of [blue]3[/blue] random Colorless cards and add the chosen card into your [gold]Hand[/gold].",shared
+Touch of Orobas,TOUCH_OF_OROBAS,Ancient Relic,Shared,"Upon pickup, replace your starter [gold]Relic[/gold] with an [gold]Ancient[/gold] version.",shared
+Tough Bandages,TOUGH_BANDAGES,Rare Relic,Shared,"Whenever you discard a card during your turn, gain [blue]3[/blue] [gold]Block[/gold].",silent
+Toxic Egg,TOXIC_EGG,Rare Relic,Shared,"Whenever you add a Skill into your [gold]Deck[/gold], [gold]Upgrade[/gold] it.",shared
+Toy Box,TOY_BOX,Ancient Relic,Shared,"Upon pickup, obtain [blue]4[/blue] [gold]Wax Relics[/gold]. Every [blue]3[/blue] combats, your left-most [gold]Wax Relic[/gold] will melt away.",shared
+Tri-Boomerang,TRI_BOOMERANG,Ancient Relic,Shared,Choose [blue]3[/blue] Attacks in your [gold]Deck[/gold]. [gold]Enchant[/gold] them with [purple]Instinct[/purple].,shared
+Tungsten Rod,TUNGSTEN_ROD,Rare Relic,Shared,"Whenever you would lose HP, lose [blue]1[/blue] less.",shared
+Tuning Fork,TUNING_FORK,Uncommon Relic,Shared,"Every time you play [blue]10[/blue] Skills, gain [blue]7[/blue] [gold]Block[/gold].",shared
+Twisted Funnel,TWISTED_FUNNEL,Uncommon Relic,Shared,"At the start of each combat, apply [blue]4[/blue] [gold]Poison[/gold] to ALL enemies.",silent
+Unceasing Top,UNCEASING_TOP,Rare Relic,Shared,"Whenever you have no cards in [gold]Hand[/gold] during your turn, draw a card.",shared
+Undying Sigil,UNDYING_SIGIL,Shop Relic,Shared,Enemies with at least as much [gold]Doom[/gold] as HP deal [blue]50%[/blue] less damage.,necrobinder
+Unsettling Lamp,UNSETTLING_LAMP,Rare Relic,Shared,"Each combat, the first time you play a card that [gold]Debuffs[/gold] an enemy, double its effect.",shared
+Vajra,VAJRA,Common Relic,Shared,Start each combat with [blue]1[/blue] [gold]Strength[/gold].,shared
+Vambrace,VAMBRACE,Uncommon Relic,Shared,"The first time you gain [gold]Block[/gold] from a card each combat, double the amount gained.",shared
+Velvet Choker,VELVET_CHOKER,Ancient Relic,Shared,Gain [energy:1] at the start of each turn. You cannot play more than [blue]6[/blue] cards per turn.,shared
+Venerable Tea Set,VENERABLE_TEA_SET,Common Relic,Shared,"Whenever you enter a [gold]Rest Site[/gold], start the next combat with an additional [energy:2].",shared
+Venerable Tea Set???,FAKE_VENERABLE_TEA_SET,Event Relic,Shared,"Whenever you enter a [gold]Rest Site[/gold], start the next combat with an additional [energy:1].",shared
+Very Hot Cocoa,VERY_HOT_COCOA,Ancient Relic,Shared,Start each combat with an additional [blue][energy:4][/blue].,shared
+Vexing Puzzlebox,VEXING_PUZZLEBOX,Rare Relic,Shared,"At the start of each combat, add a random card into your [gold]Hand[/gold]. It costs [blue]0[/blue][energy:1].",shared
+Vitruvian Minion,VITRUVIAN_MINION,Shop Relic,Shared,Cards containing “Minion” deal double damage and gain double [gold]Block[/gold].,regent
+War Hammer,WAR_HAMMER,Ancient Relic,Shared,"Whenever you kill an [gold]Elite[/gold], [gold]Upgrade[/gold] [blue]4[/blue] random cards.",shared
+War Paint,WAR_PAINT,Common Relic,Shared,"Upon pickup, [gold]Upgrade[/gold] [blue]2[/blue] random Skills.",shared
+Whetstone,WHETSTONE,Common Relic,Shared,"Upon pickup, [gold]Upgrade[/gold] [blue]2[/blue] random Attacks.",shared
+Whispering Earring,WHISPERING_EARRING,Ancient Relic,Shared,Gain [energy:1] at the start of each turn. [red]Vakuu plays your first turn for you.[/red],shared
+White Beast Statue,WHITE_BEAST_STATUE,Rare Relic,Shared,Potions always appear in combat rewards.,shared
+White Star,WHITE_STAR,Rare Relic,Shared,[gold]Elites[/gold] drop an additional [gold]Rare[/gold] card reward.,shared
+Wing Charm,WING_CHARM,Shop Relic,Shared,A random card in each card reward is [gold]Enchanted[/gold] with [purple]Swift[/purple] [blue]1[/blue].,shared
+Wongo Customer Appreciation Badge,WONGO_CUSTOMER_APPRECIATION_BADGE,Event Relic,Shared,Does nothing.,shared
+Wongo's Mystery Ticket,WONGOS_MYSTERY_TICKET,Event Relic,Shared,Receive [blue]3[/blue] random [gold]Relics[/gold] after [blue]5[/blue] combats.,shared
+Yummy Cookie,YUMMY_COOKIE,Ancient Relic,Shared,"Upon pickup, [gold]Upgrade[/gold] [blue]4[/blue] cards.",shared

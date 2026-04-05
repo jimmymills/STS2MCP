@@ -1,0 +1,89 @@
+Card,Tier,Energy,Rarity,Type,Card Text,Upgraded Text,Notes
+Strike,Starter,1,Starter,Attack,Deal 6 damage.,Deal 9 damage.,Starting card x5. Remove when possible.
+Defend,Starter,1,Starter,Skill,Gain 5 Block.,Gain 8 Block.,Starting card x4. Remove when possible.
+Survivor,Starter,1,Starter,Skill,Gain 8 Block. Discard a card.,Gain 11 Block. Discard a card.,Starting card. Enables discard synergies from turn 1.
+Neutralize,Starter,0,Starter,Attack,Deal 3 damage. Apply 1 Weak.,Deal 4 damage. Apply 2 Weak.,Starting card. Zero-cost weak application. Upgrade often.
+Reflex,S,3,Uncommon,Skill,Sly. Draw 2 cards.,Sly. Draw 3 cards.,Top discard payoff. Zero-cost when discarded. Works with Prepared/Acro. Counts as card play for Pinpoint.
+Adrenaline,S,0,Rare,Skill,Gain 1 energy. Draw 2 cards. Exhaust.,Gain 2 energy. Draw 2 cards. Exhaust.,Free acceleration. Helps line up combos. Top rare.
+Acrobatics,S,1,Common,Skill,Draw 3 cards. Discard 1 card.,Draw 4 cards. Discard 1 card.,Best card in class. Enables entire discard package. Triggers Sly cards. Always pick.
+Calculated Gamble,S,0,Rare,Skill,Discard your hand. Draw that many cards. Exhaust.,Discard your hand. Draw that many cards. Retain. Exhaust.,Dig through entire deck. Triggers all Sly. Upgrade gives Retain but not critical.
+Well-Laid Plans,S,1,Uncommon,Power,"At the end of your turn, Retain up to 1 card.","At the end of your turn, Retain up to 2 cards.",Lines up all combos. Hold Gamble/Acro for perfect turns. Best consistency tool.
+Prepared,S,0,Common,Skill,Draw 1 card. Discard 1 card.,Draw 2 cards. Discard 2 cards.,Bridge card into discard archetype. Discounts Pinpoint for free. Upgrade is disgusting.
+Tools of the Trade,S,1,Uncommon,Power,"At the start of your turn, draw 1 card and discard 1 card.","Costs 0. At the start of your turn, draw 1 card and discard 1 card.",Permanent Sly trigger. Draw consistency. Upgrades to 0 energy.
+Wraith Form,S,3,Ancient,Power,"Gain 2 Intangible. At the end of your turn, lose 1 Dexterity.","Gain 3 Intangible. At the end of your turn, lose 1 Dexterity.",Ancient exclusive. Game-winning. 3 turns invincible. Downside rarely matters. Always upgrade.
+Suppress,S,1,Ancient,Attack,Deal 11 damage. Apply 3 Weak.,Deal 14 damage. Apply 3 Weak.,Neutralize upgrade via Ancient. 3 Weak is gross. Always applies turn 1.
+Pinpoint,A,3,Uncommon,Attack,Deal 17 damage. Costs 1 less for each Skill played this turn.,Deal 22 damage. Costs 1 less for each Skill played this turn.,Gross damage. Often costs 0 with Acro. Loopable. Solves damage for entire run.
+The Hunt,A,1,Rare,Attack,"Deal 10 damage. If Fatal, gain an additional card reward this turn. Exhaust.","Deal 12 damage. If Fatal, gain an additional card reward this turn. Exhaust.",Double card rewards. Helps find combo pieces. Gross with polarized card pool.
+Piercing Wail,A,1,Common,Skill,ALL enemies lose 6 Strength this turn. Exhaust.,ALL enemies lose 8 Strength this turn. Exhaust.,Still common for some reason. Full blocks AoE fights. Disgusting.
+Tactician,A,Unplayable,Uncommon,Skill,"Unplayable. If this card is discarded, gain 1 energy.","Unplayable. If this card is discarded, gain 2 energy.",Discard payoff. Less needed with Sly cheating energy. Works best with Acro.
+Footwork,A,1,Uncommon,Power,Gain 2 Dexterity.,Gain 3 Dexterity.,Stops chip damage. One copy often enough. Doesn't need upgrade.
+Leg Sweep,A,2,Uncommon,Skill,Apply 2 Weak. Gain 11 Block.,Apply 3 Weak. Gain 14 Block.,Best weak source. Never take damage in hallways. Weak is broken.
+Corrosive Wave,A,1,Uncommon,Skill,"Whenever you draw a card this turn, apply 3 Poison to ALL enemies.","Whenever you draw a card this turn, apply 4 Poison to ALL enemies.",NOT Sly (must play it). 1 energy then draw = massive AoE poison. Play before Acrobatics. Great with draw-heavy decks.
+Noxious Fumes,A,1,Uncommon,Power,"At the end of your turn, apply 2 Poison to ALL enemies.","At the end of your turn, apply 3 Poison to ALL enemies.",Gets out of deck as power. Boss scaling. AoE. Needs upgrade. One of few good poison cards.
+Malaise,A,X,Rare,Skill,Enemy loses X Strength. Apply X Weak. Exhaust.,Enemy loses X Strength. Apply X+1 Weak. Exhaust.,Weaker than Spire 1 (no heart-like enemies). Still solid weak source.
+Afterimage,A,1,Rare,Power,"Whenever you play a card, gain 1 Block.","Whenever you play a card, gain 2 Block.",Less needed now. Block solved by going infinite turn 1. Still good output.
+Bullet Time,A,3,Rare,Skill,You cannot draw additional cards this turn. Cards cost 0 this turn.,Cards cost 0 this turn.,Energy cheat. Less payoffs than Spire 1 (no Snecko/Pyramid often). Situational.
+Expose,B,0,Uncommon,Skill,Remove all Artifact and Block from the enemy. Apply 2 Vulnerable. Exhaust.,Remove all Artifact and Block from the enemy. Apply 3 Vulnerable. Exhaust.,Zero-cost vuln. Terror replacement. Helps kill turn 1. Block removal utility.
+Precise Cut,B,0,Common,Attack,Deal 13 damage. Deal 2 less damage for each other card in your hand.,Deal 17 damage. Deal 2 less damage for each other card in your hand.,Works with Prepared/Acro. Often deals full 13. Early game damage. Falls off later.
+Dagger Throw,B,1,Common,Attack,Deal 9 damage. Discard 1 card.,Deal 12 damage. Discard 1 card.,Discard enabler with damage. Less needed than Spire 1. Better options exist.
+Untouchable,B,2,Uncommon,Skill,Sly. Gain 9 Block.,Sly. Gain 12 Block.,Zero-cost 9 block when discarded. Even 2-for-9 isn't bad. Doesn't require redraw. Disgusting.
+Flick-Flack,B,1,Common,Attack,Sly. Deal 7 damage to ALL enemies.,Sly. Deal 9 damage to ALL enemies.,Usually costs 0. Early game AoE. Loopable. Solid discard payoff.
+Ricochet,B,2,Uncommon,Attack,Sly. Deal 3 damage to a random enemy 4 times.,Sly. Deal 4 damage to a random enemy 4 times.,Zero-cost 12 damage. Lack of targeting hurts. Worse Flick-Flack but still decent.
+Abrasive,B,1,Rare,Power,Sly. Gain 1 Dexterity. Gain 4 Thorns.,Sly. Gain 2 Dexterity. Gain 4 Thorns.,Free power when discarded. 1 Dex breakpoint meaningful. Good vs multi-hit.
+Speedster,B,1,Uncommon,Power,"Whenever you draw a card, deal 2 damage to a random enemy.","Whenever you draw a card, deal 3 damage to a random enemy.",Discard payoff. AoE scaling in boss fights. Doesn't trigger on start of turn draw.
+Flechettes,B,1,Uncommon,Attack,Deal 5 damage for each Skill in your hand.,Deal 7 damage for each Skill in your hand.,"Much better than Spire 1. With Acro/Prepared, often 15-21 damage for 1."
+Haze,B,3,Uncommon,Skill,Sly. Apply 4 Poison to ALL enemies.,Sly. Apply 6 Poison to ALL enemies.,Comparable to Flick-Flack. Better late game payoff. AoE poison. Loopable.
+Dash,B,2,Common,Attack,Gain 10 Block. Deal 10 damage.,Gain 13 Block. Deal 13 damage.,Early game card. Chunky numbers. Doesn't enable anything. Gets you through Act 1.
+Backflip,B,1,Common,Skill,Gain 5 Block. Draw 2 cards.,Gain 8 Block. Draw 2 cards.,Not as good as it looks. Rather have discard attached. Can brick Pillage-style turns.
+Backstab,B,0,Common,Attack,Innate. Deal 11 damage. Exhaust.,Innate. Deal 15 damage. Exhaust.,Great Act 1 frontload. Falls off. Extra brick less punishing than Spire 1.
+Assassinate,B,2,Rare,Attack,Deal 12 damage. Strips Artifact. Apply 2 Vulnerable. Exhaust.,Deal 15 damage. Strips Artifact. Apply 2 Vulnerable. Exhaust.,Giga-backstab. Great early. Being rare hurts (competes with better rares).
+Blur,B,1,Uncommon,Skill,Block is not removed at the start of your next turn.,Block is not removed at the start of your next turn.,Less blocking with Dex in this game. Good with boat relics. Less wraith form setups.
+Predator,B,2,Uncommon,Attack,Deal 15 damage. Draw 2 cards next turn.,Deal 20 damage. Draw 2 cards next turn.,Big damage common. Draw next turn decent. 2 energy hurts. Less needed with better options.
+Master Planner,B,2,Rare,Power,"Whenever you play a Skill, it gains Sly.","Costs 1. Whenever you play a Skill, it gains Sly.",Win more card. Insane when working. Hard to play early. Situational.
+Grand Finale,B,0,Rare,Attack,Can only be played if there are no cards in your Draw Pile. Deal 50 damage.,Can only be played if there are no cards in your Draw Pile. Deal 60 damage.,Easier to play with small decks. Still finicky. Decent win condition for discard.
+Burst,B,1,Rare,Skill,"This turn, your next Skill is played twice.","This turn, your next 2 Skills are played twice.",Less payoffs than Spire 1. No apps/catalyst common. Situational now.
+Nightmare,B,3,Rare,Skill,Choose a card in your hand. Add 3 copies of it into your hand next turn. Exhaust.,Choose a card in your hand. Add 3 copies of it into your hand next turn. Exhaust.,What are you nightmaring? Less good targets. Energy hard to find. Calc Gamble exhausts.
+Accuracy,B,1,Uncommon,Power,Shivs deal 4 additional damage.,Shivs deal 6 additional damage.,Only good with Shiv cards. Blade Dance exhausting hurts. Draw order dependent.
+Blade Dance,B,1,Common,Attack,Add 3 Shivs into your hand. Exhaust.,Add 4 Shivs into your hand. Exhaust.,Now exhausts but Shivs go to exhaust for Knife Trap anyway! Still good Shiv generation. 12-16 damage for 1 energy.
+Escape Plan,B,0,Common,Skill,"Draw 1 card. If it's a Skill, gain 3 Block.","Draw 1 card. If it's a Skill, gain 6 Block.",Free block often. No Gremlin Nob. Works with After Image.
+Dagger Spray,C,1,Common,Attack,Deal 4 damage to ALL enemies twice.,Deal 6 damage to ALL enemies twice.,AoE more important in Spire 2. Worse than Flick-Flack. Pickable Act 1.
+Follow Through,C,1,Common,Attack,"Deal 6 damage to ALL enemies. If last card was a Skill, apply 1 Weak to ALL.","Deal 8 damage to ALL enemies. If last card was a Skill, apply 1 Weak to ALL.",Weak all is fine. AoE damage meh. Skill condition trivial.
+Hidden Daggers,B,0,Uncommon,Skill,Discard 2 cards. Add 2 Shivs into your hand.,Discard 2 cards. Add 3 Shivs into your hand.,0-cost Shiv generator! Discards statuses enemies inflict. Sly synergy. Great in Shiv or Sly builds.
+Bouncing Flask,C,2,Uncommon,Skill,Apply 3 Poison to a random enemy 3 times.,Apply 3 Poison to a random enemy 4 times.,Boss damage if desperate. No Catalyst. Poison bad in general.
+Sucker Punch,C,1,Common,Attack,Deal 8 damage. Apply 1 Weak.,Deal 11 damage. Apply 1 Weak.,Weak is good. Start with Neutralize. Less needed.
+Cloak and Dagger,B,1,Common,Skill,Gain 6 Block. Add 1 Shiv to your hand.,Gain 9 Block. Add 2 Shivs to your hand.,Block + Shivs. Take early even without Shiv commitment. Passive defense while generating Shivs for Knife Trap.
+Strangle,C,1,Uncommon,Attack,"Deal 8 damage. Whenever you play a card this turn, enemy loses 2 HP.","Deal 10 damage. Whenever you play a card this turn, enemy loses 3 HP.","Choke replacement. Shivs bad, so less useful. Desperation damage."
+Deadly Poison,B,1,Common,Skill,Apply 5 Poison.,Apply 7 Poison.,"Simple reliable poison. With Accelerant+, 7 poison = 18 damage (7+6+5). Clone enchantment makes this insane."
+Infinite Blades,C,1,Uncommon,Power,"At the start of your turn, add a Shiv into your hand.","At the start of your turn, add 2 Shivs into your hand.",Best Shiv enabler ironically. Slow. Works with Phantom Blade. Not needed usually.
+Tracking,C,2,Uncommon,Skill,Weak enemies take double damage from Attacks.,Costs 1. Weak enemies take double damage from Attacks.,Double damage is wrath. 2 energy hurts. Needs upgrade. Often infinite anyway.
+Poisoned Stab,C,1,Common,Attack,Deal 6 damage. Apply 3 Poison.,Deal 8 damage. Apply 4 Poison.,Just numbers. 12 damage equivalent. Fine early.
+Slice,C,0,Common,Attack,Deal 5 damage.,Deal 8 damage.,Zero cost damage. Sly cards better (don't need to redraw). Less good than Spire 1.
+Leading Strike,C,1,Common,Attack,Deal 11 damage. Add 1 Shiv to your hand.,Deal 14 damage. Add 1 Shiv to your hand.,Damage common. One shiv not enough for accuracy.
+Anticipate,C,0,Uncommon,Skill,Gain 3 Dexterity this turn.,Gain 5 Dexterity this turn.,Temporary Dex. Rather draw combo pieces. Energy cheat but meh.
+Up My Sleeve,B,2,Common,Skill,Add 3 Shivs into your hand. Reduce this card's cost by 1.,Add 4 Shivs into your hand. Reduce this card's cost by 1.,Blade Dance that DOESN'T exhaust! Cost goes 2→1→0. Infinite Shivs in long fights. Excellent with Knife Trap.
+Hand Trick,C,1,Uncommon,Skill,Gain 7 Block. Add Sly to a Skill in your hand this turn.,Gain 10 Block. Add Sly to a Skill in your hand this turn.,Situational energy cheat. What expensive skills do you have? Probably underrated.
+Fan of Knives,C,2,Uncommon,Attack,Deal 4 damage to ALL enemies. Add 4 Shivs into your hand.,Deal 4 damage to ALL enemies. Add 4 Shivs into your hand. Exhaust.,16 AoE for 2 that exhausts. Fine. No Shiv synergies usually.
+Memento Mori,C,1,Uncommon,Attack,Deal 8 damage. Deals 4 additional damage for each card discarded this turn.,Deal 10 damage. Deals 5 additional damage for each card discarded this turn.,Discard payoff without Sly. 1 energy cost hurts. Better payoffs exist.
+Mirage,C,1,Uncommon,Skill,Gain Block equal to Poison on ALL enemies. Exhaust.,Gain Block equal to Poison on ALL enemies. Exhaust.,Need poison setup. Twisted Funnel only. Very niche.
+Finisher,B,1,Rare,Attack,Deal 6 damage for each Attack played this turn.,Deal 8 damage for each Attack played this turn.,Early Shiv payoff before you find Knife Trap. +6 damage per Shiv. Chunks elites. Falls off vs bosses.
+Pounce,D,2,Uncommon,Attack,Deal 12 damage. The next Skill you play costs 0.,Deal 16 damage. The next Skill you play costs 0.,Most skills cost 1 or less already. Basically 1-for-12. Fine. Awkward.
+Envenom,C,2,Uncommon,Power,"Whenever an Attack deals unblocked damage, apply 1 Poison.","Whenever an Attack deals unblocked damage, apply 2 Poison.",Works with Shivs for poison stacking. 2 energy is clunky. Don't use with Accelerant (small poisons burn off too fast).
+Skewer,D,X,Uncommon,Attack,Deal 7 damage X times.,Deal 10 damage X times.,Energy at premium. No ChemX often. Niche with enchantments.
+Deflect,D,0,Common,Skill,Gain 4 Block.,Gain 7 Block.,Worse than Spire 1. Better things exist. At least free.
+Dodge and Roll,D,1,Uncommon,Skill,"Gain 4 Block. Next turn, gain 4 Block.","Gain 6 Block. Next turn, gain 6 Block.",Blocking with Dex less common. 1 energy brick.
+Expertise,D,1,Rare,Skill,Draw cards until you have 6 cards in hand.,Draw cards until you have 7 cards in hand.,Clunky. Wants upgrade. Not attached to discard. Can enable infinite sometimes.
+Knife Trap,A,2,Rare,Skill,Play every Shiv in your Exhaust pile against the enemy.,Play every Shiv in your Exhaust pile against the enemy. Shiv becomes Shiv+.,NEW SHIV CORE. Plays ALL Shivs from exhaust = massive burst. Upgrade gives Shiv+ damage. Boss melter. Won more runs with this alone than with Accuracy alone.
+Accelerant,A,2,Uncommon,Skill,Poison ticks 1 additional time.,Poison ticks 2 additional times. Costs 1.,THE KEY POISON CARD. Makes 10 poison deal 27 damage (10+9+8). Upgrade ASAP. Changes entire archetype.
+Bubble Bubble,B,1,Uncommon,Attack,"Deal 5 damage. If enemy is Poisoned, deal 5 damage again.","Deal 7 damage. If enemy is Poisoned, deal 7 damage again.",Great with Noxious Fumes or Twisted Funnel. Adds massive damage to poison builds. Don't take too early without poison source.
+Blade of Ink,B,1,Uncommon,Skill,Gain 2 Strength per attack this turn. Gain 4 Block.,Gain 3 Strength per attack this turn. Gain 6 Block.,#2 Shiv support card. Stacks Strength fast with Shivs (2→4→6→8...). Great with Knife Trap burst turn.
+Outbreak,D,1,Uncommon,Power,"Every 3 times you apply Poison, deal 11 damage to ALL enemies.","Every 3 times you apply Poison, deal 14 damage to ALL enemies.",Meant for Envenom Shivs. Clunky. Poison bad. Every 3 is too slow.
+Phantom Blades,D,1,Uncommon,Power,Shivs gain Retain. First Shiv each turn deals 9 additional damage.,Shivs gain Retain. First Shiv each turn deals 12 additional damage.,Once-a-turn Accuracy. Strange. Works with Infinite Blades. Niche.
+Serpent Form,D,3,Uncommon,Power,"Whenever you play a card, deal 4 damage to a random enemy.","Whenever you play a card, deal 6 damage to a random enemy.",3 energy too much. Just worse Speedster. Shivs bad anyway.
+Shadow Step,D,1,Uncommon,Skill,"Discard your hand. Next turn, Attacks deal double damage.","Discard your hand. Next turn, Attacks deal double damage.",Unload + Phantasmal Killer. Throws away Well-Laid Plans. Gamble on next draw. Bad.
+Shadowmeld,D,1,Uncommon,Skill,Double your Block gain this turn.,Double your Block gain this turn. Costs 0.,Need to block more than 5 to be worth it. How often? Combo card for nothing.
+Storm of Steel,D,2,Uncommon,Skill,Discard your hand. Add a Shiv for each card discarded.,Discard your hand. Add a Shiv for each card discarded. Costs 1.,Terrible. Ruins Well-Laid Plans. Ruins Retain. Shivs bad.
+Echoing Slash,D,2,Rare,Attack,Deal 6 damage to ALL enemies. Deal 6 damage to ALL enemies.,Deal 8 damage to ALL enemies. Deal 8 damage to ALL enemies.,"Being rare hurts. Just damage. Fine early, never see it early."
+Murder,D,3,Rare,Attack,Deal 1 damage. Deal 1 additional damage for each card drawn this combat.,Deal 1 damage. Deal 1 additional damage for each card drawn this combat.,"3 energy brick. If drawing lots, you're infinite already. Never want turn 1."
+Snakebite,C,2,Common,Skill,Apply 10 Poison. Retain.,Apply 10 Poison. Retain.,Retain is valuable for timing. 10 poison with Accelerant+ = 27 burst. Don't take more than 1. Upgrade recommended.
+Flanking,B,2,Uncommon,Skill,The enemy takes double damage from other players this turn.,,NEW - needs evaluation
+Sneaky,B,2,Rare,Power,"Whenever another player attacks an enemy, gain 1 [gold]Block[/gold].",,"NEW - Sly keyword, likely good"

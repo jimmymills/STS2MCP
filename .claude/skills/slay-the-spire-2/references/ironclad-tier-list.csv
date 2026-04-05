@@ -1,0 +1,90 @@
+Card,Tier,Energy,Rarity,Type,Card Text,Upgraded Text,Notes
+Strike,Starter,1,Starter,Attack,Deal 6 damage.,Deal 9 damage.,Starting card x5. Remove when possible.
+Defend,Starter,1,Starter,Skill,Gain 5 Block.,Gain 8 Block.,Starting card x4. Remove when possible.
+Bash,Starter,2,Starter,Attack,Deal 8 damage. Apply 2 Vulnerable.,Deal 10 damage. Apply 3 Vulnerable.,Starting card. Key for trading damage in Act 1. Always play into attacks.
+Stoke,S,1,Uncommon,Skill,Exhaust your Hand. Draw a card for each card Exhausted. Exhaust.,Exhaust your Hand. Draw a card for each card Exhausted. Exhaust.,Best card in class. Upgrades to 0 energy.
+Offering,S,0,Rare,Skill,Lose 6 HP. Gain 2 energy. Draw 3 cards. Exhaust.,Lose 6 HP. Gain 2 energy. Draw 5 cards. Exhaust.,Top infinite enabler. Life loss irrelevant.
+Burning Pact,S,1,Uncommon,Skill,Exhaust 1 card. Draw 2 cards.,Exhaust 1 card. Draw 3 cards.,Main infinite enabler. Self-cycles.
+Bloodletting,S,0,Common,Skill,Lose 3 HP. Gain 2 energy.,Lose 3 HP. Gain 3 energy.,Now Common - enables all infinites. Most polarizing card.
+Pillage,S,1,Common,Attack,Deal 6 damage. Draw cards until you draw a non-Attack card.,Deal 9 damage. Draw cards until you draw a non-Attack card.,Can draw entire deck. Broken with Second Wind.
+Spite,S,0,Common,Attack,"Deal 6 damage. If you lost HP this turn, draw 1 card.","Deal 9 damage. If you lost HP this turn, draw 1 card.",Goes infinite with Bloodletting alone.
+Pommel Strike,S,1,Common,Attack,Deal 9 damage. Draw 1 card.,Deal 10 damage. Draw 2 cards.,Core infinite piece. Pick every one you see.
+Expect a Fight,S,2,Uncommon,Skill,Gain 1 energy for each Attack in your Hand.,Gain 1 energy for each Attack in your Hand.,Generates 5-7 energy/turn. Upgrades to 1 cost.
+Forgotten Ritual,S,1,Uncommon,Skill,"If you Exhausted a card this turn, gain 3 energy.","If you Exhausted a card this turn, gain 4 energy.",Broken energy gen. Works with all exhaust synergies.
+Dark Embrace,S,2,Rare,Power,"Whenever a card is Exhausted, draw 1 card.","Whenever a card is Exhausted, draw 1 card.",Now rare but still essential. Upgrades to 1 cost.
+Vicious,S,1,Uncommon,Power,"Whenever you apply Vulnerable, draw 1 card.","Whenever you apply Vulnerable, draw 2 cards.",Enables infinites. Makes Taunt/Thunderclap draw engines.
+Second Wind,S,1,Uncommon,Skill,Exhaust all non-Attack cards in your Hand. Gain 5 Block for each card Exhausted.,Exhaust all non-Attack cards in your Hand. Gain 7 Block for each card Exhausted.,Mass exhaust enabler. Combos with Pillage.
+Stomp,S,3,Uncommon,Attack,Deal 12 damage to ALL enemies. Costs 1 less for each Attack played this turn.,Deal 15 damage to ALL enemies. Costs 1 less for each Attack played this turn.,Often free. Favorite new design. Strong Act 1.
+Pact's End,A,0,Uncommon,Attack,Can only be played if you have 3 or more cards in your Exhaust Pile. Deal 17 damage to ALL enemies.,Can only be played if you have 3 or more cards in your Exhaust Pile. Deal 23 damage to ALL enemies.,Strong payoff. Condition easy to meet.
+Battle Trance,A,0,Rare,Skill,Draw 3 cards. You cannot draw additional cards this turn.,Draw 4 cards. You cannot draw additional cards this turn.,Great draw consistency. Lines up combos.
+Feed,A,1,Rare,Attack,"Deal 10 damage. If Fatal, raise your Max HP by 3. Exhaust.","Deal 12 damage. If Fatal, raise your Max HP by 4. Exhaust.",Less essential than Spire 1. Still good early.
+Thrash,A,1,Rare,Attack,Deal 4 damage twice. Exhaust a random Attack in your Hand and add its damage to this card.,Deal 6 damage twice. Exhaust a random Attack in your Hand and add its damage to this card.,Good scaling. Exhausts cards.
+Taunt,A,1,Common,Skill,Gain 7 Block. Apply 1 Vulnerable.,Gain 8 Block. Apply 2 Vulnerable.,Great with Vicious. Extends vuln.
+Brand,A,0,Rare,Skill,Lose 1 HP. Exhaust 1 card. Gain 1 Strength.,Lose 1 HP. Exhaust 1 card. Gain 2 Strength.,Targeted exhaust at 0 cost. Rare hurts it.
+Fiend Fire,A,2,Rare,Attack,Exhaust your Hand. Deal 7 damage for each card Exhausted. Exhaust.,Exhaust your Hand. Deal 10 damage for each card Exhausted. Exhaust.,Mass exhaust. Not the best version anymore (Stoke exists).
+Flame Barrier,B,2,Uncommon,Skill,"Gain 12 Block. Whenever you are attacked this turn, deal 4 damage back.","Gain 16 Block. Whenever you are attacked this turn, deal 6 damage back.",Early game. Good vs multi-hit enemies.
+Primal Force,B,0,Uncommon,Skill,Transform all Attacks in your Hand into Giant Rock.,Transform all Attacks in your Hand into Giant Rock+.,Act 1 carry. Giant Rock deals 16 damage.
+Rage,B,0,Uncommon,Skill,"Whenever you play an Attack this turn, gain 3 Block.","Whenever you play an Attack this turn, gain 5 Block.",Early game. Works with Pommel Strike loops.
+Headbutt,B,1,Common,Attack,Deal 9 damage. Put a card from your Discard Pile on top of your Draw Pile.,Deal 12 damage. Put a card from your Discard Pile on top of your Draw Pile.,Combo setup. Less needed than Spire 1.
+Hemokinesis,B,1,Uncommon,Attack,Lose 2 HP. Deal 14 damage.,Lose 2 HP. Deal 19 damage.,Solid early damage. Slightly nerfed from Spire 1.
+Thunderclap,B,1,Common,Skill,Deal 4 damage and apply 1 Vulnerable to ALL enemies.,Deal 7 damage and apply 1 Vulnerable to ALL enemies.,Much better with Vicious. Can draw 8+ in AoE fights.
+Dismantle,B,1,Common,Attack,"Deal 8 damage. If the enemy is Vulnerable, hits twice.","Deal 10 damage. If the enemy is Vulnerable, hits twice.",Early game damage. 1 energy deal 24 with vuln.
+Anger,B,0,Common,Attack,Deal 6 damage. Add a copy of this card into your Discard Pile.,Deal 8 damage. Add a copy of this card into your Discard Pile.,Strong Act 1 pick. Loops with Burning Pact.
+Barricade,B,3,Rare,Power,Block is not removed at the start of your turn.,Block is not removed at the start of your turn.,Much worse than Spire 1. No good enablers.
+Bludgeon,B,3,Uncommon,Attack,Deal 32 damage.,Deal 42 damage.,Big bonk for hallways. Combos with Bloodletting.
+Breakthrough,B,1,Common,Attack,Lose 1 HP. Deal 9 damage to ALL enemies.,Lose 1 HP. Deal 13 damage to ALL enemies.,Needed AoE for Act 1.
+Bully,B,0,Common,Attack,Deal 4 damage. Deals 2 additional damage for each Vulnerable on the enemy.,Deal 4 damage. Deals 3 additional damage for each Vulnerable on the enemy.,Zero cost attack. Vuln synergy awkward.
+Colossus,B,1,Rare,Skill,Gain 5 Block. You receive 50% less damage from Vulnerable enemies this turn.,Gain 8 Block. You receive 50% less damage from Vulnerable enemies this turn.,Decent in multiplayer. Niche.
+Crimson Mantle,B,1,Rare,Power,"At the start of your turn, lose 1 HP and gain 8 Block.","At the start of your turn, lose 1 HP and gain 10 Block.",Awkward. Doesn't block turn played.
+Cruelty,B,1,Uncommon,Power,Vulnerable enemies take an additional 25% damage.,Vulnerable enemies take an additional 50% damage.,Not needed for infinites.
+Corruption,B,3,Ancient,Power,"Skills cost 0. Whenever you play a Skill, Exhaust it.","Skills cost 0. Whenever you play a Skill, Exhaust it.",Worse without Dark Embrace at uncommon. Situational.
+Demon Form,B,3,Rare,Power,"At the start of your turn, gain 2 Strength.","At the start of your turn, gain 3 Strength.",Strength not needed for infinites. Act 1 boss only.
+Evil Eye,B,1,Common,Skill,Gain 8 Block. Gain another 8 Block if you have Exhausted a card this turn.,Gain 11 Block. Gain another 11 Block if you have Exhausted a card this turn.,Decent block. Lines up with Burning Pact.
+Feel No Pain,B,1,Uncommon,Power,"Whenever a card is Exhausted, gain 3 Block.","Whenever a card is Exhausted, gain 4 Block.",Huge fall from grace. No Power Through. Hard to pick Act 1.
+Impervious,B,2,Rare,Skill,Gain 30 Block. Exhaust.,Gain 40 Block. Exhaust.,Big block for Act 1. Not needed for infinites.
+Inferno,B,1,Rare,Power,"At the start of your turn, lose 1 HP. Whenever you lose HP on your turn, deal 6 damage to ALL enemies.","At the start of your turn, lose 1 HP. Whenever you lose HP on your turn, deal 9 damage to ALL enemies.",Decent AoE. Better than Combust. Works with Puzzle.
+Inflame,B,1,Uncommon,Power,Gain 2 Strength.,Gain 3 Strength.,Much worse in Spire 2. Strength less needed.
+Iron Wave,B,1,Common,Attack,Gain 5 Block. Deal 5 damage.,Gain 7 Block. Deal 7 damage.,Decent output. Prevents chip in hallways.
+Pyre,B,2,Uncommon,Power,Gain 1 energy at the start of each turn.,Gain 2 energy at the start of each turn.,Early game only. Can't generate exponential energy.
+Rampage,B,1,Common,Attack,Deal 9 damage. Increase this card's damage by 5 this combat.,Deal 9 damage. Increase this card's damage by 9 this combat.,Better than Spire 1. Kills Act 1 bosses.
+Shrug It Off,B,1,Common,Skill,Gain 8 Block. Draw 1 card.,Gain 11 Block. Draw 1 card.,Early game block. Turns off Pillage.
+Stampede,B,2,Rare,Power,"At the end of your turn, 1 random Attack in your Hand is played against a random enemy.","At the end of your turn, 1 random Attack in your Hand is played against a random enemy.",Cheats energy. Upgrades to 1 cost.
+True Grit,B,1,Common,Skill,Gain 7 Block. Exhaust 1 card at random.,Gain 9 Block. Exhaust 1 card.,Demands upgrade for targeted exhaust. More pickable than Spire 1.
+Unrelenting,B,2,Uncommon,Attack,Deal 12 damage. The next Attack you play costs 0.,Deal 18 damage. The next Attack you play costs 0.,Cheats energy. Plays Bash for free.
+Uppercut,B,2,Uncommon,Attack,Deal 13 damage. Apply 1 Weak. Apply 1 Vulnerable.,Deal 13 damage. Apply 2 Weak. Apply 2 Vulnerable.,Weak less needed when going infinite. Harder to upgrade.
+Whirlwind,B,X,Uncommon,Attack,Deal 5 damage to ALL enemies X times.,Deal 8 damage to ALL enemies X times.,Mediocre AoE. Needs upgrade. No strength payoff.
+Hellraiser,B,2,Rare,Power,"Whenever you draw a card containing 'Strike', it is played against a random enemy.","Whenever you draw a card containing 'Strike', it is played against a random enemy.",Fun but softlock protection limits it. Upgrades to 1 cost.
+Aggression,C,1,Rare,Power,"At the start of your turn, put a random Attack from your Discard Pile into your Hand and Upgrade it.","Innate. At the start of your turn, put a random Attack from your Discard Pile into your Hand and Upgrade it.",Slow scaling. Clad doesn't need this.
+Armaments,C,1,Common,Skill,Gain 5 Block. Upgrade a card in your Hand.,Gain 5 Block. Upgrade ALL cards in your Hand.,Too slow. Essentially defend + 3 damage.
+Ashen Strike,C,1,Uncommon,Attack,Deal 6 damage. Deals 3 additional damage for each card in your Exhaust Pile.,Deal 6 damage. Deals 4 additional damage for each card in your Exhaust Pile.,Slow scaling damage. Better payoffs exist.
+Blood Wall,C,2,Uncommon,Skill,Lose 2 HP. Gain 16 Block.,Lose 2 HP. Gain 20 Block.,Not needed. Shuts down late game power.
+Cascade,C,X,Rare,Skill,Play the top X cards of your Draw Pile.,Play the top X+1 cards of your Draw Pile.,Awkward. Can brick. No Frozen Eye.
+Cinder,C,2,Uncommon,Attack,Deal 17 damage. Exhaust the top card of your Draw Pile.,Deal 22 damage. Exhaust the top card of your Draw Pile.,No control. Can exhaust key pieces.
+Conflagration,C,1,Rare,Attack,Deal 8 damage to ALL enemies. Deals 2 additional damage for each other Attack you've played this turn.,Deal 9 damage to ALL enemies. Deals 3 additional damage for each other Attack you've played this turn.,Bad rare. Stomp is better at uncommon.
+Drum of Battle,C,0,Rare,Power,"Draw 2 cards. At the start of your turn, Exhaust the top card of your Draw Pile.","Draw 3 cards. At the start of your turn, Exhaust the top card of your Draw Pile.",Risky. Can exhaust key cards. Only when winning.
+Grapple,C,1,Common,Attack,"Deal 7 damage. Whenever you gain Block this turn, deal 5 damage to the enemy.","Deal 9 damage. Whenever you gain Block this turn, deal 7 damage to the enemy.",Weird. Rather play Bash into attacks.
+Havoc,C,1,Common,Skill,Play the top card of your Draw Pile and Exhaust it.,Play the top card of your Draw Pile and Exhaust it.,Less useful now. Better exhaust options exist. Upgrades to 0.
+Howl from Beyond,C,3,Rare,Attack,"Deal 16 damage to ALL enemies. At the start of your turn, plays from the Exhaust Pile.","Deal 21 damage to ALL enemies. At the start of your turn, plays from the Exhaust Pile.",Clunky. Must be exhausted first to replay. 3 energy bad.
+Infernal Blade,C,1,Uncommon,Skill,Add a random Attack into your Hand. It's free to play this turn. Exhaust.,Add a random Attack into your Hand. It's free to play this turn. Exhaust.,Less needed. Sometimes get Body Slam.
+Juggernaut,C,2,Rare,Power,"Whenever you gain Block, deal 5 damage to a random enemy.","Whenever you gain Block, deal 7 damage to a random enemy.",No good block cards to trigger it. Feel No Pain gone.
+Mangle,C,3,Rare,Attack,Deal 15 damage. Enemy loses 10 Strength this turn.,Deal 20 damage. Enemy loses 15 Strength this turn.,Too expensive. Should cost 2.
+Molten Fist,C,1,Uncommon,Attack,Deal 10 damage. Double the enemy's Vulnerable. Exhaust.,Deal 14 damage. Double the enemy's Vulnerable. Exhaust.,Vuln synergy awkward. How does this enter deck?
+Perfected Strike,C,2,Uncommon,Attack,Deal 6 damage. Deals 2 additional damage for ALL your cards containing 'Strike'.,Deal 6 damage. Deals 3 additional damage for ALL your cards containing 'Strike'.,Falls off fast. Removing strikes is common.
+Rupture,C,1,Uncommon,Power,"Whenever you lose HP on your turn, gain 1 Strength.","Whenever you lose HP on your turn, gain 2 Strength.",Strength not needed. Needs upgrade.
+Setup Strike,C,1,Common,Attack,Deal 7 damage. Gain 2 Strength this turn.,Deal 9 damage. Gain 3 Strength this turn.,Meh. Strength doesn't pay off.
+Stone Armor,C,1,Common,Power,Gain 4 Plating.,Gain 6 Plating.,Plating decreases now. Much worse than Metallicize was.
+Tremble,C,1,Uncommon,Skill,Apply 2 Vulnerable.,Apply 3 Vulnerable.,Better options exist.
+Twin Strike,C,1,Common,Attack,Deal 5 damage twice.,Deal 7 damage twice.,Strength payoff bad in this game.
+Unmovable,C,2,Rare,Power,"The first time you gain Block from a card each turn, double the amount gained.","The first time you gain Block from a card each turn, double the amount gained.",Niche. Barricade archetype doesn't work.
+Break,D,2,Ancient,Attack,Deal 20 damage. Apply 5 Vulnerable.,Deal 25 damage. Apply 7 Vulnerable.,Ancient boon not worth it. Other boons way better.
+Body Slam,D,1,Uncommon,Attack,Deal damage equal to your Block.,Deal damage equal to your Block.,No enablers for block builds. Power Through gone. Upgrades to 0.
+Dominate,D,1,Uncommon,Skill,Gain 1 Strength for each Vulnerable on the enemy. Exhaust.,Gain 1 Strength for each Vulnerable on the enemy. Exhaust.,Draw order dependent. Rather just play Strike.
+Fight Me!,D,2,Uncommon,Attack,Deal 5 damage twice. Gain 2 Strength. The enemy gains 1 Strength.,Deal 6 damage twice. Gain 3 Strength. The enemy gains 1 Strength.,Buffs enemy. Why?
+Juggling,D,1,Uncommon,Power,Add a copy of the third Attack you play each turn into your Hand.,Innate. Add a copy of the third Attack you play each turn into your Hand.,Can brick infinite. Very awkward.
+One-Two Punch,D,1,Rare,Skill,"This turn, your next Attack is played an extra time.","This turn, your next 2 Attacks are played an extra time.",No big attacks to double. Not good in Spire 1 either.
+Sword Boomerang,D,1,Common,Attack,Deal 3 damage to a random enemy 3 times.,Deal 3 damage to a random enemy 4 times.,Strength bad. Can't target. AoE fights common.
+Tear Asunder,D,2,Rare,Attack,Deal 5 damage. Hits an additional time for each time you lost HP this combat.,Deal 7 damage. Hits an additional time for each time you lost HP this combat.,"Too slow. If looping Bloodletting, you already won."
+Demonic Shield,B,0,Uncommon,Skill,"Lose 1 HP.
+Give another player [gold]Block[/gold] equal to your [gold]Block[/gold].[InCombat]",,NEW - needs evaluation
+Tank,B,1,Rare,Power,"Take double damage from enemies.
+Allies take half damage from enemies.",,NEW - needs evaluation

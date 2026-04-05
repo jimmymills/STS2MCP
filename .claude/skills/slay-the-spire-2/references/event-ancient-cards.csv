@@ -1,0 +1,57 @@
+name,id,cost,type,rarity,description,keywords
+Apotheosis,APOTHEOSIS,2,Skill,Ancient,[gold]Upgrade[/gold] ALL your cards.,Exhaust|Innate
+Apparition,APPARITION,1,Skill,Ancient,Gain 1 [gold]Intangible[/gold].,Exhaust|Ethereal
+Biased Cognition,BIASED_COGNITION,1,Power,Ancient,"Gain 4 [gold]Focus[/gold].
+At the start of your turn, lose 1 [gold]Focus[/gold].",
+Break,BREAK,2,Attack,Ancient,"Deal 20 damage.
+Apply 5 [gold]Vulnerable[/gold].",
+Brightest Flame,BRIGHTEST_FLAME,0,Skill,Ancient,"Gain [energy:2].
+Draw 2 cards.
+Lose 1 Max HP.",
+Byrd Swoop,BYRD_SWOOP,0,Attack,Event,Deal 14 damage.,
+Caltrops,CALTROPS,1,Power,Event,"Whenever you are attacked, deal 3 damage back.",
+Clash,CLASH,0,Attack,Event,"Can only be played if every card in your [gold]Hand[/gold] is an Attack.
+Deal 14 damage.",
+Corruption,CORRUPTION,3,Power,Ancient,"Skills cost 0 [energy:1].
+Whenever you play a Skill, [gold]Exhaust[/gold] it.",
+Distraction,DISTRACTION,1,Skill,Event,Add a random Skill into your [gold]Hand[/gold]. It's free to play this turn.,Exhaust
+Dual Wield,DUAL_WIELD,1,Skill,Event,Choose an Attack or Power card. Add  copies|a copy} of that card into your [gold]Hand[/gold].,
+Enlightenment,ENLIGHTENMENT,0,Skill,Event,Reduce the cost of ALL cards in your [gold]Hand[/gold] to 1 this turn.,Exhaust
+Entrench,ENTRENCH,2,Skill,Event,Double your [gold]Block[/gold].,
+Exterminate,EXTERMINATE,1,Attack,Event,Deal 3 damage 4 times to ALL enemies.,
+Feeding Frenzy,FEEDING_FRENZY,0,Skill,Event,Gain 5 [gold]Strength[/gold] this turn.,
+Forbidden Grimoire,FORBIDDEN_GRIMOIRE,2,Power,Ancient,"At the end of combat, you may remove a card from your [gold]Deck[/gold].",Eternal
+Hello World,HELLO_WORLD,1,Power,Event,"At the start of your turn, add a random Common card into your [gold]Hand[/gold].",
+Mad Science,MAD_SCIENCE,1,Attack,Event,"Skill|Power):Deal 12.|Gain 8 [gold]Block[/gold].|}[HasRider][Choking][Wisdom][Expertise][Curious]|Skill|Power):
+???|
+???|???}",
+Maul,MAUL,1,Attack,Ancient,"Deal 5 damage twice.
+Increase the damage of ALL Maul cards by 1 this combat.",
+Metamorphosis,METAMORPHOSIS,2,Skill,Event,Add 3 random Attacks into your [gold]Draw Pile[/gold]. They're free to play this combat.,Exhaust
+Meteor Shower,METEOR_SHOWER,0,Attack,Ancient,"Deal 14 damage to ALL enemies.
+Apply 2 [gold]Weak[/gold] and [gold]Vulnerable[/gold] to ALL enemies.",
+Neow's Fury,NEOWS_FURY,1,Attack,Ancient,"Deal 10 damage.
+Put 2 random cards from your [gold]Discard Pile[/gold] into your [gold]Hand[/gold].",Exhaust
+Outmaneuver,OUTMANEUVER,1,Skill,Event,"Next turn, gain [energy:2].",
+Peck,PECK,1,Attack,Event,Deal 2 damage 3 times.,
+Protector,PROTECTOR,1,Attack,Ancient,"[gold]Osty[/gold] deals 11 damage.
+Deals additional damage equal to [gold]Osty's[/gold] [gold]Max HP[/gold].",
+Quadcast,QUADCAST,1,Skill,Ancient,[gold]Evoke[/gold] your rightmost Orb 4 times.,
+Rebound,REBOUND,1,Attack,Event,"Deal 9 damage.
+Put the next card you play this turn on top of your [gold]Draw Pile[/gold].",
+Relax,RELAX,3,Skill,Ancient,"Gain 15 [gold]Block[/gold].
+Next turn, draw 2 cards and gain [energy:2].",Exhaust
+Rip and Tear,RIP_AND_TEAR,1,Attack,Uncommon,Deal 7 damage to a random enemy twice.,
+Squash,SQUASH,1,Attack,Event,"Deal 10 damage.
+Apply 2 [gold]Vulnerable[/gold].",
+Stack,STACK,1,Skill,Event,Gain [gold]Block[/gold] equal to the number of cards in your [gold]Discard Pile[/gold]|}.[InCombat],
+Suppress,SUPPRESS,0,Attack,Ancient,"Deal 11 damage.
+Apply 3 [gold]Weak[/gold].",Innate
+The Sealed Throne,THE_SEALED_THRONE,1,Power,Ancient,"Whenever you play a card, gain [star:1].",
+Toric Toughness,TORIC_TOUGHNESS,2,Skill,Event,"Gain 5 [gold]Block[/gold].
+Gain 5 [gold]Block[/gold] at the start of the next 2 turns.",
+Whistle,WHISTLE,3,Attack,Ancient,"Deal 33 damage.
+[gold]Stun[/gold] the enemy.",Exhaust
+Wish,WISH,0,Skill,Ancient,Put a card from your [gold]Draw Pile[/gold] into your [gold]Hand[/gold].,Exhaust
+Wraith Form,WRAITH_FORM,3,Power,Ancient,"Gain 2 [gold]Intangible[/gold].
+At the start of your turn, lose 1 [gold]Dexterity[/gold].",

@@ -30,11 +30,7 @@ public static partial class Advisor
     private static HttpListener? _listener;
     private static Thread? _serverThread;
     private static readonly ConcurrentQueue<Action> _mainThreadQueue = new();
-    
-    // Pending advice responses from OpenClaw
-    private static readonly ConcurrentDictionary<string, TaskCompletionSource<string>> _pendingAdvice = new();
-    private static readonly ConcurrentDictionary<string, string> _adviceResponses = new();
-    
+
     internal static readonly JsonSerializerOptions JsonOptions = new()
     {
         WriteIndented = true,
@@ -203,7 +199,7 @@ public static partial class Advisor
             
             // CORS headers
             response.Headers.Add("Access-Control-Allow-Origin", "*");
-            response.Headers.Add("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+            response.Headers.Add("Access-Control-Allow-Methods", "GET, OPTIONS");
             response.Headers.Add("Access-Control-Allow-Headers", "Content-Type, Authorization");
 
             if (request.HttpMethod == "OPTIONS")
@@ -213,10 +209,9 @@ public static partial class Advisor
                 return;
             }
 
-            // Allow GET for state queries, POST only for /advice callback
-            if (request.HttpMethod != "GET" && request.HttpMethod != "POST")
+            if (request.HttpMethod != "GET")
             {
-                SendError(response, 405, "Method not allowed.");
+                SendError(response, 405, "Method not allowed. This is a read-only API.");
                 return;
             }
 
@@ -225,8 +220,8 @@ public static partial class Advisor
             switch (path)
             {
                 case "/":
-                    SendJson(response, new { 
-                        message = $"STS2 Advisor v{Version} - Read-only game state API",
+                    SendJson(response, new {
+                        message = $"STS2 Advisor v{Version} - Read-only game state API (advice via local Claude Code CLI)",
                         status = "ok",
                         endpoints = new[] {
                             "GET /state - Full game state",
@@ -273,15 +268,6 @@ public static partial class Advisor
                     HandleGetEvent(response);
                     break;
                 
-                case "/advice":
-                    if (request.HttpMethod == "POST")
-                        HandlePostAdvice(request, response);
-                    else if (request.HttpMethod == "GET")
-                        HandleGetAdvice(request, response);
-                    else
-                        SendError(response, 405, "Use POST to submit advice, GET to poll for it");
-                    break;
-                    
                 default:
                     SendError(response, 404, "Endpoint not found");
                     break;
@@ -407,128 +393,6 @@ public static partial class Advisor
         }
     }
 
-    // ==================== Advice Callback System ====================
-    
-    /// <summary>
-    /// Register a pending advice request. Returns a request ID.
-    /// The overlay calls this, then sends request to OpenClaw with the ID.
-    /// OpenClaw POSTs back to /advice with the response.
-    /// </summary>
-    internal static string RegisterAdviceRequest()
-    {
-        var requestId = Guid.NewGuid().ToString("N")[..12];
-        var tcs = new TaskCompletionSource<string>();
-        _pendingAdvice[requestId] = tcs;
-        
-        // Auto-expire after 60 seconds
-        Task.Delay(60000).ContinueWith(_ => {
-            if (_pendingAdvice.TryRemove(requestId, out var expired))
-            {
-                expired.TrySetResult("[Request timed out - no response from OpenClaw]");
-            }
-        });
-        
-        return requestId;
-    }
-    
-    /// <summary>
-    /// Wait for advice response (called by overlay after sending to OpenClaw)
-    /// </summary>
-    internal static async Task<string> WaitForAdvice(string requestId, int timeoutMs = 30000)
-    {
-        if (_pendingAdvice.TryGetValue(requestId, out var tcs))
-        {
-            var timeoutTask = Task.Delay(timeoutMs);
-            var completedTask = await Task.WhenAny(tcs.Task, timeoutTask);
-            
-            if (completedTask == tcs.Task)
-            {
-                _pendingAdvice.TryRemove(requestId, out _);
-                return await tcs.Task;
-            }
-            else
-            {
-                _pendingAdvice.TryRemove(requestId, out _);
-                return "[Request timed out]";
-            }
-        }
-        
-        // Check if response already arrived
-        if (_adviceResponses.TryRemove(requestId, out var cached))
-        {
-            return cached;
-        }
-        
-        return "[Request not found]";
-    }
-    
-    /// <summary>
-    /// POST /advice - OpenClaw posts advice response here
-    /// Body: { "request_id": "xxx", "advice": "..." }
-    /// </summary>
-    private static void HandlePostAdvice(HttpListenerRequest request, HttpListenerResponse response)
-    {
-        try
-        {
-            using var reader = new StreamReader(request.InputStream, request.ContentEncoding);
-            var body = reader.ReadToEnd();
-            var json = JsonSerializer.Deserialize<JsonElement>(body);
-            
-            var requestId = json.TryGetProperty("request_id", out var rid) ? rid.GetString() : null;
-            var advice = json.TryGetProperty("advice", out var adv) ? adv.GetString() : null;
-            
-            if (string.IsNullOrEmpty(requestId) || advice == null)
-            {
-                SendError(response, 400, "Missing request_id or advice");
-                return;
-            }
-            
-            // Complete the pending request if it exists
-            if (_pendingAdvice.TryRemove(requestId, out var tcs))
-            {
-                tcs.TrySetResult(advice);
-                GD.Print($"[STS2 Advisor] Received advice for request {requestId}");
-            }
-            else
-            {
-                // Store it in case the poll comes after
-                _adviceResponses[requestId] = advice;
-                GD.Print($"[STS2 Advisor] Cached advice for request {requestId} (no pending waiter)");
-            }
-            
-            SendJson(response, new { status = "ok", request_id = requestId });
-        }
-        catch (Exception ex)
-        {
-            SendError(response, 500, $"Failed to process advice: {ex.Message}");
-        }
-    }
-    
-    /// <summary>
-    /// GET /advice?request_id=xxx - Poll for advice (alternative to callback)
-    /// </summary>
-    private static void HandleGetAdvice(HttpListenerRequest request, HttpListenerResponse response)
-    {
-        var requestId = request.QueryString["request_id"];
-        if (string.IsNullOrEmpty(requestId))
-        {
-            SendError(response, 400, "Missing request_id query parameter");
-            return;
-        }
-        
-        if (_adviceResponses.TryRemove(requestId, out var advice))
-        {
-            SendJson(response, new { status = "ready", request_id = requestId, advice });
-        }
-        else if (_pendingAdvice.ContainsKey(requestId))
-        {
-            SendJson(response, new { status = "pending", request_id = requestId });
-        }
-        else
-        {
-            SendJson(response, new { status = "not_found", request_id = requestId });
-        }
-    }
 
     internal static void SendJson(HttpListenerResponse response, object data)
     {

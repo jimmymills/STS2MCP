@@ -1,0 +1,92 @@
+Card,Tier,Energy,Rarity,Type,Card Text,Upgraded Text,Notes
+Strike,Starter,1,Starter,Attack,Deal 6 damage.,Deal 9 damage.,Starting card. Remove when possible.
+Defend,Starter,1,Starter,Skill,Gain 5 Block.,Gain 8 Block.,Starting card. Remove when possible.
+Venerate,Starter,1,Starter,Skill,Gain 2 Stars.,Gain 3 Stars.,Starting card. Worse star generation. Better options exist.
+Falling Star,Starter,0,Starter,Attack,Costs 2 Stars. Deal 7 damage. Apply 1 Weak.,Costs 2 Stars. Deal 7 damage. Apply 2 Weak.,Starting card. 0 energy 7 damage with Weak. Actually good starter.
+Child of the Stars,S,1,Rare,Power,Gain block equal to Stars spent. Mental Fortress for stars.,Gain block equal to Stars spent +3.,BEST CARD IN CLASS. Mental Fortress but for stars. 3 stars spent = 9 block. Click every time.
+Big Bang,S,0,Rare,Skill,Gain 2 energy. Draw 2 cards. Forge 12. Exhaust.,Gain 3 energy. Draw 2 cards. Forge 12. Exhaust.,Adrenaline tier. 0-cost energy + draw + Carnage in hand. Goes infinite with exhaust removal event.
+Void Form,S,3,Rare,Power,First two cards each turn cost 0 energy and 0 stars. End your turn.,First two cards each turn cost 0 energy and 0 stars. End your turn.,Echo Form for costs. Cheats energy AND stars. Play this = win fight. End turn clause rarely matters.
+Glow,S,1,Common,Skill,Gain 2 Stars. Draw 2 cards.,Gain 3 Stars. Draw 2 cards.,BEST COMMON. Basically Coolheaded for Regent. Stars + draw. Loopable. Core of every deck.
+Convergence,S,1,Uncommon,Skill,Next turn gain 1 energy and 1 star. Retain your hand.,Next turn gain 1 energy and 2 stars. Retain your hand.,Runic Pyramid on a card. Retain hand = line up combos. Main infinite enabler. Disgusting.
+Comet,S,0,Rare,Attack,Costs 5 Stars. Deal 33 damage. Apply 3 Weak and 3 Vulnerable. Increase damage by 11 per play.,Costs 5 Stars. Deal 44 damage. Apply 3 Weak and 3 Vulnerable. Increase damage by 11 per play.,"Best star payoff. 0 energy, 33 damage + Shockwave. Scales to 66, 99+ damage. Boss killer."
+Reflect,S,1,Uncommon,Skill,Costs 3 Stars. Gain block equal to attack damage. Deal that damage back.,Costs 3 Stars. Gain block equal to attack damage +3. Deal that damage back.,Insane output. 17 block turn 1 + deals damage back. AoE fights = deals AoE damage. Gross.
+Guards!!!,S,2,Rare,Skill,Transform any number of cards in hand into Minion Sacrifice. Exhaust.,Transform any number of cards in hand into Minion Sacrifice. Exhaust.,"Targeted Fiend Fire. Exhaust bad cards, keep good ones. Minion Sacrifice = 0 energy 9 block. Setup + block same turn."
+Foregone Conclusion,S,1,Uncommon,Skill,"Next turn, seek 2 cards from draw pile.","Next turn, seek 3 cards from draw pile.",Seek delayed. Find combo pieces. Doesn't exhaust so chain it. Consistency engine.
+Particle Wall,A,0,Uncommon,Skill,Costs 2 Stars. Gain 9 block. Return this to hand.,Costs 2 Stars. Gain 12 block. Return this to hand.,Premium block. Repeatable. With Hidden Cache = infinite block. Great with Convergence retain.
+Gamma Blast,A,0,Uncommon,Attack,Costs 3 Stars. Deal 13 damage. Apply 2 Weak and 2 Vulnerable.,Costs 3 Stars. Deal 18 damage. Apply 2 Weak and 2 Vulnerable.,Loop payoff. 0 energy damage + debuffs. Cheaper than Comet but less damage. Very solid.
+Hidden Cache,A,1,Uncommon,Skill,"Next turn, gain 4 Stars.","Next turn, gain 5 Stars.",Best star generation. 4 stars = pay for expensive cards. Bridges into Comet/Gamma Blast.
+Shining Strike,A,1,Common,Attack,Deal 9 damage. Gain 2 Stars. Put this on top of draw pile.,Deal 12 damage. Gain 2 Stars. Put this on top of draw pile.,Draw this every turn. Permanent star engine. Minus one draw but stars every turn. Enables payoffs.
+Guiding Star,A,1,Common,Attack,Costs 2 Stars. Deal 10 damage. Draw 2 cards.,Costs 2 Stars. Deal 13 damage. Draw 2 cards.,BUFFED in patch 0.101! Draw is NOW not next turn. Much better tempo.
+Genesis,A,2,Uncommon,Power,"At end of turn, if you played 2+ cards, gain 2 Stars.","At end of turn, if you played 2+ cards, gain 3 Stars.",Free stars every turn. Lets you play expensive payoffs. Good scaling.
+Bombardment,A,3,Rare,Power,"At end of turn, deal 18 damage to a random enemy.","At end of turn, deal 24 damage to a random enemy.","One card boss solve. Pay 3 upfront, then 18/turn forever. Block while it kills. Early game = S tier."
+Knockout Blow,A,2,Uncommon,Attack,Deal 30 damage. Gain 5 Stars.,Deal 38 damage. Gain 5 Stars.,30 damage kills most things. Gain stars to combo with Following Star/Cloak. Great early.
+Begone!,A,1,Common,Attack,Deal 4 damage. Transform a card in hand into Minion Dive Bomb.,Deal 5 damage. Transform a card in hand into Minion Dive Bomb.,Targeted exhaust + creates Dive Bomb (13 damage). Status card converter. Colorless build synergy.
+Royal Gamble,A,0,Uncommon,Skill,Costs 5 Stars. Gain 9 Stars. Exhaust.,Costs 5 Stars. Gain 9 Stars. Retain. Exhaust.,Net +4 stars for free. Upgrade gives Retain. Lines up big plays.
+Gather Light,B,1,Common,Skill,"Gain 7 block. Next turn, gain 1 star.","Gain 10 block. Next turn, gain 2 stars.",Charge Battery but stars. Good block common. Stars are bonus.
+Glitterstream,B,1,Common,Skill,Gain 11 block next turn. Gain 4 block now.,Gain 14 block next turn. Gain 6 block now.,Good numbers. 15 total block for 1 energy. Helps survive setup turns.
+Solar Strike,B,1,Common,Attack,Deal 8 damage. Gain 1 Star.,Deal 11 damage. Gain 2 Stars.,Damage common that generates stars. Gather Light but damage. Fine early.
+Cloak of Stars,B,0,Common,Skill,Costs 3 Stars. Gain 8 block.,Costs 3 Stars. Gain 11 block.,0 energy block. Use after Knockout Blow. Frontload block while saving energy.
+Photon Cut,B,1,Common,Attack,Deal 10 damage. Put a card from hand on top of draw pile.,Deal 13 damage. Draw 2 cards.,Damage + draw manipulation. Upgrade is Pommel Strike. Solid common.
+Astral Pulse,B,0,Uncommon,Attack,Costs 3 Stars. Deal 8 damage to ALL enemies.,Costs 3 Stars. Deal 10 damage to ALL enemies.,AoE matters in STS2. 0 energy AoE. Good early hallway clear.
+Cosmic Indifference,B,1,Common,Skill,Gain 5 block. Put a card from hand on top of draw pile.,Gain 7 block. Put a card from hand on top of draw pile.,Headbutt for block. Line up star gen with star payoff. Decent utility.
+Bulwark,B,2,Common,Attack,Deal 13 damage. Forge 5.,Deal 16 damage. Forge 5.,Forge is bad but 2 for 13 is okay rate. Not infinite-able but fine early.
+Charge!!,B,1,Uncommon,Skill,Exhaust 2 cards from draw pile. Add 2 Minion Strikes to hand next turn.,Exhaust 3 cards from draw pile. Add 3 Minion Strikes to hand next turn.,Targeted exhaust from draw pile. Minion Strikes = 0 cost 7 damage draw 1. Thins deck.
+Crush Under,B,1,Common,Attack,Deal 7 damage to ALL enemies. All enemies lose 1 Strength.,Deal 8 damage to ALL enemies. All enemies lose 2 Strength.,AoE + Strength reduction. Good Act 1 common. Multi-hit enemies hate this.
+Hegemony,B,2,Common,Attack,"Deal 15 damage. Next turn, gain 1 energy.","Deal 18 damage. Next turn, gain 2 energy.",Energy cheat. 15 damage is okay. Clunky but does something.
+Collision Course,C,1,Common,Attack,Deal 9 damage. Add Debris to hand.,Deal 12 damage. Add Debris to hand.,Debris = status you pay 1 to exhaust. Essentially 1 for 9 if you exhaust debris. Meh.
+Radiate,A,0,Common,Attack,Deal 3 damage to ALL enemies per Star gained this turn.,Deal 4 damage to ALL enemies per Star gained this turn.,0-cost AoE nuke. Hidden Cache turn = 12+ AoE. Turn 1 with Divine Right = 9 AoE free. Great with Royally Approved enchant.
+Crescent Spear,C,1,Uncommon,Attack,Deal 13 damage. Costs 3 Stars. Card costs reduced by 1.,Deal 16 damage. Costs 3 Stars. Card costs reduced by 1.,1 energy + 3 stars for 13 and cost reduction. Awkward. Too expensive for what it does.
+Devastate,C,1,Uncommon,Attack,Costs 4 Stars. Deal 30 damage.,Costs 4 Stars. Deal 36 damage.,4 stars is awkward (start with 3). Need to draw star gen first. Big number but clunky.
+Dying Star,C,1,Rare,Skill,Costs 3 Stars. Ethereal. Deal 9 damage to ALL. All enemies lose 9 Strength.,Costs 3 Stars. Ethereal. Deal 9 damage to ALL. All enemies lose 9 Strength.,Block card disguised as attack. -9 Str = huge. Ethereal means it leaves. Rare slot hurts.
+Seven Stars,C,2,Rare,Attack,Costs 7 Stars. Deal 7 damage to ALL enemies 7 times.,Costs 1. Deal 7 damage to ALL enemies 7 times.,49 AoE damage if you can pay. 7 stars is HARD to get. Upgrade makes it easier. Field wipe if it works.
+"Decisions, Decisions",C,0,Uncommon,Skill,"Costs 6 Stars. Draw 3 cards. Choose a Skill, play it 3 times.","Costs 6 Stars. Draw 3 cards. Choose a Skill, play it 3 times.",6 stars is very hard. Triple Glow = 9 stars + draw 6. Niche.
+Kingly Kick,C,4,Rare,Attack,Deal 24 damage. Cost reduced by 1 each time drawn.,Deal 28 damage. Cost reduced by 1 each time drawn.,4 energy is brutal. Scales as drawn but slow. Top-deck manipulation makes it better.
+Kingly Punch,D,2,Rare,Attack,Deal 12 damage. Deals +3 damage per play this combat.,Deal 15 damage. Deals +3 damage per play this combat.,Worse rampage. Slow scaling. 2 energy hurts. Don't pick.
+Furnace,D,1,Uncommon,Power,"At end of turn, Forge 4.","At end of turn, Forge 6.",Forge archetype. Slow. One card boss solve but takes forever.
+Spoils of Battle,D,1,Common,Skill,Forge 10.,Forge 15.,Forge 10 for 1 energy. Blade package is bad. Skip.
+Wrought in War,D,1,Common,Attack,Deal 7 damage. Forge 5.,Deal 10 damage. Forge 5.,Early damage + slow scaling. Rampage that does something turn 1. Not good enough.
+Refine Blade,D,1,Common,Attack,Forge 3. Next turn gain 1 energy.,Forge 5. Next turn gain 1 energy.,Forge 3 is nothing. Energy next turn is clunky. Bad.
+Conqueror,D,1,Common,Attack,Deal 5 damage. Forge 5 additional for each hit this turn.,Deal 7 damage. Forge 7 additional for each hit this turn.,Needs multi-hit setup. Target specific. Rare card doing common things. Skip.
+Summon Forth,B,1,Uncommon,Skill,Forge 8. Put Sovereign Blade in hand from anywhere.,Forge 11. Put Sovereign Blade in hand from anywhere.,Core of Blade builds. Forge + draw Blade. Lets you play Blade multiple times per combat.
+Sword Sage,D,2,Rare,Power,Increase Sovereign Blade cost by 1. It hits an additional time.,Increase Sovereign Blade cost by 1. It hits an additional time.,Blade costs MORE?! 3 energy blade is unplayable. Avoid.
+The Smith,D,2,Rare,Skill,Forge 30.,Forge 40.,"Need stars + 2 energy + blade draw. If skill potion gives this, great. Otherwise skip."
+Manifest Authority,D,1,Rare,Skill,Add 2 random colorless cards to hand. They cost 0 this turn.,Add 3 random colorless cards to hand. They cost 0 this turn.,Random colorless often bad. Still pay their cost next turn if not played.
+Black Hole,D,1,Uncommon,Power,"Whenever you spend or gain Stars, deal 3 damage to ALL enemies.","Whenever you spend or gain Stars, deal 4 damage to ALL enemies.","Slow chip damage. Doesn't scale with star count, just instances. Desperation AoE pick."
+Terraforming,D,1,Common,Skill,Gain 6 Vigor.,Gain 9 Vigor.,Multi-hit synergy. No multi-hit package. Skip.
+Spectrum Shift,C,2,Uncommon,Power,"At start of turn, add 1 random colorless card to hand.","At start of turn, add 1 random colorless card to hand.",2 energy is expensive. BUT feeds Supermassive/Arsenal/Pillar of Creation. Colorless build only.
+Tyranny,D,2,Rare,Power,"At start of turn, draw 1 card and exhaust 1 card randomly.","At start of turn, draw 1 card and exhaust 1 card randomly.",Random exhaust can hit your good cards. Card creation synergy but unreliable.
+Orbit,D,2,Uncommon,Power,"At end of turn, gain 1 energy.","At end of turn, gain 2 energy.","2 energy for 1 energy/turn. Bad energy relic. Stars are the limiting factor, not energy."
+Resonance,D,1,Uncommon,Skill,Costs 2 Stars. Gain 1 Strength. All enemies lose 1 Strength.,Costs 2 Stars. Gain 2 Strength. All enemies lose 2 Strength.,Strength doesn't matter when looping 33 damage Comets. Skip.
+Monarch's Gaze,D,3,Rare,Power,Attacks reduce enemy Strength by 1. Cards give you 1 Strength this turn.,Attacks reduce enemy Strength by 1. Cards give you 2 Strength this turn.,3 energy! Does almost nothing. Horrible.
+Pale Blue Dot,D,2,Uncommon,Power,Sovereign Blade deals double damage this turn.,Costs 1. Sovereign Blade deals double damage this turn.,Blade costs 2 + this costs 2 = 4 energy for one attack. No.
+Bundle of Joy,F,1,Rare,Skill,Add 3 random Regent cards to hand.,Add 4 random Regent cards to hand.,Random cards you still have to pay for. Doesn't cheat costs. Terrible.
+Lunar Blast,F,0,Uncommon,Attack,Deal 4 damage per Skill played this turn.,Deal 6 damage per Skill played this turn.,Inconsistent. Often bricks. Better things to do with skills.
+Make It So,F,1,Uncommon,Attack,"Deal 6 damage. Every 3 Skills, returns to hand.","Deal 8 damage. Every 3 Skills, returns to hand.",Flurry of Blows but worse. Doesn't help combos. Skip.
+Supermassive,B,1,Uncommon,Attack,Deal 5 damage. +3 per card created this combat.,Deal 5 damage. +4 per card created this combat.,Card creation build core. Transform cards = created. GUARDS/BEGONE synergy. Pick early for colorless build.
+Pillar of Creation,B,1,Rare,Power,"Whenever you create a card, gain 3 block.","Whenever you create a card, gain 4 block.",Card creation synergy. GUARDS = instant 15+ block. Crash Landing = panic button. Colorless build key.
+Heirloom Hammer,F,2,Rare,Attack,Deal 17 damage. Copy a colorless card in hand.,Deal 20 damage. Copy a colorless card in hand.,What colorless are you copying? 2 for 17 is bad. Skip.
+Heavenly Drill,F,X,Rare,Attack,Deal 7 damage X times.,Deal 10 damage X times.,X-cost with no energy gen. Need Chem X. Ultra niche.
+Prophesize,F,2,Rare,Skill,Draw 6 cards.,Costs 1. Draw 6 cards.,2 energy draw 6 but then what? No energy left. Upgrade makes it playable.
+I Am Invincible,F,1,Rare,Skill,"Gain 9 block. If on top of draw pile, play this.","Gain 12 block. If on top of draw pile, play this.",Top-deck manipulation needed. Too niche.
+Celestial Might,B,2,Common,Attack,Deal 6 damage 3 times.,Deal 8 damage 3 times.,18 damage for 2 energy. Gets much better with Strength or Vigor. Decent Act 1 vs multi-hit vulnerable enemies like Vantom.
+Know Thy Place,C,0,Common,Skill,Apply 1 Weak. Apply 1 Vulnerable. Exhaust.,Apply 1 Weak. Apply 1 Vulnerable.,Free debuffs but exhausts. Upgrade removes exhaust. Following Star already gives Weak + damage.
+Stardust,B,0,Uncommon,Attack,Deal 5 damage to random enemy X times.,Deal 7 damage to random enemy X times.,X = Stars spent? Star-scaling damage. Multi-hit synergizes with Vigor/Strength.
+Alignment,A,0,Uncommon,Skill,Costs 3 Stars. Gain 2 energy.,Costs 3 Stars. Gain 3 energy.,Trade stars for energy. Explosive turns. Pairs with Hidden Cache for huge energy swing.
+Arsenal,B,1,Rare,Power,"Whenever you create a card, gain 1 Strength.","Whenever you create a card, gain 2 Strength.",BUFFED in patch 0.101! Now triggers on card CREATION (not colorless). Works with GUARDS/BEGONE/transforms.
+Beat into Shape,C,1,Rare,Attack,Deal 5 damage. Forge 5. Forges +5 for each hit this turn.,Deal 7 damage. Forge 7. Forges +7 for each hit this turn.,Forge scaling with multi-hit. Celestial Might + this = lots of Forge. Still Forge package is weak.
+Crash Landing,C,1,Rare,Attack,Deal 21 damage to ALL enemies. Fill hand with Debris.,Deal 26 damage to ALL enemies. Fill hand with Debris.,Big AoE but Debris clogs hand. Use to finish fights only. Worse than Crash Lightning.
+Quasar,B,0,Uncommon,Skill,Choose 1 of 3 random Colorless cards to add to hand.,Choose 1 of 3 random UPGRADED Colorless cards to add to hand.,0-cost card discovery. Feeds Supermassive/Arsenal. Can find Apotheosis or good colorless.
+Seeking Edge,A,1,Rare,Power,Forge 7. Sovereign Blade now deals damage to ALL enemies.,Forge 11. Sovereign Blade now deals damage to ALL enemies.,Makes Blade an AoE finisher. Key for Blade builds. Forge 7 is decent bonus.
+The Sealed Throne,S,1,Ancient,Power,"Whenever you play a card, gain 1 Star.","Innate. Whenever you play a card, gain 1 Star.",ANCIENT ONLY. Broken star gen. Every card = 1 star. Slam pick for any Regent.
+Glimmer,B,1,Uncommon,Skill,"Draw 3 cards.
+Put 1 card from your [gold]Hand[/gold] on top of your [gold]Draw Pile[/gold].",,NEW - low cost utility
+Hammer Time,B,2,Rare,Power,"Whenever you [gold]Forge[/gold], all allies [gold]Forge[/gold] as well.",,NEW - needs evaluation
+Largesse,B,0,Uncommon,Skill,Another player adds 1 random Colorless card to their [gold]Hand[/gold].,,NEW - needs evaluation
+Meteor Shower,A,0,Ancient,Attack,"Deal 14 damage to ALL enemies.
+Apply 2 [gold]Weak[/gold] and [gold]Vulnerable[/gold] to ALL enemies.",,NEW - likely powerful AoE
+Monologue,B,0,Uncommon,Skill,"Whenever you play a card this turn, gain 1 [gold]Strength[/gold] this turn.",,NEW - needs evaluation
+Neutron Aegis,A,1,Rare,Power,Gain 8 [gold]Plating[/gold].,,"NEW - block card, likely good"
+Parry,B,1,Uncommon,Power,"Whenever you play [gold]Sovereign Blade[/gold], gain 6 [gold]Block[/gold].",,NEW - block card
+Patter,B,1,Common,Skill,"Gain 8 [gold]Block[/gold].
+Gain 2 [gold]Vigor[/gold].",,NEW - needs evaluation
+Royalties,B,1,Rare,Power,"At the end of combat, gain 30 [gold]Gold[/gold].",,NEW - gold/resource generation

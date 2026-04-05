@@ -1,0 +1,65 @@
+name,id,rarity,character,description
+Ashwater,ASHWATER,Uncommon,Shared,[gold]Exhaust[/gold] any number of cards in your [gold]Hand[/gold].
+Attack Potion,ATTACK_POTION,Common,Shared,Choose [blue]1[/blue] of [blue]3[/blue] random Attack cards to add into your [gold]Hand[/gold]. It's free to play this turn.
+Beetle Juice,BEETLE_JUICE,Rare,Shared,Enemy's attacks deal [blue]30%[/blue] less damage for the next [blue]4[/blue] turns.
+Blessing of the Forge,BLESSING_OF_THE_FORGE,Uncommon,Shared,[gold]Upgrade[/gold] all cards in your [gold]Hand[/gold] for the rest of combat.
+Block Potion,BLOCK_POTION,Common,Shared,Gain [blue]12[/blue] [gold]Block[/gold].
+Blood Potion,BLOOD_POTION,Common,Shared,Heal for [green]20%[/green] of your Max HP.
+Bone Brew,BONE_BREW,Uncommon,Shared,[gold]Summon[/gold] [blue]15[/blue].
+Bottled Potential,BOTTLED_POTENTIAL,Rare,Shared,Shuffle ALL your cards into your [gold]Draw Pile[/gold]. Draw [blue]5[/blue] cards.
+Clarity Extract,CLARITY,Uncommon,Shared,"Draw [blue]1[/blue] card. At the start of your next [blue]3[/blue] turns, draw [blue]1[/blue] additional card."
+Colorless Potion,COLORLESS_POTION,Common,Shared,Choose [blue]1[/blue] of [blue]3[/blue] random Colorless cards to add into your [gold]Hand[/gold]. It's free to play this turn.
+Cosmic Concoction,COSMIC_CONCOCTION,Rare,Shared,Add [blue]3[/blue] [gold]Upgraded[/gold] Colorless cards into your [gold]Hand[/gold].
+Cunning Potion,CUNNING_POTION,Uncommon,Shared,Add [blue]3[/blue] [gold]Upgraded Shivs[/gold] into your [gold]Hand[/gold].
+Cure All,CURE_ALL,Uncommon,Shared,Gain [energy:1]. Draw [blue]2[/blue] cards.
+Dexterity Potion,DEXTERITY_POTION,Common,Shared,Gain [blue]2[/blue] [gold]Dexterity[/gold].
+Distilled Chaos,DISTILLED_CHAOS,Rare,Shared,Play the top [blue]3[/blue] cards of your [gold]Draw Pile[/gold].
+Droplet of Precognition,DROPLET_OF_PRECOGNITION,Rare,Shared,Choose a card in your [gold]Draw Pile[/gold] and add it into your [gold]Hand[/gold].
+Duplicator,DUPLICATOR,Uncommon,Shared,"This turn, your next card is played an extra time."
+Energy Potion,ENERGY_POTION,Common,Shared,Gain [energy:2].
+Entropic Brew,ENTROPIC_BREW,Rare,Shared,Fill all your empty potion slots with random potions.
+Essence of Darkness,ESSENCE_OF_DARKNESS,Rare,Shared,[gold]Channel[/gold] a [gold]Dark[/gold] for each of your [gold]Orb Slots[/gold].
+Explosive Ampoule,EXPLOSIVE_AMPOULE,Common,Shared,Deal [blue]10[/blue] damage to ALL enemies.
+Fairy in a Bottle,FAIRY_IN_A_BOTTLE,Rare,Shared,"When you would die, instead this potion is discarded and you heal to [blue]30%[/blue] of your Max HP."
+Fire Potion,FIRE_POTION,Common,Shared,Deal [blue]20[/blue] damage.
+Flex Potion,FLEX_POTION,Common,Shared,"Gain [blue]5[/blue] [gold]Strength[/gold]. At the end of your turn, lose [blue]5[/blue] [gold]Strength[/gold]."
+Focus Potion,FOCUS_POTION,Common,Shared,Gain [blue]2[/blue] [gold]Focus[/gold].
+Fortifier,FORTIFIER,Uncommon,Shared,Triple your [gold]Block[/gold].
+Foul Potion,FOUL_POTION,Event,Shared,"Deal [blue]12[/blue] damage to EVERYONE.
+Can be thrown at the [gold]Merchant[/gold] for [blue]100[/blue] [gold]Gold[/gold] instead."
+Fruit Juice,FRUIT_JUICE,Rare,Shared,Gain [blue]5[/blue] Max HP.
+Fysh Oil,FYSH_OIL,Uncommon,Shared,Gain [blue]1[/blue] [gold]Strength[/gold] and [blue]1[/blue] [gold]Dexterity[/gold].
+Gambler's Brew,GAMBLERS_BREW,Uncommon,Shared,"Discard any number of cards, then draw that many."
+Ghost in a Jar,GHOST_IN_A_JAR,Rare,Shared,Gain [blue]1[/blue] [gold]Intangible[/gold].
+Gigantification Potion,GIGANTIFICATION_POTION,Rare,Shared,The next Attack you play deals triple damage.
+Glowwater Potion,GLOWWATER_POTION,Event,Shared,[gold]Exhaust[/gold] your [gold]Hand[/gold]. Draw [blue]10[/blue] cards.
+Heart of Iron,HEART_OF_IRON,Uncommon,Shared,Gain [blue]7[/blue] [gold]Plating[/gold].
+King's Courage,KINGS_COURAGE,Uncommon,Shared,[gold]Forge[/gold] [blue]15[/blue].
+Liquid Bronze,LIQUID_BRONZE,Uncommon,Shared,Gain [blue]3[/blue] [gold]Thorns[/gold].
+Liquid Memories,LIQUID_MEMORIES,Rare,Shared,Put a card from your [gold]Discard Pile[/gold] into your [gold]Hand[/gold]. It costs [blue]0[/blue] [energy:1] this turn.
+Lucky Tonic,LUCKY_TONIC,Rare,Shared,Gain [blue]1[/blue] [gold]Buffer[/gold].
+Mazaleth's Gift,MAZALETHS_GIFT,Rare,Shared,Gain [blue]1[/blue] [gold]Ritual[/gold].
+Orobic Acid,OROBIC_ACID,Rare,Shared,"Add a random Attack, Skill, and Power into your [gold]Hand[/gold]. They're free to play this turn."
+Poison Potion,POISON_POTION,Common,Shared,Apply [blue]6[/blue] [gold]Poison[/gold].
+Pot of Ghouls,POT_OF_GHOULS,Rare,Shared,Add [blue]2[/blue] [gold]Souls[/gold] into your [gold]Hand[/gold].
+Potion of Binding,POTION_OF_BINDING,Uncommon,Shared,Apply [blue]1[/blue] [gold]Weak[/gold] and [blue]1[/blue] [gold]Vulnerable[/gold] to ALL enemies.
+Potion of Capacity,POTION_OF_CAPACITY,Uncommon,Shared,Gain [blue]2[/blue] [gold]Orb Slots[/gold].
+Potion of Doom,POTION_OF_DOOM,Common,Shared,Apply [blue]33[/blue] [gold]Doom[/gold].
+Potion-Shaped Rock,POTION_SHAPED_ROCK,Token,Shared,Deal [blue]15[/blue] damage.
+Powdered Demise,POWDERED_DEMISE,Uncommon,Shared,Enemy loses [blue]9[/blue] HP at the end of each of its turns.
+Power Potion,POWER_POTION,Common,Shared,Choose [blue]1[/blue] of [blue]3[/blue] random Power cards to add into your [gold]Hand[/gold]. It's free to play this turn.
+Radiant Tincture,RADIANT_TINCTURE,Uncommon,Shared,Gain [energy:1]. Gain an additional [energy:1] at the start of your next [blue]3[/blue] turns.
+Regen Potion,REGEN_POTION,Uncommon,Shared,Gain [green]5[/green] [gold]Regen[/gold].
+Shackling Potion,SHACKLING_POTION,Rare,Shared,ALL enemies lose [blue]7[/blue] [gold]Strength[/gold] this turn.
+Ship in a Bottle,SHIP_IN_A_BOTTLE,Rare,Shared,"Gain [blue]10[/blue] [gold]Block[/gold]. Next turn, gain [blue]10[/blue] [gold]Block[/gold]."
+Skill Potion,SKILL_POTION,Common,Shared,Choose [blue]1[/blue] of [blue]3[/blue] random Skill cards to add into your [gold]Hand[/gold]. It's free to play this turn.
+Snecko Oil,SNECKO_OIL,Rare,Shared,Draw [blue]7[/blue] cards. Randomize the cost of cards in your [gold]Hand[/gold] this turn.
+Soldier's Stew,SOLDIERS_STEW,Rare,Shared,All cards containing [gold]Strike[/gold] gain [blue]1[/blue] [gold]Replay[/gold] this combat.
+Speed Potion,SPEED_POTION,Common,Shared,"Gain [blue]5[/blue] [gold]Dexterity[/gold]. At the end of your turn, lose [blue]5[/blue] [gold]Dexterity[/gold]."
+Stable Serum,STABLE_SERUM,Uncommon,Shared,[gold]Retain[/gold] your [gold]Hand[/gold] for [blue]2[/blue] turns.
+Star Potion,STAR_POTION,Common,Shared,Gain [star:3].
+Strength Potion,STRENGTH_POTION,Common,Shared,Gain [blue]2[/blue] [gold]Strength[/gold].
+Swift Potion,SWIFT_POTION,Common,Shared,Draw [blue]3[/blue] cards.
+Touch of Insanity,TOUCH_OF_INSANITY,Uncommon,Shared,Choose a card in your [gold]Hand[/gold]. It is free to play this combat.
+Vulnerable Potion,VULNERABLE_POTION,Common,Shared,Apply [blue]3[/blue] [gold]Vulnerable[/gold].
+Weak Potion,WEAK_POTION,Common,Shared,Apply [blue]3[/blue] [gold]Weak[/gold].

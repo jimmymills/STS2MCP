@@ -1,0 +1,13 @@
+name,id,cost,type,description,keywords
+Fuel,FUEL,0,Skill,"Gain [energy:1].
+Draw 1 card.",Exhaust
+Giant Rock,GIANT_ROCK,1,Attack,Deal 16 damage.,
+Luminesce,LUMINESCE,0,Skill,Gain [energy:2].,Exhaust|Retain
+Minion Dive Bomb,MINION_DIVE_BOMB,1,Attack,Deal 13 damage.,Exhaust
+Minion Sacrifice,MINION_SACRIFICE,0,Skill,Gain 9 [gold]Block[/gold].,Exhaust
+Minion Strike,MINION_STRIKE,0,Attack,"Deal 7 damage.
+Draw 1 card.",Exhaust
+Shiv,SHIV,0,Attack,Deal 4 damage.,Exhaust
+Soul,SOUL,0,Skill,Draw 2 cards.,Exhaust
+Sovereign Blade,SOVEREIGN_BLADE,2,Attack,Deal 10 damage.,Retain
+Sweeping Gaze,SWEEPING_GAZE,0,Attack,[gold]Osty[/gold] deals 10 damage to a random enemy.,Exhaust|Ethereal

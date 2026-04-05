@@ -1,0 +1,143 @@
+name,id,cost,type,rarity,description,keywords,tags,damage,block,upgrade
+Adaptive Strike,ADAPTIVE_STRIKE,2,Attack,Rare,"Deal 18 damage.
+Add a 0[energy:1] copy of this card into your [gold]Discard Pile[/gold].",,Strike,18,,"{""damage"": ""+5""}"
+All for One,ALL_FOR_ONE,2,Attack,Rare,"Deal 10 damage.
+Put ALL 0[energy:1] cards from your [gold]Discard Pile[/gold] into your [gold]Hand[/gold].",,,10,,"{""damage"": ""+4""}"
+Ball Lightning,BALL_LIGHTNING,1,Attack,Common,"Deal 7 damage.
+[gold]Channel[/gold] 1 [gold]Lightning[/gold].",,,7,,"{""damage"": ""+3""}"
+Barrage,BARRAGE,1,Attack,Common,Deal 5 damage for each [gold]Channeled[/gold] Orb.[InCombat],,,5,,"{""damage"": ""+2""}"
+Beam Cell,BEAM_CELL,0,Attack,Common,"Deal 3 damage.
+Apply 1 [gold]Vulnerable[/gold].",,,3,,"{""damage"": ""+1"", ""vulnerable"": ""+1""}"
+Biased Cognition,BIASED_COGNITION,1,Power,Ancient,"Gain 4 [gold]Focus[/gold].
+At the start of your turn, lose 1 [gold]Focus[/gold].",,,,,"{""focuspower"": ""+1""}"
+Boost Away,BOOST_AWAY,0,Skill,Common,"Gain 6 [gold]Block[/gold].
+Add a [gold]Dazed[/gold] into your [gold]Discard Pile[/gold].",,,,6,"{""block"": ""+3""}"
+Boot Sequence,BOOT_SEQUENCE,0,Skill,Uncommon,Gain 10 [gold]Block[/gold].,Exhaust|Innate,,,10,"{""block"": ""+3""}"
+Buffer,BUFFER,2,Power,Rare,Prevent the next time you would lose HP.,,,,,"{""bufferpower"": ""+1""}"
+Bulk Up,BULK_UP,2,Power,Uncommon,"Lose 1 Orb Slot.
+Gain 2 [gold]Strength[/gold].
+Gain 2 [gold]Dexterity[/gold].",,,,,"{""strength"": ""+1"", ""dexterity"": ""+1""}"
+Capacitor,CAPACITOR,1,Power,Uncommon,Gain 2 Orb Slots.,,,,,"{""repeat"": ""+1""}"
+Chaos,CHAOS,1,Skill,Uncommon,[gold]Channel[/gold] 1 random Orb.,,,,,"{""repeat"": ""+1""}"
+Charge Battery,CHARGE_BATTERY,1,Skill,Common,"Gain 7 [gold]Block[/gold].
+Next turn, gain [energy:1].",,,,7,"{""block"": ""+3""}"
+Chill,CHILL,0,Skill,Uncommon,[gold]Channel[/gold] 1 [gold]Frost[/gold] for each enemy.,Exhaust,,,,"{""remove_exhaust"": 1}"
+Claw,CLAW,0,Attack,Common,"Deal 3 damage.
+Increase the damage of ALL Claw cards by 2 this combat.",,,3,,"{""damage"": ""+1"", ""increase"": ""+1""}"
+Cold Snap,COLD_SNAP,1,Attack,Common,"Deal 6 damage.
+[gold]Channel[/gold] 1 [gold]Frost[/gold].",,,6,,"{""damage"": ""+3""}"
+Compact,COMPACT,1,Skill,Uncommon,"Gain 6 [gold]Block[/gold].
+[gold]Transform[/gold] all Status cards in your [gold]Hand[/gold] into [gold]Fuel[/gold].",,,,6,"{""block"": ""+1""}"
+Compile Driver,COMPILE_DRIVER,1,Attack,Common,"Deal 7 damage.
+Draw 1 card for each unique Orb you have.[InCombat]",,,7,,"{""damage"": ""+3""}"
+Consuming Shadow,CONSUMING_SHADOW,2,Power,Rare,"[gold]Channel[/gold] 2 [gold]Dark[/gold].
+At the end of your turn, [gold]Evoke[/gold] your leftmost Orb.",,,,,"{""repeat"": ""+1""}"
+Coolant,COOLANT,1,Power,Rare,"At the start of your turn, gain 2 [gold]Block[/gold] for each unique Orb you have.",,,,,"{""coolantpower"": ""+1""}"
+Coolheaded,COOLHEADED,1,Skill,Common,"[gold]Channel[/gold] 1 [gold]Frost[/gold].
+Draw 1 card.",,,,,"{""cards"": ""+1""}"
+Creative AI,CREATIVE_AI,3,Power,Rare,"At the start of your turn, add a random Power into your [gold]Hand[/gold].",,,,,"{""cost"": 2}"
+Darkness,DARKNESS,1,Skill,Uncommon,"[gold]Channel[/gold] 1 [gold]Dark[/gold].
+Trigger the passive ability of all [gold]Dark[/gold] Orbs.",,,,,{}
+Defend,DEFEND_DEFECT,1,Skill,Basic,Gain 5 [gold]Block[/gold].,,Defend,,5,"{""block"": ""+3""}"
+Defragment,DEFRAGMENT,1,Power,Rare,Gain 1 [gold]Focus[/gold].,,,,,"{""focuspower"": ""+1""}"
+Double Energy,DOUBLE_ENERGY,1,Skill,Uncommon,Double your Energy.,Exhaust,,,,"{""cost"": 0}"
+Dualcast,DUALCAST,1,Skill,Basic,[gold]Evoke[/gold] your rightmost Orb twice.,,,,,"{""cost"": 0}"
+Echo Form,ECHO_FORM,3,Power,Rare,The first card you play each turn is played an extra time.,Ethereal,,,,"{""remove_ethereal"": 1}"
+Energy Surge,ENERGY_SURGE,1,Skill,Uncommon,ALL players gain [energy:2].,Exhaust,,,,"{""energy"": ""+1""}"
+FTL,FTL,0,Attack,Uncommon,"Deal 5 damage.
+If you have played fewer than 3 cards this turn, draw 1 card.",,,5,,"{""damage"": ""+1"", ""playmax"": ""+1""}"
+Feral,FERAL,2,Power,Uncommon,"The first time you play a
+0[energy:1] Attack each turn,
+return it to your [gold]Hand[/gold].",,,,,"{""cost"": 1}"
+Fight Through,FIGHT_THROUGH,1,Skill,Uncommon,"Gain 13 [gold]Block[/gold].
+Add 2 [gold]Wounds[/gold] into your [gold]Discard Pile[/gold].",,,,13,"{""block"": ""+4""}"
+Flak Cannon,FLAK_CANNON,2,Attack,Rare,"[gold]Exhaust[/gold] ALL your [gold]Status[/gold] cards.
+Deal 8 damage to a random enemy for each card [gold]Exhausted[/gold].[InCombat]",,,8,,"{""damage"": ""+3""}"
+Focused Strike,FOCUSED_STRIKE,1,Attack,Common,"Deal 9 damage.
+Gain 1 [gold]Focus[/gold] this turn.",,Strike,9,,"{""damage"": ""+2"", ""focuspower"": ""+1""}"
+Fusion,FUSION,2,Skill,Uncommon,[gold]Channel[/gold] 1 [gold]Plasma[/gold].,,,,,"{""cost"": 1}"
+Genetic Algorithm,GENETIC_ALGORITHM,1,Skill,Rare,"Gain 1 [gold]Block[/gold].
+Permanently increase this card's [gold]Block[/gold] by 3.",Exhaust,,,1,"{""increase"": ""+1""}"
+Glacier,GLACIER,2,Skill,Uncommon,"Gain 6 [gold]Block[/gold].
+[gold]Channel[/gold] 2 [gold]Frost[/gold].",,,,6,"{""block"": ""+3""}"
+Glasswork,GLASSWORK,1,Skill,Uncommon,"Gain 5 [gold]Block[/gold].
+[gold]Channel[/gold] 1 [gold]Glass[/gold].",,,,5,"{""block"": ""+3""}"
+Go for the Eyes,GO_FOR_THE_EYES,0,Attack,Common,"Deal 3 damage.
+If the enemy intends to attack, apply 1 [gold]Weak[/gold].",,,3,,"{""damage"": ""+1"", ""weak"": ""+1""}"
+Gunk Up,GUNK_UP,1,Attack,Common,"Deal 4 damage 3 times.
+Add a [gold]Slimed[/gold] into your [gold]Discard Pile[/gold].",,,4,,"{""damage"": ""+1""}"
+Hailstorm,HAILSTORM,1,Power,Uncommon,"At the end of your turn, if you have [gold]Frost[/gold], deal 6 damage to ALL enemies.",,,,,"{""hailstormpower"": ""+2""}"
+Helix Drill,HELIX_DRILL,0,Attack,Rare,Deal 3 damage for each [energy:1] previously spent this turn.[InCombat],,,3,,"{""damage"": ""+2""}"
+Hologram,HOLOGRAM,1,Skill,Common,"Gain 3 [gold]Block[/gold].
+Put a card from your [gold]Discard Pile[/gold] into your [gold]Hand[/gold].",Exhaust,,,3,"{""block"": ""+2"", ""remove_exhaust"": 1}"
+Hotfix,HOTFIX,0,Skill,Common,Gain 2 [gold]Focus[/gold] this turn.,,,,,"{""focuspower"": ""+1""}"
+Hyperbeam,HYPERBEAM,2,Attack,Rare,"Deal 26 damage to ALL enemies.
+Lose 3 [gold]Focus[/gold].",,,26,,"{""damage"": ""+8""}"
+Ice Lance,ICE_LANCE,3,Attack,Rare,"Deal 19 damage.
+[gold]Channel[/gold] 3 [gold]Frost[/gold].",,,19,,"{""damage"": ""+5""}"
+Ignition,IGNITION,1,Skill,Rare,Another player [gold]Channels[/gold] [gold]Plasma[/gold].,Exhaust,,,,"{""remove_exhaust"": 1}"
+Iteration,ITERATION,1,Power,Uncommon,"The first time you draw a Status card each turn, draw 2 cards.",,,,,"{""iterationpower"": ""+1""}"
+Leap,LEAP,1,Skill,Common,Gain 9 [gold]Block[/gold].,,,,9,"{""block"": ""+3""}"
+Lightning Rod,LIGHTNING_ROD,1,Skill,Common,"Gain 4 [gold]Block[/gold].
+At the start of the next 2 turns, [gold]Channel[/gold] 1 [gold]Lightning[/gold].",,,,4,"{""block"": ""+3""}"
+Loop,LOOP,1,Power,Uncommon,"At the start of your turn, trigger the passive ability of your rightmost Orb.",,,,,"{""loop"": ""+1""}"
+Machine Learning,MACHINE_LEARNING,1,Power,Rare,"At the start of your turn, draw 1 additional card.",,,,,"{""add_innate"": 1}"
+Meteor Strike,METEOR_STRIKE,5,Attack,Rare,"Deal 24 damage.
+[gold]Channel[/gold] 3 [gold]Plasma[/gold].",,Strike,24,,"{""damage"": ""+6""}"
+Modded,MODDED,0,Skill,Rare,"Gain 1 Orb Slot.
+Draw 1 card. Increase this card's cost by 1.",,,,,"{""cards"": ""+1""}"
+Momentum Strike,MOMENTUM_STRIKE,1,Attack,Common,"Deal 10 damage.
+Reduce this card's cost to 0 [energy:1].",,Strike,10,,"{""damage"": ""+3""}"
+Multi-Cast,MULTI_CAST,0,Skill,Rare,[gold]Evoke[/gold] your rightmost Orb X times.,,,,,{}
+Null,NULL,2,Attack,Uncommon,"Deal 10 damage.
+Apply 2 [gold]Weak[/gold].
+[gold]Channel[/gold] 1 [gold]Dark[/gold].",,,10,,"{""damage"": ""+3"", ""weak"": ""+1""}"
+Overclock,OVERCLOCK,0,Skill,Uncommon,"Draw 2 cards.
+Add a [gold]Burn[/gold] into your [gold]Discard Pile[/gold].",,,,,"{""cards"": ""+1""}"
+Quadcast,QUADCAST,1,Skill,Ancient,[gold]Evoke[/gold] your rightmost Orb 4 times.,,,,,"{""cost"": 0}"
+Rainbow,RAINBOW,2,Skill,Rare,"[gold]Channel[/gold] 1 [gold]Lightning[/gold].
+[gold]Channel[/gold] 1 [gold]Frost[/gold].
+[gold]Channel[/gold] 1 [gold]Dark[/gold].",Exhaust,,,,"{""remove_exhaust"": 1}"
+Reboot,REBOOT,0,Skill,Rare,"Shuffle ALL your cards into your [gold]Draw Pile[/gold].
+Draw 4 cards.",Exhaust,,,,"{""cards"": ""+2""}"
+Refract,REFRACT,3,Attack,Uncommon,"Deal 9 damage twice.
+[gold]Channel[/gold] 2 [gold]Glass[/gold].",,,9,,"{""damage"": ""+3""}"
+Rocket Punch,ROCKET_PUNCH,2,Attack,Uncommon,"Deal 13 damage.
+Draw 1 card.
+When a Status card is created, reduce this card's cost to 0 [energy:1] this turn.",,,13,,"{""damage"": ""+1"", ""cards"": ""+1""}"
+Scavenge,SCAVENGE,1,Skill,Uncommon,"[gold]Exhaust[/gold] a card.
+Next turn, gain [energy:2].",,,,,"{""energy"": ""+1""}"
+Scrape,SCRAPE,1,Attack,Uncommon,"Deal 7 damage.
+Draw 4 cards.
+Discard all cards drawn this way that do not cost 0 [energy:1].",,,7,,"{""damage"": ""+3"", ""cards"": ""+1""}"
+Shadow Shield,SHADOW_SHIELD,2,Skill,Uncommon,"Gain 11 [gold]Block[/gold].
+[gold]Channel[/gold] 1 [gold]Dark[/gold].",,,,11,"{""block"": ""+4""}"
+Shatter,SHATTER,1,Attack,Rare,"Deal 11 damage to ALL enemies.
+[gold]Evoke[/gold] all of your Orbs.",,,11,,"{""damage"": ""+4""}"
+Signal Boost,SIGNAL_BOOST,1,Skill,Rare,The next Power you play is played an additional time.,Exhaust,,,,"{""cost"": 0}"
+Skim,SKIM,1,Skill,Uncommon,Draw 3 cards.,,,,,"{""cards"": ""+1""}"
+Smokestack,SMOKESTACK,1,Power,Uncommon,"Whenever you create a Status, deal 5 damage to ALL enemies.",,,,,"{""smokestackpower"": ""+2""}"
+Spinner,SPINNER,1,Power,Rare,"At the start of your turn, [gold]Channel[/gold] 1 [gold]Glass[/gold].",,,,,{}
+Storm,STORM,1,Power,Uncommon,"Whenever you play a Power, [gold]Channel[/gold] 1 [gold]Lightning[/gold].",,,,,"{""stormpower"": ""+1""}"
+Strike,STRIKE_DEFECT,1,Attack,Basic,Deal 6 damage.,,Strike,6,,"{""damage"": ""+3""}"
+Subroutine,SUBROUTINE,1,Power,Uncommon,"Whenever you play a Power, gain [energy:1].",,,,,"{""cost"": 0}"
+Sunder,SUNDER,3,Attack,Uncommon,"Deal 24 damage.
+If this kills an enemy, gain [energy:3].",,,24,,"{""damage"": ""+8""}"
+Supercritical,SUPERCRITICAL,0,Skill,Rare,Gain [energy:4].,Exhaust,,,,"{""energy"": ""+2""}"
+Sweeping Beam,SWEEPING_BEAM,1,Attack,Common,"Deal 6 damage to ALL enemies.
+Draw 1 card.",,,6,,"{""damage"": ""+3""}"
+Synchronize,SYNCHRONIZE,1,Skill,Uncommon,Gain 2 [gold]Focus[/gold] this turn for each unique Orb you have.[InCombat],Exhaust,,,,"{""remove_exhaust"": 1}"
+Synthesis,SYNTHESIS,2,Attack,Uncommon,"Deal 12 damage.
+The next Power you play costs 0 [energy:1].",,,12,,"{""damage"": ""+6""}"
+TURBO,TURBO,0,Skill,Common,"Gain [energy:2].
+Add a [gold]Void[/gold] into your [gold]Discard Pile[/gold].",,,,,"{""energy"": ""+1""}"
+Tempest,TEMPEST,0,Skill,Uncommon,[gold]Channel[/gold] X [gold]Lightning[/gold].,,,,,{}
+Tesla Coil,TESLA_COIL,0,Attack,Uncommon,"Deal 3 damage.
+Trigger all [gold]Lightning[/gold] against the enemy.",,,3,,"{""damage"": ""+3""}"
+Thunder,THUNDER,1,Power,Uncommon,"Whenever you [gold]Evoke Lightning[/gold], deal 6 damage to each enemy hit.",,,,,"{""thunderpower"": ""+2""}"
+Trash to Treasure,TRASH_TO_TREASURE,1,Power,Rare,"Whenever you create a Status card, [gold]Channel[/gold] 1 random Orb.",,,,,"{""add_innate"": 1}"
+Uproar,UPROAR,2,Attack,Common,"Deal 5 damage twice.
+Play a random Attack from your [gold]Draw Pile[/gold].",,,5,,"{""damage"": ""+2""}"
+Voltaic,VOLTAIC,2,Skill,Rare,[gold]Channel Lightning[/gold] equal to the [gold]Lightning[/gold] already [gold]Channeled[/gold] this combat.[InCombat],Exhaust,,,,"{""remove_exhaust"": 1}"
+White Noise,WHITE_NOISE,1,Skill,Uncommon,Add a random Power into your [gold]Hand[/gold]. It's free to play this turn.,Exhaust,,,,"{""cost"": 0}"
+Zap,ZAP,1,Skill,Basic,[gold]Channel[/gold] 1 [gold]Lightning[/gold].,,,,,"{""cost"": 0}"

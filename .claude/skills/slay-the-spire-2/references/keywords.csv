@@ -1,0 +1,9 @@
+name,id,description
+Eternal,ETERNAL,Cannot be removed or transformed from your [gold]Deck[/gold].
+Ethereal,ETHEREAL,"If this card is in your [gold]Hand[/gold] at the end of this turn, it is [gold]Exhausted[/gold]."
+Exhaust,EXHAUST,Removed until the end of combat.
+Innate,INNATE,Start each combat with this card in your [gold]Hand[/gold].
+Period,PERIOD,
+Retain,RETAIN,Retained cards are not discarded at the end of turn.
+Sly,SLY,"If this card is discarded from your [gold]Hand[/gold] before the end of your turn, play it for free."
+Unplayable,UNPLAYABLE,Unplayable cards cannot be played.

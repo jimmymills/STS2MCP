@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Net.Http;
 using System.Text;
@@ -11,16 +12,10 @@ namespace STS2Advisor;
 
 /// <summary>
 /// In-game overlay for displaying AI advisor responses.
-/// Hotkeys trigger advice requests, responses display on screen.
-/// 
-/// Configure via STS2Advisor.conf (same folder as DLL):
-///   port=15526
-///   openclaw_url=https://openclaw.tail0ddab.ts.net
-///   openclaw_token=your-hooks-token
-///   callback_host=100.65.10.110
+/// Hotkeys trigger advice requests via local Claude Code CLI.
+/// Session context is maintained per run via --session-id.
 ///
-/// The token is your hooks.token from OpenClaw config (for /hooks/wake endpoint).
-/// callback_host should be your machine's IP that OpenClaw can reach (e.g., Tailscale IP).
+/// Requires 'claude' CLI to be available on PATH.
 /// </summary>
 public partial class AdvisorOverlay : CanvasLayer
 {
@@ -33,18 +28,12 @@ public partial class AdvisorOverlay : CanvasLayer
     private PanelContainer? _hotkeyHint; // Always-visible hotkey reminder
     private LineEdit? _chatInput; // Text input for follow-up messages
     private Button? _sendButton;
-    private static readonly System.Net.Http.HttpClient _httpClient = new() { Timeout = TimeSpan.FromSeconds(30) };
-    
-    // Loaded from config file or defaults
-    private static string _openclawBaseUrl = "";
-    private static string _openclawHookToken = "";
-    private static string _callbackHost = "localhost"; // Can be set to Tailscale IP for remote access
-    private static bool _configLoaded = false;
-    
+    private static readonly HttpClient _httpClient = new() { Timeout = TimeSpan.FromSeconds(30) };
+
     // Session key for persistent context during a run
-    // Generated once per game session, reset when game restarts
+    // Used as --session-id for Claude Code CLI to maintain conversation context
     private static string? _sessionKey = null;
-    
+
     private bool _isVisible = false;
     private string _currentAdviceType = "";
 
@@ -52,71 +41,18 @@ public partial class AdvisorOverlay : CanvasLayer
     {
         _instance = this;
         Layer = 100; // On top of everything
-        
-        LoadConfig();
+
         CreateUI();
         _panel?.Hide();  // Start with advice panel hidden, but hotkey hint visible
-        
+
         GD.Print("[STS2 Advisor] Overlay ready. Hotkeys: F1=Card, F3=Event, F4=Combat, F5=Shop, F7=Hide, F8=Reset");
-        if (!string.IsNullOrEmpty(_openclawBaseUrl))
-        {
-            GD.Print($"[STS2 Advisor] OpenClaw configured: {_openclawBaseUrl}");
-        }
-        else
-        {
-            GD.Print("[STS2 Advisor] OpenClaw not configured - will show raw state. Add openclaw_url and openclaw_token to STS2Advisor.conf");
-        }
-    }
-
-    private static void LoadConfig()
-    {
-        if (_configLoaded) return;
-        _configLoaded = true;
-        
-        try
-        {
-            string? modDir = Path.GetDirectoryName(
-                System.Reflection.Assembly.GetExecutingAssembly().Location);
-            if (modDir == null) return;
-
-            string configPath = Path.Combine(modDir, "STS2Advisor.conf");
-            if (!File.Exists(configPath)) return;
-
-            foreach (var line in File.ReadAllLines(configPath))
-            {
-                var trimmed = line.Trim();
-                if (string.IsNullOrEmpty(trimmed) || trimmed.StartsWith("#")) continue;
-                
-                var parts = trimmed.Split('=', 2);
-                if (parts.Length != 2) continue;
-                
-                var key = parts[0].Trim().ToLowerInvariant();
-                var value = parts[1].Trim();
-                
-                switch (key)
-                {
-                    case "openclaw_url":
-                        _openclawBaseUrl = value;
-                        break;
-                    case "openclaw_token":
-                        _openclawHookToken = value;
-                        break;
-                    case "callback_host":
-                        _callbackHost = value;
-                        break;
-                }
-            }
-        }
-        catch (Exception ex)
-        {
-            GD.PrintErr($"[STS2 Advisor] Failed to load overlay config: {ex.Message}");
-        }
+        GD.Print("[STS2 Advisor] Using local Claude Code CLI for advice");
     }
 
     private void CreateUI()
     {
         var viewportSize = GetViewport().GetVisibleRect().Size;
-        
+
         // ========== Always-visible hotkey hint (top right) ==========
         _hotkeyHint = new PanelContainer();
         var hintStyle = new StyleBoxFlat();
@@ -124,21 +60,21 @@ public partial class AdvisorOverlay : CanvasLayer
         hintStyle.SetCornerRadiusAll(5);
         hintStyle.SetContentMarginAll(8);
         _hotkeyHint.AddThemeStyleboxOverride("panel", hintStyle);
-        
+
         var hintLabel = new Label();
         hintLabel.Text = "🎮 F1:Card | F3:Event | F4:Combat | F5:Shop | F7:Hide | F8:Reset";
         hintLabel.AddThemeFontSizeOverride("font_size", 14);
         hintLabel.AddThemeColorOverride("font_color", new Color(0.8f, 0.8f, 0.9f));
         _hotkeyHint.AddChild(hintLabel);
-        
+
         AddChild(_hotkeyHint);
         // Position in top right area, but left of menu buttons
         _hotkeyHint.Position = new Vector2(viewportSize.X - 740, 10);
-        
+
         // ========== Main advice panel (moved up to avoid card selection) ==========
         _panel = new PanelContainer();
         _panel.CustomMinimumSize = new Vector2(600, 350);
-        
+
         // Add a semi-transparent background style
         var styleBox = new StyleBoxFlat();
         styleBox.BgColor = new Color(0.1f, 0.1f, 0.15f, 0.95f);
@@ -150,69 +86,69 @@ public partial class AdvisorOverlay : CanvasLayer
 
         var vbox = new VBoxContainer();
         vbox.SetAnchorsPreset(Control.LayoutPreset.FullRect);
-        
+
         // Header with title and close button
         var header = new HBoxContainer();
-        
+
         var title = new Label();
         title.Text = "🎮 STS2 Advisor";
         title.AddThemeFontSizeOverride("font_size", 24);
         title.SizeFlagsHorizontal = Control.SizeFlags.ExpandFill;
         header.AddChild(title);
-        
+
         _closeButton = new Button();
         _closeButton.Text = "✕";
         _closeButton.Pressed += OnClosePressed;
         header.AddChild(_closeButton);
-        
+
         vbox.AddChild(header);
-        
+
         // Separator
         var sep = new HSeparator();
         vbox.AddChild(sep);
-        
+
         // Scrollable content area
         var scroll = new ScrollContainer();
         scroll.SizeFlagsVertical = Control.SizeFlags.ExpandFill;
         scroll.CustomMinimumSize = new Vector2(0, 250);
-        
+
         _label = new RichTextLabel();
         _label.BbcodeEnabled = true;
         _label.FitContent = true;
         _label.SizeFlagsHorizontal = Control.SizeFlags.ExpandFill;
         _label.SizeFlagsVertical = Control.SizeFlags.ExpandFill;
         _label.Text = "Press a hotkey to get advice:\n\n[b]F1[/b] - Card Reward\n[b]F3[/b] - Event\n[b]F4[/b] - Combat\n[b]F5[/b] - Shop\n[b]F7[/b] - Hide\n[b]F8[/b] - Reset Session";
-        
+
         scroll.AddChild(_label);
         vbox.AddChild(scroll);
-        
+
         // Chat input for follow-up messages
         var inputRow = new HBoxContainer();
         inputRow.SizeFlagsHorizontal = Control.SizeFlags.ExpandFill;
-        
+
         _chatInput = new LineEdit();
         _chatInput.PlaceholderText = "Type follow-up question or clarification...";
         _chatInput.SizeFlagsHorizontal = Control.SizeFlags.ExpandFill;
         _chatInput.TextSubmitted += OnChatSubmitted;
         inputRow.AddChild(_chatInput);
-        
+
         _sendButton = new Button();
         _sendButton.Text = "Send";
         _sendButton.Pressed += OnSendPressed;
         inputRow.AddChild(_sendButton);
-        
+
         vbox.AddChild(inputRow);
-        
+
         // Hotkey hints at bottom of panel
         var hints = new Label();
         hints.Text = "F1:Card | F3:Event | F4:Combat | F5:Shop | F7:Hide | F8:Reset | Enter:Send";
         hints.AddThemeColorOverride("font_color", new Color(0.6f, 0.6f, 0.6f));
         hints.HorizontalAlignment = HorizontalAlignment.Center;
         vbox.AddChild(hints);
-        
+
         _panel.AddChild(vbox);
         AddChild(_panel);
-        
+
         // Position panel in upper portion of screen (moved up from center)
         _panel.Position = new Vector2(
             (viewportSize.X - _panel.CustomMinimumSize.X) / 2,
@@ -290,65 +226,74 @@ public partial class AdvisorOverlay : CanvasLayer
         }
     }
 
+    /// <summary>
+    /// Invoke Claude Code CLI with the given prompt, using --session-id for context persistence.
+    /// Returns the CLI's stdout as the response.
+    /// </summary>
+    private static async Task<string> InvokeClaude(string prompt, string sessionId)
+    {
+        var psi = new ProcessStartInfo
+        {
+            FileName = "claude",
+            ArgumentList = { "-p", "--session-id", sessionId, prompt },
+            RedirectStandardOutput = true,
+            RedirectStandardError = true,
+            UseShellExecute = false,
+            CreateNoWindow = true,
+        };
+
+        // Inherit PATH so claude CLI is found
+        psi.Environment["PATH"] = Environment.GetEnvironmentVariable("PATH") ?? "/usr/local/bin:/usr/bin:/bin";
+
+        using var process = new Process { StartInfo = psi };
+
+        var stdout = new StringBuilder();
+        var stderr = new StringBuilder();
+
+        process.OutputDataReceived += (_, e) => { if (e.Data != null) stdout.AppendLine(e.Data); };
+        process.ErrorDataReceived += (_, e) => { if (e.Data != null) stderr.AppendLine(e.Data); };
+
+        process.Start();
+        process.BeginOutputReadLine();
+        process.BeginErrorReadLine();
+
+        // Wait with a timeout (120 seconds for complex analysis)
+        var exited = await Task.Run(() => process.WaitForExit(120_000));
+        if (!exited)
+        {
+            try { process.Kill(); } catch { }
+            return "[Request timed out after 120 seconds]";
+        }
+
+        if (process.ExitCode != 0 && stdout.Length == 0)
+        {
+            var err = stderr.ToString().Trim();
+            return $"[Claude CLI error (exit {process.ExitCode})]\n{err}";
+        }
+
+        return stdout.ToString().Trim();
+    }
+
     private async void SendFollowUp(string message)
     {
         if (_chatInput != null)
         {
             _chatInput.Text = "";
         }
-        
+
         SetText($"[i]Sending: {message}...[/i]");
-        
-        // Check if OpenClaw is configured
-        if (string.IsNullOrEmpty(_openclawBaseUrl) || string.IsNullOrEmpty(_openclawHookToken))
-        {
-            SetText("[color=yellow]OpenClaw not configured[/color]");
-            return;
-        }
-        
+
         // Ensure we have a session key
         if (string.IsNullOrEmpty(_sessionKey))
         {
             _sessionKey = $"sts2-session-{Guid.NewGuid():N}";
         }
-        
-        // Register callback
-        var requestId = Advisor.RegisterAdviceRequest();
-        var callbackUrl = $"http://{_callbackHost}:{Advisor.DefaultPort}/advice";
-        
-        // Build wake message with the follow-up
-        var wakeText = $@"STS2 Advisor Follow-up (request_id: {requestId})
 
-Player message: {message}
-
-This is a follow-up to the previous advice. The player needs clarification or has additional context.
-
-After responding, POST your advice to: {callbackUrl}
-Body: {{""request_id"": ""{requestId}"", ""advice"": ""your response here""}}
-
-Keep response brief and helpful.";
-        
-        var payload = new { text = wakeText, mode = "now" };
-        var json = JsonSerializer.Serialize(payload, Advisor.JsonOptions);
-        var content = new StringContent(json, Encoding.UTF8, "application/json");
-        
-        var request = new HttpRequestMessage(HttpMethod.Post, $"{_openclawBaseUrl}/hooks/wake");
-        request.Headers.Add("Authorization", $"Bearer {_openclawHookToken}");
-        request.Content = content;
-        
         try
         {
-            var response = await _httpClient.SendAsync(request);
-            if (response.IsSuccessStatusCode)
-            {
-                SetText($"[i]Waiting for response...[/i]");
-                var advice = await Advisor.WaitForAdvice(requestId, 30000);
-                SetText(advice);
-            }
-            else
-            {
-                SetText($"[color=yellow]Error: {response.StatusCode}[/color]");
-            }
+            GD.Print($"[STS2 Advisor] Sending follow-up via Claude CLI (session: {_sessionKey})");
+            var advice = await InvokeClaude(message, _sessionKey);
+            SetText(advice);
         }
         catch (Exception ex)
         {
@@ -367,7 +312,7 @@ Keep response brief and helpful.";
             // Get run state first to establish session key
             var runStateResponse = await _httpClient.GetStringAsync($"http://localhost:{Advisor.DefaultPort}/state");
             var runState = JsonSerializer.Deserialize<JsonElement>(runStateResponse);
-            
+
             // Generate session key from run_id if available (persists context for this run)
             if (runState.TryGetProperty("run_id", out var runIdProp))
             {
@@ -377,13 +322,13 @@ Keep response brief and helpful.";
                     _sessionKey = $"sts2-run-{runId}";
                 }
             }
-            
+
             // Fallback: generate a session key if none exists
             if (string.IsNullOrEmpty(_sessionKey))
             {
                 _sessionKey = $"sts2-session-{Guid.NewGuid():N}";
             }
-            
+
             // Get the current game state from local API
             string endpoint = adviceType switch
             {
@@ -397,205 +342,29 @@ Keep response brief and helpful.";
             var stateResponse = await _httpClient.GetStringAsync($"http://localhost:{Advisor.DefaultPort}{endpoint}");
             var deckResponse = await _httpClient.GetStringAsync($"http://localhost:{Advisor.DefaultPort}/deck");
             var relicsResponse = await _httpClient.GetStringAsync($"http://localhost:{Advisor.DefaultPort}/relics");
-            
+
             // Get character for tier list context
             var character = runState.TryGetProperty("character", out var charProp) ? charProp.GetString() ?? "Unknown" : "Unknown";
-            
-            // Build the prompt for OpenClaw
+
+            // Build the prompt
             string prompt = adviceType switch
             {
-                "card" => $"Card choices:\n{stateResponse}\n\nMy deck:\n{deckResponse}\n\nMy relics:\n{relicsResponse}\n\nRecommend one card or skip, with a one-line reason.",
-                "shop" => $"Shop items:\n{stateResponse}\n\nMy deck:\n{deckResponse}\n\nMy relics:\n{relicsResponse}\n\nWhat's worth buying? Brief recommendation.",
-                "event" => $"Event:\n{stateResponse}\n\nMy deck:\n{deckResponse}\n\nMy relics:\n{relicsResponse}\n\nWhich option and why? Brief recommendation.",
-                "combat" => $"Combat state:\n{stateResponse}\n\nMy deck:\n{deckResponse}\n\nMy relics:\n{relicsResponse}\n\nBrief tactical suggestion.",
-                _ => $"STS2 Game State:\n{stateResponse}"
-            };
-            
-            // Check if OpenClaw is configured
-            if (string.IsNullOrEmpty(_openclawBaseUrl) || string.IsNullOrEmpty(_openclawHookToken))
-            {
-                SetText("[color=yellow]OpenClaw not configured[/color]\n\nAdd to STS2Advisor.conf:\n  openclaw_url=https://your-openclaw-url\n  openclaw_token=your-hook-token\n\n[i]Showing raw state:[/i]\n\n" + FormatStateAsText(adviceType, stateResponse));
-                return;
-            }
-            
-            // Register a callback request ID
-            var requestId = Advisor.RegisterAdviceRequest();
-            var callbackUrl = $"http://{_callbackHost}:{Advisor.DefaultPort}/advice";
-            
-            // Build the wake message for OpenClaw main session
-            // This triggers the main agent which has access to STS2 skill and tier lists
-            var wakeText = $@"STS2 Advisor Request (request_id: {requestId})
-
-Type: {adviceType}
-Character: {character}
-
-{prompt}
-
-After analyzing, POST your advice to: {callbackUrl}
-Body: {{""request_id"": ""{requestId}"", ""advice"": ""your advice here""}}
-
-Use your STS2 skill knowledge and tier lists. Keep advice brief (2-3 sentences).";
-            
-            // Package for OpenClaw /hooks/wake endpoint (triggers main session with skill access)
-            var payload = new
-            {
-                text = wakeText,
-                mode = "now"
+                "card" => $"STS2 Advisor Request - Card Choice\nCharacter: {character}\n\nCard choices:\n{stateResponse}\n\nMy deck:\n{deckResponse}\n\nMy relics:\n{relicsResponse}\n\nUse your STS2 skill knowledge and tier lists. Recommend one card or skip, with a one-line reason. Keep advice brief (2-3 sentences).",
+                "shop" => $"STS2 Advisor Request - Shop\nCharacter: {character}\n\nShop items:\n{stateResponse}\n\nMy deck:\n{deckResponse}\n\nMy relics:\n{relicsResponse}\n\nUse your STS2 skill knowledge and tier lists. What's worth buying? Keep advice brief (2-3 sentences).",
+                "event" => $"STS2 Advisor Request - Event\nCharacter: {character}\n\nEvent:\n{stateResponse}\n\nMy deck:\n{deckResponse}\n\nMy relics:\n{relicsResponse}\n\nUse your STS2 skill knowledge and tier lists. Which option and why? Keep advice brief (2-3 sentences).",
+                "combat" => $"STS2 Advisor Request - Combat\nCharacter: {character}\n\nCombat state:\n{stateResponse}\n\nMy deck:\n{deckResponse}\n\nMy relics:\n{relicsResponse}\n\nUse your STS2 skill knowledge and tier lists. Brief tactical suggestion (2-3 sentences).",
+                _ => $"STS2 Advisor Request\nCharacter: {character}\n\nSTS2 Game State:\n{stateResponse}\n\nUse your STS2 skill knowledge. Keep advice brief."
             };
 
-            var json = JsonSerializer.Serialize(payload, Advisor.JsonOptions);
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
-            
-            // Set up request with hook auth
-            var request = new HttpRequestMessage(HttpMethod.Post, $"{_openclawBaseUrl}/hooks/wake");
-            request.Headers.Add("Authorization", $"Bearer {_openclawHookToken}");
-            request.Content = content;
-            
-            GD.Print($"[STS2 Advisor] Sending {adviceType} wake request: {requestId}");
-            
-            try
-            {
-                var response = await _httpClient.SendAsync(request);
-                
-                if (response.IsSuccessStatusCode)
-                {
-                    // Wake sent - now wait for the callback
-                    SetText($"[i]Analyzing {adviceType}...[/i]\n\nWaiting for advice (request: {requestId})");
-                    
-                    // Wait for the advice to come back via callback
-                    var advice = await Advisor.WaitForAdvice(requestId, 30000);
-                    SetText(advice);
-                }
-                else
-                {
-                    var errorText = await response.Content.ReadAsStringAsync();
-                    SetText($"[color=yellow]OpenClaw returned {response.StatusCode}[/color]\n\n{errorText}\n\n[i]Showing raw state:[/i]\n\n" + FormatStateAsText(adviceType, stateResponse));
-                }
-            }
-            catch (HttpRequestException ex)
-            {
-                // No webhook configured or network error, show raw state
-                SetText($"[color=yellow]Could not reach OpenClaw[/color]\n{ex.Message}\n\n[i]Showing raw state:[/i]\n\n" + FormatStateAsText(adviceType, stateResponse));
-            }
+            GD.Print($"[STS2 Advisor] Sending {adviceType} request via Claude CLI (session: {_sessionKey})");
+            SetText($"[i]Analyzing {adviceType}...[/i]");
+
+            var advice = await InvokeClaude(prompt, _sessionKey);
+            SetText(advice);
         }
         catch (Exception ex)
         {
             SetText($"[color=red]Error[/color]\n\n{ex.Message}");
-        }
-    }
-
-    private string FormatStateAsText(string adviceType, string jsonState)
-    {
-        try
-        {
-            var state = JsonSerializer.Deserialize<JsonElement>(jsonState);
-            var sb = new StringBuilder();
-            
-            sb.AppendLine($"[b]{adviceType.ToUpper()} STATE[/b]\n");
-            
-            if (adviceType == "card" && state.TryGetProperty("cards", out var cards))
-            {
-                sb.AppendLine("[b]Card Choices:[/b]\n");
-                int i = 1;
-                foreach (var card in cards.EnumerateArray())
-                {
-                    var name = card.GetProperty("name").GetString();
-                    var type = card.GetProperty("type").GetString();
-                    var cost = card.GetProperty("energy_cost").GetString();
-                    var desc = card.GetProperty("description").GetString();
-                    var rarity = card.GetProperty("rarity").GetString();
-                    
-                    sb.AppendLine($"{i}. [b]{name}[/b] ({rarity}) - {cost} energy");
-                    sb.AppendLine($"   {type}: {desc}\n");
-                    i++;
-                }
-                sb.AppendLine("\n[i]Webhook not configured - showing raw state.[/i]");
-                sb.AppendLine("[i]Configure OPENCLAW_WEBHOOK_URL for AI advice.[/i]");
-            }
-            else if (adviceType == "shop" && state.TryGetProperty("items", out var items))
-            {
-                var gold = state.TryGetProperty("gold", out var g) ? g.GetInt32() : 0;
-                sb.AppendLine($"[b]Gold:[/b] {gold}\n");
-                sb.AppendLine("[b]Items:[/b]\n");
-                foreach (var item in items.EnumerateArray())
-                {
-                    var type = item.GetProperty("type").GetString();
-                    var cost = item.GetProperty("cost").GetInt32();
-                    var canAfford = item.TryGetProperty("can_afford", out var ca) && ca.GetBoolean();
-                    var name = item.TryGetProperty("name", out var n) ? n.GetString() : type;
-                    var afford = canAfford ? "[color=green]✓[/color]" : "[color=red]✗[/color]";
-                    
-                    sb.AppendLine($"{afford} {name} - {cost}g");
-                }
-            }
-            else if (adviceType == "event" && state.TryGetProperty("options", out var options))
-            {
-                var eventName = state.TryGetProperty("event_name", out var en) ? en.GetString() : "Unknown";
-                var isAncient = state.TryGetProperty("is_ancient", out var ia) && ia.GetBoolean();
-                
-                sb.AppendLine($"[b]Event:[/b] {eventName}");
-                if (isAncient) sb.AppendLine("[color=purple](Ancient Boon)[/color]");
-                sb.AppendLine();
-                
-                sb.AppendLine("[b]Options:[/b]\n");
-                foreach (var opt in options.EnumerateArray())
-                {
-                    var title = opt.TryGetProperty("title", out var t) ? t.GetString() : "?";
-                    var desc = opt.TryGetProperty("description", out var d) ? d.GetString() : "";
-                    
-                    sb.AppendLine($"• [b]{title}[/b]");
-                    sb.AppendLine($"  {desc}\n");
-                }
-            }
-            else if (adviceType == "combat")
-            {
-                var energy = state.TryGetProperty("energy", out var e) ? e.GetInt32() : 0;
-                var maxEnergy = state.TryGetProperty("max_energy", out var me) ? me.GetInt32() : 0;
-                var hp = state.TryGetProperty("hp", out var h) ? h.GetInt32() : 0;
-                var maxHp = state.TryGetProperty("max_hp", out var mh) ? mh.GetInt32() : 0;
-                
-                sb.AppendLine($"[b]Combat[/b] | Energy: {energy}/{maxEnergy} | HP: {hp}/{maxHp}\n");
-                
-                if (state.TryGetProperty("enemies", out var enemies))
-                {
-                    sb.AppendLine("[b]Enemies:[/b]");
-                    foreach (var enemy in enemies.EnumerateArray())
-                    {
-                        var name = enemy.TryGetProperty("name", out var n) ? n.GetString() : "?";
-                        var ehp = enemy.TryGetProperty("hp", out var eh) ? eh.GetInt32() : 0;
-                        var emhp = enemy.TryGetProperty("max_hp", out var emh) ? emh.GetInt32() : 0;
-                        var intents = enemy.TryGetProperty("intents", out var ints) ? ints.ToString() : "?";
-                        
-                        sb.AppendLine($"• {name} ({ehp}/{emhp}) - Intent: {intents}");
-                    }
-                    sb.AppendLine();
-                }
-                
-                if (state.TryGetProperty("hand", out var hand))
-                {
-                    sb.AppendLine("[b]Hand:[/b]");
-                    foreach (var card in hand.EnumerateArray())
-                    {
-                        var name = card.TryGetProperty("name", out var n) ? n.GetString() : "?";
-                        var cost = card.TryGetProperty("energy_cost", out var c) ? c.GetString() : "?";
-                        var canPlay = card.TryGetProperty("can_play", out var cp) && cp.GetBoolean();
-                        var playable = canPlay ? "" : " [color=red](unplayable)[/color]";
-                        
-                        sb.AppendLine($"• {name} ({cost}){playable}");
-                    }
-                }
-            }
-            else
-            {
-                // Generic JSON display
-                sb.AppendLine(jsonState);
-            }
-            
-            return sb.ToString();
-        }
-        catch
-        {
-            return jsonState;
         }
     }
 
@@ -608,7 +377,7 @@ Use your STS2 skill knowledge and tier lists. Keep advice brief (2-3 sentences).
             text = text.Replace("✅", "[color=green]✅[/color]");
             text = text.Replace("❌", "[color=red]❌[/color]");
             text = text.Replace("⭐", "[color=yellow]⭐[/color]");
-            
+
             _label.Text = text;
         }
     }

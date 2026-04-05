@@ -1,0 +1,289 @@
+name,id,image_file
+"Akabeko",AKABEKO,akabeko.png
+"Alchemical Coffer",ALCHEMICAL_COFFER,alchemical_coffer.png
+"Amethyst Aubergine",AMETHYST_AUBERGINE,amethyst_aubergine.png
+"Anchor",ANCHOR,anchor.png
+"Anchor???",FAKE_ANCHOR,fake_anchor.png
+"Arcane Scroll",ARCANE_SCROLL,arcane_scroll.png
+"Archaic Tooth",ARCHAIC_TOOTH,archaic_tooth.png
+"Art of War",ART_OF_WAR,art_of_war.png
+"Astrolabe",ASTROLABE,astrolabe.png
+"Bag of Marbles",BAG_OF_MARBLES,bag_of_marbles.png
+"Bag of Preparation",BAG_OF_PREPARATION,bag_of_preparation.png
+"Beating Remnant",BEATING_REMNANT,beating_remnant.png
+"Beautiful Bracelet",BEAUTIFUL_BRACELET,beautiful_bracelet.png
+"Bellows",BELLOWS,bellows.png
+"Belt Buckle",BELT_BUCKLE,belt_buckle.png
+"Big Hat",BIG_HAT,big_hat.png
+"Big Mushroom",BIG_MUSHROOM,big_mushroom.png
+"Biiig Hug",BIIIG_HUG,biiig_hug.png
+"Bing Bong",BING_BONG,bing_bong.png
+"Black Blood",BLACK_BLOOD,black_blood.png
+"Black Star",BLACK_STAR,black_star.png
+"Blessed Antler",BLESSED_ANTLER,blessed_antler.png
+"Blood Vial",BLOOD_VIAL,blood_vial.png
+"Blood Vial???",FAKE_BLOOD_VIAL,fake_blood_vial.png
+"Blood-Soaked Rose",BLOOD_SOAKED_ROSE,blood_soaked_rose.png
+"Bone Flute",BONE_FLUTE,bone_flute.png
+"Bone Tea",BONE_TEA,bone_tea.png
+"Book Repair Knife",BOOK_REPAIR_KNIFE,book_repair_knife.png
+"Book of Five Rings",BOOK_OF_FIVE_RINGS,book_of_five_rings.png
+"Bookmark",BOOKMARK,bookmark.png
+"Booming Conch",BOOMING_CONCH,booming_conch.png
+"Bound Phylactery",BOUND_PHYLACTERY,bound_phylactery.png
+"Bowler Hat",BOWLER_HAT,bowler_hat.png
+"Bread",BREAD,bread.png
+"Brilliant Scarf",BRILLIANT_SCARF,brilliant_scarf.png
+"Brimstone",BRIMSTONE,brimstone.png
+"Bronze Scales",BRONZE_SCALES,bronze_scales.png
+"Burning Blood",BURNING_BLOOD,burning_blood.png
+"Burning Sticks",BURNING_STICKS,burning_sticks.png
+"Byrdpip",BYRDPIP,byrdpip.png
+"Calling Bell",CALLING_BELL,calling_bell.png
+"Candelabra",CANDELABRA,candelabra.png
+"Captain's Wheel",CAPTAINS_WHEEL,captains_wheel.png
+"Cauldron",CAULDRON,cauldron.png
+"Centennial Puzzle",CENTENNIAL_PUZZLE,centennial_puzzle.png
+"Chandelier",CHANDELIER,chandelier.png
+"Charon's Ashes",CHARONS_ASHES,charons_ashes.png
+"Chemical X",CHEMICAL_X,chemical_x.png
+"Choices Paradox",CHOICES_PARADOX,choices_paradox.png
+"Circlet",CIRCLET,circlet.png
+"Claws",CLAWS,claws.png
+"Cloak Clasp",CLOAK_CLASP,cloak_clasp.png
+"Cracked Core",CRACKED_CORE,cracked_core.png
+"Crossbow",CROSSBOW,crossbow.png
+"Cursed Pearl",CURSED_PEARL,cursed_pearl.png
+"Darkstone Periapt",DARKSTONE_PERIAPT,darkstone_periapt.png
+"Data Disk",DATA_DISK,data_disk.png
+"Daughter of the Wind",DAUGHTER_OF_THE_WIND,daughter_of_the_wind.png
+"Delicate Frond",DELICATE_FROND,delicate_frond.png
+"Demon Tongue",DEMON_TONGUE,demon_tongue.png
+"Diamond Diadem",DIAMOND_DIADEM,diamond_diadem.png
+"Dingy Rug",DINGY_RUG,dingy_rug.png
+"Distinguished Cape",DISTINGUISHED_CAPE,distinguished_cape.png
+"Divine Destiny",DIVINE_DESTINY,divine_destiny.png
+"Divine Right",DIVINE_RIGHT,divine_right.png
+"Dolly's Mirror",DOLLYS_MIRROR,dollys_mirror.png
+"Dragon Fruit",DRAGON_FRUIT,dragon_fruit.png
+"Dream Catcher",DREAM_CATCHER,dream_catcher.png
+"Driftwood",DRIFTWOOD,driftwood.png
+"Dusty Tome",DUSTY_TOME,dusty_tome.png
+"Ectoplasm",ECTOPLASM,ectoplasm.png
+"Electric Shrymp",ELECTRIC_SHRYMP,electric_shrymp.png
+"Ember Tea",EMBER_TEA,ember_tea.png
+"Emotion Chip",EMOTION_CHIP,emotion_chip.png
+"Empty Cage",EMPTY_CAGE,empty_cage.png
+"Eternal Feather",ETERNAL_FEATHER,eternal_feather.png
+"Fencing Manual",FENCING_MANUAL,fencing_manual.png
+"Festive Popper",FESTIVE_POPPER,festive_popper.png
+"Fiddle",FIDDLE,fiddle.png
+"Forgotten Soul",FORGOTTEN_SOUL,forgotten_soul.png
+"Fragrant Mushroom",FRAGRANT_MUSHROOM,fragrant_mushroom.png
+"Fresnel Lens",FRESNEL_LENS,fresnel_lens.png
+"Frozen Egg",FROZEN_EGG,frozen_egg.png
+"Funerary Mask",FUNERARY_MASK,funerary_mask.png
+"Fur Coat",FUR_COAT,fur_coat.png
+"Galactic Dust",GALACTIC_DUST,galactic_dust.png
+"Gambling Chip",GAMBLING_CHIP,gambling_chip.png
+"Game Piece",GAME_PIECE,game_piece.png
+"Ghost Seed",GHOST_SEED,ghost_seed.png
+"Girya",GIRYA,girya.png
+"Glass Eye",GLASS_EYE,glass_eye.png
+"Glitter",GLITTER,glitter.png
+"Gnarled Hammer",GNARLED_HAMMER,gnarled_hammer.png
+"Gold-Plated Cables",GOLD_PLATED_CABLES,gold_plated_cables.png
+"Golden Compass",GOLDEN_COMPASS,golden_compass.png
+"Golden Pearl",GOLDEN_PEARL,golden_pearl.png
+"Gorget",GORGET,gorget.png
+"Gremlin Horn",GREMLIN_HORN,gremlin_horn.png
+"Hand Drill",HAND_DRILL,hand_drill.png
+"Happy Flower",HAPPY_FLOWER,happy_flower.png
+"Happy Flower???",FAKE_HAPPY_FLOWER,fake_happy_flower.png
+"Helical Dart",HELICAL_DART,helical_dart.png
+"History Course",HISTORY_COURSE,history_course.png
+"Horn Cleat",HORN_CLEAT,horn_cleat.png
+"Ice Cream",ICE_CREAM,ice_cream.png
+"Infused Core",INFUSED_CORE,infused_core.png
+"Intimidating Helmet",INTIMIDATING_HELMET,intimidating_helmet.png
+"Iron Club",IRON_CLUB,iron_club.png
+"Ivory Tile",IVORY_TILE,ivory_tile.png
+"Jeweled Mask",JEWELED_MASK,jeweled_mask.png
+"Jewelry Box",JEWELRY_BOX,jewelry_box.png
+"Joss Paper",JOSS_PAPER,joss_paper.png
+"Juzu Bracelet",JUZU_BRACELET,juzu_bracelet.png
+"Kifuda",KIFUDA,kifuda.png
+"Kunai",KUNAI,kunai.png
+"Kusarigama",KUSARIGAMA,kusarigama.png
+"Lantern",LANTERN,lantern.png
+"Large Capsule",LARGE_CAPSULE,large_capsule.png
+"Lasting Candy",LASTING_CANDY,lasting_candy.png
+"Lava Lamp",LAVA_LAMP,lava_lamp.png
+"Lava Rock",LAVA_ROCK,lava_rock.png
+"Lead Paperweight",LEAD_PAPERWEIGHT,lead_paperweight.png
+"Leafy Poultice",LEAFY_POULTICE,leafy_poultice.png
+"Lee's Waffle",LEES_WAFFLE,lees_waffle.png
+"Lee's Waffle???",FAKE_LEES_WAFFLE,fake_lees_waffle.png
+"Letter Opener",LETTER_OPENER,letter_opener.png
+"Lizard Tail",LIZARD_TAIL,lizard_tail.png
+"Looming Fruit",LOOMING_FRUIT,looming_fruit.png
+"Lord's Parasol",LORDS_PARASOL,lords_parasol.png
+"Lost Coffer",LOST_COFFER,lost_coffer.png
+"Lost Wisp",LOST_WISP,lost_wisp.png
+"Lucky Fysh",LUCKY_FYSH,lucky_fysh.png
+"Lunar Pastry",LUNAR_PASTRY,lunar_pastry.png
+"Mango",MANGO,mango.png
+"Mango???",FAKE_MANGO,fake_mango.png
+"Massive Scroll",MASSIVE_SCROLL,massive_scroll.png
+"Maw Bank",MAW_BANK,maw_bank.png
+"Meal Ticket",MEAL_TICKET,meal_ticket.png
+"Meat Cleaver",MEAT_CLEAVER,meat_cleaver.png
+"Meat on the Bone",MEAT_ON_THE_BONE,meat_on_the_bone.png
+"Membership Card",MEMBERSHIP_CARD,membership_card.png
+"Mercury Hourglass",MERCURY_HOURGLASS,mercury_hourglass.png
+"Metronome",METRONOME,metronome.png
+"Mini Regent",MINI_REGENT,mini_regent.png
+"Miniature Cannon",MINIATURE_CANNON,miniature_cannon.png
+"Miniature Tent",MINIATURE_TENT,miniature_tent.png
+"Molten Egg",MOLTEN_EGG,molten_egg.png
+"Mr. Struggles",MR_STRUGGLES,mr_struggles.png
+"Mummified Hand",MUMMIFIED_HAND,mummified_hand.png
+"Music Box",MUSIC_BOX,music_box.png
+"Mystic Lighter",MYSTIC_LIGHTER,mystic_lighter.png
+"Neow's Torment",NEOWS_TORMENT,neows_torment.png
+"New Leaf",NEW_LEAF,new_leaf.png
+"Ninja Scroll",NINJA_SCROLL,ninja_scroll.png
+"Nunchaku",NUNCHAKU,nunchaku.png
+"Nutritious Oyster",NUTRITIOUS_OYSTER,nutritious_oyster.png
+"Nutritious Soup",NUTRITIOUS_SOUP,nutritious_soup.png
+"Oddly Smooth Stone",ODDLY_SMOOTH_STONE,oddly_smooth_stone.png
+"Old Coin",OLD_COIN,old_coin.png
+"Orange Dough",ORANGE_DOUGH,orange_dough.png
+"Orichalcum",ORICHALCUM,orichalcum.png
+"Orichalcum???",FAKE_ORICHALCUM,fake_orichalcum.png
+"Ornamental Fan",ORNAMENTAL_FAN,ornamental_fan.png
+"Orrery",ORRERY,orrery.png
+"Pael's Blood",PAELS_BLOOD,paels_blood.png
+"Pael's Claw",PAELS_CLAW,paels_claw.png
+"Pael's Eye",PAELS_EYE,paels_eye.png
+"Pael's Flesh",PAELS_FLESH,paels_flesh.png
+"Pael's Growth",PAELS_GROWTH,paels_growth.png
+"Pael's Horn",PAELS_HORN,paels_horn.png
+"Pael's Legion",PAELS_LEGION,paels_legion.png
+"Pael's Tears",PAELS_TEARS,paels_tears.png
+"Pael's Tooth",PAELS_TOOTH,paels_tooth.png
+"Pael's Wing",PAELS_WING,paels_wing.png
+"Pandora's Box",PANDORAS_BOX,pandoras_box.png
+"Pantograph",PANTOGRAPH,pantograph.png
+"Paper Krane",PAPER_KRANE,paper_krane.png
+"Paper Phrog",PAPER_PHROG,paper_phrog.png
+"Parrying Shield",PARRYING_SHIELD,parrying_shield.png
+"Pear",PEAR,pear.png
+"Pen Nib",PEN_NIB,pen_nib.png
+"Pendulum",PENDULUM,pendulum.png
+"Permafrost",PERMAFROST,permafrost.png
+"Petrified Toad",PETRIFIED_TOAD,petrified_toad.png
+"Philosopher's Stone",PHILOSOPHERS_STONE,philosophers_stone.png
+"Phylactery Unbound",PHYLACTERY_UNBOUND,phylactery_unbound.png
+"Planisphere",PLANISPHERE,planisphere.png
+"Pocketwatch",POCKETWATCH,pocketwatch.png
+"Pollinous Core",POLLINOUS_CORE,pollinous_core.png
+"Pomander",POMANDER,pomander.png
+"Potion Belt",POTION_BELT,potion_belt.png
+"Power Cell",POWER_CELL,power_cell.png
+"Prayer Wheel",PRAYER_WHEEL,prayer_wheel.png
+"Precarious Shears",PRECARIOUS_SHEARS,precarious_shears.png
+"Precise Scissors",PRECISE_SCISSORS,precise_scissors.png
+"Preserved Fog",PRESERVED_FOG,preserved_fog.png
+"Prismatic Gem",PRISMATIC_GEM,prismatic_gem.png
+"Pumpkin Candle",PUMPKIN_CANDLE,pumpkin_candle.png
+"Punch Dagger",PUNCH_DAGGER,punch_dagger.png
+"Radiant Pearl",RADIANT_PEARL,radiant_pearl.png
+"Rainbow Ring",RAINBOW_RING,rainbow_ring.png
+"Razor Tooth",RAZOR_TOOTH,razor_tooth.png
+"Red Mask",RED_MASK,red_mask.png
+"Red Skull",RED_SKULL,red_skull.png
+"Regal Pillow",REGAL_PILLOW,regal_pillow.png
+"Regalite",REGALITE,regalite.png
+"Reptile Trinket",REPTILE_TRINKET,reptile_trinket.png
+"Ring of the Drake",RING_OF_THE_DRAKE,ring_of_the_drake.png
+"Ring of the Snake",RING_OF_THE_SNAKE,ring_of_the_snake.png
+"Ringing Triangle",RINGING_TRIANGLE,ringing_triangle.png
+"Ripple Basin",RIPPLE_BASIN,ripple_basin.png
+"Royal Poison",ROYAL_POISON,royal_poison.png
+"Royal Stamp",ROYAL_STAMP,royal_stamp.png
+"Ruined Helmet",RUINED_HELMET,ruined_helmet.png
+"Runic Capacitor",RUNIC_CAPACITOR,runic_capacitor.png
+"Runic Pyramid",RUNIC_PYRAMID,runic_pyramid.png
+"Sai",SAI,sai.png
+"Sand Castle",SAND_CASTLE,sand_castle.png
+"Screaming Flagon",SCREAMING_FLAGON,screaming_flagon.png
+"Scroll Boxes",SCROLL_BOXES,scroll_boxes.png
+"Sea Glass",SEA_GLASS,sea_glass.png
+"Seal of Gold",SEAL_OF_GOLD,seal_of_gold.png
+"Self-Forming Clay",SELF_FORMING_CLAY,self_forming_clay.png
+"Sere Talon",SERE_TALON,sere_talon.png
+"Shovel",SHOVEL,shovel.png
+"Shuriken",SHURIKEN,shuriken.png
+"Signet Ring",SIGNET_RING,signet_ring.png
+"Silver Crucible",SILVER_CRUCIBLE,silver_crucible.png
+"Sling of Courage",SLING_OF_COURAGE,sling_of_courage.png
+"Small Capsule",SMALL_CAPSULE,small_capsule.png
+"Snecko Eye",SNECKO_EYE,snecko_eye.png
+"Snecko Eye???",FAKE_SNECKO_EYE,fake_snecko_eye.png
+"Snecko Skull",SNECKO_SKULL,snecko_skull.png
+"Sozu",SOZU,sozu.png
+"Sparkling Rouge",SPARKLING_ROUGE,sparkling_rouge.png
+"Spiked Gauntlets",SPIKED_GAUNTLETS,spiked_gauntlets.png
+"Stone Calendar",STONE_CALENDAR,stone_calendar.png
+"Stone Cracker",STONE_CRACKER,stone_cracker.png
+"Stone Humidifier",STONE_HUMIDIFIER,stone_humidifier.png
+"Storybook",STORYBOOK,storybook.png
+"Strawberry",STRAWBERRY,strawberry.png
+"Strike Dummy",STRIKE_DUMMY,strike_dummy.png
+"Strike Dummy???",FAKE_STRIKE_DUMMY,fake_strike_dummy.png
+"Sturdy Clamp",STURDY_CLAMP,sturdy_clamp.png
+"Sword of Jade",SWORD_OF_JADE,sword_of_jade.png
+"Sword of Stone",SWORD_OF_STONE,sword_of_stone.png
+"Symbiotic Virus",SYMBIOTIC_VIRUS,symbiotic_virus.png
+"Tanx's Whistle",TANXS_WHISTLE,tanxs_whistle.png
+"Tea of Discourtesy",TEA_OF_DISCOURTESY,tea_of_discourtesy.png
+"The Abacus",THE_ABACUS,the_abacus.png
+"The Boot",THE_BOOT,the_boot.png
+"The Chosen Cheese",CHOSEN_CHEESE,chosen_cheese.png
+"The Courier",THE_COURIER,the_courier.png
+"The Merchant's Rug???",FAKE_MERCHANTS_RUG,fake_merchants_rug.png
+"Throwing Axe",THROWING_AXE,throwing_axe.png
+"Tingsha",TINGSHA,tingsha.png
+"Tiny Mailbox",TINY_MAILBOX,tiny_mailbox.png
+"Toasty Mittens",TOASTY_MITTENS,toasty_mittens.png
+"Toolbox",TOOLBOX,toolbox.png
+"Touch of Orobas",TOUCH_OF_OROBAS,touch_of_orobas.png
+"Tough Bandages",TOUGH_BANDAGES,tough_bandages.png
+"Toxic Egg",TOXIC_EGG,toxic_egg.png
+"Toy Box",TOY_BOX,toy_box.png
+"Tri-Boomerang",TRI_BOOMERANG,tri_boomerang.png
+"Tungsten Rod",TUNGSTEN_ROD,tungsten_rod.png
+"Tuning Fork",TUNING_FORK,tuning_fork.png
+"Twisted Funnel",TWISTED_FUNNEL,twisted_funnel.png
+"Unceasing Top",UNCEASING_TOP,unceasing_top.png
+"Undying Sigil",UNDYING_SIGIL,undying_sigil.png
+"Unsettling Lamp",UNSETTLING_LAMP,unsettling_lamp.png
+"Vajra",VAJRA,vajra.png
+"Vambrace",VAMBRACE,vambrace.png
+"Velvet Choker",VELVET_CHOKER,velvet_choker.png
+"Venerable Tea Set",VENERABLE_TEA_SET,venerable_tea_set.png
+"Venerable Tea Set???",FAKE_VENERABLE_TEA_SET,fake_venerable_tea_set.png
+"Very Hot Cocoa",VERY_HOT_COCOA,very_hot_cocoa.png
+"Vexing Puzzlebox",VEXING_PUZZLEBOX,vexing_puzzlebox.png
+"Vitruvian Minion",VITRUVIAN_MINION,vitruvian_minion.png
+"War Hammer",WAR_HAMMER,war_hammer.png
+"War Paint",WAR_PAINT,war_paint.png
+"Whetstone",WHETSTONE,whetstone.png
+"Whispering Earring",WHISPERING_EARRING,whispering_earring.png
+"White Beast Statue",WHITE_BEAST_STATUE,white_beast_statue.png
+"White Star",WHITE_STAR,white_star.png
+"Wing Charm",WING_CHARM,wing_charm.png
+"Wongo Customer Appreciation Badge",WONGO_CUSTOMER_APPRECIATION_BADGE,wongo_customer_appreciation_badge.png
+"Wongo's Mystery Ticket",WONGOS_MYSTERY_TICKET,wongos_mystery_ticket.png
+"Yummy Cookie",YUMMY_COOKIE,yummy_cookie.png

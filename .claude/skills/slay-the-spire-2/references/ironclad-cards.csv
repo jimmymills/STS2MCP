@@ -1,0 +1,143 @@
+name,id,cost,type,rarity,description,keywords,tags,damage,block,upgrade
+Aggression,AGGRESSION,1,Power,Rare,"At the start of your turn, put a random Attack from your [gold]Discard Pile[/gold] into your [gold]Hand[/gold] and [gold]Upgrade[/gold] it.",,,,,"{""add_innate"": 1}"
+Anger,ANGER,0,Attack,Common,"Deal 6 damage.
+Add a copy of this card into your [gold]Discard Pile[/gold].",,,6,,"{""damage"": ""+2""}"
+Armaments,ARMAMENTS,1,Skill,Common,"Gain 5 [gold]Block[/gold].
+[gold]Upgrade[/gold] a card in your [gold]Hand[/gold].",,,,5,{}
+Ashen Strike,ASHEN_STRIKE,1,Attack,Uncommon,"Deal 9 damage.
+Deals 3 additional damage for each card in your [gold]Exhaust Pile[/gold].",,Strike,,,"{""damage"": ""+1"", ""extradamage"": ""+1""}"
+Barricade,BARRICADE,3,Power,Rare,[gold]Block[/gold] is not removed at the start of your turn.,,,,,"{""cost"": 2}"
+Bash,BASH,2,Attack,Basic,"Deal 8 damage.
+Apply 2 [gold]Vulnerable[/gold].",,,8,,"{""damage"": ""+2"", ""vulnerable"": ""+1""}"
+Battle Trance,BATTLE_TRANCE,0,Skill,Uncommon,"Draw 3 cards.
+You cannot draw additional cards this turn.",,,,,"{""cards"": ""+1""}"
+Blood Wall,BLOOD_WALL,2,Skill,Common,"Lose 2 HP.
+Gain 16 [gold]Block[/gold].",,,,16,"{""block"": ""+4""}"
+Bloodletting,BLOODLETTING,0,Skill,Common,"Lose 3 HP.
+Gain [energy:2].",,,,,"{""energy"": ""+1""}"
+Bludgeon,BLUDGEON,3,Attack,Uncommon,Deal 32 damage.,,,32,,"{""damage"": ""+10""}"
+Body Slam,BODY_SLAM,1,Attack,Common,Deal damage equal to your [gold]Block[/gold].[InCombat],,,,,"{""cost"": 0}"
+Brand,BRAND,0,Skill,Rare,"Lose 1 HP.
+[gold]Exhaust[/gold] 1 card.
+Gain 1 [gold]Strength[/gold].",,,,,"{""strength"": ""+1""}"
+Break,BREAK,2,Attack,Ancient,"Deal 20 damage.
+Apply 5 [gold]Vulnerable[/gold].",,,20,,"{""damage"": ""+5"", ""vulnerable"": ""+2""}"
+Breakthrough,BREAKTHROUGH,1,Attack,Common,"Lose 1 HP.
+Deal 9 damage to ALL enemies.",,,9,,"{""damage"": ""+4""}"
+Bully,BULLY,0,Attack,Uncommon,"Deal 6 damage.
+Deals 2 additional damage for each [gold]Vulnerable[/gold] on the enemy.",,,,,"{""damage"": ""+1"", ""extradamage"": ""+1""}"
+Burning Pact,BURNING_PACT,1,Skill,Uncommon,"[gold]Exhaust[/gold] 1 card.
+Draw 2 cards.",,,,,"{""cards"": ""+1""}"
+Cascade,CASCADE,-1,Skill,Rare,Play the top X cards of your [gold]Draw Pile[/gold].,,,,,{}
+Cinder,CINDER,2,Attack,Common,"Deal 17 damage.
+[gold]Exhaust[/gold] the top card of your [gold]Draw Pile[/gold].",,,17,,"{""damage"": ""+5""}"
+Colossus,COLOSSUS,1,Skill,Rare,"Gain 5 [gold]Block[/gold].
+You receive 50% less damage from [gold]Vulnerable[/gold] enemies this turn.",,,,5,"{""block"": ""+3""}"
+Conflagration,CONFLAGRATION,1,Attack,Rare,"Deal 10 damage to ALL enemies.
+Deals 2 additional damage for each other Attack you've played this turn.",,,,,"{""damage"": ""+1"", ""calculationbase"": ""+1"", ""extradamage"": ""+1""}"
+Corruption,CORRUPTION,3,Power,Ancient,"Skills cost 0 [energy:1].
+Whenever you play a Skill, [gold]Exhaust[/gold] it.",,,,,"{""cost"": 2}"
+Crimson Mantle,CRIMSON_MANTLE,1,Power,Rare,"At the start of your turn, lose 1 HP and gain 8 [gold]Block[/gold].",,,,,"{""crimsonmantlepower"": ""+2""}"
+Cruelty,CRUELTY,1,Power,Rare,[gold]Vulnerable[/gold] enemies take an additional 25% damage.,,,,,"{""crueltypower"": ""+25""}"
+Dark Embrace,DARK_EMBRACE,2,Power,Rare,"Whenever a card is [gold]Exhausted[/gold],
+draw 1 card.",,,,,"{""cost"": 1}"
+Defend,DEFEND_IRONCLAD,1,Skill,Basic,Gain 5 [gold]Block[/gold].,,Defend,,5,"{""block"": ""+3""}"
+Demon Form,DEMON_FORM,3,Power,Rare,"At the start of your turn, gain 2 [gold]Strength[/gold].",,,,,"{""strengthpower"": ""+1""}"
+Demonic Shield,DEMONIC_SHIELD,0,Skill,Uncommon,"Lose 1 HP.
+Give another player [gold]Block[/gold] equal to your [gold]Block[/gold].[InCombat]",Exhaust,,,,"{""remove_exhaust"": 1}"
+Dismantle,DISMANTLE,1,Attack,Uncommon,"Deal 8 damage.
+If the enemy is [gold]Vulnerable[/gold], hits twice.",,,8,,"{""damage"": ""+2""}"
+Dominate,DOMINATE,1,Skill,Uncommon,Gain 1 [gold]Strength[/gold] for each [gold]Vulnerable[/gold] on the enemy.,Exhaust,,,,"{""remove_exhaust"": 1}"
+Drum of Battle,DRUM_OF_BATTLE,0,Power,Uncommon,"Draw 2 cards.
+At the start of your turn, [gold]Exhaust[/gold] the top card of your [gold]Draw Pile[/gold].",,,,,"{""cards"": ""+1""}"
+Evil Eye,EVIL_EYE,1,Skill,Uncommon,"Gain 8 [gold]Block[/gold].
+Gain another 8 [gold]Block[/gold] if you have [gold]Exhausted[/gold] a card this turn.",,,,8,"{""block"": ""+3""}"
+Expect a Fight,EXPECT_A_FIGHT,2,Skill,Uncommon,Gain [energy:1] for each Attack in your [gold]Hand[/gold].,,,,,"{""cost"": 1}"
+Feed,FEED,1,Attack,Rare,"Deal 10 damage.
+If [gold]Fatal[/gold], raise your Max HP by 3.",Exhaust,,10,,"{""damage"": ""+2"", ""maxhp"": ""+1""}"
+Feel No Pain,FEEL_NO_PAIN,1,Power,Uncommon,"Whenever a card is [gold]Exhausted[/gold], gain 3 [gold]Block[/gold].",,,,,"{""power"": ""+1""}"
+Fiend Fire,FIEND_FIRE,2,Attack,Rare,"[gold]Exhaust[/gold] your [gold]Hand[/gold].
+Deal 7 damage for each card [gold]Exhausted[/gold].",Exhaust,,7,,"{""damage"": ""+3""}"
+Fight Me!,FIGHT_ME,2,Attack,Uncommon,"Deal 5 damage twice.
+Gain 2 [gold]Strength[/gold].
+The enemy gains 1 [gold]Strength[/gold].",,,5,,"{""damage"": ""+1"", ""strength"": ""+1""}"
+Flame Barrier,FLAME_BARRIER,2,Skill,Uncommon,"Gain 12 [gold]Block[/gold].
+Whenever you are attacked this turn, deal 4 damage back.",,,,12,"{""block"": ""+4"", ""damageback"": ""+2""}"
+Forgotten Ritual,FORGOTTEN_RITUAL,1,Skill,Uncommon,"If you [gold]Exhausted[/gold] a card this turn, gain [energy:3].",,,,,"{""energy"": ""+1""}"
+Grapple,GRAPPLE,1,Attack,Uncommon,"Deal 7 damage.
+Whenever you gain [gold]Block[/gold] this turn, deal 5 damage to the enemy.",,,7,,"{""damage"": ""+2"", ""grapplepower"": ""+2""}"
+Havoc,HAVOC,1,Skill,Common,Play the top card of your [gold]Draw Pile[/gold] and [gold]Exhaust[/gold] it.,,,,,"{""cost"": 0}"
+Headbutt,HEADBUTT,1,Attack,Common,"Deal 9 damage.
+Put a card from your [gold]Discard Pile[/gold] on top of your [gold]Draw Pile[/gold].",,,9,,"{""damage"": ""+3""}"
+Hellraiser,HELLRAISER,2,Power,Rare,"Whenever you draw a card containing “Strike”, it is played against a random enemy.",,,,,"{""cost"": 1}"
+Hemokinesis,HEMOKINESIS,1,Attack,Uncommon,"Lose 2 HP.
+Deal 14 damage.",,,14,,"{""damage"": ""+5""}"
+Howl from Beyond,HOWL_FROM_BEYOND,3,Attack,Uncommon,"Deal 16 damage to ALL enemies.
+At the start of your turn, plays from the [gold]Exhaust Pile[/gold].",,,16,,"{""damage"": ""+5""}"
+Impervious,IMPERVIOUS,2,Skill,Rare,Gain 30 [gold]Block[/gold].,Exhaust,,,30,"{""block"": ""+10""}"
+Infernal Blade,INFERNAL_BLADE,1,Skill,Uncommon,Add a random Attack into your [gold]Hand[/gold]. It's free to play this turn.,Exhaust,,,,"{""cost"": 0}"
+Inferno,INFERNO,1,Power,Uncommon,"At the start of your turn, lose 1 HP.
+Whenever you lose HP on your turn, deal 6 damage to ALL enemies.",,,,,"{""infernopower"": ""+3""}"
+Inflame,INFLAME,1,Power,Uncommon,Gain 2 [gold]Strength[/gold].,,,,,"{""strengthpower"": ""+1""}"
+Iron Wave,IRON_WAVE,1,Attack,Common,"Gain 5 [gold]Block[/gold].
+Deal 5 damage.",,,5,5,"{""damage"": ""+2"", ""block"": ""+2""}"
+Juggernaut,JUGGERNAUT,2,Power,Rare,"Whenever you gain [gold]Block[/gold], deal 5 damage to a random enemy.",,,,,"{""juggernautpower"": ""+2""}"
+Juggling,JUGGLING,1,Power,Uncommon,Add a copy of the third [gold]Attack[/gold] you play each turn into your [gold]Hand[/gold].,,,,,"{""add_innate"": 1}"
+Mangle,MANGLE,3,Attack,Rare,"Deal 15 damage.
+Enemy loses 10 [gold]Strength[/gold] this turn.",,,15,,"{""damage"": ""+5"", ""strengthloss"": ""+5""}"
+Molten Fist,MOLTEN_FIST,1,Attack,Common,"Deal 10 damage.
+Double the enemy's [gold]Vulnerable[/gold].",Exhaust,,10,,"{""damage"": ""+4""}"
+Offering,OFFERING,0,Skill,Rare,"Lose 6 HP.
+Gain [energy:2].
+Draw 3 cards.",Exhaust,,,,"{""cards"": ""+2""}"
+One-Two Punch,ONE_TWO_PUNCH,1,Skill,Rare,"This turn, your next Attack is played an extra time.",,,,,"{""attacks"": ""+1""}"
+Pact's End,PACTS_END,0,Attack,Rare,"Can only be played if you have 3 or more cards in your [gold]Exhaust Pile[/gold].
+Deal 17 damage to ALL enemies.",,,17,,"{""damage"": ""+6""}"
+Perfected Strike,PERFECTED_STRIKE,2,Attack,Common,"Deal 8 damage.
+Deals 2 additional damage for ALL your cards containing “Strike”.",,Strike,,,"{""damage"": ""+1"", ""extradamage"": ""+1""}"
+Pillage,PILLAGE,1,Attack,Uncommon,"Deal 6 damage.
+Draw cards until you draw a non-Attack card.",,,6,,"{""damage"": ""+3""}"
+Pommel Strike,POMMEL_STRIKE,1,Attack,Common,"Deal 9 damage.
+Draw 1 card.",,Strike,9,,"{""damage"": ""+1"", ""cards"": ""+1""}"
+Primal Force,PRIMAL_FORCE,0,Skill,Rare,Transform all Attacks in your [gold]Hand[/gold] into [gold]Giant Rock[/gold].,,,,,{}
+Pyre,PYRE,2,Power,Rare,Gain [energy:1] at the start of each turn.,,,,,"{""energy"": ""+1""}"
+Rage,RAGE,0,Skill,Uncommon,"Whenever you play an Attack this turn, gain 3 [gold]Block[/gold].",,,,,"{""power"": ""+2""}"
+Rampage,RAMPAGE,1,Attack,Uncommon,"Deal 9 damage.
+Increase this card's damage by 5 this combat.",,,9,,"{""increase"": ""+4""}"
+Rupture,RUPTURE,1,Power,Uncommon,"Whenever you lose HP on your turn, gain 1 [gold]Strength[/gold].",,,,,"{""strength"": ""+1""}"
+Second Wind,SECOND_WIND,1,Skill,Uncommon,[gold]Exhaust[/gold] all non-Attack cards in your [gold]Hand[/gold]. Gain 5 [gold]Block[/gold] for each card [gold]Exhausted[/gold].,,,,5,"{""block"": ""+2""}"
+Setup Strike,SETUP_STRIKE,1,Attack,Common,"Deal 7 damage.
+Gain 2 [gold]Strength[/gold] this turn.",,Strike,7,,"{""damage"": ""+2"", ""strength"": ""+1""}"
+Shrug It Off,SHRUG_IT_OFF,1,Skill,Common,"Gain 8 [gold]Block[/gold].
+Draw 1 card.",,,,8,"{""block"": ""+3""}"
+Spite,SPITE,0,Attack,Uncommon,"Deal 6 damage.
+If you lost HP this turn, draw 1 card.",,,6,,"{""damage"": ""+3""}"
+Stampede,STAMPEDE,2,Power,Uncommon,"At the end of your turn, 1 random Attack in your [gold]Hand[/gold] is played against a random enemy.",,,,,"{""cost"": 1}"
+Stoke,STOKE,1,Skill,Rare,"[gold]Exhaust[/gold] your [gold]Hand[/gold].
+Draw a card for each card [gold]Exhausted[/gold].",Exhaust,,,,"{""cost"": 0}"
+Stomp,STOMP,3,Attack,Uncommon,"Deal 12 damage to ALL enemies.
+Costs 1 less [energy:1] for each Attack played this turn.",,,12,,"{""damage"": ""+3""}"
+Stone Armor,STONE_ARMOR,1,Power,Uncommon,Gain 4 [gold]Plating[/gold].,,,,,"{""platingpower"": ""+2""}"
+Strike,STRIKE_IRONCLAD,1,Attack,Basic,Deal 6 damage.,,Strike,6,,"{""damage"": ""+3""}"
+Sword Boomerang,SWORD_BOOMERANG,1,Attack,Common,Deal 3 damage to a random enemy 3 times.,,,3,,"{""repeat"": ""+1""}"
+Tank,TANK,1,Power,Rare,"Take double damage from enemies.
+Allies take half damage from enemies.",,,,,"{""cost"": 0}"
+Taunt,TAUNT,1,Skill,Uncommon,"Gain 7 [gold]Block[/gold].
+Apply 1 [gold]Vulnerable[/gold].",,,,7,"{""block"": ""+1"", ""vulnerable"": ""+1""}"
+Tear Asunder,TEAR_ASUNDER,2,Attack,Rare,"Deal 5 damage.
+Hits an additional time for each time you lost HP this combat.[InCombat]",,,5,,"{""damage"": ""+2""}"
+Thrash,THRASH,1,Attack,Rare,"Deal 4 damage twice.
+[gold]Exhaust[/gold] a random Attack in your [gold]Hand[/gold] and add its damage to this card.",,,4,,"{""damage"": ""+2""}"
+Thunderclap,THUNDERCLAP,1,Attack,Common,Deal 4 damage and apply 1 [gold]Vulnerable[/gold] to ALL enemies.,,,4,,"{""damage"": ""+3""}"
+Tremble,TREMBLE,1,Skill,Common,Apply 2 [gold]Vulnerable[/gold].,,,,,"{""vulnerable"": ""+1""}"
+True Grit,TRUE_GRIT,1,Skill,Common,"Gain 7 [gold]Block[/gold].
+[gold]Exhaust[/gold] 1 card at random.",,,,7,"{""block"": ""+2""}"
+Twin Strike,TWIN_STRIKE,1,Attack,Common,Deal 5 damage twice.,,Strike,5,,"{""damage"": ""+2""}"
+Unmovable,UNMOVABLE,2,Power,Rare,"The first time you gain [gold]Block[/gold] from a card each turn, double the amount gained.",,,,,"{""cost"": 1}"
+Unrelenting,UNRELENTING,2,Attack,Uncommon,"Deal 12 damage.
+The next Attack you play costs 0 [energy:1].",,,12,,"{""damage"": ""+6""}"
+Uppercut,UPPERCUT,2,Attack,Uncommon,"Deal 13 damage.
+Apply 1 [gold]Weak[/gold].
+Apply 1 [gold]Vulnerable[/gold].",,,13,,"{""power"": ""+1""}"
+Vicious,VICIOUS,1,Power,Uncommon,"Whenever you apply [gold]Vulnerable[/gold], draw 1 card.",,,,,"{""cards"": ""+1""}"
+Whirlwind,WHIRLWIND,0,Attack,Uncommon,Deal 5 damage to ALL enemies X times.,,,5,,"{""damage"": ""+3""}"

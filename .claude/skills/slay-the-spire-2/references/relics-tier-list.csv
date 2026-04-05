@@ -1,0 +1,289 @@
+name,id,tier,rarity,character,pool,description,notes
+Akabeko,AKABEKO,A,Uncommon Relic,Shared,shared,"At the start of each combat, gain [blue]8[/blue] [gold]Vigor[/gold].",8 Vigor at combat start. First attack hits harder.
+Alchemical Coffer,ALCHEMICAL_COFFER,B,Ancient Relic,Shared,shared,"Upon pickup, gain [blue]4[/blue] potion slots filled with random potions.",Standard relic. Evaluate based on deck needs.
+Amethyst Aubergine,AMETHYST_AUBERGINE,C,Common Relic,Shared,shared,Enemies drop [blue]10[/blue] additional [gold]Gold[/gold].,Enemies drop +10 Gold. Minor gold boost.
+Anchor,ANCHOR,A,Common Relic,Shared,shared,Start each combat with [blue]10[/blue] [gold]Block[/gold].,Start with 10 Block. Smooths early turns for all characters.
+Anchor???,FAKE_ANCHOR,B,Event Relic,Shared,shared,Start each combat with [blue]4[/blue] [gold]Block[/gold].,Standard relic. Evaluate based on deck needs.
+Arcane Scroll,ARCANE_SCROLL,B,Ancient Relic,Shared,shared,"Upon pickup, obtain a random [gold]Rare Card[/gold] to add to your [gold]Deck[/gold].",Standard relic. Evaluate based on deck needs.
+Archaic Tooth,ARCHAIC_TOOTH,B,Ancient Relic,Shared,shared,"Upon pickup, [gold]Transform[/gold] a starter card with an ancient version.",Standard relic. Evaluate based on deck needs.
+Art of War,ART_OF_WAR,B,Rare Relic,Shared,shared,"If you do not play any Attacks during your turn, gain an additional [energy:1] next turn.",Standard relic. Evaluate based on deck needs.
+Astrolabe,ASTROLABE,S,Ancient Relic,Shared,shared,"Upon pickup, [gold]Transform[/gold] [blue]3[/blue] cards, then [gold]Upgrade[/gold] them.",Transform 3 cards + Upgrade. Deck refinement.
+Bag of Marbles,BAG_OF_MARBLES,B,Uncommon Relic,Shared,shared,"At the start of each combat, apply [blue]1[/blue] [gold]Vulnerable[/gold] to ALL enemies.",Standard relic. Evaluate based on deck needs.
+Bag of Preparation,BAG_OF_PREPARATION,A,Common Relic,Shared,shared,"At the start of each combat, draw [blue]2[/blue] additional cards.",Draw 2 extra cards turn 1. Consistency boost.
+Beating Remnant,BEATING_REMNANT,A,Rare Relic,Shared,shared,You cannot lose more than [blue]20[/blue] HP in a single turn.,Cannot lose more than 20 HP per turn. Anti-burst.
+Beautiful Bracelet,BEAUTIFUL_BRACELET,B,Ancient Relic,Shared,shared,"Upon pickup, choose [blue]3[/blue] cards in your [gold]Deck[/gold]. [gold]Enchant[/gold] them with [purple]Swift[/purple] [blue]3[/blue].",Standard relic. Evaluate based on deck needs.
+Bellows,BELLOWS,B,Uncommon Relic,Shared,shared,The first [gold]Hand[/gold] you draw each combat is [gold]Upgraded[/gold].,Standard relic. Evaluate based on deck needs.
+Belt Buckle,BELT_BUCKLE,B,Shop Relic,Shared,shared,"While you have no potions, you have [blue]2[/blue] additional [gold]Dexterity[/gold].",Standard relic. Evaluate based on deck needs.
+Big Hat,BIG_HAT,C,Rare Relic,Shared,necrobinder,"At the start of each combat, add [blue]2[/blue] random [gold]Ethereal[/gold] cards into your [gold]Hand[/gold].",2 random Ethereal cards at start. Too inconsistent.
+Big Mushroom,BIG_MUSHROOM,C,Event Relic,Shared,shared,"Upon pickup, raise your Max HP by [blue]20[/blue]. At the start of each combat, draw [blue]2[/blue] fewer cards.","+20 Max HP, draw 2 fewer turn 1. HP vs consistency tradeoff."
+Biiig Hug,BIIIG_HUG,B,Ancient Relic,Shared,shared,"Upon pickup, remove [blue]4[/blue] cards from your [gold]Deck[/gold]. Whenever you shuffle your [gold]Draw Pile[/gold], add a [gold]Soot[/gold] into your [gold]Draw Pile[/gold].",Standard relic. Evaluate based on deck needs.
+Bing Bong,BING_BONG,B,Event Relic,Shared,shared,"Whenever you add a card to your [gold]Deck[/gold], add one additional copy.","Add card = add copy. Doubles picks, doubles dilution."
+Black Blood,BLACK_BLOOD,S,Starter Relic,Shared,ironclad,"At the end of combat, heal [green]12[/green] HP.",Upgrade. Heal 12 HP after combat. Keep Ironclad healthy.
+Black Star,BLACK_STAR,B,Ancient Relic,Shared,shared,[gold]Elites[/gold] drop an additional Relic when defeated.,Standard relic. Evaluate based on deck needs.
+Blessed Antler,BLESSED_ANTLER,B,Ancient Relic,Shared,shared,"Gain [energy:1] at the start of each turn. At the start of each combat, shuffle [blue]3[/blue] [gold]Dazed[/gold] into your [gold]Draw Pile[/gold].",Standard relic. Evaluate based on deck needs.
+Blood Vial,BLOOD_VIAL,B,Common Relic,Shared,shared,"At the start of each combat, heal [green]2[/green] HP.",Standard relic. Evaluate based on deck needs.
+Blood Vial???,FAKE_BLOOD_VIAL,B,Event Relic,Shared,shared,"At the start of each combat, heal [green]1[/green] HP.",Standard relic. Evaluate based on deck needs.
+Blood-Soaked Rose,BLOOD_SOAKED_ROSE,B,Ancient Relic,Shared,shared,"Upon pickup, add [blue]1[/blue] [red]Enthralled[/red] to your [gold]Deck[/gold]. Gain [energy:1] at the start of each turn.",Standard relic. Evaluate based on deck needs.
+Bone Flute,BONE_FLUTE,A,Common Relic,Shared,necrobinder,"Whenever [gold]Osty[/gold] attacks, gain [blue]2[/blue] [gold]Block[/gold].",Osty attacks = 2 Block. Free Block every turn.
+Bone Tea,BONE_TEA,B,Event Relic,Shared,shared,"At the start of the next [blue]2[/blue] combats, [gold]Upgrade[/gold] your starting hand.",Standard relic. Evaluate based on deck needs.
+Book Repair Knife,BOOK_REPAIR_KNIFE,A,Uncommon Relic,Shared,necrobinder,"Whenever a non-Minion enemy dies to [gold]Doom[/gold], heal [green]3[/green] HP.",Doom kills heal 3. Sustain for 66 HP character.
+Book of Five Rings,BOOK_OF_FIVE_RINGS,B,Common Relic,Shared,shared,"Every [blue]5[/blue] cards you add to your [gold]Deck[/gold], heal [green]15[/green] HP.",Standard relic. Evaluate based on deck needs.
+Bookmark,BOOKMARK,B,Rare Relic,Shared,necrobinder,"At the end of each turn, lower the cost of a random [gold]Retained[/gold] card by [blue]1[/blue] until played.",End turn: random Retained card -1 cost. Retain builds.
+Booming Conch,BOOMING_CONCH,B,Ancient Relic,Shared,shared,"At the start of [gold]Elite[/gold] combats, draw [blue]2[/blue] additional cards.",Standard relic. Evaluate based on deck needs.
+Bound Phylactery,BOUND_PHYLACTERY,A,Starter Relic,Shared,necrobinder,"At the start of your turn, [gold]Summon[/gold] [blue]1[/blue].",Starter. Summon 1 at turn start. Early board presence.
+Bowler Hat,BOWLER_HAT,B,Uncommon Relic,Shared,shared,Gain [blue]20%[/blue] additional [gold]Gold[/gold].,Standard relic. Evaluate based on deck needs.
+Bread,BREAD,B,Shop Relic,Shared,shared,"At the start of your first turn, lose [energy:2]. At the start of all other turns, gain [energy:1].",Standard relic. Evaluate based on deck needs.
+Brilliant Scarf,BRILLIANT_SCARF,B,Ancient Relic,Shared,shared,The [blue]5th[/blue] card you play each turn is free.,Standard relic. Evaluate based on deck needs.
+Brimstone,BRIMSTONE,C,Shop Relic,Shared,ironclad,"At the start of your turn, gain [blue][SelfStrength][/blue] [gold]Strength[/gold] and ALL enemies gain [blue][EnemyStrength][/blue] [gold]Strength[/gold].",RISKY: +2 Str but enemies +1 Str. Only if you kill fast. Skip on Necrobinder.
+Bronze Scales,BRONZE_SCALES,B,Common Relic,Shared,shared,Start each combat with [blue]3[/blue] [gold]Thorns[/gold].,Take attack damage = deal 3 back. Thorns effect.
+Burning Blood,BURNING_BLOOD,A,Starter Relic,Shared,ironclad,"At the end of combat, heal [green]6[/green] HP.",Starter. Heal 6 HP after combat. Most forgiving start.
+Burning Sticks,BURNING_STICKS,B,Shop Relic,Shared,shared,"The first time each combat you [gold]Exhaust[/gold] a Skill, add a copy of it into your [gold]Hand[/gold].",Standard relic. Evaluate based on deck needs.
+Byrdpip,BYRDPIP,B,Event Relic,Shared,shared,"Upon pickup, gain the card [gold]Byrd Swoop[/gold]. A [gold]Byrdpip[/gold] will accompany you in battles.",Standard relic. Evaluate based on deck needs.
+Calling Bell,CALLING_BELL,D,Ancient Relic,Shared,shared,"Upon pickup, obtain a unique [red]Curse[/red] and [blue]3[/blue] [gold]Relics[/gold].",TRAP: 3 relics + curse. Bad relic worse than no relic.
+Candelabra,CANDELABRA,B,Uncommon Relic,Shared,shared,"At the start of your [blue]2nd[/blue] turn, gain [energy:2].",Standard relic. Evaluate based on deck needs.
+Captain's Wheel,CAPTAINS_WHEEL,B,Rare Relic,Shared,shared,"At the start of your [blue]3rd[/blue] turn, gain [blue]18[/blue] [gold]Block[/gold].",Turn 3 = 18 Block. Strong defensive milestone.
+Cauldron,CAULDRON,B,Shop Relic,Shared,shared,"Upon pickup, brews [blue]5[/blue] random potions.",5 random potions on pickup. Immediate burst.
+Centennial Puzzle,CENTENNIAL_PUZZLE,B,Common Relic,Shared,shared,"The first time you lose HP each combat, draw [blue]3[/blue] cards.",Standard relic. Evaluate based on deck needs.
+Chandelier,CHANDELIER,B,Rare Relic,Shared,shared,"At the start of your [blue]3rd[/blue] turn, gain [energy:3].",Standard relic. Evaluate based on deck needs.
+Charon's Ashes,CHARONS_ASHES,A,Rare Relic,Shared,ironclad,"Whenever you [gold]Exhaust[/gold] a card, deal [blue]3[/blue] damage to ALL enemies.",Exhaust deals 3 AoE. Defines Exhaust archetype.
+Chemical X,CHEMICAL_X,A,Shop Relic,Shared,shared,The effects of your cost [blue]X[/blue] cards are increased by [blue]2[/blue].,X-cost +2 effect. Only if you have X-cost cards.
+Choices Paradox,CHOICES_PARADOX,B,Ancient Relic,Shared,shared,"At the start of each combat, add [blue]1[/blue] of [blue]5[/blue] random cards into your [gold]Hand[/gold]. Add [gold]Retain[/gold] to the chosen card.",Standard relic. Evaluate based on deck needs.
+Circlet,CIRCLET,B,None,Shared,shared,It's a circlet.,Standard relic. Evaluate based on deck needs.
+Claws,CLAWS,B,Ancient Relic,Shared,shared,"Upon pickup, [gold]Transform[/gold] up to [blue]6[/blue] cards into [gold]Maul[/gold].",Standard relic. Evaluate based on deck needs.
+Cloak Clasp,CLOAK_CLASP,B,Rare Relic,Shared,shared,"At the end of your turn, gain [blue]1[/blue] [gold]Block[/gold] for each card in your [gold]Hand[/gold].",Standard relic. Evaluate based on deck needs.
+Cracked Core,CRACKED_CORE,A,Starter Relic,Shared,defect,"At the start of each combat, [gold]Channel[/gold] [blue]1[/blue] [gold]Lightning[/gold].",Starter. Channel 1 Lightning at start. Free head start.
+Crossbow,CROSSBOW,B,Ancient Relic,Shared,shared,"At the start of your turn, add a random [gold]Attack[/gold] into your [gold]Hand[/gold]. It costs [blue]0[/blue][energy:1] this turn.",Standard relic. Evaluate based on deck needs.
+Cursed Pearl,CURSED_PEARL,B,Ancient Relic,Shared,shared,"Upon pickup, receive [red]Greed[/red]. Gain [blue]333[/blue] [gold]Gold[/gold].",Standard relic. Evaluate based on deck needs.
+Darkstone Periapt,DARKSTONE_PERIAPT,A,Event Relic,Shared,shared,"Whenever you obtain a [red]Curse[/red], raise your Max HP by [blue]6[/blue].",Curse = +6 Max HP. Curse strategy enabler.
+Data Disk,DATA_DISK,S,Common Relic,Shared,defect,Start each combat with [blue]1[/blue] [gold]Focus[/gold].,Start with 1 Focus. Improves every Orb passively.
+Daughter of the Wind,DAUGHTER_OF_THE_WIND,B,Event Relic,Shared,shared,"Whenever you play an Attack, gain [blue]1[/blue] [gold]Block[/gold].",Standard relic. Evaluate based on deck needs.
+Delicate Frond,DELICATE_FROND,B,Ancient Relic,Shared,shared,"At the start of each combat, fill all empty potion slots with random potions.",Standard relic. Evaluate based on deck needs.
+Demon Tongue,DEMON_TONGUE,S,Rare Relic,Shared,ironclad,"The first time you lose HP on your turn, heal HP equal to the amount lost.","Self-damage heals you. Perfect with Hemokinesis, Breakthrough."
+Diamond Diadem,DIAMOND_DIADEM,B,Ancient Relic,Shared,shared,"Whenever you play [blue]2[/blue] or fewer cards in a turn, take half damage from enemies.",Standard relic. Evaluate based on deck needs.
+Dingy Rug,DINGY_RUG,B,Shop Relic,Shared,shared,Card rewards can now contain Colorless cards.,Standard relic. Evaluate based on deck needs.
+Distinguished Cape,DISTINGUISHED_CAPE,B,Ancient Relic,Shared,shared,"Upon pickup, lose [red]9[/red] Max HP. Add [blue]3[/blue] [gold]Apparitions[/gold] to your [gold]Deck[/gold].",Standard relic. Evaluate based on deck needs.
+Divine Destiny,DIVINE_DESTINY,S,Starter Relic,Shared,regent,"At the start of each combat, gain [star:6].",Upgrade. 6 Stars at combat start. Huge head start.
+Divine Right,DIVINE_RIGHT,A,Starter Relic,Shared,regent,"At the start of each combat, gain [star:3].",Starter. 3 Stars at combat start. Stars carry over!
+Dolly's Mirror,DOLLYS_MIRROR,A,Shop Relic,Shared,shared,"Upon pickup, obtain an additional copy of a card in your [gold]Deck[/gold].",Copy a card on pickup. Double your best card.
+Dragon Fruit,DRAGON_FRUIT,B,Shop Relic,Shared,shared,"Whenever you gain [gold]Gold[/gold], raise your Max HP by [blue]1[/blue].",Gain Gold = +1 Max HP. Scales with gold events.
+Dream Catcher,DREAM_CATCHER,B,Event Relic,Shared,shared,"Whenever you [gold]Rest[/gold], you may add a card to your [gold]Deck[/gold].",Standard relic. Evaluate based on deck needs.
+Driftwood,DRIFTWOOD,B,Ancient Relic,Shared,shared,You may reroll each card reward once.,Standard relic. Evaluate based on deck needs.
+Dusty Tome,DUSTY_TOME,B,Ancient Relic,Shared,shared,"Upon pickup, obtain an [gold]Ancient Card[/gold].",Standard relic. Evaluate based on deck needs.
+Ectoplasm,ECTOPLASM,B,Ancient Relic,Shared,shared,You can no longer gain [gold]Gold[/gold]. Gain [energy:1] at the start of each turn.,Standard relic. Evaluate based on deck needs.
+Electric Shrymp,ELECTRIC_SHRYMP,B,Ancient Relic,Shared,shared,"Upon pickup, [gold]Enchant[/gold] a Skill with [purple]Imbued[/purple].",Standard relic. Evaluate based on deck needs.
+Ember Tea,EMBER_TEA,B,Event Relic,Shared,shared,"At the start of the next [blue]2[/blue] combats, gain [blue]2[/blue] [gold]Strength[/gold].",Standard relic. Evaluate based on deck needs.
+Emotion Chip,EMOTION_CHIP,A,Rare Relic,Shared,defect,"If you lost HP during the previous turn, trigger the passive ability of all Orbs at the start of your turn.","If lost HP last turn, trigger all Orb passives. Reward for damage."
+Empty Cage,EMPTY_CAGE,A,Ancient Relic,Shared,shared,"Upon pickup, remove [blue]2[/blue] cards from your [gold]Deck[/gold].",Remove 2 cards on pickup. Deck thinning.
+Eternal Feather,ETERNAL_FEATHER,C,Uncommon Relic,Shared,shared,"For every [blue]5[/blue] cards in your [gold]Deck[/gold], heal [green]3[/green] HP whenever you enter a [gold]Rest Site[/gold].",Rest sites = +3 HP per 5 cards in deck. Minor.
+Fencing Manual,FENCING_MANUAL,A,Common Relic,Shared,regent,"At the start of each combat, [gold]Forge[/gold] [blue]10[/blue].",Forge 10 at combat start. Free enchant value.
+Festive Popper,FESTIVE_POPPER,B,Common Relic,Shared,shared,"At the start of each combat, deal [blue]9[/blue] damage to ALL enemies.",Standard relic. Evaluate based on deck needs.
+Fiddle,FIDDLE,B,Ancient Relic,Shared,shared,"At the start of each turn, draw [blue]2[/blue] additional cards. You may not draw cards during your turn.",Standard relic. Evaluate based on deck needs.
+Forgotten Soul,FORGOTTEN_SOUL,B,Event Relic,Shared,shared,"Whenever you [gold]Exhaust[/gold] a card, deal [blue]1[/blue] damage to a random enemy.",Standard relic. Evaluate based on deck needs.
+Fragrant Mushroom,FRAGRANT_MUSHROOM,B,Event Relic,Shared,shared,"Upon pickup, lose [red]15[/red] HP and [gold]Upgrade[/gold] [blue]3[/blue] random cards.",Standard relic. Evaluate based on deck needs.
+Fresnel Lens,FRESNEL_LENS,B,Event Relic,Shared,shared,"Whenever you add a card that gains [gold]Block[/gold] to your [gold]Deck[/gold], [gold]Enchant[/gold] it with [purple]Nimble[/purple] [blue]2[/blue].",Standard relic. Evaluate based on deck needs.
+Frozen Egg,FROZEN_EGG,B,Rare Relic,Shared,shared,"Whenever you add a Power into your [gold]Deck[/gold], [gold]Upgrade[/gold] it.",Standard relic. Evaluate based on deck needs.
+Funerary Mask,FUNERARY_MASK,S,Uncommon Relic,Shared,necrobinder,"At the start of each combat, add [blue]3[/blue] [gold]Souls[/gold] into your [gold]Draw Pile[/gold].",3 Souls in draw pile at start. Removes setup variance.
+Fur Coat,FUR_COAT,B,Ancient Relic,Shared,shared,"Upon pickup, mark [blue]7[/blue] random combats. Enemies in those rooms have [blue]1[/blue] HP.",Standard relic. Evaluate based on deck needs.
+Galactic Dust,GALACTIC_DUST,A,Uncommon Relic,Shared,regent,"For every [blue]10[/blue] [star:1] spent, gain [blue]10[/blue] [gold]Block[/gold].",Every 10 Stars spent = 10 Block. Defensive engine.
+Gambling Chip,GAMBLING_CHIP,S,Rare Relic,Shared,shared,"At the start of each combat, discard any number of cards then draw that many.",Free mulligan every fight. Eliminates bad opening hands.
+Game Piece,GAME_PIECE,B,Rare Relic,Shared,shared,"Whenever you play a Power, draw [blue]1[/blue] card.",Standard relic. Evaluate based on deck needs.
+Ghost Seed,GHOST_SEED,A,Shop Relic,Shared,shared,[gold]Strikes[/gold] and [gold]Defends[/gold] gain [gold]Ethereal[/gold].,Strikes/Defends gain Ethereal. Free deck thinning.
+Girya,GIRYA,B,Rare Relic,Shared,shared,You can now gain [gold]Strength[/gold] at [gold]Rest Sites[/gold]. ([blue]3[/blue] times max),Rest = +1 Strength (3 max). Slow scaling.
+Glass Eye,GLASS_EYE,B,Ancient Relic,Shared,shared,"Upon pickup, obtain [blue]2[/blue] [gold]Common[/gold] cards, [blue]2[/blue] [gold]Uncommon[/gold] cards, and [blue]1[/blue] [gold]Rare[/gold] card.",Standard relic. Evaluate based on deck needs.
+Glitter,GLITTER,B,Ancient Relic,Shared,shared,[gold]Enchant[/gold] all card rewards with [purple]Glam[/purple].,Standard relic. Evaluate based on deck needs.
+Gnarled Hammer,GNARLED_HAMMER,B,Shop Relic,Shared,shared,"Upon pickup, [gold]Enchant[/gold] up to [blue]3[/blue] Attacks with [purple]Sharp[/purple] [blue]3[/blue].",Enchant 3 Attacks with Sharp 3. Immediate damage.
+Gold-Plated Cables,GOLD_PLATED_CABLES,A,Uncommon Relic,Shared,defect,Your rightmost Orb triggers its passive an additional time.,Rightmost Orb triggers twice. Position your best Orb.
+Golden Compass,GOLDEN_COMPASS,B,Ancient Relic,Shared,shared,"Upon pickup, replace the [gold]Act[/gold] [blue]2[/blue] Map with a single special path.",Standard relic. Evaluate based on deck needs.
+Golden Pearl,GOLDEN_PEARL,B,Ancient Relic,Shared,shared,"Upon pickup, gain [blue]150[/blue] [gold]Gold[/gold].",Standard relic. Evaluate based on deck needs.
+Gorget,GORGET,B,Common Relic,Shared,shared,"At the start of each combat, gain [blue]4[/blue] [gold]Plating[/gold].",Standard relic. Evaluate based on deck needs.
+Gremlin Horn,GREMLIN_HORN,B,Uncommon Relic,Shared,shared,"Whenever an enemy dies, gain [energy:1] and draw [blue]1[/blue] card.",Kill non-minion = +1 Energy + draw 1. Snowball vs multi.
+Hand Drill,HAND_DRILL,B,Event Relic,Shared,shared,"Whenever you break an enemy's [gold]Block[/gold], apply [blue]2[/blue] [gold]Vulnerable[/gold].",Standard relic. Evaluate based on deck needs.
+Happy Flower,HAPPY_FLOWER,B,Common Relic,Shared,shared,"Every [blue]3[/blue] turns, gain [energy:1].",Standard relic. Evaluate based on deck needs.
+Happy Flower???,FAKE_HAPPY_FLOWER,B,Event Relic,Shared,shared,"Every [blue]5[/blue] turns, gain [energy:1].",Standard relic. Evaluate based on deck needs.
+Helical Dart,HELICAL_DART,S,Rare Relic,Shared,silent,"Whenever you play a [gold]Shiv[/gold], gain [blue]1[/blue] [gold]Dexterity[/gold] this turn.",Shiv = +1 Dex this turn. Shiv builds become defensive.
+History Course,HISTORY_COURSE,B,Event Relic,Shared,shared,"At the start of your turn, play a copy of your last played Attack or Skill.",Standard relic. Evaluate based on deck needs.
+Horn Cleat,HORN_CLEAT,B,Uncommon Relic,Shared,shared,"At the start of your [blue]2nd[/blue] turn, gain [blue]14[/blue] [gold]Block[/gold].",Turn 2+ = 14 Block. Strong defensive start.
+Ice Cream,ICE_CREAM,S,Rare Relic,Shared,shared,Energy is now conserved between turns.,Energy carries over turns. Top tier.
+Infused Core,INFUSED_CORE,S,Starter Relic,Shared,defect,"At the start of each combat, [gold]Channel[/gold] [blue]3[/blue] [gold]Lightning[/gold].",Upgrade. Channel 3 Lightning at start. Massive.
+Intimidating Helmet,INTIMIDATING_HELMET,B,Rare Relic,Shared,shared,"Whenever you play a card that costs [energy:2] or more, gain [blue]4[/blue] [gold]Block[/gold].",Standard relic. Evaluate based on deck needs.
+Iron Club,IRON_CLUB,B,Ancient Relic,Shared,shared,"Every [blue]4[/blue] cards you play, draw [blue]1[/blue] card.",Standard relic. Evaluate based on deck needs.
+Ivory Tile,IVORY_TILE,B,Rare Relic,Shared,necrobinder,"Whenever you play a card that costs [energy:3] or more, gain [energy:1].",Play Soul-cost card = +1 Soul. Self-sustaining economy.
+Jeweled Mask,JEWELED_MASK,B,Ancient Relic,Shared,shared,"At the start of combat put a random Power from your [gold]Draw Pile[/gold] into your [gold]Hand[/gold], it's free to play.",Standard relic. Evaluate based on deck needs.
+Jewelry Box,JEWELRY_BOX,B,Ancient Relic,Shared,shared,"Upon pickup, add [blue]1[/blue] [gold]Apotheosis[/gold] to your [gold]Deck[/gold].",Standard relic. Evaluate based on deck needs.
+Joss Paper,JOSS_PAPER,B,Uncommon Relic,Shared,shared,"Every [blue]5[/blue] times you [gold]Exhaust[/gold] a card, draw [blue]1[/blue] card.",Standard relic. Evaluate based on deck needs.
+Juzu Bracelet,JUZU_BRACELET,B,Common Relic,Shared,shared,Regular enemy combats are no longer encountered in [gold]?[/gold] rooms.,Standard relic. Evaluate based on deck needs.
+Kifuda,KIFUDA,B,Shop Relic,Shared,shared,"Upon pickup, [gold]Enchant[/gold] up to [blue]3[/blue] cards with [purple]Adroit[/purple].",Standard relic. Evaluate based on deck needs.
+Kunai,KUNAI,A,Rare Relic,Shared,shared,"Every time you play [blue]3[/blue] Attacks in a single turn, gain [blue]1[/blue] [gold]Dexterity[/gold].",Play 3 attacks = +1 Dex. Attack-heavy defense.
+Kusarigama,KUSARIGAMA,B,Uncommon Relic,Shared,shared,"Every time you play [blue]3[/blue] Attacks in a single turn, deal [blue]6[/blue] damage to a random enemy.",Standard relic. Evaluate based on deck needs.
+Lantern,LANTERN,A,Common Relic,Shared,shared,Start each combat with an additional [energy:1].,Turn 1 = +1 Energy. Gets setup cards out early.
+Large Capsule,LARGE_CAPSULE,B,Ancient Relic,Shared,shared,"Upon pickup, obtain [blue]2[/blue] random [gold]Relics[/gold]. Add an additional [gold]Strike[/gold] and [gold]Defend[/gold] to your [gold]Deck[/gold].",Standard relic. Evaluate based on deck needs.
+Lasting Candy,LASTING_CANDY,B,Rare Relic,Shared,shared,"Every other combat, your card rewards gain an additional Power.",Standard relic. Evaluate based on deck needs.
+Lava Lamp,LAVA_LAMP,B,Shop Relic,Shared,shared,"At the end of combat, [gold]Upgrade[/gold] all card rewards if you took no damage.",No damage = upgraded rewards. Defensive incentive.
+Lava Rock,LAVA_ROCK,B,Ancient Relic,Shared,shared,The Act 1 Boss drops [blue]2[/blue] [gold]Relics[/gold].,Standard relic. Evaluate based on deck needs.
+Lead Paperweight,LEAD_PAPERWEIGHT,B,Ancient Relic,Shared,shared,"Upon pickup, choose [blue]1[/blue] of [blue]2[/blue] Colorless cards to add to your [gold]Deck[/gold].",Standard relic. Evaluate based on deck needs.
+Leafy Poultice,LEAFY_POULTICE,B,Ancient Relic,Shared,shared,"Upon pickup, [gold]Transform[/gold] [blue]1[/blue] of your [gold]Strikes[/gold] and [blue]1[/blue] of your [gold]Defends[/gold] and lose [blue]10[/blue] Max HP.",Standard relic. Evaluate based on deck needs.
+Lee's Waffle,LEES_WAFFLE,B,Shop Relic,Shared,shared,"Upon pickup, raise your Max HP by [blue]7[/blue] and heal all of your HP.","+7 Max HP, full heal. Emergency sustain."
+Lee's Waffle???,FAKE_LEES_WAFFLE,B,Event Relic,Shared,shared,"Upon pickup, heal [green]10%[/green] of your HP.",Standard relic. Evaluate based on deck needs.
+Letter Opener,LETTER_OPENER,B,Uncommon Relic,Shared,shared,"Every time you play [blue]3[/blue] Skills in a single turn, deal [blue]5[/blue] damage to ALL enemies.",Play 3 Skills = 5 damage to all. Skill-heavy reward.
+Lizard Tail,LIZARD_TAIL,A,Rare Relic,Shared,shared,"When you would die, heal to [green]50%[/green] of your Max HP instead (works once).",Die = revive at 50% HP (once). Safety net.
+Looming Fruit,LOOMING_FRUIT,B,Ancient Relic,Shared,shared,"Upon pickup, raise your Max HP by [blue]31[/blue].",Standard relic. Evaluate based on deck needs.
+Lord's Parasol,LORDS_PARASOL,B,Ancient Relic,Shared,shared,"When you encounter the [gold]Merchant[/gold], immediately obtain EVERYTHING he sells.",Standard relic. Evaluate based on deck needs.
+Lost Coffer,LOST_COFFER,B,Ancient Relic,Shared,shared,"Upon pickup, gain [blue]1[/blue] card reward and procure [blue]1[/blue] random potion.",Standard relic. Evaluate based on deck needs.
+Lost Wisp,LOST_WISP,B,Event Relic,Shared,shared,"Whenever you play a [gold]Power[/gold], deal [blue]8[/blue] damage to ALL enemies.",Standard relic. Evaluate based on deck needs.
+Lucky Fysh,LUCKY_FYSH,B,Uncommon Relic,Shared,shared,"Whenever you add a card to your [gold]Deck[/gold], gain [blue]15[/blue] [gold]Gold[/gold].",Standard relic. Evaluate based on deck needs.
+Lunar Pastry,LUNAR_PASTRY,S,Rare Relic,Shared,regent,"At the end of your turn, gain [star:1].",End turn = +1 Star. Passive Stars every turn.
+Mango,MANGO,B,Rare Relic,Shared,shared,"Upon pickup, raise your Max HP by [blue]14[/blue].",Max HP +14 on pickup. Simple HP boost.
+Mango???,FAKE_MANGO,B,Event Relic,Shared,shared,"Upon pickup, raise your Max HP by [blue]3[/blue].",Standard relic. Evaluate based on deck needs.
+Massive Scroll,MASSIVE_SCROLL,B,Ancient Relic,Shared,shared,"Upon pickup, choose [blue]1[/blue] of [blue]3[/blue] [gold]Multiplayer Colorless Cards[/gold] to add to your [gold]Deck[/gold].",Standard relic. Evaluate based on deck needs.
+Maw Bank,MAW_BANK,B,Event Relic,Shared,shared,"Whenever you climb a floor, gain [blue]12[/blue] [gold]Gold[/gold]. No longer works when you spend any [gold]Gold[/gold] at the shop.",Standard relic. Evaluate based on deck needs.
+Meal Ticket,MEAL_TICKET,B,Common Relic,Shared,shared,"Whenever you enter a shop room, heal [green]15[/green] HP.",Standard relic. Evaluate based on deck needs.
+Meat Cleaver,MEAT_CLEAVER,B,Ancient Relic,Shared,shared,You may [gold]Cook[/gold] at Rest Sites.,Standard relic. Evaluate based on deck needs.
+Meat on the Bone,MEAT_ON_THE_BONE,B,Rare Relic,Shared,shared,"If your HP is at or below [blue]50%[/blue] at the end of combat, heal [green]12[/green] HP.",End combat below 50% HP = heal 12. Safety net.
+Membership Card,MEMBERSHIP_CARD,S,Shop Relic,Shared,shared,[blue]50%[/blue] discount on all products!,"Shop 50% off. Buy early, pays for itself."
+Mercury Hourglass,MERCURY_HOURGLASS,B,Uncommon Relic,Shared,shared,"At the start of your turn, deal [blue]3[/blue] damage to ALL enemies.",Start turn = 3 damage to all. Free AoE.
+Metronome,METRONOME,B,Rare Relic,Shared,defect,"The first time you [gold]Channel[/gold] [blue]7[/blue] [gold]Orbs[/gold] each combat, deal [blue]30[/blue] damage to ALL enemies.",Channel 7 Orbs = 30 AoE. Milestone bonus for Orb decks.
+Mini Regent,MINI_REGENT,S,Rare Relic,Shared,regent,"The first time you spend [star:1] each turn, gain [blue]1[/blue] [gold]Strength[/gold].",First Star spent = +1 Strength. Free Strength scaling.
+Miniature Cannon,MINIATURE_CANNON,B,Uncommon Relic,Shared,shared,[gold]Upgraded[/gold] Attacks deal [blue]3[/blue] additional damage.,Standard relic. Evaluate based on deck needs.
+Miniature Tent,MINIATURE_TENT,A,Shop Relic,Shared,shared,You may choose any number of options at [gold]Rest Sites[/gold].,All rest site options. Incredible flexibility.
+Molten Egg,MOLTEN_EGG,B,Rare Relic,Shared,shared,"Whenever you add an Attack card to your [gold]Deck[/gold], [gold]Upgrade[/gold] it.",Standard relic. Evaluate based on deck needs.
+Mr. Struggles,MR_STRUGGLES,B,Event Relic,Shared,shared,"At the start of your turn, deal damage equal to the turn number to ALL enemies.",Standard relic. Evaluate based on deck needs.
+Mummified Hand,MUMMIFIED_HAND,S,Rare Relic,Shared,shared,"Whenever you play a Power, a random card in your [gold]Hand[/gold] is free to play that turn.","Play a Power, random card costs 0. Explosive in Power-heavy decks."
+Music Box,MUSIC_BOX,B,Ancient Relic,Shared,shared,Create an [gold]Ethereal[/gold] copy of the first Attack you play each turn.,Standard relic. Evaluate based on deck needs.
+Mystic Lighter,MYSTIC_LIGHTER,B,Shop Relic,Shared,shared,[gold]Enchanted[/gold] Attacks deal [blue]9[/blue] additional damage.,Standard relic. Evaluate based on deck needs.
+Neow's Torment,NEOWS_TORMENT,B,Ancient Relic,Shared,shared,"Upon pickup, add [blue]1[/blue] [gold]Neow's Fury[/gold] to your [gold]Deck[/gold].",Standard relic. Evaluate based on deck needs.
+New Leaf,NEW_LEAF,B,Ancient Relic,Shared,shared,"Upon pickup, [gold]Transform[/gold] [blue]1[/blue] card.",Standard relic. Evaluate based on deck needs.
+Ninja Scroll,NINJA_SCROLL,B,Shop Relic,Shared,silent,"At the start of each combat, add [blue]3[/blue] [gold]Shivs[/gold] into your [gold]Hand[/gold].",3 Shivs at combat start. Shiv build only.
+Nunchaku,NUNCHAKU,B,Uncommon Relic,Shared,shared,"Every time you play [blue]10[/blue] Attacks, gain [energy:1].",Standard relic. Evaluate based on deck needs.
+Nutritious Oyster,NUTRITIOUS_OYSTER,B,Ancient Relic,Shared,shared,"Upon pickup, raise your Max HP by [blue]11[/blue].",Standard relic. Evaluate based on deck needs.
+Nutritious Soup,NUTRITIOUS_SOUP,B,Ancient Relic,Shared,shared,"Upon pickup, [gold]Enchant[/gold] all [gold]Strikes[/gold] in your [gold]Deck[/gold] with [purple]Tezcatara's Ember[/purple].",Standard relic. Evaluate based on deck needs.
+Oddly Smooth Stone,ODDLY_SMOOTH_STONE,B,Common Relic,Shared,shared,Start each combat with [blue]1[/blue] [gold]Dexterity[/gold].,+1 Dexterity. Simple defensive boost.
+Old Coin,OLD_COIN,B,Rare Relic,Shared,shared,"Upon pickup, gain [blue]300[/blue] [gold]Gold[/gold].",+300 Gold on pickup. Shop power.
+Orange Dough,ORANGE_DOUGH,B,Rare Relic,Shared,regent,"At the start of each combat, add [blue]2[/blue] random Colorless cards into your [gold]Hand[/gold].",2 random Colorless turn 1. Random but adds pressure.
+Orichalcum,ORICHALCUM,B,Uncommon Relic,Shared,shared,"If you end your turn without [gold]Block[/gold], gain [blue]6[/blue] [gold]Block[/gold].",Standard relic. Evaluate based on deck needs.
+Orichalcum???,FAKE_ORICHALCUM,B,Event Relic,Shared,shared,"If you end your turn without [gold]Block[/gold], gain [blue]3[/blue] [gold]Block[/gold].",Standard relic. Evaluate based on deck needs.
+Ornamental Fan,ORNAMENTAL_FAN,A,Uncommon Relic,Shared,shared,"Every time you play [blue]3[/blue] Attacks in a single turn, gain [blue]4[/blue] [gold]Block[/gold].","After 3 attacks, gain 4 Block. Rewards attack-heavy plays."
+Orrery,ORRERY,S,Shop Relic,Shared,shared,"Upon pickup, gain [blue]5[/blue] card rewards.",5 card rewards on pickup. Massive deck building spike.
+Pael's Blood,PAELS_BLOOD,B,Ancient Relic,Shared,shared,"At the start of your turn, draw [blue]1[/blue] additional card.",Standard relic. Evaluate based on deck needs.
+Pael's Claw,PAELS_CLAW,B,Ancient Relic,Shared,shared,"Upon pickup, [gold]Enchant[/gold] all [gold]Defends[/gold] with [purple][EnchantmentName][/purple].",Standard relic. Evaluate based on deck needs.
+Pael's Eye,PAELS_EYE,B,Ancient Relic,Shared,shared,"The first time each combat you end your turn without playing cards, [gold]Exhaust[/gold] your [gold]Hand[/gold], and take an extra turn.",Standard relic. Evaluate based on deck needs.
+Pael's Flesh,PAELS_FLESH,B,Ancient Relic,Shared,shared,"Gain an additional [energy:1] at the start of your [blue]3rd[/blue] turn, and every turn after that.",Standard relic. Evaluate based on deck needs.
+Pael's Growth,PAELS_GROWTH,B,Ancient Relic,Shared,shared,"Upon pickup, [gold]Enchant[/gold] a card with [purple][EnchantmentName][/purple].",Standard relic. Evaluate based on deck needs.
+Pael's Horn,PAELS_HORN,B,Ancient Relic,Shared,shared,"Upon pickup, add [blue]2[/blue] [gold]Relax[/gold] to your [gold]Deck[/gold].",Standard relic. Evaluate based on deck needs.
+Pael's Legion,PAELS_LEGION,B,Ancient Relic,Shared,shared,"Doubles [gold]Block[/gold] gained from a card, then goes to sleep for [blue]2[/blue] turns.",Standard relic. Evaluate based on deck needs.
+Pael's Tears,PAELS_TEARS,B,Ancient Relic,Shared,shared,"If you end your turn with unspent [energy:1], gain an additional [energy:2] next turn.",Standard relic. Evaluate based on deck needs.
+Pael's Tooth,PAELS_TOOTH,B,Ancient Relic,Shared,shared,"Upon pickup, remove [blue]5[/blue] cards from your [gold]Deck[/gold]. After each combat, randomly add [blue]1[/blue] back [gold]Upgraded[/gold].",Standard relic. Evaluate based on deck needs.
+Pael's Wing,PAELS_WING,B,Ancient Relic,Shared,shared,"You may sacrifice card rewards to Pael. Every [blue]2[/blue] sacrifices, obtain a [gold]Relic[/gold].",Standard relic. Evaluate based on deck needs.
+Pandora's Box,PANDORAS_BOX,A,Ancient Relic,Shared,shared,[gold]Transform[/gold] ALL [gold]Strikes[/gold] and [gold]Defends[/gold].,Transform all Strikes/Defends. High variance.
+Pantograph,PANTOGRAPH,B,Uncommon Relic,Shared,shared,"At the start of each [gold]Boss[/gold] combat, heal [green]25[/green] HP.",Standard relic. Evaluate based on deck needs.
+Paper Krane,PAPER_KRANE,A,Rare Relic,Shared,silent,Enemies with [gold]Weak[/gold] deal [blue]40%[/blue] less damage to you rather than [blue]25%[/blue].,Weak enemies deal 40% less. Huge damage reduction.
+Paper Phrog,PAPER_PHROG,A,Uncommon Relic,Shared,ironclad,Enemies with [gold]Vulnerable[/gold] take [blue]75%[/blue] more damage rather than [blue]50%[/blue].,Vulnerable = 75% more damage. Big multiplier.
+Parrying Shield,PARRYING_SHIELD,B,Uncommon Relic,Shared,shared,"If you end a turn with at least [blue]10[/blue] [gold]Block[/gold], deal [blue]6[/blue] damage to a random enemy.",Standard relic. Evaluate based on deck needs.
+Pear,PEAR,B,Uncommon Relic,Shared,shared,"Upon pickup, raise your Max HP by [blue]10[/blue].",Max HP +10 on pickup. Simple HP boost.
+Pen Nib,PEN_NIB,A,Uncommon Relic,Shared,shared,Every [blue]10th[/blue] Attack you play deals double damage.,Every 10th attack = 2x damage. Good for all.
+Pendulum,PENDULUM,B,Common Relic,Shared,shared,"Whenever you shuffle your [gold]Draw Pile[/gold], draw a card.",Standard relic. Evaluate based on deck needs.
+Permafrost,PERMAFROST,B,Common Relic,Shared,shared,"The first time you play a Power each combat, gain [blue]6[/blue] [gold]Block[/gold].",Standard relic. Evaluate based on deck needs.
+Petrified Toad,PETRIFIED_TOAD,B,Uncommon Relic,Shared,shared,"At the start of each combat, procure a [gold]Potion-Shaped Rock[/gold].",Standard relic. Evaluate based on deck needs.
+Philosopher's Stone,PHILOSOPHERS_STONE,B,Ancient Relic,Shared,shared,Gain [energy:1] at the start of each turn. ALL enemies start combat with [blue]1[/blue] [gold]Strength[/gold].,Standard relic. Evaluate based on deck needs.
+Phylactery Unbound,PHYLACTERY_UNBOUND,B,Starter Relic,Shared,necrobinder,"At the start of each combat, [gold]Summon[/gold] [blue]5[/blue]. At the start of your turn, [gold]Summon[/gold] [blue]2[/blue].",Standard relic. Evaluate based on deck needs.
+Planisphere,PLANISPHERE,B,Uncommon Relic,Shared,shared,"Whenever you enter a [gold]?[/gold] room, heal [green]4[/green] HP.",Standard relic. Evaluate based on deck needs.
+Pocketwatch,POCKETWATCH,B,Rare Relic,Shared,shared,"Whenever you play [blue]3[/blue] or fewer cards during your turn, draw [blue]3[/blue] additional cards at the start of your next turn.",Play 3 or fewer cards = draw 3 next turn. Draw reward.
+Pollinous Core,POLLINOUS_CORE,B,Event Relic,Shared,shared,"Every [blue]4[/blue] turns, draw [blue]2[/blue] additional cards.",Standard relic. Evaluate based on deck needs.
+Pomander,POMANDER,B,Ancient Relic,Shared,shared,"Upon pickup, [gold]Upgrade[/gold] a card.",Standard relic. Evaluate based on deck needs.
+Potion Belt,POTION_BELT,B,Common Relic,Shared,shared,"Upon pickup, gain [blue]2[/blue] potion slots.",Standard relic. Evaluate based on deck needs.
+Power Cell,POWER_CELL,B,Rare Relic,Shared,defect,"At the start of each combat, add [blue]2[/blue] zero-cost cards from your [gold]Draw Pile[/gold] into your [gold]Hand[/gold].",Standard relic. Evaluate based on deck needs.
+Prayer Wheel,PRAYER_WHEEL,B,Rare Relic,Shared,shared,Normal enemies drop an additional card reward.,Standard relic. Evaluate based on deck needs.
+Precarious Shears,PRECARIOUS_SHEARS,B,Ancient Relic,Shared,shared,"Upon pickup, remove [blue]2[/blue] cards from your [gold]Deck[/gold] and take [red]13[/red] damage.",Standard relic. Evaluate based on deck needs.
+Precise Scissors,PRECISE_SCISSORS,B,Ancient Relic,Shared,shared,"Upon pickup, remove [blue]1[/blue] card from your [gold]Deck[/gold].",Standard relic. Evaluate based on deck needs.
+Preserved Fog,PRESERVED_FOG,B,Ancient Relic,Shared,shared,"Upon pickup, remove [blue]5[/blue] cards from your [gold]Deck[/gold]. Add [red]Folly[/red] to your [gold]Deck[/gold].",Standard relic. Evaluate based on deck needs.
+Prismatic Gem,PRISMATIC_GEM,B,Ancient Relic,Shared,shared,Gain [energy:1] at the start of each turn. Card rewards now contain cards from other colors.,Standard relic. Evaluate based on deck needs.
+Pumpkin Candle,PUMPKIN_CANDLE,B,Ancient Relic,Shared,shared,Gain [energy:1] at the start of each turn. Extinguishes at the start of [gold]Act[/gold] [blue]3[/blue].,Standard relic. Evaluate based on deck needs.
+Punch Dagger,PUNCH_DAGGER,B,Shop Relic,Shared,shared,"Upon pickup, [gold]Enchant[/gold] an Attack with [purple]Momentum[/purple] [blue]5[/blue].",Standard relic. Evaluate based on deck needs.
+Radiant Pearl,RADIANT_PEARL,B,Ancient Relic,Shared,shared,"At the start of each combat, add [blue]1[/blue] [gold]Luminesce[/gold] into your [gold]Hand[/gold].",Standard relic. Evaluate based on deck needs.
+Rainbow Ring,RAINBOW_RING,B,Rare Relic,Shared,shared,"The first time you play an Attack, Skill, and Power each turn, gain [blue]1[/blue] [gold]Strength[/gold] and [blue]1[/blue] [gold]Dexterity[/gold].",Standard relic. Evaluate based on deck needs.
+Razor Tooth,RAZOR_TOOTH,B,Rare Relic,Shared,shared,"Every time you play an Attack or Skill, [gold]Upgrade[/gold] it for the remainder of combat.",Standard relic. Evaluate based on deck needs.
+Red Mask,RED_MASK,B,Uncommon Relic,Shared,shared,"At the start of each combat, apply [blue]1[/blue] [gold]Weak[/gold] to ALL enemies.",Standard relic. Evaluate based on deck needs.
+Red Skull,RED_SKULL,B,Common Relic,Shared,ironclad,"While your HP is at or below [blue]50%[/blue], you have [blue]3[/blue] additional [gold]Strength[/gold].",Below 50% HP = +3 Strength. Reward for risk.
+Regal Pillow,REGAL_PILLOW,B,Common Relic,Shared,shared,"Whenever you [gold]Rest[/gold], heal an additional [blue]15[/blue] HP.",Standard relic. Evaluate based on deck needs.
+Regalite,REGALITE,B,Uncommon Relic,Shared,regent,"Whenever you create a Colorless card, gain [blue]2[/blue] [gold]Block[/gold].",Create Colorless = 2 Block. Forge build synergy.
+Reptile Trinket,REPTILE_TRINKET,B,Uncommon Relic,Shared,shared,"Whenever you use a potion, gain [blue]3[/blue] [gold]Strength[/gold] this turn.",Standard relic. Evaluate based on deck needs.
+Ring of the Drake,RING_OF_THE_DRAKE,S,Starter Relic,Shared,silent,"At the start of your first [blue]3[/blue] turns, draw [blue]2[/blue] additional cards.",Upgrade. Draw 2 extra first 3 turns. Massive early advantage.
+Ring of the Snake,RING_OF_THE_SNAKE,A,Starter Relic,Shared,silent,"At the start of each combat, draw [blue]2[/blue] additional cards.",Starter. Draw 2 extra turn 1. Needs thin deck to shine.
+Ringing Triangle,RINGING_TRIANGLE,S,Shop Relic,Shared,shared,[gold]Retain[/gold] your [gold]Hand[/gold] on the first turn of combat.,Retain hand turn 1. Eliminates opening variance.
+Ripple Basin,RIPPLE_BASIN,B,Uncommon Relic,Shared,shared,"If you did not play any Attacks during your turn, gain [blue]4[/blue] [gold]Block[/gold].",Standard relic. Evaluate based on deck needs.
+Royal Poison,ROYAL_POISON,B,Event Relic,Shared,shared,"At the start of each combat, lose [blue]4[/blue] HP.",Standard relic. Evaluate based on deck needs.
+Royal Stamp,ROYAL_STAMP,B,Shop Relic,Shared,shared,"Upon pickup, choose an Attack or Skill in your [gold]Deck[/gold] to [gold]Enchant[/gold] with [purple][Enchantment][/purple].",Standard relic. Evaluate based on deck needs.
+Ruined Helmet,RUINED_HELMET,A,Rare Relic,Shared,ironclad,"The first time you gain [gold]Strength[/gold] each combat, double the amount gained.",First Strength gain doubled. Strong with Inflame.
+Runic Capacitor,RUNIC_CAPACITOR,S,Shop Relic,Shared,defect,Start each combat with [blue]3[/blue] additional [gold]Orb Slots[/gold].,+3 Orb slots. Essential Defect relic.
+Runic Pyramid,RUNIC_PYRAMID,B,Ancient Relic,Shared,shared,"At the end of your turn, you no longer discard your [gold]Hand[/gold].",Standard relic. Evaluate based on deck needs.
+Sai,SAI,B,Ancient Relic,Shared,shared,"At the start of your turn, gain [blue]7[/blue] [gold]Block[/gold].",Standard relic. Evaluate based on deck needs.
+Sand Castle,SAND_CASTLE,B,Ancient Relic,Shared,shared,"Upon pickup, [gold]Upgrade[/gold] [blue]6[/blue] random cards.",Standard relic. Evaluate based on deck needs.
+Screaming Flagon,SCREAMING_FLAGON,B,Shop Relic,Shared,shared,"If you end your turn with no cards in your [gold]Hand[/gold], deal [blue]20[/blue] damage to ALL enemies.",Standard relic. Evaluate based on deck needs.
+Scroll Boxes,SCROLL_BOXES,B,Ancient Relic,Shared,shared,"Upon pickup, lose all [gold]Gold[/gold] and choose [blue]1[/blue] of [blue]2[/blue] packs of cards to add to your [gold]Deck[/gold].",Standard relic. Evaluate based on deck needs.
+Sea Glass,SEA_GLASS,B,Ancient Relic,Shared,shared,See [blue]15[/blue] cards from another character. Choose any number of them to add to your [gold]Deck[/gold].,Standard relic. Evaluate based on deck needs.
+Seal of Gold,SEAL_OF_GOLD,B,Ancient Relic,Shared,shared,"At the start of your turn, spend [blue]5[/blue] [gold]Gold[/gold] to gain [energy:1].",Standard relic. Evaluate based on deck needs.
+Self-Forming Clay,SELF_FORMING_CLAY,S,Uncommon Relic,Shared,ironclad,"Whenever you lose HP in combat, gain [blue]3[/blue] [gold]Block[/gold] next turn.",Lose HP = gain 3 Block next turn. Synergizes with self-damage.
+Sere Talon,SERE_TALON,B,Ancient Relic,Shared,shared,"Upon pickup, add [blue]2[/blue] random [red]Curses[/red] and [blue]3[/blue] [purple]Wishes[/purple] to your [gold]Deck[/gold].",Standard relic. Evaluate based on deck needs.
+Shovel,SHOVEL,B,Rare Relic,Shared,shared,You can now dig at [gold]Rest Sites[/gold] to obtain a random [gold]Relic[/gold].,Rest = dig for relic. Relic generation.
+Shuriken,SHURIKEN,A,Rare Relic,Shared,shared,"Every time you play [blue]3[/blue] Attacks in a single turn, gain [blue]1[/blue] [gold]Strength[/gold].",Play 3 attacks = +1 Strength. Attack-heavy scaling.
+Signet Ring,SIGNET_RING,B,Ancient Relic,Shared,shared,"Upon pickup, gain [blue]999[/blue] [gold]Gold[/gold].",Standard relic. Evaluate based on deck needs.
+Silver Crucible,SILVER_CRUCIBLE,B,Ancient Relic,Shared,shared,The first [blue]3[/blue] card rewards you see are [gold]Upgraded[/gold]. The first Treasure Chest you open is [red]empty[/red].,Standard relic. Evaluate based on deck needs.
+Sling of Courage,SLING_OF_COURAGE,B,Shop Relic,Shared,shared,Start each [gold]Elite[/gold] combat with [blue]2[/blue] [gold]Strength[/gold].,+2 Strength in Elite fights. Elite-focused.
+Small Capsule,SMALL_CAPSULE,B,Ancient Relic,Shared,shared,"Upon pickup, obtain a random [gold]Relic[/gold].",Standard relic. Evaluate based on deck needs.
+Snecko Eye,SNECKO_EYE,B,Ancient Relic,Shared,shared,"At the start of your turn, draw [blue]2[/blue] additional cards. Start each combat [red]Confused[/red].",Standard relic. Evaluate based on deck needs.
+Snecko Eye???,FAKE_SNECKO_EYE,B,Event Relic,Shared,shared,Start each combat [red]Confused[/red].,Standard relic. Evaluate based on deck needs.
+Snecko Skull,SNECKO_SKULL,A,Common Relic,Shared,silent,"Whenever you apply [gold]Poison[/gold], apply an additional [blue]1[/blue] [gold]Poison[/gold].",Poison +1 extra. Doubles poison stacking rate.
+Sozu,SOZU,B,Ancient Relic,Shared,shared,Gain [energy:1] at the start of each turn. You can no longer obtain potions.,Standard relic. Evaluate based on deck needs.
+Sparkling Rouge,SPARKLING_ROUGE,B,Uncommon Relic,Shared,shared,"At the start of your [blue]3rd[/blue] turn, gain [blue]1[/blue] [gold]Strength[/gold] and [blue]1[/blue] [gold]Dexterity[/gold].",Standard relic. Evaluate based on deck needs.
+Spiked Gauntlets,SPIKED_GAUNTLETS,B,Ancient Relic,Shared,shared,Gain [energy:1] at the start of each turn. Powers cost [blue]1[/blue] more [energy:1].,Standard relic. Evaluate based on deck needs.
+Stone Calendar,STONE_CALENDAR,B,Rare Relic,Shared,shared,"At the end of turn [blue]7[/blue], deal [blue]52[/blue] damage to ALL enemies.",End turn 7+ = 52 damage to all. Long fight AoE.
+Stone Cracker,STONE_CRACKER,B,Uncommon Relic,Shared,shared,"At the start of [gold]Boss[/gold] combats, [gold]Upgrade[/gold] [blue]3[/blue] random cards in your [gold]Draw Pile[/gold] for the rest of combat.",Standard relic. Evaluate based on deck needs.
+Stone Humidifier,STONE_HUMIDIFIER,B,Ancient Relic,Shared,shared,"Whenever you [gold]Rest[/gold] at a [gold]Rest Site[/gold], raise your Max HP by [blue]5[/blue].",Standard relic. Evaluate based on deck needs.
+Storybook,STORYBOOK,B,Ancient Relic,Shared,shared,"Upon pickup, add [blue]1[/blue] [gold]Brightest Flame[/gold] to your [gold]Deck[/gold].",Standard relic. Evaluate based on deck needs.
+Strawberry,STRAWBERRY,B,Common Relic,Shared,shared,"Upon pickup, raise your Max HP by [blue]7[/blue].",Standard relic. Evaluate based on deck needs.
+Strike Dummy,STRIKE_DUMMY,B,Common Relic,Shared,shared,Cards containing “Strike” deal [blue]3[/blue] additional damage.,Standard relic. Evaluate based on deck needs.
+Strike Dummy???,FAKE_STRIKE_DUMMY,B,Event Relic,Shared,shared,Cards containing “Strike” deal [blue]1[/blue] additional damage.,Standard relic. Evaluate based on deck needs.
+Sturdy Clamp,STURDY_CLAMP,B,Rare Relic,Shared,shared,Up to [blue]10[/blue] [gold]Block[/gold] persists across turns.,Standard relic. Evaluate based on deck needs.
+Sword of Jade,SWORD_OF_JADE,B,Event Relic,Shared,shared,Start each combat with [blue]3[/blue] [gold]Strength[/gold].,Standard relic. Evaluate based on deck needs.
+Sword of Stone,SWORD_OF_STONE,B,Event Relic,Shared,shared,Transforms into a powerful [gold]Relic[/gold] after defeating [blue]5[/blue] [gold]Elites[/gold].,Standard relic. Evaluate based on deck needs.
+Symbiotic Virus,SYMBIOTIC_VIRUS,A,Uncommon Relic,Shared,defect,"At the start of each combat, [gold]Channel[/gold] [blue]1[/blue] [gold]Dark[/gold].",Channel 1 Dark at start. Dark scales over fight.
+Tanx's Whistle,TANXS_WHISTLE,B,Ancient Relic,Shared,shared,"Upon pickup, add [blue]1[/blue] [gold]Whistle[/gold] to your [gold]Deck[/gold].",Standard relic. Evaluate based on deck needs.
+Tea of Discourtesy,TEA_OF_DISCOURTESY,B,Event Relic,Shared,shared,"At the start of the next combat, shuffle [blue]2[/blue] [gold]Dazed[/gold] into your [gold]Draw Pile[/gold].",Standard relic. Evaluate based on deck needs.
+The Abacus,THE_ABACUS,A,Shop Relic,Shared,shared,"Whenever you shuffle your [gold]Draw Pile[/gold], gain [blue]6[/blue] [gold]Block[/gold].",Shuffle = 6 Block. Free Block in thin decks.
+The Boot,THE_BOOT,B,Event Relic,Shared,shared,"Whenever you would deal [blue]4[/blue] or less unblocked attack damage, increase it to [blue]5[/blue].",Standard relic. Evaluate based on deck needs.
+The Chosen Cheese,CHOSEN_CHEESE,B,Event Relic,Shared,shared,"At the end of combat, gain [blue]1[/blue] Max HP.",Standard relic. Evaluate based on deck needs.
+The Courier,THE_COURIER,B,Rare Relic,Shared,shared,"The merchant no longer runs out of cards, relics, or potions and his prices are reduced by [blue]20%[/blue].",Shop always has card removal. Helps thin deck.
+The Merchant's Rug???,FAKE_MERCHANTS_RUG,B,Event Relic,Shared,shared,Poor imitation. Does nothing.,Standard relic. Evaluate based on deck needs.
+Throwing Axe,THROWING_AXE,B,Ancient Relic,Shared,shared,The first card you play each combat is played an extra time.,Standard relic. Evaluate based on deck needs.
+Tingsha,TINGSHA,S,Uncommon Relic,Shared,silent,"Whenever you discard a card during your turn, deal [blue]3[/blue] damage to a random enemy for each card discarded.",Discard = 3 damage per card. BROKEN in discard builds.
+Tiny Mailbox,TINY_MAILBOX,B,Common Relic,Shared,shared,"Whenever you [gold]Rest[/gold], procure a random potion.",Standard relic. Evaluate based on deck needs.
+Toasty Mittens,TOASTY_MITTENS,B,Ancient Relic,Shared,shared,"At the start of your turn, [gold]Exhaust[/gold] the top card of your [gold]Draw Pile[/gold] and gain [blue]1[/blue] [gold]Strength[/gold].",Standard relic. Evaluate based on deck needs.
+Toolbox,TOOLBOX,B,Shop Relic,Shared,shared,"At the start of each combat, choose [blue]1[/blue] of [blue]3[/blue] random Colorless cards and add the chosen card into your [gold]Hand[/gold].",Turn 1 = pick 1 of 3 Colorless. Utility access.
+Touch of Orobas,TOUCH_OF_OROBAS,B,Ancient Relic,Shared,shared,"Upon pickup, replace your starter [gold]Relic[/gold] with an [gold]Ancient[/gold] version.",Standard relic. Evaluate based on deck needs.
+Tough Bandages,TOUGH_BANDAGES,S,Rare Relic,Shared,silent,"Whenever you discard a card during your turn, gain [blue]3[/blue] [gold]Block[/gold].",Discard = 3 Block per card. Pair with Tingsha = immortal.
+Toxic Egg,TOXIC_EGG,B,Rare Relic,Shared,shared,"Whenever you add a Skill into your [gold]Deck[/gold], [gold]Upgrade[/gold] it.",Standard relic. Evaluate based on deck needs.
+Toy Box,TOY_BOX,B,Ancient Relic,Shared,shared,"Upon pickup, obtain [blue]4[/blue] [gold]Wax Relics[/gold]. Every [blue]3[/blue] combats, your left-most [gold]Wax Relic[/gold] will melt away.",Standard relic. Evaluate based on deck needs.
+Tri-Boomerang,TRI_BOOMERANG,B,Ancient Relic,Shared,shared,Choose [blue]3[/blue] Attacks in your [gold]Deck[/gold]. [gold]Enchant[/gold] them with [purple]Instinct[/purple].,Standard relic. Evaluate based on deck needs.
+Tungsten Rod,TUNGSTEN_ROD,S,Rare Relic,Shared,shared,"Whenever you would lose HP, lose [blue]1[/blue] less.",Lose HP = lose 1 less. Incredible sustain.
+Tuning Fork,TUNING_FORK,B,Uncommon Relic,Shared,shared,"Every time you play [blue]10[/blue] Skills, gain [blue]7[/blue] [gold]Block[/gold].",Standard relic. Evaluate based on deck needs.
+Twisted Funnel,TWISTED_FUNNEL,B,Uncommon Relic,Shared,silent,"At the start of each combat, apply [blue]4[/blue] [gold]Poison[/gold] to ALL enemies.",4 Poison to all at start. Good in Poison builds only.
+Unceasing Top,UNCEASING_TOP,A,Rare Relic,Shared,shared,"Whenever you have no cards in [gold]Hand[/gold] during your turn, draw a card.",Empty hand = draw 1. Infinite enabler.
+Undying Sigil,UNDYING_SIGIL,S,Shop Relic,Shared,necrobinder,Enemies with at least as much [gold]Doom[/gold] as HP deal [blue]50%[/blue] less damage.,Doom >= HP enemies deal 50% less. MUST BUY as Necro.
+Unsettling Lamp,UNSETTLING_LAMP,B,Rare Relic,Shared,shared,"Each combat, the first time you play a card that [gold]Debuffs[/gold] an enemy, double its effect.",Standard relic. Evaluate based on deck needs.
+Vajra,VAJRA,B,Common Relic,Shared,shared,Start each combat with [blue]1[/blue] [gold]Strength[/gold].,+1 Strength. Simple offensive boost.
+Vambrace,VAMBRACE,B,Uncommon Relic,Shared,shared,"The first time you gain [gold]Block[/gold] from a card each combat, double the amount gained.",Standard relic. Evaluate based on deck needs.
+Velvet Choker,VELVET_CHOKER,D,Ancient Relic,Shared,shared,Gain [energy:1] at the start of each turn. You cannot play more than [blue]6[/blue] cards per turn.,TRAP: 6 card limit. Bricks combo decks. Avoid on Silent/Defect.
+Venerable Tea Set,VENERABLE_TEA_SET,B,Common Relic,Shared,shared,"Whenever you enter a [gold]Rest Site[/gold], start the next combat with an additional [energy:2].",Standard relic. Evaluate based on deck needs.
+Venerable Tea Set???,FAKE_VENERABLE_TEA_SET,B,Event Relic,Shared,shared,"Whenever you enter a [gold]Rest Site[/gold], start the next combat with an additional [energy:1].",Standard relic. Evaluate based on deck needs.
+Very Hot Cocoa,VERY_HOT_COCOA,B,Ancient Relic,Shared,shared,Start each combat with an additional [blue][energy:4][/blue].,Standard relic. Evaluate based on deck needs.
+Vexing Puzzlebox,VEXING_PUZZLEBOX,B,Rare Relic,Shared,shared,"At the start of each combat, add a random card into your [gold]Hand[/gold]. It costs [blue]0[/blue][energy:1].",Standard relic. Evaluate based on deck needs.
+Vitruvian Minion,VITRUVIAN_MINION,S,Shop Relic,Shared,regent,Cards containing “Minion” deal double damage and gain double [gold]Block[/gold].,Minion cards 2x damage/block. Essential for Minion builds.
+War Hammer,WAR_HAMMER,B,Ancient Relic,Shared,shared,"Whenever you kill an [gold]Elite[/gold], [gold]Upgrade[/gold] [blue]4[/blue] random cards.",Standard relic. Evaluate based on deck needs.
+War Paint,WAR_PAINT,B,Common Relic,Shared,shared,"Upon pickup, [gold]Upgrade[/gold] [blue]2[/blue] random Skills.",Standard relic. Evaluate based on deck needs.
+Whetstone,WHETSTONE,B,Common Relic,Shared,shared,"Upon pickup, [gold]Upgrade[/gold] [blue]2[/blue] random Attacks.",Upgrade 2 attacks on pickup. Immediate value.
+Whispering Earring,WHISPERING_EARRING,B,Ancient Relic,Shared,shared,Gain [energy:1] at the start of each turn. [red]Vakuu plays your first turn for you.[/red],Standard relic. Evaluate based on deck needs.
+White Beast Statue,WHITE_BEAST_STATUE,B,Rare Relic,Shared,shared,Potions always appear in combat rewards.,Standard relic. Evaluate based on deck needs.
+White Star,WHITE_STAR,B,Rare Relic,Shared,shared,[gold]Elites[/gold] drop an additional [gold]Rare[/gold] card reward.,Standard relic. Evaluate based on deck needs.
+Wing Charm,WING_CHARM,B,Shop Relic,Shared,shared,A random card in each card reward is [gold]Enchanted[/gold] with [purple]Swift[/purple] [blue]1[/blue].,Standard relic. Evaluate based on deck needs.
+Wongo Customer Appreciation Badge,WONGO_CUSTOMER_APPRECIATION_BADGE,B,Event Relic,Shared,shared,Does nothing.,Standard relic. Evaluate based on deck needs.
+Wongo's Mystery Ticket,WONGOS_MYSTERY_TICKET,B,Event Relic,Shared,shared,Receive [blue]3[/blue] random [gold]Relics[/gold] after [blue]5[/blue] combats.,Standard relic. Evaluate based on deck needs.
+Yummy Cookie,YUMMY_COOKIE,B,Ancient Relic,Shared,shared,"Upon pickup, [gold]Upgrade[/gold] [blue]4[/blue] cards.",Standard relic. Evaluate based on deck needs.

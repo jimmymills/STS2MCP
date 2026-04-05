@@ -1,0 +1,85 @@
+name,id,cost,type,rarity,description,keywords,upgrade
+Alchemize,ALCHEMIZE,1,Skill,Rare,Procure a random potion.,Exhaust,"{""cost"": 0}"
+Anointed,ANOINTED,1,Skill,Rare,Put every [gold]Rare[/gold] card from your [gold]Draw Pile[/gold] into your [gold]Hand[/gold].,Exhaust,"{""add_retain"": 1}"
+Automation,AUTOMATION,1,Power,Uncommon,"Every 10 cards you draw, gain [energy:1].",,"{""cost"": 0}"
+Beacon of Hope,BEACON_OF_HOPE,1,Power,Rare,"Whenever you gain [gold]Block[/gold] on your turn, other players gain half that much [gold]Block[/gold].",,"{""add_innate"": 1}"
+Beat Down,BEAT_DOWN,3,Skill,Rare,Play 3 random Attacks from your [gold]Discard Pile[/gold].,,"{""cards"": ""+1""}"
+Believe in You,BELIEVE_IN_YOU,0,Skill,Uncommon,Another player gains [energy:3].,,"{""energy"": ""+1""}"
+Bolas,BOLAS,0,Attack,Rare,"Deal 3 damage.
+At the start of your next turn, return this to your [gold]Hand[/gold].",,"{""damage"": ""+1""}"
+Calamity,CALAMITY,3,Power,Rare,"Whenever you play an Attack, add a random Attack into your [gold]Hand[/gold].",,"{""cost"": 2}"
+Catastrophe,CATASTROPHE,2,Skill,Uncommon,Play 2 random cards from your [gold]Draw Pile[/gold].,,"{""cards"": ""+1""}"
+Coordinate,COORDINATE,1,Skill,Uncommon,Give another player 5 [gold]Strength[/gold] this turn.,,"{""strength"": ""+3""}"
+Dark Shackles,DARK_SHACKLES,0,Skill,Uncommon,Enemy loses 9 [gold]Strength[/gold] this turn.,Exhaust,"{""strengthloss"": ""+6""}"
+Discovery,DISCOVERY,1,Skill,Uncommon,Choose 1 of 3 random cards to add into your [gold]Hand[/gold]. It costs 0 [energy:1] this turn.,Exhaust,"{""remove_exhaust"": 1}"
+Dramatic Entrance,DRAMATIC_ENTRANCE,0,Attack,Uncommon,Deal 11 damage to ALL enemies.,Exhaust|Innate,"{""damage"": ""+4""}"
+Entropy,ENTROPY,1,Power,Rare,"At the start of your turn, [gold]Transform[/gold] 1 card in your [gold]Hand[/gold].",,"{""add_innate"": 1}"
+Equilibrium,EQUILIBRIUM,2,Skill,Uncommon,"Gain 13 [gold]Block[/gold].
+[gold]Retain[/gold] your [gold]Hand[/gold] this turn.",,"{""block"": ""+3""}"
+Eternal Armor,ETERNAL_ARMOR,3,Power,Rare,Gain 7 [gold]Plating[/gold].,,"{""platingpower"": ""+2""}"
+Fasten,FASTEN,1,Power,Uncommon,Gain an additional 5 [gold]Block[/gold] from Defend cards.,,"{""extrablock"": ""+2""}"
+Finesse,FINESSE,0,Skill,Uncommon,"Gain 4 [gold]Block[/gold].
+Draw 1 card.",,"{""block"": ""+3""}"
+Fisticuffs,FISTICUFFS,1,Attack,Uncommon,"Deal 7 damage.
+Gain [gold]Block[/gold] equal to damage dealt.",,"{""damage"": ""+2""}"
+Flash of Steel,FLASH_OF_STEEL,0,Attack,Uncommon,"Deal 5 damage.
+Draw 1 card.",,"{""damage"": ""+3""}"
+Gang Up,GANG_UP,1,Attack,Uncommon,"Deal 10 damage.
+Deals 5 additional damage for each time another player has attacked the enemy this turn.",,"{""damage"": ""+2"", ""extradamage"": ""+2""}"
+Gold Axe,GOLD_AXE,1,Attack,Rare,Deal damage equal to the number of cards played this combat.[InCombat],,"{""add_retain"": 1}"
+Hand of Greed,HAND_OF_GREED,2,Attack,Rare,"Deal 20 damage.
+If [gold]Fatal[/gold], gain 20 [gold]Gold[/gold].",,"{""damage"": ""+5"", ""gold"": ""+5""}"
+Hidden Gem,HIDDEN_GEM,1,Skill,Rare,A random card in your [gold]Draw Pile[/gold] gains [gold]Replay[/gold] 2.,,"{""replay"": ""+1""}"
+Huddle Up,HUDDLE_UP,1,Skill,Uncommon,ALL allies draw 2 cards.,,"{""cards"": ""+1""}"
+Impatience,IMPATIENCE,0,Skill,Uncommon,"If you have no Attacks in your [gold]Hand[/gold], draw 2 cards.",,"{""cards"": ""+1""}"
+Intercept,INTERCEPT,1,Skill,Uncommon,"Gain 9 [gold]Block[/gold].
+Redirect all incoming attacks that would be dealt to another player this turn to you.",,"{""block"": ""+4""}"
+Jack of All Trades,JACK_OF_ALL_TRADES,0,Skill,Uncommon,Add 1 random Colorless card into your [gold]Hand[/gold].,Exhaust,"{""cards"": ""+1""}"
+Jackpot,JACKPOT,3,Attack,Rare,"Deal 25 damage.
+Add 3 random 0[energy:1] cards into your [gold]Hand[/gold].",,"{""damage"": ""+5""}"
+Knockdown,KNOCKDOWN,3,Attack,Rare,"Deal 10 damage.
+The enemy takes double damage from other players this turn.",,"{""damage"": ""+4"", ""knockdownpower"": ""+1""}"
+Lift,LIFT,1,Skill,Uncommon,Give another player 11 [gold]Block[/gold].,,"{""block"": ""+5""}"
+Master of Strategy,MASTER_OF_STRATEGY,0,Skill,Rare,Draw 3 cards.,Exhaust,"{""cards"": ""+1""}"
+Mayhem,MAYHEM,2,Power,Rare,"At the start of your turn, play the top card of your [gold]Draw Pile[/gold].",,"{""cost"": 1}"
+Mimic,MIMIC,1,Skill,Rare,Gain [gold]Block[/gold] equal to the [gold]Block[/gold] on another player.,Exhaust,"{""remove_exhaust"": 1}"
+Mind Blast,MIND_BLAST,1,Attack,Uncommon,Deal damage equal to the number of cards in your [gold]Draw Pile[/gold].[InCombat],Innate,"{""cost"": 0}"
+Nostalgia,NOSTALGIA,1,Power,Rare,The first Attack or Skill you play each turn is placed on top of your [gold]Draw Pile[/gold].,,"{""cost"": 0}"
+Omnislice,OMNISLICE,0,Attack,Uncommon,"Deal 8 damage.
+Damage ALL other enemies equal to the damage dealt.",,"{""damage"": ""+3""}"
+Panache,PANACHE,0,Power,Uncommon,"Every time you play 5 cards in a single turn, deal 10 damage to ALL enemies.",,"{""panachedamage"": ""+4""}"
+Panic Button,PANIC_BUTTON,0,Skill,Uncommon,"Gain 30 [gold]Block[/gold].
+You cannot gain [gold]Block[/gold] from cards for 2 turns.",Exhaust,"{""block"": ""+10""}"
+Prep Time,PREP_TIME,1,Power,Uncommon,"At the start of your turn, gain 4 [gold]Vigor[/gold].",,"{""preptimepower"": ""+2""}"
+Production,PRODUCTION,0,Skill,Uncommon,Gain [energy:2].,Exhaust,"{""remove_exhaust"": 1}"
+Prolong,PROLONG,0,Skill,Uncommon,"Next turn, gain [gold]Block[/gold] equal to your current [gold]Block[/gold].",Exhaust,"{""remove_exhaust"": 1}"
+Prowess,PROWESS,1,Power,Uncommon,"Gain 1 [gold]Strength[/gold].
+Gain 1 [gold]Dexterity[/gold].",,"{""dexterity"": ""+1"", ""strength"": ""+1""}"
+Purity,PURITY,0,Skill,Uncommon,Exhaust up to 3 cards in your [gold]Hand[/gold].,Exhaust|Retain,"{""cards"": ""+2""}"
+Rally,RALLY,2,Skill,Rare,ALL players gain 12 [gold]Block[/gold].,,"{""block"": ""+5""}"
+Rend,REND,2,Attack,Rare,"Deal 20 damage.
+Deals 5 additional damage for each unique debuff on the enemy.",,"{""damage"": ""+3"", ""extradamage"": ""+3"", ""calculationbase"": ""+3""}"
+Restlessness,RESTLESSNESS,0,Skill,Uncommon,"If your [gold]Hand[/gold] is empty, draw 2 cards and gain [energy:2].",Retain,"{""cards"": ""+1"", ""energy"": ""+1""}"
+Rolling Boulder,ROLLING_BOULDER,3,Power,Rare,"At the start of your turn, deal 5 damage to ALL enemies and increase this damage by 5.",,"{""rollingboulderpower"": ""+5""}"
+Salvo,SALVO,1,Attack,Rare,"Deal 12 damage.
+[gold]Retain[/gold] your [gold]Hand[/gold] this turn.",,"{""damage"": ""+4""}"
+Scrawl,SCRAWL,1,Skill,Rare,Draw cards until your [gold]Hand[/gold] is full.,Exhaust,"{""add_retain"": 1}"
+Secret Technique,SECRET_TECHNIQUE,0,Skill,Rare,Put a Skill from your [gold]Draw Pile[/gold] into your [gold]Hand[/gold].,Exhaust,"{""remove_exhaust"": 1}"
+Secret Weapon,SECRET_WEAPON,0,Skill,Rare,Put an Attack from your [gold]Draw Pile[/gold] into your [gold]Hand[/gold].,Exhaust,"{""remove_exhaust"": 1}"
+Seeker Strike,SEEKER_STRIKE,1,Attack,Uncommon,"Deal 6 damage.
+Choose 1 of 3 cards in your [gold]Draw Pile[/gold] to add into your [gold]Hand[/gold].",,"{""damage"": ""+3""}"
+Shockwave,SHOCKWAVE,2,Skill,Uncommon,Apply 3 [gold]Weak[/gold] and [gold]Vulnerable[/gold] to ALL enemies.,Exhaust,"{""power"": ""+2""}"
+Splash,SPLASH,1,Skill,Uncommon,Choose 1 of 3 random Attacks from another character to add into your [gold]Hand[/gold]. It's free to play this turn.,,{}
+Stratagem,STRATAGEM,1,Power,Uncommon,"Whenever you shuffle your [gold]Draw Pile[/gold], choose a card from it to put into your [gold]Hand[/gold].",,"{""cost"": 0}"
+Tag Team,TAG_TEAM,2,Attack,Uncommon,"Deal 11 damage.
+The next Attack another player plays on the enemy is played an extra time.",,"{""damage"": ""+4""}"
+The Bomb,THE_BOMB,2,Skill,Uncommon,"At the end of 3 turns, deal 40 damage to ALL enemies.",,"{""bombdamage"": ""+10""}"
+The Gambit,THE_GAMBIT,0,Skill,Rare,"Gain 50 [gold]Block[/gold].
+If you take unblocked attack damage this combat, die.",,"{""block"": ""+25""}"
+Thinking Ahead,THINKING_AHEAD,0,Skill,Uncommon,"Draw 2 cards.
+Put 1 card from your [gold]Hand[/gold] on top of your [gold]Draw Pile[/gold].",Exhaust,"{""remove_exhaust"": 1}"
+Thrumming Hatchet,THRUMMING_HATCHET,1,Attack,Uncommon,"Deal 11 damage.
+At the start of your next turn, return this to your [gold]Hand[/gold].",,"{""damage"": ""+3""}"
+Ultimate Defend,ULTIMATE_DEFEND,1,Skill,Uncommon,Gain 11 [gold]Block[/gold].,,"{""block"": ""+4""}"
+Ultimate Strike,ULTIMATE_STRIKE,1,Attack,Uncommon,Deal 14 damage.,,"{""damage"": ""+6""}"
+Volley,VOLLEY,0,Attack,Uncommon,Deal 10 damage to a random enemy X times.,,"{""damage"": ""+4""}"

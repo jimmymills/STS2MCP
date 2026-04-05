@@ -1,0 +1,141 @@
+name,id,cost,type,rarity,description,keywords,tags,damage,block,upgrade
+Afterlife,AFTERLIFE,1,Skill,Common,[gold]Summon[/gold] 6.,Exhaust,,,,"{""summon"": ""+3""}"
+Banshee's Cry,BANSHEES_CRY,6,Attack,Rare,"Deal 33 damage to ALL enemies.
+Costs [energy:2] less for each [gold]Ethereal[/gold] card played this combat.",,,33,,"{""damage"": ""+6""}"
+Blight Strike,BLIGHT_STRIKE,1,Attack,Common,"Deal 8 damage.
+Apply [gold]Doom[/gold] equal to damage dealt.",,Strike,8,,"{""damage"": ""+2""}"
+Bodyguard,BODYGUARD,1,Skill,Basic,[gold]Summon[/gold] 5.,,,,,"{""summon"": ""+2""}"
+Bone Shards,BONE_SHARDS,1,Attack,Uncommon,"If [gold]Osty[/gold] is alive, he deals 9 damage to ALL enemies and you gain 9 [gold]Block[/gold].
+[gold]Osty[/gold] dies.",,OstyAttack,9,9,"{""damage"": ""+3"", ""block"": ""+3"", ""ostydamage"": ""+3""}"
+Borrowed Time,BORROWED_TIME,0,Skill,Uncommon,"Apply 3 [gold]Doom[/gold] to yourself.
+Gain [energy:1].",,,,,"{""energy"": ""+1""}"
+Bury,BURY,4,Attack,Uncommon,Deal 52 damage.,,,52,,"{""damage"": ""+11""}"
+Calcify,CALCIFY,1,Power,Uncommon,[gold]Osty's[/gold] attacks deal 4 additional damage.,,,,,"{""calcifypower"": ""+2""}"
+Call of the Void,CALL_OF_THE_VOID,1,Power,Rare,"At the start of your turn, add 1 random card into your [gold]Hand[/gold]. It gains [gold]Ethereal[/gold].",,,,,"{""add_innate"": 1}"
+Capture Spirit,CAPTURE_SPIRIT,1,Skill,Uncommon,"Enemy loses 3 HP.
+Add 3 [gold]Souls[/gold] into your [gold]Draw Pile[/gold].",,,3,,"{""damage"": ""+1"", ""cards"": ""+1""}"
+Cleanse,CLEANSE,1,Skill,Uncommon,"[gold]Summon[/gold] 3.
+[gold]Exhaust[/gold] 1 card from your [gold]Draw Pile[/gold].",,,,,"{""summon"": ""+2""}"
+Countdown,COUNTDOWN,1,Power,Uncommon,"At the start of your turn, apply 6 [gold]Doom[/gold] to a random enemy.",,,,,"{""countdownpower"": ""+3""}"
+Danse Macabre,DANSE_MACABRE,1,Power,Uncommon,"Whenever you play a card that costs [energy:2] or more, gain 3 [gold]Block[/gold].",,,,,"{""dansemacabrepower"": ""+1""}"
+Death March,DEATH_MARCH,1,Attack,Uncommon,"Deal 11 damage.
+Deals 3 additional damage for each card drawn during your turn.",,,,,"{""damage"": ""+1"", ""calculationbase"": ""+1"", ""extradamage"": ""+1""}"
+Death's Door,DEATHS_DOOR,1,Skill,Uncommon,"Gain 6 [gold]Block[/gold].
+If you applied [gold]Doom[/gold] this turn, gain [gold]Block[/gold] 2 additional times.",,,,6,"{""block"": ""+1""}"
+Deathbringer,DEATHBRINGER,2,Skill,Uncommon,Apply 21 [gold]Doom[/gold] and 1 [gold]Weak[/gold] to ALL enemies.,,,,,"{""doom"": ""+5""}"
+Debilitate,DEBILITATE,1,Attack,Uncommon,"Deal 7 damage.
+[gold]Vulnerable[/gold] and [gold]Weak[/gold] are twice as effective against the enemy for the next 3 turns.",,,7,,"{""damage"": ""+2"", ""debilitatepower"": ""+1""}"
+Defend,DEFEND_NECROBINDER,1,Skill,Basic,Gain 5 [gold]Block[/gold].,,Defend,,5,"{""block"": ""+3""}"
+Defile,DEFILE,1,Attack,Common,Deal 13 damage.,Ethereal,,13,,"{""damage"": ""+4""}"
+Defy,DEFY,1,Skill,Common,"Gain 6 [gold]Block[/gold].
+Apply 1 [gold]Weak[/gold].",Ethereal,,,6,"{""block"": ""+1"", ""weak"": ""+1""}"
+Delay,DELAY,2,Skill,Uncommon,"Gain 11 [gold]Block[/gold].
+Next turn,
+gain [energy:1].",,,,11,"{""block"": ""+2"", ""energy"": ""+1""}"
+Demesne,DEMESNE,3,Power,Rare,"At the start of your turn, gain [energy:1] and draw 1 additional card.",Ethereal,,,,"{""cost"": 2}"
+Devour Life,DEVOUR_LIFE,1,Power,Rare,"Whenever you play a [gold]Soul[/gold], [gold]Summon[/gold] 1.",,,,,"{""devourlifepower"": ""+1""}"
+Dirge,DIRGE,0,Skill,Uncommon,"[gold]Summon[/gold] 3 X times.
+Add X [gold]Souls[/gold] into your [gold]Draw Pile[/gold].",,,,,"{""summon"": ""+1""}"
+Drain Power,DRAIN_POWER,1,Attack,Common,"Deal 10 damage.
+[gold]Upgrade[/gold] 2 random cards in your [gold]Discard Pile[/gold].",,,10,,"{""damage"": ""+2"", ""cards"": ""+1""}"
+Dredge,DREDGE,1,Skill,Uncommon,Put 3 cards from your [gold]Discard Pile[/gold] into your [gold]Hand[/gold].,Exhaust,,,,"{""add_retain"": 1}"
+Eidolon,EIDOLON,2,Skill,Rare,"[gold]Exhaust[/gold] your [gold]Hand[/gold].
+If 9 cards were [gold]Exhausted[/gold] this way, gain 1 [gold]Intangible[/gold].",,,,,"{""cost"": 1}"
+End of Days,END_OF_DAYS,3,Skill,Rare,"Apply 29 [gold]Doom[/gold] to ALL enemies.
+Kill enemies with at least as much [gold]Doom[/gold] as HP.",,,,,"{""doom"": ""+8""}"
+Enfeebling Touch,ENFEEBLING_TOUCH,1,Skill,Uncommon,Enemy loses 8 [gold]Strength[/gold] this turn.,Ethereal,,,,"{""strengthloss"": ""+3""}"
+Eradicate,ERADICATE,0,Attack,Rare,Deal 11 damage X times.,Retain,,11,,"{""damage"": ""+3""}"
+Fear,FEAR,1,Attack,Common,"Deal 7 damage.
+Apply 1 [gold]Vulnerable[/gold].",Ethereal,,7,,"{""damage"": ""+1"", ""vulnerable"": ""+1""}"
+Fetch,FETCH,0,Attack,Uncommon,"[gold]Osty[/gold] deals 3 damage.
+If this is the first time this card has been played this turn, draw 1 card.",,OstyAttack,3,,"{""damage"": ""+3"", ""ostydamage"": ""+3""}"
+Flatten,FLATTEN,2,Attack,Common,"[gold]Osty[/gold] deals 12 damage.
+This card costs 0 [energy:1] if [gold]Osty[/gold] has attacked this turn.",,OstyAttack,12,,"{""damage"": ""+4"", ""ostydamage"": ""+4""}"
+Forbidden Grimoire,FORBIDDEN_GRIMOIRE,2,Power,Ancient,"At the end of combat, you may remove a card from your [gold]Deck[/gold].",Eternal,,,,"{""cost"": 1}"
+Friendship,FRIENDSHIP,1,Power,Uncommon,"Lose 2 [gold]Strength[/gold].
+Gain [energy:1] at the start of each turn.",,,,,"{""strengthpower"": ""-1""}"
+Glimpse Beyond,GLIMPSE_BEYOND,1,Skill,Rare,ALL players add 3 [gold]Souls[/gold] into their [gold]Draw Pile[/gold].,Exhaust,,,,"{""cards"": ""+1""}"
+Grave Warden,GRAVE_WARDEN,1,Skill,Common,"Gain 8 [gold]Block[/gold].
+Add a [gold]Soul[/gold] into your [gold]Draw Pile[/gold].",,,,8,"{""block"": ""+2""}"
+Graveblast,GRAVEBLAST,1,Attack,Common,"Deal 4 damage.
+Put a card from your [gold]Discard Pile[/gold] into your [gold]Hand[/gold].",Exhaust,,4,,"{""damage"": ""+2"", ""remove_exhaust"": 1}"
+Hang,HANG,1,Attack,Rare,"Deal 10 damage.
+Double the damage ALL Hang cards deal to this enemy.",,,10,,"{""damage"": ""+3""}"
+Haunt,HAUNT,1,Power,Uncommon,"Whenever you play a [gold]Soul[/gold], a random enemy loses 6 HP.",,,,,"{""hploss"": ""+2""}"
+High Five,HIGH_FIVE,2,Attack,Uncommon,"[gold]Osty[/gold] deals 11 damage
+and applies 2 [gold]Vulnerable[/gold]
+to ALL enemies.",,OstyAttack,11,,"{""damage"": ""+2"", ""ostydamage"": ""+2"", ""vulnerable"": ""+1""}"
+Invoke,INVOKE,1,Skill,Common,"Next turn, [gold]Summon[/gold] 2 and gain [energy:2].",,,,,"{""summon"": ""+1"", ""energy"": ""+1""}"
+Legion of Bone,LEGION_OF_BONE,2,Skill,Uncommon,ALL players [gold]Summon[/gold] 6.,Exhaust,,,,"{""summon"": ""+2""}"
+Lethality,LETHALITY,1,Power,Uncommon,The first Attack each turn deals 50% additional damage.,Ethereal,,,,"{""lethalitypower"": ""+25""}"
+Melancholy,MELANCHOLY,3,Skill,Uncommon,"Gain 13 [gold]Block[/gold].
+Reduce this card's cost by [energy:1] whenever ANYONE dies.",,,,13,"{""block"": ""+4""}"
+Misery,MISERY,0,Attack,Rare,"Deal 7 damage.
+Apply any debuffs on the enemy to ALL other enemies.",,,7,,"{""damage"": ""+2"", ""add_retain"": 1}"
+Necro Mastery,NECRO_MASTERY,2,Power,Rare,"[gold]Summon[/gold] 5.
+Whenever [gold]Osty[/gold] loses HP,
+ALL enemies lose that much HP as well.",,,,,"{""summon"": ""+3""}"
+Negative Pulse,NEGATIVE_PULSE,1,Skill,Common,"Gain 5 [gold]Block[/gold].
+Apply 7 [gold]Doom[/gold] to ALL enemies.",,,,5,"{""block"": ""+1"", ""doom"": ""+4""}"
+Neurosurge,NEUROSURGE,0,Power,Rare,"Gain [energy:3].
+Draw 2 cards.
+At the start of your turn, apply 3 [gold]Doom[/gold] to yourself.",,,,,"{""energy"": ""+1""}"
+No Escape,NO_ESCAPE,1,Skill,Uncommon,"Apply 10 [gold]Doom[/gold], plus an additional 5 [gold]Doom[/gold] for every 10 [gold]Doom[/gold] already on this enemy.[IsTargeting]",,,,,"{""calculationbase"": ""+5""}"
+Oblivion,OBLIVION,0,Skill,Rare,"Whenever you play a card this turn, apply 3 [gold]Doom[/gold] to the enemy.",,,,,"{""doom"": ""+1""}"
+Pagestorm,PAGESTORM,1,Power,Uncommon,"Whenever you draw an [gold]Ethereal[/gold] card, draw 1 card.",,,,,"{""cost"": 0}"
+Parse,PARSE,1,Skill,Uncommon,Draw 3 cards.,Ethereal,,,,"{""cards"": ""+1""}"
+Poke,POKE,0,Attack,Common,[gold]Osty[/gold] deals 6 damage.,,OstyAttack,6,,"{""damage"": ""+3"", ""ostydamage"": ""+3""}"
+Protector,PROTECTOR,1,Attack,Ancient,"[gold]Osty[/gold] deals 11 damage.
+Deals additional damage equal to [gold]Osty's[/gold] [gold]Max HP[/gold].",,OstyAttack,,,"{""cost"": 0, ""calculationbase"": ""+5""}"
+Pull Aggro,PULL_AGGRO,2,Skill,Common,"[gold]Summon[/gold] 4.
+Gain 7 [gold]Block[/gold].",,,,7,"{""block"": ""+2"", ""summon"": ""+1""}"
+Pull from Below,PULL_FROM_BELOW,1,Attack,Uncommon,Deal 5 damage for each [gold]Ethereal[/gold] card played this combat.[InCombat],,,5,,"{""damage"": ""+2""}"
+Putrefy,PUTREFY,1,Skill,Uncommon,"Apply 2 [gold]Weak[/gold].
+Apply 2 [gold]Vulnerable[/gold].",Exhaust,,,,"{""power"": ""+1""}"
+Rattle,RATTLE,1,Attack,Uncommon,"[gold]Osty[/gold] deals 7 damage.
+Hits an additional time for each other time he has attacked this turn.[InCombat]",,OstyAttack,7,,"{""damage"": ""+2"", ""ostydamage"": ""+2""}"
+Reanimate,REANIMATE,3,Skill,Rare,[gold]Summon[/gold] 20.,Exhaust,,,,"{""summon"": ""+5""}"
+Reap,REAP,3,Attack,Common,Deal 27 damage.,Retain,,27,,"{""damage"": ""+6""}"
+Reaper Form,REAPER_FORM,3,Power,Rare,"Whenever Attacks deal damage, they also apply that much [gold]Doom[/gold].",,,,,"{""add_retain"": 1}"
+Reave,REAVE,1,Attack,Common,"Deal 9 damage.
+Add a [gold]Soul[/gold] into your [gold]Draw Pile[/gold].",,,9,,"{""damage"": ""+2""}"
+Right Hand Hand,RIGHT_HAND_HAND,0,Attack,Uncommon,"[gold]Osty[/gold] deals 4 damage.
+Whenever you play a card that costs [energy:2] or more, return this to your [gold]Hand[/gold] from the [gold]Discard Pile[/gold].",,OstyAttack,4,,"{""damage"": ""+2"", ""ostydamage"": ""+2""}"
+Sacrifice,SACRIFICE,1,Skill,Rare,"If [gold]Osty[/gold] is alive, he dies and you gain [gold]Block[/gold] equal to double his Max HP.",Retain,,,,"{""cost"": 0}"
+Scourge,SCOURGE,1,Skill,Common,"Apply 13 [gold]Doom[/gold].
+Draw 1 card.",,,,,"{""doom"": ""+3"", ""cards"": ""+1""}"
+Sculpting Strike,SCULPTING_STRIKE,1,Attack,Common,"Deal 8 damage.
+Add [gold]Ethereal[/gold] to a card in your [gold]Hand[/gold].",,Strike,8,,"{""damage"": ""+3""}"
+Seance,SEANCE,0,Skill,Rare,Transform a card in your [gold]Draw Pile[/gold] into [gold]Soul[/gold].,Ethereal,,,,{}
+Sentry Mode,SENTRY_MODE,2,Power,Rare,"At the start of your turn, add 1 [gold]Sweeping Gaze[/gold] into your [gold]Hand[/gold].",,,,,"{""cost"": 1}"
+Severance,SEVERANCE,2,Attack,Uncommon,"Deal 13 damage.
+Add a [gold]Soul[/gold] into your [gold]Draw Pile[/gold], [gold]Hand[/gold], and [gold]Discard Pile[/gold].",,,13,,"{""damage"": ""+5""}"
+Shared Fate,SHARED_FATE,0,Skill,Rare,"Lose 2 [gold]Strength[/gold].
+Enemy loses 2 [gold]Strength[/gold].",Exhaust,,,,"{""enemystrengthloss"": ""+1""}"
+Shroud,SHROUD,1,Power,Uncommon,"Whenever you apply [gold]Doom[/gold], gain 2 [gold]Block[/gold].",,,,2,"{""block"": ""+1""}"
+Sic 'Em,SIC_EM,1,Attack,Uncommon,"[gold]Osty[/gold] deals 5 damage.
+Whenever [gold]Osty[/gold] hits this enemy this turn, [gold]Summon[/gold] 2.",,OstyAttack,5,,"{""damage"": ""+1"", ""ostydamage"": ""+1"", ""sicempower"": ""+1""}"
+Sleight of Flesh,SLEIGHT_OF_FLESH,2,Power,Uncommon,"Whenever you apply a debuff to an enemy, they take 9 damage.",,,,,"{""sleightoffleshpower"": ""+4""}"
+Snap,SNAP,1,Attack,Common,"[gold]Osty[/gold] deals 7 damage.
+Add [gold]Retain[/gold] to a card in your [gold]Hand[/gold].",,OstyAttack,7,,"{""damage"": ""+3"", ""ostydamage"": ""+3""}"
+Soul Storm,SOUL_STORM,1,Attack,Rare,"Deal 11 damage.
+Deals 2 additional damage for each [gold]Soul[/gold] in your [gold]Exhaust Pile[/gold].",,,,,"{""damage"": ""+1"", ""extradamage"": ""+1""}"
+Sow,SOW,1,Attack,Common,Deal 8 damage to ALL enemies.,Retain,,8,,"{""damage"": ""+3""}"
+Spirit of Ash,SPIRIT_OF_ASH,1,Power,Rare,"Whenever you play an [gold]Ethereal[/gold] card, gain 4 [gold]Block[/gold].",,,,,"{""blockonexhaust"": ""+1""}"
+Spur,SPUR,1,Skill,Uncommon,"[gold]Summon[/gold] 3.
+[gold]Osty[/gold] heals 5 HP.",Retain,,,,"{""summon"": ""+2"", ""heal"": ""+2""}"
+Squeeze,SQUEEZE,3,Attack,Rare,"[gold]Osty[/gold] deals 30 damage.
+Deals 5 additional damage for ALL your other [gold]Osty[/gold] Attacks.",,OstyAttack,,,"{""damage"": ""+1"", ""calculationbase"": ""+5"", ""extradamage"": ""+1""}"
+Strike,STRIKE_NECROBINDER,1,Attack,Basic,Deal 6 damage.,,Strike,6,,"{""damage"": ""+3""}"
+The Scythe,THE_SCYTHE,2,Attack,Rare,"Deal 13 damage.
+Permanently increase this card's damage by 3.",Exhaust,,13,,"{""increase"": ""+1""}"
+Time's Up,TIMES_UP,2,Attack,Rare,Deal damage equal to the enemy's [gold]Doom[/gold].[IsTargeting],Exhaust,,,,"{""add_retain"": 1}"
+Transfigure,TRANSFIGURE,1,Skill,Rare,"Add [gold]Replay[/gold] to a card in your [gold]Hand[/gold].
+It costs an extra [energy:1].",Exhaust,,,,"{""remove_exhaust"": 1}"
+Undeath,UNDEATH,0,Skill,Rare,"Gain 7 [gold]Block[/gold].
+Add a copy of this card into your [gold]Discard Pile[/gold].",,,,7,"{""block"": ""+2""}"
+Unleash,UNLEASH,1,Attack,Basic,"[gold]Osty[/gold] deals 7 damage.
+Deals additional damage equal to [gold]Osty's[/gold] current HP.",,OstyAttack,,,"{""calculationbase"": ""+3""}"
+Veilpiercer,VEILPIERCER,1,Attack,Uncommon,"Deal 10 damage.
+The next [gold]Ethereal[/gold] card you play costs 0 [energy:1].",,,10,,"{""damage"": ""+3""}"
+Wisp,WISP,0,Skill,Common,Gain [energy:1].,Exhaust,,,,"{""add_retain"": 1}"

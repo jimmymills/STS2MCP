@@ -1,0 +1,144 @@
+name,id,cost,type,rarity,description,keywords,tags,damage,block,upgrade
+Alignment,ALIGNMENT,0,Skill,Uncommon,Gain [energy:2].,,,,,"{""energy"": ""+1""}"
+Arsenal,ARSENAL,1,Power,Rare,"Whenever you play a Colorless card, gain 1 [gold]Strength[/gold].",,,,,"{""arsenalpower"": ""+1""}"
+Astral Pulse,ASTRAL_PULSE,0,Attack,Common,Deal 14 damage to ALL enemies.,,,14,,"{""damage"": ""+4""}"
+BEGONE!,BEGONE,1,Attack,Common,"Deal 4 damage.
+Choose a card in your [gold]Hand[/gold] to [gold]Transform[/gold] into [gold]Minion Dive Bomb[/gold].",,,4,,"{""damage"": ""+1""}"
+Beat into Shape,BEAT_INTO_SHAPE,1,Attack,Rare,"Deal 5 damage.
+[gold]Forge[/gold] X.
+[gold]Forges[/gold] an additional 5 for every other time you've hit the enemy this turn.",,,5,,"{""damage"": ""+2"", ""calculationbase"": ""+2"", ""calculationextra"": ""+2""}"
+Big Bang,BIG_BANG,0,Skill,Rare,"Draw 1 card.
+Gain [energy:1].
+Gain [star:1].
+[gold]Forge[/gold] 5.",Exhaust,,,,"{""add_innate"": 1}"
+Black Hole,BLACK_HOLE,1,Power,Uncommon,"Whenever you spend or gain [star:1], deal 3 damage to ALL enemies.",,,,,"{""blackholepower"": ""+1""}"
+Bombardment,BOMBARDMENT,3,Attack,Rare,"Deal 18 damage.
+At the start of your turn, plays from the [gold]Exhaust Pile[/gold].",Exhaust,,18,,"{""damage"": ""+6""}"
+Bulwark,BULWARK,2,Skill,Uncommon,"Gain 13 [gold]Block[/gold].
+[gold]Forge[/gold] 10.",,,,13,"{""block"": ""+3"", ""forge"": ""+3""}"
+Bundle of Joy,BUNDLE_OF_JOY,2,Skill,Rare,Add 3 random Colorless cards into your [gold]Hand[/gold].,Exhaust,,,,"{""cards"": ""+1""}"
+CHARGE!!,CHARGE,1,Skill,Uncommon,"Choose 2 cards in your [gold]Draw Pile[/gold] to [gold]Transform[/gold] into
+[gold]Minion Strikes[/gold].",,,,,{}
+Celestial Might,CELESTIAL_MIGHT,2,Attack,Common,Deal 6 damage 3 times.,,,6,,"{""damage"": ""+2""}"
+Child of the Stars,CHILD_OF_THE_STARS,1,Power,Uncommon,"Whenever you spend [star:1], gain 2 [gold]Block[/gold] for each [star:1] spent.",,,,,"{""blockforstars"": ""+1""}"
+Cloak of Stars,CLOAK_OF_STARS,0,Skill,Common,Gain 7 [gold]Block[/gold].,,,,7,"{""block"": ""+3""}"
+Collision Course,COLLISION_COURSE,0,Attack,Common,"Deal 9 damage.
+Add a [gold]Debris[/gold] into your [gold]Hand[/gold].",,,9,,"{""damage"": ""+3""}"
+Comet,COMET,0,Attack,Rare,"Deal 33 damage.
+Apply 3 [gold]Weak[/gold].
+Apply 3 [gold]Vulnerable[/gold].",,,33,,"{""damage"": ""+11""}"
+Conqueror,CONQUEROR,1,Skill,Uncommon,"[gold]Forge[/gold] 3.
+[gold]Sovereign Blade[/gold] deals double damage to the enemy this turn.",,,,,"{""forge"": ""+2""}"
+Convergence,CONVERGENCE,1,Skill,Uncommon,"Next turn,
+gain [energy:1] and [star:1].
+[gold]Retain[/gold] your [gold]Hand[/gold] this turn.",,,,,"{""stars"": ""+1""}"
+Cosmic Indifference,COSMIC_INDIFFERENCE,1,Skill,Common,"Gain 6 [gold]Block[/gold].
+Put a card from your [gold]Discard Pile[/gold] on top of your [gold]Draw Pile[/gold].",,,,6,"{""block"": ""+3""}"
+Crash Landing,CRASH_LANDING,1,Attack,Rare,"Deal 21 damage to ALL enemies.
+Fill your [gold]Hand[/gold] with [gold]Debris[/gold].",,,21,,"{""damage"": ""+5""}"
+Crescent Spear,CRESCENT_SPEAR,1,Attack,Common,"Deal 8 damage.
+Deals 2 additional damage for ALL your cards that have a [star:1] cost.",,,,,"{""damage"": ""+1"", ""extradamage"": ""+1""}"
+Crush Under,CRUSH_UNDER,1,Attack,Common,Deal 7 damage to ALL enemies. All enemies lose 1 [gold]Strength[/gold] this turn.,,,7,,"{""damage"": ""+1"", ""strengthloss"": ""+1""}"
+"Decisions, Decisions",DECISIONS_DECISIONS,0,Skill,Rare,"Draw 3 cards.
+Choose a Skill in your [gold]Hand[/gold] and play it 3 times.",Exhaust,,,,"{""cards"": ""+2""}"
+Defend,DEFEND_REGENT,1,Skill,Basic,Gain 5 [gold]Block[/gold].,,Defend,,5,"{""block"": ""+3""}"
+Devastate,DEVASTATE,1,Attack,Uncommon,Deal 30 damage.,,,30,,"{""damage"": ""+10""}"
+Dying Star,DYING_STAR,1,Attack,Rare,Deal 9 damage to ALL enemies. ALL enemies lose 9 [gold]Strength[/gold] this turn.,Ethereal,,9,,"{""damage"": ""+2"", ""strengthloss"": ""+2""}"
+Falling Star,FALLING_STAR,0,Attack,Basic,"Deal 7 damage.
+Apply 1 [gold]Weak[/gold].
+Apply 1 [gold]Vulnerable[/gold].",,,7,,"{""damage"": ""+4""}"
+Foregone Conclusion,FOREGONE_CONCLUSION,1,Skill,Rare,"Next turn, put 2 cards from your [gold]Draw Pile[/gold] into your [gold]Hand[/gold].",,,,,"{""cards"": ""+1""}"
+Furnace,FURNACE,1,Power,Uncommon,"At the start of your turn, [gold]Forge[/gold] 4.",,,,,"{""forge"": ""+2""}"
+GUARDS!!!,GUARDS,2,Skill,Rare,[gold]Transform[/gold] any number of cards in your [gold]Hand[/gold] into [gold]Minion Sacrifice[/gold].,Exhaust,,,,{}
+Gamma Blast,GAMMA_BLAST,0,Attack,Uncommon,"Deal 13 damage.
+Apply 2 [gold]Weak[/gold].
+Apply 2 [gold]Vulnerable[/gold].",,,13,,"{""damage"": ""+5""}"
+Gather Light,GATHER_LIGHT,1,Skill,Common,"Gain 7 [gold]Block[/gold].
+Gain [star:1].",,,,7,"{""block"": ""+3""}"
+Genesis,GENESIS,2,Power,Rare,"At the start of your turn, gain [star:2].",,,,,"{""starsperturn"": ""+1""}"
+Glimmer,GLIMMER,1,Skill,Uncommon,"Draw 3 cards.
+Put 1 card from your [gold]Hand[/gold] on top of your [gold]Draw Pile[/gold].",,,,,"{""cards"": ""+1""}"
+Glitterstream,GLITTERSTREAM,2,Skill,Common,"Gain 11 [gold]Block[/gold].
+Next turn, gain 4 [gold]Block[/gold].",,,,11,"{""block"": ""+2"", ""blocknextturn"": ""+2""}"
+Glow,GLOW,1,Skill,Common,"Gain [star:1].
+Draw 2 cards.",,,,,"{""stars"": ""+1""}"
+Guiding Star,GUIDING_STAR,1,Attack,Common,"Deal 12 damage.
+Next turn, draw 2 cards.",,,12,,"{""damage"": ""+1"", ""cards"": ""+1""}"
+Hammer Time,HAMMER_TIME,2,Power,Rare,"Whenever you [gold]Forge[/gold], all allies [gold]Forge[/gold] as well.",,,,,"{""cost"": 1}"
+Heavenly Drill,HEAVENLY_DRILL,0,Attack,Rare,"Deal 8 damage X times.
+Double X if it's 4 or more.",,,8,,"{""damage"": ""+2""}"
+Hegemony,HEGEMONY,2,Attack,Uncommon,"Deal 15 damage.
+Next turn, gain [energy:2].",,,15,,"{""damage"": ""+3"", ""energy"": ""+1""}"
+Heirloom Hammer,HEIRLOOM_HAMMER,2,Attack,Rare,"Deal 17 damage.
+Choose a Colorless card in your [gold]Hand[/gold]. Add a copy of that card into your [gold]Hand[/gold].",,,17,,"{""damage"": ""+5""}"
+Hidden Cache,HIDDEN_CACHE,1,Skill,Common,"Gain [star:1].
+Next turn, gain [star:3].",,,,,"{""starnextturnpower"": ""+1""}"
+I Am Invincible,I_AM_INVINCIBLE,1,Skill,Rare,"Gain 9 [gold]Block[/gold].
+At the end of your turn, if this is on top of your [gold]Draw Pile[/gold], play it.",,,,9,"{""block"": ""+3""}"
+Kingly Kick,KINGLY_KICK,4,Attack,Uncommon,"Deal 24 damage.
+Whenever you draw this card, reduce its cost by 1.",,,24,,"{""damage"": ""+6""}"
+Kingly Punch,KINGLY_PUNCH,1,Attack,Uncommon,"Deal 8 damage.
+Whenever you draw this card, increase its damage by 3 this combat.",,,8,,"{""increase"": ""+2""}"
+Knockout Blow,KNOCKOUT_BLOW,3,Attack,Uncommon,"Deal 30 damage.
+If this kills an enemy, gain [star:5].",,,30,,"{""damage"": ""+8""}"
+Know Thy Place,KNOW_THY_PLACE,0,Skill,Common,"Apply 1 [gold]Weak[/gold].
+Apply 1 [gold]Vulnerable[/gold].",Exhaust,,,,"{""remove_exhaust"": 1}"
+Largesse,LARGESSE,0,Skill,Uncommon,Another player adds 1 random Colorless card to their [gold]Hand[/gold].,,,,,{}
+Lunar Blast,LUNAR_BLAST,0,Attack,Uncommon,Deal 4 damage for each Skill already played this turn.[InCombat],,,4,,"{""damage"": ""+1""}"
+Make It So,MAKE_IT_SO,0,Attack,Rare,"Deal 6 damage.
+Every 3 Skills you play in a turn, put this into your [gold]Hand[/gold].",,,6,,"{""damage"": ""+3""}"
+Manifest Authority,MANIFEST_AUTHORITY,1,Skill,Uncommon,"Gain 7 [gold]Block[/gold].
+Add 1 random Colorless card into your [gold]Hand[/gold].",,,,7,"{""block"": ""+1""}"
+Meteor Shower,METEOR_SHOWER,0,Attack,Ancient,"Deal 14 damage to ALL enemies.
+Apply 2 [gold]Weak[/gold] and [gold]Vulnerable[/gold] to ALL enemies.",,,14,,"{""damage"": ""+7""}"
+Monarch's Gaze,MONARCHS_GAZE,3,Power,Rare,"Whenever you attack an enemy, it loses 1 [gold]Strength[/gold] this turn.",,,,,"{""cost"": 2}"
+Monologue,MONOLOGUE,0,Skill,Uncommon,"Whenever you play a card this turn, gain 1 [gold]Strength[/gold] this turn.",,,,,"{""add_retain"": 1}"
+Neutron Aegis,NEUTRON_AEGIS,1,Power,Rare,Gain 8 [gold]Plating[/gold].,,,,,"{""platingpower"": ""+3""}"
+Orbit,ORBIT,2,Power,Uncommon,"Every [energy:4] you spend,
+gain [energy:1].",,,,,"{""cost"": 1}"
+Pale Blue Dot,PALE_BLUE_DOT,1,Power,Uncommon,"If you play 5 or more cards in a turn, draw 1 card at the start of your next turn.",,,,,"{""cards"": ""+1""}"
+Parry,PARRY,1,Power,Uncommon,"Whenever you play [gold]Sovereign Blade[/gold], gain 6 [gold]Block[/gold].",,,,,"{""parrypower"": ""+3""}"
+Particle Wall,PARTICLE_WALL,0,Skill,Uncommon,"Gain 9 [gold]Block[/gold].
+Return this card to your [gold]Hand[/gold].",,,,9,"{""block"": ""+3""}"
+Patter,PATTER,1,Skill,Common,"Gain 8 [gold]Block[/gold].
+Gain 2 [gold]Vigor[/gold].",,,,8,"{""block"": ""+2"", ""vigorpower"": ""+1""}"
+Photon Cut,PHOTON_CUT,1,Attack,Common,"Deal 10 damage.
+Draw 1 card.
+Put 1 card from your [gold]Hand[/gold] on top of your [gold]Draw Pile[/gold].",,,10,,"{""damage"": ""+3"", ""cards"": ""+1""}"
+Pillar of Creation,PILLAR_OF_CREATION,1,Power,Uncommon,"Whenever you create a card, gain 3 [gold]Block[/gold].",,,,3,"{""block"": ""+1""}"
+Prophesize,PROPHESIZE,2,Skill,Uncommon,Draw 6 cards.,,,,,"{""cards"": ""+3""}"
+Quasar,QUASAR,0,Skill,Uncommon,Choose 1 of 3 random Colorless cards to add into your [gold]Hand[/gold].,,,,,{}
+Radiate,RADIATE,0,Attack,Uncommon,Deal 3 damage to ALL enemies for each [star:1] gained this turn.[InCombat],,,3,,"{""damage"": ""+1""}"
+Refine Blade,REFINE_BLADE,1,Skill,Common,"[gold]Forge[/gold] 6.
+Next turn, gain [energy:1].",,,,,"{""forge"": ""+4""}"
+Reflect,REFLECT,1,Skill,Uncommon,"Gain 17 [gold]Block[/gold].
+Blocked attack damage is reflected to your attacker this turn.",,,,17,"{""block"": ""+4""}"
+Resonance,RESONANCE,1,Skill,Uncommon,Gain 1 [gold]Strength[/gold]. ALL enemies lose 1 [gold]Strength[/gold].,,,,,"{""strengthpower"": ""+1""}"
+Royal Gamble,ROYAL_GAMBLE,0,Skill,Uncommon,Gain 9 [star:1].,Exhaust,,,,"{""add_retain"": 1}"
+Royalties,ROYALTIES,1,Power,Rare,"At the end of combat, gain 30 [gold]Gold[/gold].",,,,,"{""gold"": ""+5""}"
+Seeking Edge,SEEKING_EDGE,1,Power,Rare,"[gold]Forge[/gold] 7.
+[gold]Sovereign Blade[/gold] now deals damage to ALL enemies.",,,,,"{""forge"": ""+4""}"
+Seven Stars,SEVEN_STARS,2,Attack,Rare,Deal 7 damage to ALL enemies 7 times.,,,7,,"{""cost"": 1}"
+Shining Strike,SHINING_STRIKE,1,Attack,Uncommon,"Deal 8 damage.
+Gain [star:2].
+Put this card on top of your [gold]Draw Pile[/gold].",,Strike,8,,"{""damage"": ""+3""}"
+Solar Strike,SOLAR_STRIKE,1,Attack,Common,"Deal 8 damage.
+Gain [star:1].",,Strike,8,,"{""damage"": ""+1"", ""stars"": ""+1""}"
+Spectrum Shift,SPECTRUM_SHIFT,2,Power,Uncommon,"At the start of your turn, add 1 random Colorless card into your [gold]Hand[/gold].",,,,,"{""cost"": 1}"
+Spoils of Battle,SPOILS_OF_BATTLE,1,Skill,Common,[gold]Forge[/gold] 10.,,,,,"{""forge"": ""+5""}"
+Stardust,STARDUST,0,Attack,Uncommon,Deal 5 damage to a random enemy X times.,,,5,,"{""damage"": ""+2""}"
+Strike,STRIKE_REGENT,1,Attack,Basic,Deal 6 damage.,,Strike,6,,"{""damage"": ""+3""}"
+Summon Forth,SUMMON_FORTH,1,Skill,Uncommon,"[gold]Forge[/gold] 8.
+Put [gold]Sovereign Blade[/gold] into your [gold]Hand[/gold] from anywhere.",,,,,"{""forge"": ""+3""}"
+Supermassive,SUPERMASSIVE,1,Attack,Uncommon,"Deal 8 damage.
+Deals 3 additional damage for each card you created this combat.",,,,,"{""damage"": ""+1"", ""extradamage"": ""+1""}"
+Sword Sage,SWORD_SAGE,2,Power,Rare,Increase the cost of [gold]Sovereign Blade[/gold] by 1. [gold]Sovereign Blade[/gold] now hits an additional time.,,,,,"{""cost"": 1}"
+Terraforming,TERRAFORMING,1,Skill,Uncommon,Gain 6 [gold]Vigor[/gold].,,,,,"{""vigorpower"": ""+2""}"
+The Sealed Throne,THE_SEALED_THRONE,1,Power,Ancient,"Whenever you play a card, gain [star:1].",,,,,"{""add_innate"": 1}"
+The Smith,THE_SMITH,1,Skill,Rare,[gold]Forge[/gold] 30.,,,,,"{""forge"": ""+10""}"
+Tyranny,TYRANNY,1,Power,Rare,"At the start of your turn, draw 1 card and [gold]Exhaust[/gold] 1 card from your [gold]Hand[/gold].",Exhaust,,,,"{""add_innate"": 1}"
+Venerate,VENERATE,1,Skill,Basic,Gain [star:2].,,,,,"{""stars"": ""+1""}"
+Void Form,VOID_FORM,3,Power,Rare,"End your turn.
+The first 2 cards you play each turn are free to play.",,,,,"{""voidformpower"": ""+1""}"
+Wrought in War,WROUGHT_IN_WAR,1,Attack,Common,"Deal 7 damage.
+[gold]Forge[/gold] 5.",,,7,,"{""damage"": ""+2"", ""forge"": ""+2""}"

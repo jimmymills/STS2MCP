@@ -1,0 +1,65 @@
+name,id,tier,rarity,pool,description,notes
+Ashwater,ASHWATER,C,Uncommon,ironclad,[gold]Exhaust[/gold] any number of cards in your [gold]Hand[/gold].,Exhaust any cards in hand. Niche.
+Attack Potion,ATTACK_POTION,B,Common,shared,Choose [blue]1[/blue] of [blue]3[/blue] random Attack cards to add into your [gold]Hand[/gold]. It's free to play this turn.,"Random Attack in hand, costs 0. Variable."
+Beetle Juice,BEETLE_JUICE,B,Rare,shared,Enemy's attacks deal [blue]30%[/blue] less damage for the next [blue]4[/blue] turns.,Standard potion. Use when needed.
+Blessing of the Forge,BLESSING_OF_THE_FORGE,A,Uncommon,shared,[gold]Upgrade[/gold] all cards in your [gold]Hand[/gold] for the rest of combat.,Upgrade all cards in hand. Massive value.
+Block Potion,BLOCK_POTION,B,Common,shared,Gain [blue]12[/blue] [gold]Block[/gold].,+12 Block. Emergency defense.
+Blood Potion,BLOOD_POTION,B,Common,ironclad,Heal for [green]20%[/green] of your Max HP.,Heal 20% Max HP. Sustain.
+Bone Brew,BONE_BREW,B,Uncommon,necrobinder,[gold]Summon[/gold] [blue]15[/blue].,+15 Summon. Necrobinder scaling.
+Bottled Potential,BOTTLED_POTENTIAL,C,Rare,shared,Shuffle ALL your cards into your [gold]Draw Pile[/gold]. Draw [blue]5[/blue] cards.,Upgrade random card in hand until played. Minor.
+Clarity Extract,CLARITY,B,Uncommon,shared,"Draw [blue]1[/blue] card. At the start of your next [blue]3[/blue] turns, draw [blue]1[/blue] additional card.",Standard potion. Use when needed.
+Colorless Potion,COLORLESS_POTION,B,Common,shared,Choose [blue]1[/blue] of [blue]3[/blue] random Colorless cards to add into your [gold]Hand[/gold]. It's free to play this turn.,"Random Colorless card, costs 0. Variable."
+Cosmic Concoction,COSMIC_CONCOCTION,B,Rare,regent,Add [blue]3[/blue] [gold]Upgraded[/gold] Colorless cards into your [gold]Hand[/gold].,Standard potion. Use when needed.
+Cunning Potion,CUNNING_POTION,A,Uncommon,silent,Add [blue]3[/blue] [gold]Upgraded Shivs[/gold] into your [gold]Hand[/gold].,Add 3 Shivs to hand. Silent staple.
+Cure All,CURE_ALL,B,Uncommon,shared,Gain [energy:1]. Draw [blue]2[/blue] cards.,Heal 10 HP per debuff removed. Situational but strong.
+Dexterity Potion,DEXTERITY_POTION,A,Common,shared,Gain [blue]2[/blue] [gold]Dexterity[/gold].,+2 Dexterity. Universal block boost.
+Distilled Chaos,DISTILLED_CHAOS,A,Rare,shared,Play the top [blue]3[/blue] cards of your [gold]Draw Pile[/gold].,"Play 3 random cards from draw pile. High variance, high ceiling."
+Droplet of Precognition,DROPLET_OF_PRECOGNITION,B,Rare,shared,Choose a card in your [gold]Draw Pile[/gold] and add it into your [gold]Hand[/gold].,Standard potion. Use when needed.
+Duplicator,DUPLICATOR,S,Uncommon,shared,"This turn, your next card is played an extra time.",Double a card this combat. Broken with right card.
+Energy Potion,ENERGY_POTION,A,Common,shared,Gain [energy:2].,+2 Energy this turn. Enables big turns.
+Entropic Brew,ENTROPIC_BREW,S,Rare,shared,Fill all your empty potion slots with random potions.,Fill all potion slots with random potions. Massive value.
+Essence of Darkness,ESSENCE_OF_DARKNESS,A,Rare,defect,[gold]Channel[/gold] a [gold]Dark[/gold] for each of your [gold]Orb Slots[/gold].,Channel 1 Dark per orb slot. Defect nuke.
+Explosive Ampoule,EXPLOSIVE_AMPOULE,B,Common,shared,Deal [blue]10[/blue] damage to ALL enemies.,Deal 10 damage to ALL. Good AoE.
+Fairy in a Bottle,FAIRY_IN_A_BOTTLE,S,Rare,shared,"When you would die, instead this potion is discarded and you heal to [blue]30%[/blue] of your Max HP.",Auto-revive at 30% HP. Save for boss/elite. Top tier.
+Fire Potion,FIRE_POTION,B,Common,shared,Deal [blue]20[/blue] damage.,Deal 20 damage. Simple but effective.
+Flex Potion,FLEX_POTION,B,Common,shared,"Gain [blue]5[/blue] [gold]Strength[/gold]. At the end of your turn, lose [blue]5[/blue] [gold]Strength[/gold].",+5 Strength this turn. Big damage turn.
+Focus Potion,FOCUS_POTION,A,Common,defect,Gain [blue]2[/blue] [gold]Focus[/gold].,+2 Focus. Defect staple.
+Fortifier,FORTIFIER,C,Uncommon,shared,Triple your [gold]Block[/gold].,+5 Block next turn. Delayed defense.
+Foul Potion,FOUL_POTION,C,Event,event,"Deal [blue]12[/blue] damage to EVERYONE.
+Can be thrown at the [gold]Merchant[/gold] for [blue]100[/blue] [gold]Gold[/gold] instead.",Apply 5 random debuffs. Chaotic.
+Fruit Juice,FRUIT_JUICE,A,Rare,shared,Gain [blue]5[/blue] Max HP.,+5 Max HP permanently. Always good.
+Fysh Oil,FYSH_OIL,B,Uncommon,shared,Gain [blue]1[/blue] [gold]Strength[/gold] and [blue]1[/blue] [gold]Dexterity[/gold].,Standard potion. Use when needed.
+Gambler's Brew,GAMBLERS_BREW,A,Uncommon,shared,"Discard any number of cards, then draw that many.","Discard hand, draw same number. Fix bad hands."
+Ghost in a Jar,GHOST_IN_A_JAR,S,Rare,silent,Gain [blue]1[/blue] [gold]Intangible[/gold].,Intangible for 1 turn. Trivializes big attacks.
+Gigantification Potion,GIGANTIFICATION_POTION,B,Rare,shared,The next Attack you play deals triple damage.,Standard potion. Use when needed.
+Glowwater Potion,GLOWWATER_POTION,B,Event,event,[gold]Exhaust[/gold] your [gold]Hand[/gold]. Draw [blue]10[/blue] cards.,Standard potion. Use when needed.
+Heart of Iron,HEART_OF_IRON,A,Uncommon,shared,Gain [blue]7[/blue] [gold]Plating[/gold].,+6 Plating. Permanent block scaling.
+King's Courage,KINGS_COURAGE,B,Uncommon,regent,[gold]Forge[/gold] [blue]15[/blue].,"+3 Strength, +3 Dexterity this turn. Big turn."
+Liquid Bronze,LIQUID_BRONZE,B,Uncommon,shared,Gain [blue]3[/blue] [gold]Thorns[/gold].,+3 Thorns. Passive damage.
+Liquid Memories,LIQUID_MEMORIES,A,Rare,shared,Put a card from your [gold]Discard Pile[/gold] into your [gold]Hand[/gold]. It costs [blue]0[/blue] [energy:1] this turn.,"Return discarded card to hand, costs 0. Combo enabler."
+Lucky Tonic,LUCKY_TONIC,C,Rare,shared,Gain [blue]1[/blue] [gold]Buffer[/gold].,+2 Luck. Minor boost.
+Mazaleth's Gift,MAZALETHS_GIFT,B,Rare,shared,Gain [blue]1[/blue] [gold]Ritual[/gold].,Standard potion. Use when needed.
+Orobic Acid,OROBIC_ACID,B,Rare,shared,"Add a random Attack, Skill, and Power into your [gold]Hand[/gold]. They're free to play this turn.",Standard potion. Use when needed.
+Poison Potion,POISON_POTION,B,Common,silent,Apply [blue]6[/blue] [gold]Poison[/gold].,Apply 6 Poison. Silent damage.
+Pot of Ghouls,POT_OF_GHOULS,B,Rare,necrobinder,Add [blue]2[/blue] [gold]Souls[/gold] into your [gold]Hand[/gold].,Summon 30. Necrobinder burst.
+Potion of Binding,POTION_OF_BINDING,B,Uncommon,shared,Apply [blue]1[/blue] [gold]Weak[/gold] and [blue]1[/blue] [gold]Vulnerable[/gold] to ALL enemies.,Standard potion. Use when needed.
+Potion of Capacity,POTION_OF_CAPACITY,A,Uncommon,defect,Gain [blue]2[/blue] [gold]Orb Slots[/gold].,+2 Orb slots. Defect scaling.
+Potion of Doom,POTION_OF_DOOM,B,Common,necrobinder,Apply [blue]33[/blue] [gold]Doom[/gold].,+30 Doom to enemy. Necrobinder execute.
+Potion-Shaped Rock,POTION_SHAPED_ROCK,C,Token,shared,Deal [blue]15[/blue] damage.,Does nothing. Placeholder.
+Powdered Demise,POWDERED_DEMISE,B,Uncommon,shared,Enemy loses [blue]9[/blue] HP at the end of each of its turns.,Standard potion. Use when needed.
+Power Potion,POWER_POTION,B,Common,shared,Choose [blue]1[/blue] of [blue]3[/blue] random Power cards to add into your [gold]Hand[/gold]. It's free to play this turn.,"Random Power in hand, costs 0. Variable."
+Radiant Tincture,RADIANT_TINCTURE,B,Uncommon,shared,Gain [energy:1]. Gain an additional [energy:1] at the start of your next [blue]3[/blue] turns.,Standard potion. Use when needed.
+Regen Potion,REGEN_POTION,B,Uncommon,shared,Gain [green]5[/green] [gold]Regen[/gold].,+5 Regen. Heal over time.
+Shackling Potion,SHACKLING_POTION,C,Rare,shared,ALL enemies lose [blue]7[/blue] [gold]Strength[/gold] this turn.,Enemy loses 3 Strength. Situational.
+Ship in a Bottle,SHIP_IN_A_BOTTLE,B,Rare,shared,"Gain [blue]10[/blue] [gold]Block[/gold]. Next turn, gain [blue]10[/blue] [gold]Block[/gold].",Standard potion. Use when needed.
+Skill Potion,SKILL_POTION,B,Common,shared,Choose [blue]1[/blue] of [blue]3[/blue] random Skill cards to add into your [gold]Hand[/gold]. It's free to play this turn.,"Random Skill in hand, costs 0. Variable."
+Snecko Oil,SNECKO_OIL,A,Rare,shared,Draw [blue]7[/blue] cards. Randomize the cost of cards in your [gold]Hand[/gold] this turn.,"Draw 5 cards, randomize costs. Can be huge."
+Soldier's Stew,SOLDIERS_STEW,B,Rare,ironclad,All cards containing [gold]Strike[/gold] gain [blue]1[/blue] [gold]Replay[/gold] this combat.,Standard potion. Use when needed.
+Speed Potion,SPEED_POTION,B,Common,shared,"Gain [blue]5[/blue] [gold]Dexterity[/gold]. At the end of your turn, lose [blue]5[/blue] [gold]Dexterity[/gold].",+5 Dexterity this turn. Big block turn.
+Stable Serum,STABLE_SERUM,B,Uncommon,shared,[gold]Retain[/gold] your [gold]Hand[/gold] for [blue]2[/blue] turns.,+3 permanent Artifact. Anti-debuff.
+Star Potion,STAR_POTION,B,Common,regent,Gain [star:3].,+8 Stars. Regent resource.
+Strength Potion,STRENGTH_POTION,A,Common,shared,Gain [blue]2[/blue] [gold]Strength[/gold].,+2 Strength. Universal damage boost.
+Swift Potion,SWIFT_POTION,B,Common,shared,Draw [blue]3[/blue] cards.,Draw 3 cards. Cycle/find answers.
+Touch of Insanity,TOUCH_OF_INSANITY,C,Uncommon,shared,Choose a card in your [gold]Hand[/gold]. It is free to play this combat.,Confuse an enemy. Very niche.
+Vulnerable Potion,VULNERABLE_POTION,B,Common,shared,Apply [blue]3[/blue] [gold]Vulnerable[/gold].,Apply 3 Vulnerable. Damage amp.
+Weak Potion,WEAK_POTION,B,Common,shared,Apply [blue]3[/blue] [gold]Weak[/gold].,Apply 3 Weak. Damage reduction.

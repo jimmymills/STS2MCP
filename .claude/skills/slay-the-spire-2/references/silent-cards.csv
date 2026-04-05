@@ -1,0 +1,130 @@
+name,id,cost,type,rarity,description,keywords,tags,damage,block,upgrade
+Abrasive,ABRASIVE,3,Power,Rare,"Gain 1 [gold]Dexterity[/gold].
+Gain 4 [gold]Thorns[/gold].",Sly,,,,"{""thornspower"": ""+2""}"
+Accelerant,ACCELERANT,1,Power,Rare,[gold]Poison[/gold] is triggered 1 additional time.,,,,,"{""accelerant"": ""+1""}"
+Accuracy,ACCURACY,1,Power,Uncommon,[gold]Shivs[/gold] deal 4 additional damage.,,,,,"{""accuracypower"": ""+2""}"
+Acrobatics,ACROBATICS,1,Skill,Common,"Draw 3 cards.
+Discard 1 card.",,,,,"{""cards"": ""+1""}"
+Adrenaline,ADRENALINE,0,Skill,Rare,"Gain [energy:1].
+Draw 2 cards.",Exhaust,,,,"{""energy"": ""+1""}"
+Afterimage,AFTERIMAGE,1,Power,Rare,"Whenever you play a card, gain 1 [gold]Block[/gold].",,,,,"{""add_innate"": 1}"
+Anticipate,ANTICIPATE,0,Skill,Common,Gain 3 [gold]Dexterity[/gold] this turn.,,,,,"{""dexterity"": ""+2""}"
+Assassinate,ASSASSINATE,0,Attack,Rare,"Deal 10 damage.
+Apply 1 [gold]Vulnerable[/gold].",Exhaust|Innate,,10,,"{""damage"": ""+3"", ""vulnerable"": ""+1""}"
+Backflip,BACKFLIP,1,Skill,Common,"Gain 5 [gold]Block[/gold].
+Draw 2 cards.",,,,5,"{""block"": ""+3""}"
+Backstab,BACKSTAB,0,Attack,Uncommon,Deal 11 damage.,Exhaust|Innate,,11,,"{""damage"": ""+4""}"
+Blade Dance,BLADE_DANCE,1,Skill,Common,Add 3 [gold]Shivs[/gold] into your [gold]Hand[/gold].,Exhaust,,,,"{""cards"": ""+1""}"
+Blade of Ink,BLADE_OF_INK,1,Skill,Rare,"This turn, whenever you play an Attack, gain 2 [gold]Strength[/gold] this turn.",,,,,"{""strength"": ""+1""}"
+Blur,BLUR,1,Skill,Uncommon,"Gain 5 [gold]Block[/gold].
+[gold]Block[/gold] is not removed at the start of your next turn.",,,,5,"{""block"": ""+3""}"
+Bouncing Flask,BOUNCING_FLASK,2,Skill,Uncommon,Apply 3 [gold]Poison[/gold] to a random enemy 3 times.,,,,,"{""repeat"": ""+1""}"
+Bubble Bubble,BUBBLE_BUBBLE,1,Skill,Uncommon,"If the enemy has [gold]Poison[/gold], apply 9 [gold]Poison[/gold].",,,,,"{""poison"": ""+3""}"
+Bullet Time,BULLET_TIME,3,Skill,Rare,You cannot draw additional cards this turn. ALL cards in your [gold]Hand[/gold] are free to play this turn.,,,,,"{""cost"": 2}"
+Burst,BURST,1,Skill,Rare,"This turn, your next Skill is played an extra time.",,,,,"{""skills"": ""+1""}"
+Calculated Gamble,CALCULATED_GAMBLE,0,Skill,Uncommon,"Discard your [gold]Hand[/gold],
+then draw that many cards.",Exhaust,,,,"{""add_retain"": 1}"
+Cloak and Dagger,CLOAK_AND_DAGGER,1,Skill,Common,"Gain 6 [gold]Block[/gold].
+Add 1 [gold]Shiv[/gold] into your [gold]Hand[/gold].",,,,6,"{""cards"": ""+1""}"
+Corrosive Wave,CORROSIVE_WAVE,1,Skill,Rare,"Whenever you draw a card this turn, apply 3 [gold]Poison[/gold] to ALL enemies.",,,,,"{""corrosivewave"": ""+1""}"
+Dagger Spray,DAGGER_SPRAY,1,Attack,Common,Deal 4 damage to ALL enemies twice.,,,4,,"{""damage"": ""+2""}"
+Dagger Throw,DAGGER_THROW,1,Attack,Common,"Deal 9 damage.
+Draw 1 card.
+Discard 1 card.",,,9,,"{""damage"": ""+3""}"
+Dash,DASH,2,Attack,Uncommon,"Gain 10 [gold]Block[/gold].
+Deal 10 damage.",,,10,10,"{""damage"": ""+3"", ""block"": ""+3""}"
+Deadly Poison,DEADLY_POISON,1,Skill,Common,Apply 5 [gold]Poison[/gold].,,,,,"{""poison"": ""+2""}"
+Defend,DEFEND_SILENT,1,Skill,Basic,Gain 5 [gold]Block[/gold].,,Defend,,5,"{""block"": ""+3""}"
+Deflect,DEFLECT,0,Skill,Common,Gain 4 [gold]Block[/gold].,,,,4,"{""block"": ""+3""}"
+Dodge and Roll,DODGE_AND_ROLL,1,Skill,Common,"Gain 4 [gold]Block[/gold].
+Next turn, gain 4 [gold]Block[/gold].",,,,4,"{""block"": ""+2""}"
+Echoing Slash,ECHOING_SLASH,1,Attack,Rare,"Deal 10 damage to ALL enemies.
+Repeat this effect for each enemy killed.",,,10,,"{""damage"": ""+3""}"
+Envenom,ENVENOM,2,Power,Rare,"Whenever an Attack deals unblocked damage, apply 1 [gold]Poison[/gold].",,,,,"{""envenompower"": ""+1""}"
+Escape Plan,ESCAPE_PLAN,0,Skill,Uncommon,"Draw 1 card.
+If you draw a Skill, gain 3 [gold]Block[/gold].",,,,3,"{""block"": ""+2""}"
+Expertise,EXPERTISE,1,Skill,Uncommon,Draw cards until you have 6 in your [gold]Hand[/gold].,,,,,"{""cards"": ""+1""}"
+Expose,EXPOSE,0,Skill,Uncommon,"Remove all [gold]Artifact[/gold] and [gold]Block[/gold] from the enemy.
+Apply 2 [gold]Vulnerable[/gold].",Exhaust,,,,"{""power"": ""+1""}"
+Fan of Knives,FAN_OF_KNIVES,2,Power,Rare,"[gold]Shivs[/gold] now hit ALL enemies.
+Add 4 [gold]Shivs[/gold] into your [gold]Hand[/gold].",,,,,"{""shivs"": ""+1""}"
+Finisher,FINISHER,1,Attack,Uncommon,Deal 6 damage for each Attack already played this turn.[InCombat],,,6,,"{""damage"": ""+2""}"
+Flanking,FLANKING,2,Skill,Uncommon,The enemy takes double damage from other players this turn.,,,,,"{""cost"": 1}"
+Flechettes,FLECHETTES,1,Attack,Uncommon,Deal 5 damage for each Skill in your [gold]Hand[/gold].[InCombat],,,5,,"{""damage"": ""+2""}"
+Flick-Flack,FLICK_FLACK,1,Attack,Common,Deal 7 damage to ALL enemies.,Sly,,7,,"{""damage"": ""+2""}"
+Follow Through,FOLLOW_THROUGH,1,Attack,Uncommon,"Deal 6 damage to ALL enemies.
+If the last card you played this turn was a Skill, apply 1 [gold]Weak[/gold] to ALL enemies.",,,6,,"{""damage"": ""+2"", ""weak"": ""+1""}"
+Footwork,FOOTWORK,1,Power,Uncommon,Gain 2 [gold]Dexterity[/gold].,,,,,"{""dexterity"": ""+1""}"
+Grand Finale,GRAND_FINALE,0,Attack,Rare,Can only be played if there are no cards in your [gold]Draw Pile[/gold]. Deal 50 damage to ALL enemies.,,,50,,"{""damage"": ""+10""}"
+Hand Trick,HAND_TRICK,1,Skill,Uncommon,"Gain 7 [gold]Block[/gold].
+Add [gold]Sly[/gold] to a Skill in your [gold]Hand[/gold] this turn.",,,,7,"{""block"": ""+3""}"
+Haze,HAZE,3,Skill,Uncommon,Apply 4 [gold]Poison[/gold] to ALL enemies.,Sly,,,,"{""poison"": ""+2""}"
+Hidden Daggers,HIDDEN_DAGGERS,0,Skill,Uncommon,"Discard 2 cards.
+Add 2 [gold]Shivs[/gold] into your [gold]Hand[/gold].",,,,,{}
+Infinite Blades,INFINITE_BLADES,1,Power,Uncommon,"At the start of your turn, add 1 [gold]Shiv[/gold] into your [gold]Hand[/gold].",,,,,"{""add_innate"": 1}"
+Knife Trap,KNIFE_TRAP,2,Skill,Rare,Play every [gold]Shiv[/gold] in your [gold]Exhaust Pile[/gold] on the enemy.[InCombat],,Shiv,,,{}
+Leading Strike,LEADING_STRIKE,1,Attack,Common,"Deal 7 damage.
+Add 1 [gold]Shiv[/gold] into your [gold]Hand[/gold].",,Strike,7,,"{""damage"": ""+3""}"
+Leg Sweep,LEG_SWEEP,2,Skill,Uncommon,"Apply 2 [gold]Weak[/gold].
+Gain 11 [gold]Block[/gold].",,,,11,"{""block"": ""+3"", ""weak"": ""+1""}"
+Malaise,MALAISE,0,Skill,Rare,Enemy loses X [gold]Strength[/gold]. Apply X [gold]Weak[/gold].,Exhaust,,,,{}
+Master Planner,MASTER_PLANNER,2,Power,Rare,"When you play a Skill, it gains [gold]Sly[/gold].",,,,,"{""cost"": 1}"
+Memento Mori,MEMENTO_MORI,1,Attack,Uncommon,"Deal 12 damage.
+Deals 4 additional damage for each card discarded this turn.",,,,,"{""damage"": ""+1"", ""calculationbase"": ""+2"", ""extradamage"": ""+1""}"
+Mirage,MIRAGE,1,Skill,Uncommon,Gain [gold]Block[/gold] equal to [gold]Poison[/gold] on ALL enemies.[InCombat],Exhaust,,,,"{""cost"": 0}"
+Murder,MURDER,3,Attack,Rare,"Deal 2 damage.
+Deals 1 additional damage for each card drawn this combat.",,,,,"{""cost"": 2}"
+Neutralize,NEUTRALIZE,0,Attack,Basic,"Deal 3 damage.
+Apply 1 [gold]Weak[/gold].",,,3,,"{""damage"": ""+1"", ""weak"": ""+1""}"
+Nightmare,NIGHTMARE,3,Skill,Rare,"Choose a card.
+Next turn, add 3 copies of that card into your [gold]Hand[/gold].",Exhaust,,,,"{""cost"": 2}"
+Noxious Fumes,NOXIOUS_FUMES,1,Power,Uncommon,"At the start of your turn, apply 2 [gold]Poison[/gold] to ALL enemies.",,,,,"{""poisonperturn"": ""+1""}"
+Outbreak,OUTBREAK,1,Power,Uncommon,"Every 3 times you apply [gold]Poison[/gold], deal 11 damage to ALL enemies.",,,,,"{""outbreakpower"": ""+4""}"
+Phantom Blades,PHANTOM_BLADES,1,Power,Uncommon,"[gold]Shivs[/gold] gain [gold]Retain[/gold].
+The first [gold]Shiv[/gold] you play each turn deals 9 additional damage.",,,,,"{""phantombladespower"": ""+3""}"
+Piercing Wail,PIERCING_WAIL,1,Skill,Common,ALL enemies lose 6 [gold]Strength[/gold] this turn.,Exhaust,,,,"{""strengthloss"": ""+2""}"
+Pinpoint,PINPOINT,3,Attack,Uncommon,"Deal 17 damage.
+Costs 1 less [energy:1] for each Skill played this turn.",,,17,,"{""damage"": ""+5""}"
+Poisoned Stab,POISONED_STAB,1,Attack,Common,"Deal 6 damage.
+Apply 3 [gold]Poison[/gold].",,,6,,"{""damage"": ""+2"", ""poison"": ""+1""}"
+Pounce,POUNCE,2,Attack,Uncommon,"Deal 12 damage.
+The next Skill you play costs 0 [energy:1].",,,12,,"{""damage"": ""+6""}"
+Precise Cut,PRECISE_CUT,0,Attack,Uncommon,"Deal 15 damage.
+Deals 2 less damage for each other card in your [gold]Hand[/gold].",,,,,"{""calculationbase"": ""+3""}"
+Predator,PREDATOR,2,Attack,Uncommon,"Deal 15 damage.
+Next turn, draw 2 cards.",,,15,,"{""damage"": ""+5""}"
+Prepared,PREPARED,0,Skill,Common,"Draw 1 card.
+Discard 1 card.",,,,,"{""cards"": ""+1""}"
+Reflex,REFLEX,3,Skill,Uncommon,Draw 2 cards.,Sly,,,,"{""cards"": ""+1""}"
+Ricochet,RICOCHET,2,Attack,Common,Deal 3 damage to a random enemy 4 times.,Sly,,3,,"{""repeat"": ""+1""}"
+Serpent Form,SERPENT_FORM,3,Power,Rare,"Whenever you play a card, deal 4 damage to a random enemy.",,,,,"{""serpentformpower"": ""+1""}"
+Shadow Step,SHADOW_STEP,1,Skill,Rare,"Discard your [gold]Hand[/gold].
+Next turn, Attacks deal double damage.",,,,,"{""cost"": 0}"
+Shadowmeld,SHADOWMELD,1,Skill,Rare,Double your [gold]Block[/gold] gain this turn.,,,,,"{""cost"": 0}"
+Skewer,SKEWER,0,Attack,Uncommon,Deal 7 damage X times.,,,7,,"{""damage"": ""+3""}"
+Slice,SLICE,0,Attack,Common,Deal 6 damage.,,,6,,"{""damage"": ""+3""}"
+Snakebite,SNAKEBITE,2,Skill,Common,Apply 7 [gold]Poison[/gold].,Retain,,,,"{""poison"": ""+3""}"
+Sneaky,SNEAKY,2,Power,Rare,"Whenever another player attacks an enemy, gain 1 [gold]Block[/gold].",Sly,,,,"{""sneakypower"": ""+1""}"
+Speedster,SPEEDSTER,2,Power,Uncommon,"Whenever you draw a card during your turn, deal 2 damage to ALL enemies.",,,,,"{""speedsterpower"": ""+1""}"
+Storm of Steel,STORM_OF_STEEL,1,Skill,Rare,"Discard your [gold]Hand[/gold].
+Add 1 [gold]Shiv[/gold] into your [gold]Hand[/gold] for each card discarded.",,,,,{}
+Strangle,STRANGLE,1,Attack,Uncommon,"Deal 8 damage.
+Whenever you play a card this turn, the enemy loses 2 HP.",,,8,,"{""damage"": ""+2"", ""stranglepower"": ""+1""}"
+Strike,STRIKE_SILENT,1,Attack,Basic,Deal 6 damage.,,Strike,6,,"{""damage"": ""+3""}"
+Sucker Punch,SUCKER_PUNCH,1,Attack,Common,"Deal 8 damage.
+Apply 1 [gold]Weak[/gold].",,,8,,"{""damage"": ""+2"", ""weak"": ""+1""}"
+Suppress,SUPPRESS,0,Attack,Ancient,"Deal 11 damage.
+Apply 3 [gold]Weak[/gold].",Innate,,11,,"{""damage"": ""+6"", ""weak"": ""+2""}"
+Survivor,SURVIVOR,1,Skill,Basic,"Gain 8 [gold]Block[/gold].
+Discard 1 card.",,,,8,"{""block"": ""+3""}"
+Tactician,TACTICIAN,3,Skill,Uncommon,Gain [energy:1].,Sly,,,,"{""energy"": ""+1""}"
+The Hunt,THE_HUNT,1,Attack,Rare,"Deal 10 damage.
+If [gold]Fatal[/gold], gain an additional card reward.",Exhaust,,10,,"{""damage"": ""+5""}"
+Tools of the Trade,TOOLS_OF_THE_TRADE,1,Power,Rare,"At the start of your turn, draw 1 card and discard 1 card.",,,,,"{""cost"": 0}"
+Tracking,TRACKING,2,Power,Rare,[gold]Weak[/gold] enemies take double damage from Attacks.,,,,,"{""cost"": 1}"
+Untouchable,UNTOUCHABLE,2,Skill,Common,Gain 9 [gold]Block[/gold].,Sly,,,9,"{""block"": ""+3""}"
+Up My Sleeve,UP_MY_SLEEVE,2,Skill,Uncommon,"Add 3 [gold]Shivs[/gold] into your [gold]Hand[/gold].
+Reduce this card's cost by 1.",,,,,"{""cards"": ""+1""}"
+Well-Laid Plans,WELL_LAID_PLANS,1,Power,Uncommon,"At the end of your turn, [gold]Retain[/gold] up to 1 card.",,,,,"{""retainamount"": ""+1""}"
+Wraith Form,WRAITH_FORM,3,Power,Ancient,"Gain 2 [gold]Intangible[/gold].
+At the start of your turn, lose 1 [gold]Dexterity[/gold].",,,,,"{""intangiblepower"": ""+1""}"

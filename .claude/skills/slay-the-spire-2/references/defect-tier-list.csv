@@ -1,0 +1,90 @@
+Card,Tier,Energy,Rarity,Type,Card Text,Upgraded Text,Notes
+Strike,Starter,1,Starter,Attack,Deal 6 damage.,Deal 9 damage.,Starting card. Remove when possible.
+Defend,Starter,1,Starter,Skill,Gain 5 Block.,Gain 8 Block.,Starting card. Remove when possible.
+Zap,Starter,1,Starter,Skill,Channel 1 Lightning.,Channel 1 Lightning. Costs 0.,Starting card. Upgrade makes it free. Keep until late game.
+Dualcast,Starter,1,Starter,Skill,Evoke your rightmost orb twice.,Evoke your rightmost orb twice. Costs 0.,Starting card. Upgrade is important. Evokes for big damage/block.
+Echo Form,S,3,Rare,Power,Ethereal. The first card you play each turn is played an additional time.,The first card you play each turn is played an additional time.,"THE GOAT. Best card in class. Double powers, double attacks. Upgrade removes Ethereal."
+Capacitor,S,1,Uncommon,Power,Gain 2 orb slots.,Gain 3 orb slots.,More orb slots = more scaling. Works with temp focus. One copy solves endgame.
+Defragment,S,1,Rare,Power,Gain 1 Focus.,Gain 2 Focus.,Made rare in STS2. Permanent focus = permanent scaling. Still best focus card.
+Chill,S,0,Uncommon,Skill,Channel 1 Frost for each enemy. Exhaust.,Channel 1 Frost for each enemy.,0-cost AoE block setup. Disgusting in multi-enemy fights. Upgrade removes Exhaust.
+Glacier,S,2,Uncommon,Skill,Gain 6 Block. Channel 2 Frost.,Gain 9 Block. Channel 2 Frost.,Nerfed -1 block from STS1. Still S tier. 2 Frost = permanent block engine.
+Coolheaded,S,1,Common,Skill,Channel 1 Frost. Draw 1 card.,Channel 1 Frost. Draw 2 cards.,Best common. Frost + draw. Upgrade is insane. Click on sight.
+Genetic Algorithm,S,1,Rare,Skill,Gain 1 Block. Permanently increase this card's block by 3.,Gain 4 Block. Permanently increase this card's block by 3.,Scales through run. Early = insane late game block. Combo with Echo Form.
+Hotfix,S,0,Common,Skill,Gain 2 Focus this turn. Exhaust.,Gain 3 Focus this turn.,Best temp focus card. 0-cost. Loop multiple copies. Upgrade removes Exhaust. NERFED: now exhausts.
+Darkness,S,1,Uncommon,Skill,Channel 1 Dark. Trigger the passive of all Dark orbs.,Channel 1 Dark. Trigger the passive of all Dark orbs twice.,Way better than STS1. Boss killer. Dark orbs solve damage. Upgrade triggers twice.
+Modded,S,0,Uncommon,Skill,Gain 1 orb slot. Draw 1 card. Increase this card's cost by 1.,Gain 1 orb slot. Draw 2 cards. Increase this card's cost by 1.,Free orb slot + draw. Play twice is still worth it. Disgusting.
+Synchronize,S,1,Rare,Skill,Gain 2 Focus this turn for each unique orb you have. Exhaust.,Gain 2 Focus this turn for each unique orb you have.,With diverse orbs = 4-8 focus. Works with Capacitor/Modded. Upgrade removes Exhaust.
+Coolant,S,1,Uncommon,Power,"At the start of your turn, gain 2 Block for each unique orb you have.","At the start of your turn, gain 3 Block for each unique orb you have.",Passive block every turn. With 3-4 orb types = never take damage. Easy setup.
+Supercritical,S,0,Rare,Skill,Gain 4 energy. Exhaust.,Gain 5 energy. Exhaust.,"0-cost, 4 energy, exhausts. Play all your powers. Chain with Coolheaded. How other characters should work."
+Boot Sequence,A,0,Uncommon,Skill,Innate. Gain 10 Block. Exhaust.,Innate. Gain 13 Block. Exhaust.,0-cost 10 block turn 1. Lets you set up. Gets out of deck. Click in Act 1.
+Buffer,A,2,Rare,Power,Prevent the next time you would lose HP.,Prevent the next 2 times you would lose HP.,Store block for setup turns. Less needed without Heart. Still great vs big attacks.
+Charge Battery,A,1,Common,Skill,"Gain 7 Block. Next turn, gain 1 energy.","Gain 9 Block. Next turn, gain 1 energy.",Premium block common. Blocks + energy next turn. Never falls off.
+Cold Snap,A,1,Common,Attack,Deal 6 damage. Channel 1 Frost.,Deal 9 damage. Channel 1 Frost.,"Damage + Frost. Basically deal 6, block 2+ forever. Great early."
+Barrage,A,1,Common,Attack,Deal 5 damage for each channeled orb.,Deal 6 damage for each channeled orb.,Buffed from 4 to 5. With orb slots = massive damage. Common scaling option.
+Focused Strike,A,1,Common,Attack,Deal 9 damage. Gain 1 Focus this turn.,Deal 11 damage. Gain 2 Focus this turn.,Temp focus at common! Damage + scaling. Click on sight.
+FTL,A,0,Uncommon,Attack,"Deal 5 damage. If fewer than 3 cards played, draw 1 card.","Deal 7 damage. If fewer than 3 cards played, draw 1 card.",0-cost damage + draw. Don't take with Echo Form (doubling FTL < doubling drawn card).
+Go for the Eyes,A,0,Common,Attack,"Deal 3 damage. If enemy intends to attack, apply 1 Weak.","Deal 4 damage. If enemy intends to attack, apply 2 Weak.",0-cost Weak. Defect's only Weak source. Works with passive block. Always solid.
+Bulk Up,A,2,Uncommon,Power,Lose 1 orb slot. Gain 2 Strength. Gain 2 Dexterity.,Lose 1 orb slot. Gain 3 Strength. Gain 3 Dexterity.,Reprogram replacement. Lose orb slot often doesn't matter. Dex = block. Great early.
+Glasswork,A,1,Common,Skill,Gain 5 Block. Channel 1 Glass.,Gain 7 Block. Channel 1 Glass.,Block + AoE damage orb. Glass ticks down but evokes for big AoE. Solves AoE fights.
+Hailstorm,A,1,Uncommon,Power,"At end of turn, if you have Frost, deal 6 damage to ALL enemies.","At end of turn, if you have Frost, deal 8 damage to ALL enemies.",You always have Frost. 6 AoE every turn. Good early.
+Hologram,A,1,Common,Skill,Gain 3 Block. Put a card from discard into your hand. Exhaust.,Gain 4 Block. Put a card from discard into your hand. Exhaust.,"Block + retrieval. Get back temp focus, Boot Sequence, etc. Don't overpick."
+Loop,A,1,Uncommon,Power,"At start of turn, trigger rightmost orb's passive.","At start of turn, trigger rightmost orb's passive twice.",Basically extra orb slot. Less good without permanent focus but still scaling.
+Null,A,2,Uncommon,Attack,Deal 10 damage. Apply 2 Weak. Channel 1 Dark.,Deal 12 damage. Apply 2 Weak. Channel 1 Dark.,Damage + Weak + Dark. Kills bosses. Never falls off.
+Shadow Shield,A,2,Uncommon,Skill,Gain 11 Block. Channel 1 Dark.,Gain 14 Block. Channel 1 Dark.,Premium block + Dark. Block while Dark cooks. Great early and late.
+Shatter,A,1,Uncommon,Attack,Deal 11 damage to ALL enemies. Evoke all your orbs.,Deal 14 damage to ALL enemies. Evoke all your orbs.,11 AoE + evoke all. Early game clear. Evoking orbs is often good (block/damage).
+Sunder,A,2,Uncommon,Attack,"Deal 24 damage. If this kills, gain 3 energy.","Deal 28 damage. If this kills, gain 3 energy.",Pseudo-AoE. Kill + refund. Great in hallways. Falls off vs bosses.
+Double Energy,A,1,Rare,Skill,Double your energy. Exhaust.,Costs 0. Double your energy. Exhaust.,3 → 6 energy. Upgrade to 0 is disgusting. Play with powers/Coolheaded.
+Machine Learning,A,1,Rare,Power,"At the start of your turn, draw 1 additional card.","At the start of your turn, draw 2 additional cards.",Extra draw helps line up Hot Fix. Long fights = lots of value.
+Quadcast,A,1,Ancient,Skill,Evoke your rightmost orb 4 times.,Evoke your rightmost orb 4 times. Costs 0.,Ancient. Evoke 4x = 20+ block or massive Dark damage. Gross.
+Ice Lance,A,3,Rare,Attack,Deal 19 damage. Channel 3 Frost.,Deal 22 damage. Channel 3 Frost.,3 Frost is a lot. Expensive but front loads block. Works with Hot Fix.
+Voltaic,A,2,Uncommon,Skill,Channel Lightning equal to Lightning channeled this combat. Exhaust.,Channel Lightning equal to Lightning channeled this combat.,Lightning archetype payoff. Goes exponential. Boss killer. Upgrade removes Exhaust.
+All for One,A,2,Rare,Attack,Deal 10 damage. Put all 0-cost cards from discard into your hand.,Deal 14 damage. Put all 0-cost cards from discard into your hand.,Claw archetype payoff. Better in STS2. Draw-order dependent but strong.
+Creative AI,B,3,Rare,Power,"At start of turn, add a random Power to your hand. Costs 0.","At start of turn, add a random Power to your hand. Costs 0.",Slow scaling. Random powers. Can print Echo Form. Setup required.
+Adaptive Strike,B,2,Uncommon,Attack,Deal 18 damage. Add a 0-cost copy to discard.,Deal 21 damage. Add a 0-cost copy to discard.,Early game damage. Slow scaling. Falls off but solid Act 1.
+Ball Lightning,B,1,Common,Attack,Deal 7 damage. Channel 1 Lightning.,Deal 10 damage. Channel 1 Lightning.,Damage + Lightning. Less needed than STS1 but still solid early.
+Leap,B,1,Common,Skill,Gain 9 Block.,Gain 12 Block.,Big block number. Worse than Charge Battery (no energy next turn). Fine early.
+Lightning Rod,B,1,Uncommon,Skill,Gain 4 Block for the next 3 turns. Channel 1 Lightning.,Gain 6 Block for the next 3 turns. Channel 1 Lightning.,Slow block + Lightning. Defect's Iron Wave. Decent early.
+Meteor Strike,B,5,Rare,Attack,Deal 24 damage. Channel 3 Plasma.,Deal 30 damage. Channel 3 Plasma.,5 energy! Energy positive if you evoke. Can go infinite. Hard to play without setup.
+Skim,B,1,Common,Skill,Draw 3 cards.,Draw 4 cards.,Draw + 0-cost cards = good. Less needed than STS1 but still solid.
+Tesla Coil,B,0,Uncommon,Attack,Deal 3 damage. Trigger all Lightning against the enemy.,Deal 5 damage. Trigger all Lightning against the enemy.,0-cost. Works with temp focus to scale Lightning. Early damage.
+Turbo,B,0,Common,Skill,Gain 2 energy. Add a Void to discard.,Gain 2 energy. Add a Void to discard.,Burst energy. Void exhausts. Bridges into status cards. Common energy gen.
+Fight Through,B,1,Common,Skill,Gain 13 Block. Add 2 Wounds to discard.,Gain 16 Block. Add 2 Wounds to discard.,Power Through on Defect. Status synergy. Worse in STS2 (second cycle matters).
+Compile Driver,B,1,Uncommon,Attack,Deal 7 damage. Draw 1 card per unique orb.,Deal 10 damage. Draw 1 card per unique orb.,With Glass orbs = more draws. B tier but can enable stuff.
+Rocket Punch,B,2,Uncommon,Attack,"Deal 13 damage. Draw 1 card. If status created, costs 0 this turn.","Deal 14 damage. Draw 2 cards. If status created, costs 0 this turn.",Status payoff. 0-cost draw. BUFFED: cost reduction lasts until played.
+Iteration,B,1,Uncommon,Power,"First time you draw a status each turn, draw 2 cards.","First time you draw a status each turn, draw 3 cards.",Status synergy. Evolve but limited. Need status gen.
+Reboot,B,0,Rare,Skill,Shuffle all cards into draw pile. Draw 4 cards. Exhaust.,Shuffle all cards into draw pile. Draw 6 cards. Exhaust.,Reset bad draws. Find Hot Fix. Don't use if hunting specific power.
+Subroutine,B,1,Rare,Power,"Whenever you play a Power, gain 1 energy.","Costs 0. Whenever you play a Power, gain 1 energy.",Power spam = energy. Worse without Heat Sinks. Upgrade to 0 is nice.
+Thunder,B,1,Uncommon,Power,"Whenever you evoke Lightning, deal 6 damage to each enemy hit.","Whenever you evoke Lightning, deal 8 damage to each enemy hit.",+6 focus on Lightning evokes. Boss damage. Needs Lightning setup.
+Sweeping Beam,B,1,Common,Attack,Deal 6 damage to ALL enemies. Draw 1 card.,Deal 9 damage. Draw 1 card.,AoE + draw. 6 AoE matters in STS2. Fine common.
+Spinner,B,1,Uncommon,Power,"At start of turn, channel 1 Glass.","At start of turn, channel 1 Glass.",Free Glass each turn. AoE over time. Good early.
+Refract,B,3,Rare,Attack,Deal 9 damage twice. Channel 2 Glass.,Deal 12 damage twice. Channel 2 Glass.,18 single + 8 AoE via Glass evoke. Early game strong. 3 energy awkward.
+Rainbow,B,2,Uncommon,Skill,"Channel 1 Lightning, 1 Frost, 1 Dark. Exhaust.","Channel 1 Lightning, 1 Frost, 1 Dark.",Jack of all trades. Diverse orbs for Synchronize/Coolant. Dark for bosses.
+Signal Boost,B,1,Uncommon,Skill,Next Power you play is played an additional time. Exhaust.,Next Power you play is played an additional time. Exhaust.,Amplify but saves across turns. Double Echo Form. Less needed in STS2.
+Claw,C,0,Common,Attack,Deal 3 damage. Increase all Claw damage by 2 this combat.,Deal 5 damage. Increase all Claw damage by 2 this combat.,Meme card. C tier stands for Claw. Better in STS2 but still niche.
+Beam Cell,C,0,Common,Attack,Deal 3 damage. Apply 1 Vulnerable.,Deal 3 damage. Apply 2 Vulnerable.,0-cost Vuln. Only good in Claw decks. Orbs don't use Vuln.
+Biased Cognition,C,1,Ancient,Power,"Gain 4 Focus. At start of turn, lose 1 Focus.","Gain 5 Focus. At start of turn, lose 1 Focus.",Ancient only. No Artifact to negate. Temp focus is plentiful. Less needed.
+Hyperbeam,C,2,Uncommon,Attack,Deal 26 damage to ALL enemies. Lose 3 Focus.,Deal 32 damage to ALL enemies. Lose 3 Focus.,Can't negate focus loss. Farm Act 1. Falls off in bosses. Carefully timed.
+Overclock,C,0,Common,Skill,Draw 2 cards. Add a Burn to discard.,Draw 3 cards. Add a Burn to discard.,Draw but Burn hurts second cycle. Less needed without power spam.
+Scavenge,C,1,Uncommon,Skill,"Exhaust a card. Next turn, gain 2 energy.","Exhaust a card. Next turn, gain 3 energy.",Nerfed Recycle. Energy next turn is clunky. Status deck only.
+Compact,C,1,Uncommon,Skill,Gain 6 Block. Transform all statuses in hand into Fuel.,Gain 8 Block. Transform all statuses in hand into Fuel.,Status cleanse + block. Fuel gives energy/draw. Needs status gen.
+White Noise,C,1,Rare,Skill,Add a random Power to hand. Costs 0 this turn. Exhaust.,Costs 0. Add a random Power to hand. Costs 0 this turn. Exhaust.,Random power can be Echo Form or garbage. Desperation pick.
+Tempest,C,X,Rare,Attack,Channel X Lightning.,Channel X Lightning. Deal X damage to ALL enemies.,X-cost Lightning spam. Glass orbs are easier AoE. Energy hungry.
+Synthesis,C,2,Uncommon,Attack,Deal 12 damage. Next Power costs 0.,Deal 15 damage. Next Power costs 0.,Energy cheat but damage number is low. 12 isn't enough.
+Multi-Cast,C,X,Rare,Skill,Evoke rightmost orb X times.,Evoke rightmost orb X+1 times.,Dark/Plasma only. Worse Dual Cast usually. Energy hungry.
+Flak Cannon,C,2,Rare,Attack,Exhaust all statuses. Deal 8 damage per status exhausted to random enemy.,Exhaust all statuses. Deal 10 damage per status exhausted to random enemy.,Status payoff. Needs heavy status gen. Niche.
+Fusion,C,2,Uncommon,Skill,Channel 1 Plasma.,Channel 1 Plasma. Costs 1.,Plasma = energy. 2 cost hurts. Less infinite potential without Recursion.
+Storm,D,0,Uncommon,Power,"Whenever you play a Power, channel 1 Lightning.","Whenever you play a Power, channel 1 Lightning.",Power spam = Lightning. No Heat Sinks hurts. Very situational.
+Scrape,D,1,Uncommon,Attack,Deal 7 damage. Draw 4 cards. Discard all non-0-cost cards drawn.,Deal 10 damage. Draw 4 cards. Discard all non-0-cost cards drawn.,Can scrape away your Echo Form. Paradox - need 0-cost to pick but can't pick first.
+Gunk Up,D,1,Common,Attack,Deal 4 damage three times. Add a Slime to discard.,Deal 5 damage three times. Add a Slime to discard.,12 damage but Slime hurts. Ball Lightning is better. Don't pick.
+Feral,D,2,Rare,Power,First 0-cost attack each turn returns to hand.,Costs 1. First 0-cost attack each turn returns to hand.,Echo Form for 0-costs. But why double 0-cost over real cards? Claw only.
+Chaos,D,1,Uncommon,Skill,Channel 1 random orb.,Channel 2 random orbs.,Random orbs bad. Other cards do orb + something. Never pick.
+Uproar,D,2,Uncommon,Attack,Deal 5 damage twice. Play random attack from draw pile.,Deal 7 damage twice. Play random attack from draw pile.,Random attack usually Strike. Weird energy cheat. Skip.
+Consuming Shadow,D,2,Rare,Power,"Channel 2 Dark. At end of turn, evoke leftmost orb.","Channel 3 Dark. At end of turn, evoke leftmost orb.",Awkward. Eats orbs you want to keep. Hard to use.
+Helix Drill,D,0,Rare,Attack,Deal 3 damage per energy spent this turn.,Deal 4 damage per energy spent this turn.,Usually 9 damage. Rare slot for this? Pinpoint does 17. Skip.
+Boost Away,D,0,Common,Skill,Gain 6 Block. Add a Daze to discard.,Gain 8 Block. Add a Daze to discard.,Block but Daze hurts draws. Status synergy only.
+Smokestack,D,1,Uncommon,Power,"Whenever you create a status, deal 5 damage to ALL enemies.","Whenever you create a status, deal 7 damage to ALL enemies.",Need status spam. How often do you create statuses? Skip.
+Trash to Treasure,D,1,Rare,Power,"Whenever you create a status, channel 1 random orb.","Whenever you create a status, channel 2 random orbs.",Status → random orb. Don't want random orbs. Skip.
+Energy Surge,B,1,Uncommon,Skill,ALL players gain [energy:2].,,NEW - energy generation
+Ignition,B,1,Rare,Skill,Another player [gold]Channels[/gold] [gold]Plasma[/gold].,,NEW - needs evaluation
+Momentum Strike,B,1,Common,Attack,"Deal 10 damage.
+Reduce this card's cost to 0 [energy:1].",,NEW - needs evaluation
