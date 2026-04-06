@@ -484,6 +484,17 @@ When user asks "what's my deck looking like":
 
 The STS2 Advisor mod provides real-time game state via HTTP API. This is the PRIMARY way to get game state.
 
+### CRITICAL: Always Sync State from the API
+
+**NEVER rely on memory or assumptions about the player's current state.** If you have ANY question about:
+- What cards are in the deck → fetch `/deck`
+- Current HP, gold, floor → fetch `/state`
+- What relics the player has → fetch `/relics`
+- Current combat situation → fetch `/combat`
+- What the card choices are → fetch `/card-reward`
+
+**Always fetch live data from the API before giving advice.** The game state changes constantly. Your memory of what happened 5 prompts ago is stale. The API is the source of truth.
+
 ### API Endpoint
 ```
 http://localhost:15526
@@ -502,65 +513,291 @@ These short commands trigger instant state fetches and advice:
 | **"relics"** | Current relics | `/relics` |
 | **"map"** | Map state & pathing | `/map` |
 | **"event"** or **"ancient"** | Event/Ancient boon choices | `/event` |
+| **"rest"** or **"campfire"** | Rest site options & upgrade advice | `/rest` |
 | **"state"** or **"status"** | Full game state overview | `/state` |
 
-### API Endpoints
+### API Endpoints & Exact JSON Response Formats
 
 #### GET /state - Full game state snapshot
 ```bash
 curl -s http://localhost:15526/state
 ```
-Returns: run info (act, floor, ascension), current state type (combat/shop/map/card_reward), player summary (character, HP, gold, deck size, relic count)
+Response when no run is active:
+```json
+{ "state": "menu", "message": "No run in progress." }
+```
+Response during a run:
+```json
+{
+  "run": { "act": 1, "floor": 5, "ascension": 0 },
+  "state": "card_reward",          // one of: "card_reward", "combat", "shop", "map", "eventroom", "unknown"
+  "card_reward": { ... },          // included when state="card_reward"
+  "combat": { ... },               // included when state="combat"
+  "shop": { ... },                 // included when state="shop"
+  "map": { ... },                  // included when state="map"
+  "player": {
+    "character": "Ironclad",       // "Ironclad", "Silent", "Defect", "Necrobinder", "Regent"
+    "hp": 65,
+    "max_hp": 80,
+    "gold": 120,
+    "deck_size": 14,
+    "relic_count": 3,
+    "potion_count": 1
+  }
+}
+```
 
 #### GET /combat - Combat state
 ```bash
 curl -s http://localhost:15526/combat
 ```
-Returns: round, turn, energy, HP, block, hand (with playability), draw/discard/exhaust counts, player status effects, enemies (HP, block, intents, status)
+```json
+{
+  "round": 2,
+  "turn": "player",                // "player" or "enemy"
+  "is_play_phase": true,
+  "energy": 2,
+  "max_energy": 3,
+  "hp": 65,
+  "max_hp": 80,
+  "block": 5,
+  "stars": 3,                      // only present for Regent
+  "hand": [
+    {
+      "index": 0,
+      "name": "Strike",
+      "type": "Attack",            // "Attack", "Skill", "Power", "Status", "Curse"
+      "energy_cost": "1",          // string: "0", "1", "2", "X", etc.
+      "star_cost": null,           // string or null: "2", "X", null
+      "description": "Deal 6 damage.",
+      "target": "SingleEnemy",     // "SingleEnemy", "AllEnemies", "Self", "None"
+      "can_play": true,
+      "unplayable_reason": null,   // null when playable, otherwise: "NotEnoughEnergy", "NoTarget", etc.
+      "is_upgraded": false
+    }
+  ],
+  "draw_pile_count": 5,
+  "discard_pile_count": 2,
+  "exhaust_pile_count": 0,
+  "status": [                      // player buffs/debuffs
+    { "name": "Strength", "amount": 2, "is_debuff": false },
+    { "name": "Weak", "amount": 1, "is_debuff": true }
+  ],
+  "orbs": [                        // only present for Defect
+    { "name": "Frost", "passive": 2, "evoke": 5 },
+    { "name": "Lightning", "passive": 3, "evoke": 8 }
+  ],
+  "orb_slots": 3,                  // only present for Defect
+  "enemies": [
+    {
+      "id": "jaw_worm_0",          // unique id: "base_id_index"
+      "name": "Jaw Worm",
+      "hp": 30,
+      "max_hp": 44,
+      "block": 0,
+      "status": [
+        { "name": "Strength", "amount": 3, "is_debuff": false }
+      ],
+      "intents": ["Attack 11"]     // human-readable intent labels
+    }
+  ]
+}
+```
 
 #### GET /card-reward - Card choices
 ```bash
 curl -s http://localhost:15526/card-reward
 ```
-Returns: array of card choices with name, type, rarity, energy cost, description, keywords, upgrade status
+```json
+{
+  "cards": [
+    {
+      "name": "Inflame",
+      "type": "Power",             // "Attack", "Skill", "Power"
+      "rarity": "Uncommon",        // "Common", "Uncommon", "Rare"
+      "energy_cost": "1",
+      "star_cost": null,
+      "description": "Gain 2 Strength.",
+      "is_upgraded": false,
+      "keywords": ["Strength"]     // hover-tip keywords
+    }
+  ],
+  "can_skip": true                 // whether a skip/bowl button is present
+}
+```
+Note: Event card selection screens return the same format but with `"_source": "event_card_selection"`.
 
 #### GET /shop - Shop inventory
 ```bash
 curl -s http://localhost:15526/shop
 ```
-Returns: player gold, items for sale (cards, relics, potions, card removal) with costs and affordability
+```json
+{
+  "gold": 250,
+  "items": [
+    {
+      "type": "card",              // "card", "relic", "potion", "card_removal"
+      "cost": 75,
+      "can_afford": true,
+      "on_sale": false,            // only on card items
+      "name": "Inflame",           // not present on card_removal
+      "card_type": "Power",        // only on card items
+      "rarity": "Uncommon",        // only on card items
+      "energy_cost": "1",          // only on card items
+      "description": "Gain 2 Strength.",  // on cards, relics, potions
+      "is_upgraded": false         // only on card items
+    },
+    {
+      "type": "relic",
+      "cost": 150,
+      "can_afford": true,
+      "name": "Vajra",
+      "description": "At the start of each combat, gain 1 Strength."
+    },
+    {
+      "type": "potion",
+      "cost": 50,
+      "can_afford": true,
+      "name": "Fire Potion",
+      "description": "Deal 20 damage to target enemy."
+    },
+    {
+      "type": "card_removal",
+      "cost": 75,
+      "can_afford": true
+    }
+  ]
+}
+```
 
 #### GET /event - Event/Ancient boon choices
 ```bash
 curl -s http://localhost:15526/event
 ```
-Returns: event_id, event_name, is_ancient, body text, options array with title, description, locked status, relic info if applicable
+```json
+{
+  "event_id": "big_fish",
+  "event_name": "Big Fish",
+  "is_ancient": false,
+  "body": "You encounter a big fish...",
+  "options": [
+    {
+      "index": 0,
+      "title": "Feed",
+      "description": "Heal 5 HP.",
+      "is_locked": false,
+      "is_proceed": false,
+      "was_chosen": false,
+      "relic_name": null,          // present if option involves a relic
+      "relic_description": null,
+      "keywords": []
+    }
+  ]
+}
+```
+
+#### GET /rest - Rest site options
+```bash
+curl -s http://localhost:15526/rest
+```
+```json
+{
+  "options": [
+    {
+      "index": 0,
+      "id": "rest",              // option id: "rest", "smith", "lift", "toke", "dig", "recall"
+      "name": "Rest",
+      "description": "Heal 30% of your max HP.",
+      "is_enabled": true
+    },
+    {
+      "index": 1,
+      "id": "smith",
+      "name": "Smith",
+      "description": "Upgrade a card.",
+      "is_enabled": true
+    }
+  ],
+  "can_proceed": false            // whether the proceed/leave button is active
+}
+```
 
 #### GET /deck - Full deck
 ```bash
 curl -s http://localhost:15526/deck
 ```
-Returns: all cards in deck with details, count, breakdown by type
+```json
+{
+  "cards": [
+    {
+      "name": "Strike",
+      "type": "Attack",
+      "rarity": "Basic",           // "Basic", "Common", "Uncommon", "Rare", "Special"
+      "energy_cost": "1",
+      "star_cost": null,
+      "description": "Deal 6 damage.",
+      "is_upgraded": false
+    }
+  ],
+  "count": 12,
+  "by_type": {                     // card count grouped by type
+    "Attack": 6,
+    "Skill": 5,
+    "Power": 1
+  }
+}
+```
 
 #### GET /relics - Current relics
 ```bash
 curl -s http://localhost:15526/relics
 ```
-Returns: all relics with names, descriptions, counters
+```json
+{
+  "relics": [
+    {
+      "name": "Burning Blood",
+      "description": "At the end of combat, heal 6 HP.",
+      "counter": null              // number if the relic tracks a counter, null otherwise
+    }
+  ],
+  "count": 3
+}
+```
 
 #### GET /map - Map state
 ```bash
 curl -s http://localhost:15526/map
 ```
-Returns: current position, next options (room types), floor, act
+```json
+{
+  "current": {
+    "col": 2,
+    "row": 3,
+    "type": "Monster"              // "Monster", "Elite", "RestSite", "Shop", "Treasure", "Unknown", "Boss"
+  },
+  "next_options": [
+    {
+      "col": 1,
+      "row": 4,
+      "type": "Unknown",
+      "leads_to": ["Shop@(1,5)", "Monster@(2,5)"]  // what nodes this connects to
+    }
+  ],
+  "floor": 3,
+  "act": 1
+}
+```
 
 ### Response Handling
 
-**When API returns data:** Parse and provide advice immediately. Don't ask for confirmation.
+**When API returns data:** Parse the JSON and provide advice immediately. Don't ask for confirmation.
 
-**When API returns error:** Report the error briefly and ask user to describe the situation manually.
+**When API returns an `"error"` field:** Report the error briefly and ask user to describe the situation manually.
 
-**When state is "menu":** No run in progress. Ask user to start a run.
+**When state is `"menu"`:** No run in progress. Ask user to start a run.
+
+**When in doubt about ANYTHING:** Fetch the API. Don't guess. Don't rely on memory of previous state. The API always has the current truth.
 
 ### Quick Command Response Format
 

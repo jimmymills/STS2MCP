@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Potions;
+using MegaCrit.Sts2.Core.Entities.RestSite;
 using MegaCrit.Sts2.Core.Entities.Merchant;
 using MegaCrit.Sts2.Core.Events;
 using MegaCrit.Sts2.Core.Models.Events;
@@ -84,6 +85,11 @@ public static class StateBuilder
         {
             result["state"] = "shop";
             result["shop"] = BuildShopState();
+        }
+        else if (currentRoom is RestSiteRoom restSiteRoom)
+        {
+            result["state"] = "rest_site";
+            result["rest_site"] = BuildRestSiteState(restSiteRoom);
         }
         else if (mapIsOpen || currentRoom is MapRoom)
         {
@@ -650,6 +656,57 @@ public static class StateBuilder
         return result;
     }
     
+    #endregion
+
+    #region Rest Site State
+
+    public static Dictionary<string, object?> BuildRestSiteState()
+    {
+        var result = new Dictionary<string, object?>();
+
+        if (!RunManager.Instance.IsInProgress)
+        {
+            result["error"] = "No run in progress";
+            return result;
+        }
+
+        var runState = RunManager.Instance.DebugOnlyGetState();
+        if (runState?.CurrentRoom is not RestSiteRoom restSiteRoom)
+        {
+            result["error"] = "Not at a rest site";
+            result["room_type"] = runState?.CurrentRoom?.GetType().Name;
+            return result;
+        }
+
+        return BuildRestSiteState(restSiteRoom);
+    }
+
+    private static Dictionary<string, object?> BuildRestSiteState(RestSiteRoom restSiteRoom)
+    {
+        var state = new Dictionary<string, object?>();
+
+        var options = new List<Dictionary<string, object?>>();
+        int index = 0;
+        foreach (var opt in restSiteRoom.Options)
+        {
+            options.Add(new Dictionary<string, object?>
+            {
+                ["index"] = index,
+                ["id"] = opt.OptionId,
+                ["name"] = SafeGetText(() => opt.Title),
+                ["description"] = SafeGetText(() => opt.Description),
+                ["is_enabled"] = opt.IsEnabled
+            });
+            index++;
+        }
+        state["options"] = options;
+
+        var proceedButton = NRestSiteRoom.Instance?.ProceedButton;
+        state["can_proceed"] = proceedButton?.IsEnabled ?? false;
+
+        return state;
+    }
+
     #endregion
 
     #region Helper Methods

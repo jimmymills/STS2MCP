@@ -28,11 +28,14 @@ public partial class AdvisorOverlay : CanvasLayer
     private PanelContainer? _hotkeyHint; // Always-visible hotkey reminder
     private LineEdit? _chatInput; // Text input for follow-up messages
     private Button? _sendButton;
-    private static readonly HttpClient _httpClient = new() { Timeout = TimeSpan.FromSeconds(30) };
+    private static readonly System.Net.Http.HttpClient _httpClient = new() { Timeout = TimeSpan.FromSeconds(30) };
 
     // Session key for persistent context during a run
-    // Used as --session-id for Claude Code CLI to maintain conversation context
     private static string? _sessionKey = null;
+
+    // Track the current run_id so we can detect new runs
+    private static string? _currentRunId = null;
+    private static bool _runInitialized = false;
 
     private bool _isVisible = false;
     private string _currentAdviceType = "";
@@ -45,8 +48,52 @@ public partial class AdvisorOverlay : CanvasLayer
         CreateUI();
         _panel?.Hide();  // Start with advice panel hidden, but hotkey hint visible
 
-        GD.Print("[STS2 Advisor] Overlay ready. Hotkeys: F1=Card, F3=Event, F4=Combat, F5=Shop, F7=Hide, F8=Reset");
+        InstallSkillFiles();
+
+        GD.Print("[STS2 Advisor] Overlay ready. Hotkeys: F1=Card, F2=Rest, F3=Event, F4=Combat, F5=Shop, F7=Hide, F8=Reset, F9=End Run");
         GD.Print("[STS2 Advisor] Using local Claude Code CLI for advice");
+    }
+
+    /// <summary>
+    /// Copies the bundled skill files from the mod directory to ~/.claude/skills/
+    /// so that the Claude Code CLI can use them.
+    /// </summary>
+    private static void InstallSkillFiles()
+    {
+        try
+        {
+            string? modDir = Path.GetDirectoryName(
+                System.Reflection.Assembly.GetExecutingAssembly().Location);
+            if (modDir == null) return;
+
+            string sourceSkillDir = Path.Combine(modDir, "skills", "slay-the-spire-2");
+            if (!Directory.Exists(sourceSkillDir))
+            {
+                GD.PrintErr($"[STS2 Advisor] Skill files not found at {sourceSkillDir}");
+                return;
+            }
+
+            string home = System.Environment.GetFolderPath(System.Environment.SpecialFolder.UserProfile);
+            string destSkillDir = Path.Combine(home, ".claude", "skills", "slay-the-spire-2");
+
+            // Copy all skill files, overwriting to keep them up to date
+            foreach (string sourceFile in Directory.GetFiles(sourceSkillDir, "*", SearchOption.AllDirectories))
+            {
+                string relativePath = Path.GetRelativePath(sourceSkillDir, sourceFile);
+                string destFile = Path.Combine(destSkillDir, relativePath);
+
+                string? destDir = Path.GetDirectoryName(destFile);
+                if (destDir != null) Directory.CreateDirectory(destDir);
+
+                File.Copy(sourceFile, destFile, overwrite: true);
+            }
+
+            GD.Print($"[STS2 Advisor] Installed skill files to {destSkillDir}");
+        }
+        catch (Exception ex)
+        {
+            GD.PrintErr($"[STS2 Advisor] Failed to install skill files: {ex.Message}");
+        }
     }
 
     private void CreateUI()
@@ -62,14 +109,14 @@ public partial class AdvisorOverlay : CanvasLayer
         _hotkeyHint.AddThemeStyleboxOverride("panel", hintStyle);
 
         var hintLabel = new Label();
-        hintLabel.Text = "🎮 F1:Card | F3:Event | F4:Combat | F5:Shop | F7:Hide | F8:Reset";
+        hintLabel.Text = "🎮 F1:Card | F6:Rest | F3:Event | F4:Combat | F5:Shop | F7:Hide | F8:Reset | F9:End Run";
         hintLabel.AddThemeFontSizeOverride("font_size", 14);
         hintLabel.AddThemeColorOverride("font_color", new Color(0.8f, 0.8f, 0.9f));
         _hotkeyHint.AddChild(hintLabel);
 
         AddChild(_hotkeyHint);
         // Position in top right area, but left of menu buttons
-        _hotkeyHint.Position = new Vector2(viewportSize.X - 740, 10);
+        _hotkeyHint.Position = new Vector2(viewportSize.X - 900, 10);
 
         // ========== Main advice panel (moved up to avoid card selection) ==========
         _panel = new PanelContainer();
@@ -141,7 +188,7 @@ public partial class AdvisorOverlay : CanvasLayer
 
         // Hotkey hints at bottom of panel
         var hints = new Label();
-        hints.Text = "F1:Card | F3:Event | F4:Combat | F5:Shop | F7:Hide | F8:Reset | Enter:Send";
+        hints.Text = "F1:Card | F6:Rest | F3:Event | F4:Combat | F5:Shop | F7:Hide | F8:Reset | F9:End Run | Enter:Send";
         hints.AddThemeColorOverride("font_color", new Color(0.6f, 0.6f, 0.6f));
         hints.HorizontalAlignment = HorizontalAlignment.Center;
         vbox.AddChild(hints);
@@ -165,6 +212,9 @@ public partial class AdvisorOverlay : CanvasLayer
                 case Key.F1:
                     RequestAdvice("card");
                     break;
+                case Key.F6:
+                    RequestAdvice("rest");
+                    break;
                 case Key.F3:
                     RequestAdvice("event");
                     break;
@@ -180,6 +230,9 @@ public partial class AdvisorOverlay : CanvasLayer
                     break;
                 case Key.F8:
                     ResetSession();
+                    break;
+                case Key.F9:
+                    EndRunAndRecord();
                     break;
             }
         }
@@ -205,6 +258,8 @@ public partial class AdvisorOverlay : CanvasLayer
     public void ResetSession()
     {
         _sessionKey = null;
+        _currentRunId = null;
+        _runInitialized = false;
         GD.Print("[STS2 Advisor] Session reset - next request will start fresh context");
         ShowOverlay();
         SetText("[color=green]Session reset![/color]\n\nNext advice request will start with fresh context.\nThis happens automatically when you start a new run.");
@@ -235,7 +290,7 @@ public partial class AdvisorOverlay : CanvasLayer
         var psi = new ProcessStartInfo
         {
             FileName = "claude",
-            ArgumentList = { "-p", "--session-id", sessionId, prompt },
+            ArgumentList = { "-p", "--dangerously-skip-permissions", prompt },
             RedirectStandardOutput = true,
             RedirectStandardError = true,
             UseShellExecute = false,
@@ -243,7 +298,7 @@ public partial class AdvisorOverlay : CanvasLayer
         };
 
         // Inherit PATH so claude CLI is found
-        psi.Environment["PATH"] = Environment.GetEnvironmentVariable("PATH") ?? "/usr/local/bin:/usr/bin:/bin";
+        psi.Environment["PATH"] = System.Environment.GetEnvironmentVariable("PATH") ?? "/usr/local/bin:/usr/bin:/bin";
 
         using var process = new Process { StartInfo = psi };
 
@@ -286,7 +341,7 @@ public partial class AdvisorOverlay : CanvasLayer
         // Ensure we have a session key
         if (string.IsNullOrEmpty(_sessionKey))
         {
-            _sessionKey = $"sts2-session-{Guid.NewGuid():N}";
+            _sessionKey = Guid.NewGuid().ToString();
         }
 
         try
@@ -301,6 +356,37 @@ public partial class AdvisorOverlay : CanvasLayer
         }
     }
 
+    /// <summary>
+    /// Initializes a new run by invoking the slay-the-spire-2 skill trigger.
+    /// Called automatically on the first advice request of a new run.
+    /// </summary>
+    private async Task<bool> EnsureRunInitialized(string character)
+    {
+        if (_runInitialized) return true;
+
+        GD.Print($"[STS2 Advisor] Initializing new {character} run via skill...");
+        SetText($"[i]Starting {character} run advisor...[/i]");
+
+        // Trigger the skill by using its trigger phrase
+        string initPrompt = $"Start a {character} run in Slay the Spire 2. " +
+            "Load the appropriate tier lists and reference files for this character. " +
+            "Initialize deck tracking with the starter deck. " +
+            "Give a brief overview of early game priorities and archetypes to watch for. " +
+            "Keep it concise (5-6 sentences max).";
+
+        var response = await InvokeClaude(initPrompt, _sessionKey ?? "");
+        if (response.StartsWith("[Claude CLI error") || response.StartsWith("[Request timed out"))
+        {
+            SetText($"[color=red]Failed to initialize run:[/color]\n\n{response}");
+            return false;
+        }
+
+        _runInitialized = true;
+        SetText(response);
+        GD.Print("[STS2 Advisor] Run initialized successfully");
+        return true;
+    }
+
     private async void RequestAdvice(string adviceType)
     {
         _currentAdviceType = adviceType;
@@ -313,20 +399,47 @@ public partial class AdvisorOverlay : CanvasLayer
             var runStateResponse = await _httpClient.GetStringAsync($"http://localhost:{Advisor.DefaultPort}/state");
             var runState = JsonSerializer.Deserialize<JsonElement>(runStateResponse);
 
-            // Generate session key from run_id if available (persists context for this run)
-            if (runState.TryGetProperty("run_id", out var runIdProp))
+            // Check if we're in a run
+            if (runState.TryGetProperty("state", out var stateProp) && stateProp.GetString() == "menu")
             {
-                var runId = runIdProp.GetString();
-                if (!string.IsNullOrEmpty(runId))
-                {
-                    _sessionKey = $"sts2-run-{runId}";
-                }
+                SetText("[color=yellow]No run in progress.[/color]\n\nStart a run in the game, then press a hotkey for advice.");
+                return;
             }
 
-            // Fallback: generate a session key if none exists
+            // Detect new run by checking run_id
+            string? runId = null;
+            if (runState.TryGetProperty("run_id", out var runIdProp))
+            {
+                runId = runIdProp.GetString();
+            }
+
+            // If run_id changed, this is a new run - reset and re-initialize
+            if (!string.IsNullOrEmpty(runId) && runId != _currentRunId)
+            {
+                GD.Print($"[STS2 Advisor] New run detected (id: {runId}), resetting session");
+                _currentRunId = runId;
+                _sessionKey = null;
+                _runInitialized = false;
+            }
+
+            // Generate session key if needed
             if (string.IsNullOrEmpty(_sessionKey))
             {
-                _sessionKey = $"sts2-session-{Guid.NewGuid():N}";
+                _sessionKey = Guid.NewGuid().ToString();
+            }
+
+            // Get character for tier list context
+            var character = runState.TryGetProperty("character", out var charProp) ? charProp.GetString() ?? "Unknown" : "Unknown";
+
+            // Initialize the run (loads skill, tier lists, etc.) on first request
+            if (!_runInitialized)
+            {
+                bool initialized = await EnsureRunInitialized(character);
+                if (!initialized) return;
+
+                // If the user just wanted to start, show the init response
+                // Otherwise, continue to fetch the specific advice they asked for
+                SetText($"[i]Run initialized! Now fetching {adviceType} advice...[/i]");
             }
 
             // Get the current game state from local API
@@ -336,15 +449,13 @@ public partial class AdvisorOverlay : CanvasLayer
                 "shop" => "/shop",
                 "event" => "/event",
                 "combat" => "/combat",
+                "rest" => "/rest",
                 _ => "/state"
             };
 
             var stateResponse = await _httpClient.GetStringAsync($"http://localhost:{Advisor.DefaultPort}{endpoint}");
             var deckResponse = await _httpClient.GetStringAsync($"http://localhost:{Advisor.DefaultPort}/deck");
             var relicsResponse = await _httpClient.GetStringAsync($"http://localhost:{Advisor.DefaultPort}/relics");
-
-            // Get character for tier list context
-            var character = runState.TryGetProperty("character", out var charProp) ? charProp.GetString() ?? "Unknown" : "Unknown";
 
             // Build the prompt
             string prompt = adviceType switch
@@ -353,18 +464,73 @@ public partial class AdvisorOverlay : CanvasLayer
                 "shop" => $"STS2 Advisor Request - Shop\nCharacter: {character}\n\nShop items:\n{stateResponse}\n\nMy deck:\n{deckResponse}\n\nMy relics:\n{relicsResponse}\n\nUse your STS2 skill knowledge and tier lists. What's worth buying? Keep advice brief (2-3 sentences).",
                 "event" => $"STS2 Advisor Request - Event\nCharacter: {character}\n\nEvent:\n{stateResponse}\n\nMy deck:\n{deckResponse}\n\nMy relics:\n{relicsResponse}\n\nUse your STS2 skill knowledge and tier lists. Which option and why? Keep advice brief (2-3 sentences).",
                 "combat" => $"STS2 Advisor Request - Combat\nCharacter: {character}\n\nCombat state:\n{stateResponse}\n\nMy deck:\n{deckResponse}\n\nMy relics:\n{relicsResponse}\n\nUse your STS2 skill knowledge and tier lists. Brief tactical suggestion (2-3 sentences).",
+                "rest" => $"STS2 Advisor Request - Rest Site\nCharacter: {character}\nHP: {(runState.TryGetProperty("player", out var playerProp) && playerProp.TryGetProperty("hp", out var hpProp) ? hpProp.ToString() : "?")}/{(playerProp.TryGetProperty("max_hp", out var maxHpProp) ? maxHpProp.ToString() : "?")}\n\nRest site options:\n{stateResponse}\n\nMy deck:\n{deckResponse}\n\nMy relics:\n{relicsResponse}\n\nUse your STS2 skill knowledge. Should I rest, upgrade, or use another option? Which card to upgrade if upgrading? Keep advice brief (2-3 sentences).",
                 _ => $"STS2 Advisor Request\nCharacter: {character}\n\nSTS2 Game State:\n{stateResponse}\n\nUse your STS2 skill knowledge. Keep advice brief."
             };
 
             GD.Print($"[STS2 Advisor] Sending {adviceType} request via Claude CLI (session: {_sessionKey})");
             SetText($"[i]Analyzing {adviceType}...[/i]");
 
-            var advice = await InvokeClaude(prompt, _sessionKey);
+            var advice = await InvokeClaude(prompt, _sessionKey ?? "");
             SetText(advice);
         }
         catch (Exception ex)
         {
             SetText($"[color=red]Error[/color]\n\n{ex.Message}");
+        }
+    }
+
+    /// <summary>
+    /// End the current run and record the results to run-notes.md.
+    /// Triggered by F9. Fetches final game state and asks Claude to write a run autopsy.
+    /// </summary>
+    private async void EndRunAndRecord()
+    {
+        ShowOverlay();
+        SetText("[i]Recording run results...[/i]");
+
+        try
+        {
+            // Fetch final game state
+            var stateResponse = await _httpClient.GetStringAsync($"http://localhost:{Advisor.DefaultPort}/state");
+            var deckResponse = await _httpClient.GetStringAsync($"http://localhost:{Advisor.DefaultPort}/deck");
+            var relicsResponse = await _httpClient.GetStringAsync($"http://localhost:{Advisor.DefaultPort}/relics");
+
+            var runState = JsonSerializer.Deserialize<JsonElement>(stateResponse);
+            var character = runState.TryGetProperty("character", out var charProp) ? charProp.GetString() ?? "Unknown" : "Unknown";
+
+            // Find the run-notes.md path
+            string home = System.Environment.GetFolderPath(System.Environment.SpecialFolder.UserProfile);
+            string runNotesPath = Path.Combine(home, ".claude", "skills", "slay-the-spire-2", "references", "run-notes.md");
+
+            string prompt = $"The current Slay the Spire 2 run has ended. Write a run autopsy and append it to the run notes file.\n\n" +
+                $"Character: {character}\n" +
+                $"Final game state:\n{stateResponse}\n\n" +
+                $"Final deck:\n{deckResponse}\n\n" +
+                $"Final relics:\n{relicsResponse}\n\n" +
+                $"Instructions:\n" +
+                $"1. Read the existing run notes at: {runNotesPath}\n" +
+                $"2. Analyze the run - what went well, what went wrong, key decisions\n" +
+                $"3. Append a new run autopsy section to {runNotesPath} using the format from the slay-the-spire-2 skill\n" +
+                $"4. Include: character, archetype built, key cards/relics, what caused the win/loss, and actionable lessons\n" +
+                $"5. Return the autopsy summary so I can display it\n\n" +
+                $"Keep the autopsy concise but include specific, actionable lessons for future runs.";
+
+            GD.Print("[STS2 Advisor] Recording run results...");
+            SetText("[i]Analyzing run and recording lessons learned...[/i]");
+
+            var advice = await InvokeClaude(prompt, _sessionKey ?? "");
+            SetText($"[color=green]Run Recorded![/color]\n\n{advice}");
+
+            // Reset session after recording
+            _currentRunId = null;
+            _sessionKey = null;
+            _runInitialized = false;
+            GD.Print("[STS2 Advisor] Run recorded and session reset");
+        }
+        catch (Exception ex)
+        {
+            SetText($"[color=red]Failed to record run:[/color]\n\n{ex.Message}");
         }
     }
 

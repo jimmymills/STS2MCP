@@ -231,7 +231,8 @@ public static partial class Advisor
                             "GET /card-reward - Card reward options (when picking cards)",
                             "GET /relics - Current relics",
                             "GET /map - Map state and options",
-                            "GET /event - Event choices (when in event)"
+                            "GET /event - Event choices (when in event)",
+                            "GET /rest - Rest site options (when at rest site)"
                         }
                     });
                     break;
@@ -266,6 +267,10 @@ public static partial class Advisor
                     
                 case "/event":
                     HandleGetEvent(response);
+                    break;
+
+                case "/rest":
+                    HandleGetRestSite(response);
                     break;
                 
                 default:
@@ -390,6 +395,20 @@ public static partial class Advisor
         catch (Exception ex)
         {
             SendError(response, 500, $"Failed to read event state: {ex.Message}");
+        }
+    }
+
+    private static void HandleGetRestSite(HttpListenerResponse response)
+    {
+        try
+        {
+            var stateTask = RunOnMainThread(() => StateBuilder.BuildRestSiteState());
+            var state = stateTask.GetAwaiter().GetResult();
+            SendJson(response, state);
+        }
+        catch (Exception ex)
+        {
+            SendError(response, 500, $"Failed to read rest site state: {ex.Message}");
         }
     }
 
