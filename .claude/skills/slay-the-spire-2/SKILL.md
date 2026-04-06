@@ -16,79 +16,58 @@ Help players build optimal decks by tracking picks, suggesting cards, and identi
 
 ### Always Load (Universal)
 These apply to ALL runs regardless of character:
-- `references/strategy-guide.md` - Core strategy, act checkpoints, pathing, scaling concepts
-- `references/ancient-boons.md` - All Ancient boons by act with tier ratings and notes
-- `references/elites.md` - All 15 elites with HP, mechanics, and strategies by act
-- `references/bosses.md` - All bosses by act with attack patterns and strategies
-- `references/relics.csv` - All relics with effects (API data)
-- `references/relics-tier-list.csv` - All relics with tier ratings, notes, and strategic evaluations
-- `references/potions.csv` - All potions with effects
-- `references/colorless-cards.csv` - Colorless cards available to all characters (API data)
-- `references/colorless-tier-list.csv` - Colorless card tier ratings with strategic notes (from top player YouTube guide)
-- `references/status-curse-cards.csv` - Status and Curse cards
-- `references/token-cards.csv` - Token cards (created by other cards/relics)
-- `references/event-ancient-cards.csv` - Event and Ancient boon cards
-- `references/enchantments.csv` - All enchantments with effects
-- `references/monsters.csv` - All monsters with HP and types
-- `references/keywords.csv` - Keywords with descriptions (API source)
-- `references/keywords.md` - Keywords, mechanics, buffs, debuffs, enchantments (detailed)
-- `references/run-notes.md` - **Lessons learned from actual runs** (update after each run!)
+- `references/index.md` - Master wiki index (start here to find any page)
+- `references/strategy/strategy-guide.md` - Core strategy, act checkpoints, pathing, scaling concepts
+- `references/pathing/pathing.md` - Map reading, elite pathing rules, act-by-act priorities
+- `references/mechanics/ancient-boons.md` - All Ancient boons by act with tier ratings and notes
+- `references/enemies/elites.md` - All 15 elites with HP, mechanics, and strategies by act
+- `references/bosses/bosses.md` - All bosses by act with attack patterns and strategies
+- `references/relics/relics.csv` - All relics with effects (API data)
+- `references/relics/relics-tier-list.csv` - All relics with tier ratings, notes, and strategic evaluations
+- `references/potions/potions.csv` - All potions with effects
+- `references/colorless/cards.csv` - Colorless cards available to all characters (API data)
+- `references/colorless/tier-list.csv` - Colorless card tier ratings with strategic notes (from top player YouTube guide)
+- `references/curses/status-curse-cards.csv` - Status and Curse cards
+- `references/mechanics/token-cards.csv` - Token cards (created by other cards/relics)
+- `references/mechanics/event-ancient-cards.csv` - Event and Ancient boon cards
+- `references/mechanics/enchantments.csv` - All enchantments with effects
+- `references/enemies/monsters.csv` - All monsters with HP and types
+- `references/keywords/keywords.csv` - Keywords with descriptions (API source)
+- `references/keywords/keywords.md` - Keywords, mechanics, buffs, debuffs, enchantments (detailed)
+- `references/strategy/run-notes.md` - **Lessons learned from actual runs** (update after each run!)
 
 ### Character-Specific (Load Based on Active Run)
 Only load the files for the character being played:
 
 **Ironclad:**
-- `references/ironclad-tier-list.csv` - Card tiers, energy, rarity, effects, strategic notes
-- `references/ironclad-cards.csv` - Detailed card data (descriptions, keywords, upgrade info)
-- `references/ironclad-archetypes.md` - Archetype breakdowns with YouTube guide summaries
+- `references/ironclad/tier-list.csv` - Card tiers, energy, rarity, effects, strategic notes
+- `references/ironclad/cards.csv` - Detailed card data (descriptions, keywords, upgrade info)
+- `references/ironclad/archetypes.md` - Archetype breakdowns with YouTube guide summaries
 
 **Silent:**
-- `references/silent-tier-list.csv` - Card tiers, energy, rarity, effects, strategic notes
-- `references/silent-cards.csv` - Detailed card data (descriptions, keywords, upgrade info)
-- `references/silent-archetypes.md` - Archetype breakdowns (Sly/Discard, Poison, Shivs, Block/Control)
+- `references/silent/tier-list.csv` - Card tiers, energy, rarity, effects, strategic notes
+- `references/silent/cards.csv` - Detailed card data (descriptions, keywords, upgrade info)
+- `references/silent/archetypes.md` - Archetype breakdowns (Sly/Discard, Poison, Shivs, Block/Control)
 
 **Defect:**
-- `references/defect-tier-list.csv` - Card tiers, energy, rarity, effects, strategic notes
-- `references/defect-cards.csv` - Detailed card data (descriptions, keywords, upgrade info)
-- `references/defect-archetypes.md` - Archetype breakdowns with YouTube guide summaries
+- `references/defect/tier-list.csv` - Card tiers, energy, rarity, effects, strategic notes
+- `references/defect/cards.csv` - Detailed card data (descriptions, keywords, upgrade info)
+- `references/defect/archetypes.md` - Archetype breakdowns with YouTube guide summaries
 
 **Necrobinder:**
-- `references/necrobinder-tier-list.csv` - Card tiers, energy, rarity, effects, strategic notes
-- `references/necrobinder-cards.csv` - Detailed card data (descriptions, keywords, upgrade info)
-- `references/necrobinder-archetypes.md` - Archetype breakdowns with YouTube guide summaries
+- `references/necrobinder/tier-list.csv` - Card tiers, energy, rarity, effects, strategic notes
+- `references/necrobinder/cards.csv` - Detailed card data (descriptions, keywords, upgrade info)
+- `references/necrobinder/archetypes.md` - Archetype breakdowns with YouTube guide summaries
 
 **Regent:**
-- `references/regent-tier-list.csv` - Card tiers, energy, rarity, effects, strategic notes
-- `references/regent-cards.csv` - Detailed card data (descriptions, keywords, upgrade info)
-- `references/regent-archetypes.md` - Archetype breakdowns with YouTube guide summaries
+- `references/regent/tier-list.csv` - Card tiers, energy, rarity, effects, strategic notes
+- `references/regent/cards.csv` - Detailed card data (descriptions, keywords, upgrade info)
+- `references/regent/archetypes.md` - Archetype breakdowns with YouTube guide summaries
 
 **Note:** Archetype files include YouTube video references with timestamps and key insights from top players. Share video links when players want to learn more about specific strategies.
 
-### Relic & Potion Images (for Shop/Screenshot Analysis)
-
-**Relics:**
-- `references/images/relics/` - PNG images of all 288 relics
-- `references/images/relics/index.csv` - Maps relic names to image filenames
-
-**Potions:**
-- `references/images/potions/` - PNG images of all 63 potions
-- `references/images/potions/index.csv` - Maps potion names to image filenames
-- `references/potions-tier-list.csv` - Potion tiers with strategic notes
-
-**When analyzing screenshots:**
-1. User sends a screenshot (shop, combat, inventory)
-2. **Load `references/visual-guide.md`** for icon identification help
-3. Look at the relic/potion icons - use color, shape, and visual descriptions
-4. Compare to the reference images if needed
-5. Use tier list CSVs to provide ratings and recommendations
-
-**Key visual reference:** `references/visual-guide.md` contains:
-- Potions organized by color (green, blue, red, orange, purple, white)
-- Relics organized by appearance (fruits, tools, jewelry, eggs, etc.)
-- Common misidentification warnings (Meal Ticket vs Strawberry, etc.)
-- Shop layout diagram
-
-Images are named consistently (e.g., `ice_cream.png`, `fairy_in_a_bottle.png`) matching IDs in lowercase with underscores.
+### Potion Tier List
+- `references/potions/potions-tier-list.csv` - Potion tiers with strategic notes
 
 ## Unknown Item Lookup (MANDATORY)
 
@@ -96,24 +75,24 @@ Images are named consistently (e.g., `ice_cream.png`, `fairy_in_a_bottle.png`) m
 
 1. **ALWAYS search the reference files first** before saying "I don't have information":
 ```bash
-# Search for a card/relic/item by name (case-insensitive)
-grep -i "item_name" .claude/skills/slay-the-spire-2/references/*.csv
+# Search all CSV files recursively (case-insensitive)
+grep -ri "item_name" .claude/skills/slay-the-spire-2/references/**/*.csv
 
 # Or search all files including markdown
 grep -ri "item_name" .claude/skills/slay-the-spire-2/references/
 ```
 
 2. **Check these files in order:**
-   - `*-cards.csv` files for cards (character-specific or colorless)
-   - `relics-tier-list.csv` for relics (includes tier + notes)
-   - `relics.csv` for relic descriptions
-   - `potions.csv` for potions
-   - `enchantments.csv` for enchantments
-   - `keywords.csv` or `keywords.md` for game terms
-   - `monsters.csv` for enemies
-   - `token-cards.csv` for generated cards
-   - `event-ancient-cards.csv` for event/ancient cards
-   - `status-curse-cards.csv` for status effects and curses
+   - `[character]/cards.csv` files for cards (e.g., `ironclad/cards.csv`, `colorless/cards.csv`)
+   - `relics/relics-tier-list.csv` for relics (includes tier + notes)
+   - `relics/relics.csv` for relic descriptions
+   - `potions/potions.csv` for potions
+   - `mechanics/enchantments.csv` for enchantments
+   - `keywords/keywords.csv` or `keywords/keywords.md` for game terms
+   - `enemies/monsters.csv` for enemies
+   - `mechanics/token-cards.csv` for generated cards
+   - `mechanics/event-ancient-cards.csv` for event/ancient cards
+   - `curses/status-curse-cards.csv` for status effects and curses
 
 3. **If still not found**, the item may be:
    - New content not yet in the API
@@ -177,11 +156,12 @@ Strike x4, Defend x4, Venerate x1, Following Star x1
 |-----------|------------------|
 | Starting a run | Character tier list + archetypes |
 | Card choice | Character tier list (if not loaded) |
-| Elite coming up | `elites.md` for that specific elite |
-| Boss fight | `bosses.md` for that specific boss |
-| Shop/event | `relics.csv` and/or `potions.csv` |
-| General strategy question | `strategy-guide.md` |
-| Keyword question | `keywords.md` |
+| Elite coming up | `enemies/elites.md` for that specific elite |
+| Boss fight | `bosses/bosses.md` for that specific boss |
+| Shop/event | `relics/relics.csv` and/or `potions/potions.csv` |
+| General strategy question | `strategy/strategy-guide.md` |
+| Keyword question | `keywords/keywords.md` |
+| Pathing question | `pathing/pathing.md` |
 
 **DO NOT** load other characters' tier lists. If playing Silent, never load Ironclad files.
 
@@ -246,7 +226,7 @@ Strike x4, Defend x4, Venerate x1, Following Star x1
 ## Elite & Boss Guidance
 
 ### Before Elites
-When player is about to face an elite, check `references/elites.md`:
+When player is about to face an elite, check `references/enemies/elites.md`:
 - Provide HP values
 - Explain key mechanics
 - Suggest strategy based on current deck
@@ -266,7 +246,7 @@ Before a boss fight, remind the player:
 ## Character-Specific Archetypes
 
 ### Ironclad Archetypes
-(Load from `references/ironclad-archetypes.md`)
+(Load from `references/ironclad/archetypes.md`)
 - Exhaust Infinite (dominant - force every run)
 - Vulnerable Synergy (Vicious engine)
 - Self-Damage (feeds into infinite)
@@ -274,7 +254,7 @@ Before a boss fight, remind the player:
 - Block/Barricade (avoid)
 
 ### Silent Archetypes
-(Load from `references/silent-archetypes.md`)
+(Load from `references/silent/archetypes.md`)
 - **Sly/Discard** (DOMINANT) - Acrobatics, Prepared, Tools of the Trade, Reflex, Well-Laid Plans, Pinpoint
 - **Shiv** (BUFFED!) - Knife Trap, Accuracy, Cloak and Dagger, Up My Sleeve, After Image
 - **Poison** (VIABLE!) - Accelerant (KEY), Deadly Poison, Bubble Bubble, Noxious Fumes, Corrosive Wave
@@ -288,7 +268,7 @@ Before a boss fight, remind the player:
 - **Weak:** Still amazing. Piercing Wail is common for some reason.
 
 ### Necrobinder Archetypes
-(Load from `references/necrobinder-archetypes.md`)
+(Load from `references/necrobinder/archetypes.md`)
 - **Soul Infinite** (DOMINANT) - Capture Spirit, Borrowed Time, Dirge, Neurosurge
 - **Doom** - Countdown, Death's Door, No Escape, End of Days
 - **Osty Attacks** - Fetch, Flatten, Rattle, Squeeze (WEAKEST package)
@@ -303,7 +283,7 @@ Before a boss fight, remind the player:
 - **Ethereal:** Exhausts if not played. Many cards have it for synergy.
 
 ### Defect Archetypes
-(Load from `references/defect-archetypes.md`)
+(Load from `references/defect/archetypes.md`)
 - **Frost Focus** (DOMINANT) - Glacier, Coolheaded, Chill + Hot Fix, Focus Strike
 - **Dark Orb** - Darkness, Shadow Shield, Null (boss killer)
 - **Claw/Zero-Cost** - Claw, All for One, FTL (meme but better in STS2)
@@ -320,7 +300,7 @@ Before a boss fight, remind the player:
 - **Glass (NEW):** AoE damage that ticks down.
 
 ### Regent Archetypes
-(Load from `references/regent-archetypes.md`)
+(Load from `references/regent/archetypes.md`)
 - **Stars Infinite** (DOMINANT) - Glow, Convergence, Comet, Gamma Blast, Child of the Stars
 - **Block + Bombardment** - Bombardment, Particle Wall, Cloak of Stars (situational)
 - **Forge / Sovereign Blade** - AVOID. The blade package is bad.
@@ -341,7 +321,7 @@ When evaluating relics or potions, load the appropriate reference file:
 - Evaluate against current archetype
 
 ### Relic Evaluation
-Load `references/relics-tier-list.csv` for comprehensive tier ratings. Key highlights:
+Load `references/relics/relics-tier-list.csv` for comprehensive tier ratings. Key highlights:
 
 **S-Tier Universal (Always Take):**
 - ✅ **Ice Cream** - Unspent energy carries over. Top tier.
@@ -370,7 +350,7 @@ Load `references/relics-tier-list.csv` for comprehensive tier ratings. Key highl
 
 ## Strategy Guidance
 
-When player asks general strategy questions, reference `references/strategy-guide.md`:
+When player asks general strategy questions, reference `references/strategy/strategy-guide.md`:
 
 ### Act 1 Priorities
 - Take damage cards first (100 damage in 3 turns benchmark)
@@ -484,6 +464,17 @@ When user asks "what's my deck looking like":
 
 The STS2 Advisor mod provides real-time game state via HTTP API. This is the PRIMARY way to get game state.
 
+### CRITICAL: Always Sync State from the API
+
+**NEVER rely on memory or assumptions about the player's current state.** If you have ANY question about:
+- What cards are in the deck → fetch `/deck`
+- Current HP, gold, floor → fetch `/state`
+- What relics the player has → fetch `/relics`
+- Current combat situation → fetch `/combat`
+- What the card choices are → fetch `/card-reward`
+
+**Always fetch live data from the API before giving advice.** The game state changes constantly. Your memory of what happened 5 prompts ago is stale. The API is the source of truth.
+
 ### API Endpoint
 ```
 http://localhost:15526
@@ -502,65 +493,291 @@ These short commands trigger instant state fetches and advice:
 | **"relics"** | Current relics | `/relics` |
 | **"map"** | Map state & pathing | `/map` |
 | **"event"** or **"ancient"** | Event/Ancient boon choices | `/event` |
+| **"rest"** or **"campfire"** | Rest site options & upgrade advice | `/rest` |
 | **"state"** or **"status"** | Full game state overview | `/state` |
 
-### API Endpoints
+### API Endpoints & Exact JSON Response Formats
 
 #### GET /state - Full game state snapshot
 ```bash
 curl -s http://localhost:15526/state
 ```
-Returns: run info (act, floor, ascension), current state type (combat/shop/map/card_reward), player summary (character, HP, gold, deck size, relic count)
+Response when no run is active:
+```json
+{ "state": "menu", "message": "No run in progress." }
+```
+Response during a run:
+```json
+{
+  "run": { "act": 1, "floor": 5, "ascension": 0 },
+  "state": "card_reward",          // one of: "card_reward", "combat", "shop", "map", "eventroom", "unknown"
+  "card_reward": { ... },          // included when state="card_reward"
+  "combat": { ... },               // included when state="combat"
+  "shop": { ... },                 // included when state="shop"
+  "map": { ... },                  // included when state="map"
+  "player": {
+    "character": "Ironclad",       // "Ironclad", "Silent", "Defect", "Necrobinder", "Regent"
+    "hp": 65,
+    "max_hp": 80,
+    "gold": 120,
+    "deck_size": 14,
+    "relic_count": 3,
+    "potion_count": 1
+  }
+}
+```
 
 #### GET /combat - Combat state
 ```bash
 curl -s http://localhost:15526/combat
 ```
-Returns: round, turn, energy, HP, block, hand (with playability), draw/discard/exhaust counts, player status effects, enemies (HP, block, intents, status)
+```json
+{
+  "round": 2,
+  "turn": "player",                // "player" or "enemy"
+  "is_play_phase": true,
+  "energy": 2,
+  "max_energy": 3,
+  "hp": 65,
+  "max_hp": 80,
+  "block": 5,
+  "stars": 3,                      // only present for Regent
+  "hand": [
+    {
+      "index": 0,
+      "name": "Strike",
+      "type": "Attack",            // "Attack", "Skill", "Power", "Status", "Curse"
+      "energy_cost": "1",          // string: "0", "1", "2", "X", etc.
+      "star_cost": null,           // string or null: "2", "X", null
+      "description": "Deal 6 damage.",
+      "target": "SingleEnemy",     // "SingleEnemy", "AllEnemies", "Self", "None"
+      "can_play": true,
+      "unplayable_reason": null,   // null when playable, otherwise: "NotEnoughEnergy", "NoTarget", etc.
+      "is_upgraded": false
+    }
+  ],
+  "draw_pile_count": 5,
+  "discard_pile_count": 2,
+  "exhaust_pile_count": 0,
+  "status": [                      // player buffs/debuffs
+    { "name": "Strength", "amount": 2, "is_debuff": false },
+    { "name": "Weak", "amount": 1, "is_debuff": true }
+  ],
+  "orbs": [                        // only present for Defect
+    { "name": "Frost", "passive": 2, "evoke": 5 },
+    { "name": "Lightning", "passive": 3, "evoke": 8 }
+  ],
+  "orb_slots": 3,                  // only present for Defect
+  "enemies": [
+    {
+      "id": "jaw_worm_0",          // unique id: "base_id_index"
+      "name": "Jaw Worm",
+      "hp": 30,
+      "max_hp": 44,
+      "block": 0,
+      "status": [
+        { "name": "Strength", "amount": 3, "is_debuff": false }
+      ],
+      "intents": ["Attack 11"]     // human-readable intent labels
+    }
+  ]
+}
+```
 
 #### GET /card-reward - Card choices
 ```bash
 curl -s http://localhost:15526/card-reward
 ```
-Returns: array of card choices with name, type, rarity, energy cost, description, keywords, upgrade status
+```json
+{
+  "cards": [
+    {
+      "name": "Inflame",
+      "type": "Power",             // "Attack", "Skill", "Power"
+      "rarity": "Uncommon",        // "Common", "Uncommon", "Rare"
+      "energy_cost": "1",
+      "star_cost": null,
+      "description": "Gain 2 Strength.",
+      "is_upgraded": false,
+      "keywords": ["Strength"]     // hover-tip keywords
+    }
+  ],
+  "can_skip": true                 // whether a skip/bowl button is present
+}
+```
+Note: Event card selection screens return the same format but with `"_source": "event_card_selection"`.
 
 #### GET /shop - Shop inventory
 ```bash
 curl -s http://localhost:15526/shop
 ```
-Returns: player gold, items for sale (cards, relics, potions, card removal) with costs and affordability
+```json
+{
+  "gold": 250,
+  "items": [
+    {
+      "type": "card",              // "card", "relic", "potion", "card_removal"
+      "cost": 75,
+      "can_afford": true,
+      "on_sale": false,            // only on card items
+      "name": "Inflame",           // not present on card_removal
+      "card_type": "Power",        // only on card items
+      "rarity": "Uncommon",        // only on card items
+      "energy_cost": "1",          // only on card items
+      "description": "Gain 2 Strength.",  // on cards, relics, potions
+      "is_upgraded": false         // only on card items
+    },
+    {
+      "type": "relic",
+      "cost": 150,
+      "can_afford": true,
+      "name": "Vajra",
+      "description": "At the start of each combat, gain 1 Strength."
+    },
+    {
+      "type": "potion",
+      "cost": 50,
+      "can_afford": true,
+      "name": "Fire Potion",
+      "description": "Deal 20 damage to target enemy."
+    },
+    {
+      "type": "card_removal",
+      "cost": 75,
+      "can_afford": true
+    }
+  ]
+}
+```
 
 #### GET /event - Event/Ancient boon choices
 ```bash
 curl -s http://localhost:15526/event
 ```
-Returns: event_id, event_name, is_ancient, body text, options array with title, description, locked status, relic info if applicable
+```json
+{
+  "event_id": "big_fish",
+  "event_name": "Big Fish",
+  "is_ancient": false,
+  "body": "You encounter a big fish...",
+  "options": [
+    {
+      "index": 0,
+      "title": "Feed",
+      "description": "Heal 5 HP.",
+      "is_locked": false,
+      "is_proceed": false,
+      "was_chosen": false,
+      "relic_name": null,          // present if option involves a relic
+      "relic_description": null,
+      "keywords": []
+    }
+  ]
+}
+```
+
+#### GET /rest - Rest site options
+```bash
+curl -s http://localhost:15526/rest
+```
+```json
+{
+  "options": [
+    {
+      "index": 0,
+      "id": "rest",              // option id: "rest", "smith", "lift", "toke", "dig", "recall"
+      "name": "Rest",
+      "description": "Heal 30% of your max HP.",
+      "is_enabled": true
+    },
+    {
+      "index": 1,
+      "id": "smith",
+      "name": "Smith",
+      "description": "Upgrade a card.",
+      "is_enabled": true
+    }
+  ],
+  "can_proceed": false            // whether the proceed/leave button is active
+}
+```
 
 #### GET /deck - Full deck
 ```bash
 curl -s http://localhost:15526/deck
 ```
-Returns: all cards in deck with details, count, breakdown by type
+```json
+{
+  "cards": [
+    {
+      "name": "Strike",
+      "type": "Attack",
+      "rarity": "Basic",           // "Basic", "Common", "Uncommon", "Rare", "Special"
+      "energy_cost": "1",
+      "star_cost": null,
+      "description": "Deal 6 damage.",
+      "is_upgraded": false
+    }
+  ],
+  "count": 12,
+  "by_type": {                     // card count grouped by type
+    "Attack": 6,
+    "Skill": 5,
+    "Power": 1
+  }
+}
+```
 
 #### GET /relics - Current relics
 ```bash
 curl -s http://localhost:15526/relics
 ```
-Returns: all relics with names, descriptions, counters
+```json
+{
+  "relics": [
+    {
+      "name": "Burning Blood",
+      "description": "At the end of combat, heal 6 HP.",
+      "counter": null              // number if the relic tracks a counter, null otherwise
+    }
+  ],
+  "count": 3
+}
+```
 
 #### GET /map - Map state
 ```bash
 curl -s http://localhost:15526/map
 ```
-Returns: current position, next options (room types), floor, act
+```json
+{
+  "current": {
+    "col": 2,
+    "row": 3,
+    "type": "Monster"              // "Monster", "Elite", "RestSite", "Shop", "Treasure", "Unknown", "Boss"
+  },
+  "next_options": [
+    {
+      "col": 1,
+      "row": 4,
+      "type": "Unknown",
+      "leads_to": ["Shop@(1,5)", "Monster@(2,5)"]  // what nodes this connects to
+    }
+  ],
+  "floor": 3,
+  "act": 1
+}
+```
 
 ### Response Handling
 
-**When API returns data:** Parse and provide advice immediately. Don't ask for confirmation.
+**When API returns data:** Parse the JSON and provide advice immediately. Don't ask for confirmation.
 
-**When API returns error:** Report the error briefly and ask user to describe the situation manually.
+**When API returns an `"error"` field:** Report the error briefly and ask user to describe the situation manually.
 
-**When state is "menu":** No run in progress. Ask user to start a run.
+**When state is `"menu"`:** No run in progress. Ask user to start a run.
+
+**When in doubt about ANYTHING:** Fetch the API. Don't guess. Don't rely on memory of previous state. The API always has the current truth.
 
 ### Quick Command Response Format
 
@@ -630,7 +847,7 @@ Returns: current position, next options (room types), floor, act
 ✅ **Choose: [Option]** - [Brief reasoning based on current deck/run]
 ```
 
-For Ancient boons, check `references/ancient-boons.md` for tier ratings and strategic notes.
+For Ancient boons, check `references/mechanics/ancient-boons.md` for tier ratings and strategic notes.
 
 ### Manual Fallback
 
@@ -905,7 +1122,7 @@ User: "glow, convergence, knockout blow"
 → Update current-run.md with current state
 → Spawn sub-agent with task:
    "Evaluate card choice for STS2 run. 
-    Read: current-run.md, [character]-tier-list.csv, [character]-archetypes.md
+    Read: current-run.md, [character]/tier-list.csv, [character]/archetypes.md
     Options: Glow, Convergence, Knockout Blow
     Return: Recommendation with reasoning"
 → Sub-agent returns recommendation
@@ -931,7 +1148,7 @@ After any "sync" command, also update current-run.md:
 
 ### Archiving Completed Runs
 
-When a run ends (win or loss), append summary to `references/run-notes.md`:
+When a run ends (win or loss), append summary to `references/strategy/run-notes.md`:
 ```markdown
 ## Run [date] - [Character] - [Win/Loss at Floor X]
 - Archetype: [what was built]
@@ -943,7 +1160,7 @@ When a run ends (win or loss), append summary to `references/run-notes.md`:
 ## Run Notes & Continuous Learning
 
 ### After Each Run (Win or Loss)
-Update `references/run-notes.md` with:
+Update `references/strategy/run-notes.md` with:
 1. **Character & archetype attempted**
 2. **Where/why the run ended** (or won)
 3. **What went wrong** (specific mistakes)
@@ -951,7 +1168,7 @@ Update `references/run-notes.md` with:
 5. **Key learnings** (actionable lessons)
 
 ### Before Each Run
-Load `references/run-notes.md` and apply lessons:
+Load `references/strategy/run-notes.md` and apply lessons:
 - Check deck size targets
 - Review elite HP thresholds
 - Remember archetype-specific warnings
@@ -979,7 +1196,7 @@ Load `references/run-notes.md` and apply lessons:
 - [Good decision]
 ...
 
-[Update references/run-notes.md with new learnings!]
+[Update references/strategy/run-notes.md with new learnings!]
 ```
 
 ### Key Metrics to Track
@@ -991,9 +1208,9 @@ Load `references/run-notes.md` and apply lessons:
 ## Data Sources & Updates
 
 ### Reference Data Sources
-- **Tier lists** (`*-tier-list.csv`) - Curated strategic evaluations with tiers (S/A/B/C/D)
-- **Card data** (`*-cards.csv`) - Factual data from spire-codex.com API (descriptions, keywords, upgrades)
-- **Relics/Potions/Monsters** - From spire-codex.com API
+- **Tier lists** (`[character]/tier-list.csv`) - Curated strategic evaluations with tiers (S/A/B/C/D)
+- **Card data** (`[character]/cards.csv`) - Factual data from spire-codex.com API (descriptions, keywords, upgrades)
+- **Relics/Potions/Monsters** - From spire-codex.com API (in `relics/`, `potions/`, `enemies/`)
 - **Archetypes** - Curated from YouTube guides and high-level play analysis
 
 ### Updating Reference Data
@@ -1003,8 +1220,8 @@ python3 /tmp/update_sts2_data.py
 ```
 
 This pulls from `https://spire-codex.com/api/` and updates:
-- All `*-cards.csv` files (per character + colorless + status/curse + token)
-- `relics.csv`, `potions.csv`, `monsters.csv`, `keywords.csv`, `enchantments.csv`
+- All `[character]/cards.csv` files (per character + `colorless/cards.csv` + `curses/status-curse-cards.csv` + `mechanics/token-cards.csv`)
+- `relics/relics.csv`, `potions/potions.csv`, `enemies/monsters.csv`, `keywords/keywords.csv`, `mechanics/enchantments.csv`
 
 **Note:** Tier lists are NOT auto-updated — they require manual curation.
 
@@ -1012,9 +1229,7 @@ This pulls from `https://spire-codex.com/api/` and updates:
 - **Last API sync:** 2026-03-27
 - **Card counts:** Ironclad 87, Silent 88, Defect 88, Necrobinder 88, Regent 88, Colorless 64
 - **Total relics:** 288 (101 with curated tiers, rest default B)
-- **Relic images:** 288 PNG files (~14MB) for screenshot analysis
 - **Total potions:** 63 (49 with curated tiers)
-- **Potion images:** 63 PNG files for screenshot analysis
 - **Total monsters:** 111
 
 ### Relic Tier Distribution
