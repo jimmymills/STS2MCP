@@ -55,4 +55,13 @@
     <Copy SourceFiles="$(ProjectDir)mod_manifest_advisor.json" DestinationFiles="$(ModsPath)/STS2Advisor.json" Condition="Exists('$(ProjectDir)mod_manifest_advisor.json')" />
     <Message Importance="High" Text="Copied $(AssemblyName).dll to $(ModsPath)" />
   </Target>
+
+  <!-- Copy skill files to mods folder on build (excluding images to save space) -->
+  <Target Name="CopySkills" AfterTargets="Build">
+    <ItemGroup>
+      <SkillFiles Include=".claude\skills\slay-the-spire-2\**\*" Exclude=".claude\skills\slay-the-spire-2\**\*.png" />
+    </ItemGroup>
+    <Copy SourceFiles="@(SkillFiles)" DestinationFiles="@(SkillFiles->'$(ModsPath)\skills\slay-the-spire-2\%(RecursiveDir)%(Filename)%(Extension)')" />
+    <Message Importance="High" Text="Copied skill files to $(ModsPath)\skills\" />
+  </Target>
 </Project>
