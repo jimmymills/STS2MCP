@@ -1,0 +1,11 @@
+{
+  "id": "STS2Advisor",
+  "name": "STS2 Advisor",
+  "author": "jimmymills",
+  "description": "Lightweight read-only API for AI deck advisors. Exposes game state without taking control.",
+  "version": "v1.0.0",
+  "has_pck": false,
+  "has_dll": true,
+  "dependencies": [],
+  "affects_gameplay": false
+}

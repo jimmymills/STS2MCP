@@ -1,18 +1,17 @@
+# Build outputs
 bin/
 obj/
 out/
 
-# Python
-__pycache__/
-*.pyc
-*.pyo
-mcp/.venv/
+# IDE
+.idea/
+.vs/
+*.user
+*.suo
 
-# Claude Code
-# .claude/
-.mcp.json
-CLAUDE.md
-GUIDE.md
+# OS
+.DS_Store
+Thumbs.db
 
-# Qoder
-.qoder.json
+# Config (local)
+*.conf

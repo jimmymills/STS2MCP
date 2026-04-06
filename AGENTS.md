@@ -1,61 +1,56 @@
-# STS2 MCP — AI Gameplay Guide
+# STS2 Advisor - Agent Instructions
 
-## MCP Tool Calling Tips
+## Overview
 
-### State Polling
-- After `combat_end_turn`, the state may show `is_play_phase: false` or `turn: enemy`. Call `get_game_state` again to advance to the next player turn.
-- Sometimes you need to call `get_game_state` twice — once to see enemy turn results, once to see your new hand.
-- Use `format: "json"` during combat for structured data; `format: "markdown"` for map/event overview.
+This is a **read-only** mod for Slay the Spire 2 that exposes game state via HTTP API. It's designed for AI assistants to observe game state and provide advice, without taking control of gameplay.
 
-### Card Index Shifting
-- **CRITICAL**: Playing a card removes it from hand and shifts all indices. Play cards from RIGHT to LEFT (highest index first) to keep lower indices stable, or re-check state between plays.
-- When targeting, always provide `target` for single-target cards. Entity IDs are UPPER_SNAKE_CASE with a `_0` suffix (e.g. `KIN_PRIEST_0`).
+## Key Files
 
-### Event & Reward Flow
-- Events: `event_choose_option`. After choosing, there's often a "Proceed" option at index 0.
-- Rest sites: `rest_choose_option`, then `proceed_to_map`.
-- Rewards: claim from right-to-left (highest index first) to avoid index shifting. Card rewards open a sub-screen; use `rewards_pick_card` or `rewards_skip_card`.
+- `STS2Advisor.cs` - HTTP server setup, endpoint handlers
+- `STS2Advisor.StateBuilder.cs` - Game state extraction logic
+- `STS2Advisor.csproj` - Build configuration
+- `mod_manifest_advisor.json` - Mod metadata for StS2
 
-### Potions
-- `use_potion(slot=N)` — slot is the potion slot index, not a card index.
-- `discard_potion(slot=N)` — discard a potion to free up the slot when full.
-- Potions don't cost energy or count as card plays. Use buff potions BEFORE playing cards.
+## API Design Principles
 
----
+1. **Read-only** - No POST endpoints, no game manipulation
+2. **Lightweight** - Return only essential data for advisory use
+3. **Multiplayer safe** - `affects_gameplay: false` so it works in multiplayer
+4. **Focused endpoints** - Specific endpoints for specific contexts (combat, shop, cards)
 
-## General Strategy
+## Endpoints
 
-### Core Principles
-1. **HP is a resource, not a score.** Take calculated damage to deal more. Don't waste energy on block when enemies aren't attacking.
-2. **Deck quality > deck size.** Skip card rewards if nothing synergizes. A lean deck draws key cards more often.
-3. **Front-load damage.** Killing enemies faster means less total damage taken.
-4. **Read intents carefully.** Sleep/Buff = go all-out offense. Attack = balance block and damage. Debuff = usually no damage, offense turn.
+| Endpoint | Purpose |
+|----------|---------|
+| `/state` | Full state snapshot - use when context is unknown |
+| `/combat` | Hand, enemies, energy - for combat advice |
+| `/shop` | Shop inventory - for purchase decisions |
+| `/card-reward` | Card choices - for pick recommendations |
+| `/deck` | Full deck list - for deck analysis |
+| `/relics` | Current relics - for synergy analysis |
+| `/map` | Map and path options - for routing decisions |
 
-### Combat Sequencing (General)
-1. Play 0-cost utility/setup cards first.
-2. Play skills before attacks when possible — many mechanics reward this order (e.g. Slow debuff on enemies stacks per card played).
-3. Play biggest attacks last to benefit from accumulated buffs/debuffs.
-4. Check enemy HP — if you can kill this turn, skip blocking entirely.
+## Building
 
-### Map Pathing
-- **Elites** give relics — fight them when healthy (>70% HP).
-- **Rest before Boss** — heal if below 80% HP. Boss fights are long and punishing.
-- **Unknown nodes** are safer than Elites. Good at medium HP.
-- **Shops** — visit with 100+ gold.
-- **Deck quality matters more than quantity** — don't add cards just because they're offered.
+The project targets .NET 8 and uses Godot.NET.Sdk. Paths in the csproj need to be updated for each developer's system.
 
-### Boss Fights
-- **Kill the leader, not the minions.** Enemies with "Minion" power flee when their leader dies.
-- Use potions aggressively in boss fights — they don't carry between acts.
-- Boss fights are wars of attrition. The longer they go, the more enemies scale with Strength buffs.
+```bash
+dotnet build STS2Advisor.csproj
+```
 
-### Potion Usage
-- Don't hoard potions. Dying with full potions is the worst outcome.
-- Use permanent-value potions (Fruit Juice = +5 Max HP) early in any combat.
-- Use buff potions (Flex Potion) on turns with multiple attacks.
+Build automatically copies the DLL to the game's mods folder.
 
-### Common Mistakes
-- Blocking when enemies are sleeping/buffing — waste of energy.
-- Not checking card indices after playing — indices shift left.
-- Taking too long to kill bosses — enemies scale every turn.
-- Adding mediocre cards that dilute the deck before boss fights.
+## Testing
+
+1. Build and ensure DLL is in `mods/STS2Advisor/`
+2. Launch Slay the Spire 2
+3. Enable mods in Settings → Mod Settings
+4. Start a run
+5. `curl http://localhost:15526/state` to verify
+
+## Code Style
+
+- Use regions to organize code sections
+- All game state access happens on main thread via `RunOnMainThread<T>()`
+- Strip BBCode tags from text with `StripRichTextTags()`
+- Use `SafeGetText()` for null-safe localized string access
