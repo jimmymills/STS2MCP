@@ -11,6 +11,16 @@ using Godot;
 namespace STS2Advisor;
 
 /// <summary>
+/// Available AI model choices for the advisor.
+/// </summary>
+public enum AdvisorModel
+{
+    ClaudeOpus,
+    ClaudeSonnet,
+    OllamaGemma,
+}
+
+/// <summary>
 /// In-game overlay for displaying AI advisor responses.
 /// Hotkeys trigger advice requests via local Claude Code CLI.
 /// Session context is maintained per run via --session-id.
@@ -29,6 +39,13 @@ public partial class AdvisorOverlay : CanvasLayer
     private LineEdit? _chatInput; // Text input for follow-up messages
     private Button? _sendButton;
     private static readonly System.Net.Http.HttpClient _httpClient = new() { Timeout = TimeSpan.FromSeconds(30) };
+
+    // Model selection
+    private static AdvisorModel _selectedModel = AdvisorModel.ClaudeOpus;
+    private static bool _modelSelected = false;
+    private PanelContainer? _modelSelectPanel;
+    private bool _waitingForModelSelection = false;
+    private string? _pendingAdviceType = null;
 
     // Session key for persistent context during a run
     private static string? _sessionKey = null;
@@ -201,6 +218,94 @@ public partial class AdvisorOverlay : CanvasLayer
             (viewportSize.X - _panel.CustomMinimumSize.X) / 2,
             80  // Near top, below the hotkey hint
         );
+
+        CreateModelSelectUI(viewportSize);
+    }
+
+    private void CreateModelSelectUI(Vector2 viewportSize)
+    {
+        _modelSelectPanel = new PanelContainer();
+        _modelSelectPanel.CustomMinimumSize = new Vector2(420, 260);
+
+        var style = new StyleBoxFlat();
+        style.BgColor = new Color(0.08f, 0.08f, 0.12f, 0.97f);
+        style.SetCornerRadiusAll(12);
+        style.SetBorderWidthAll(2);
+        style.BorderColor = new Color(0.5f, 0.7f, 1.0f, 1.0f);
+        style.SetContentMarginAll(20);
+        _modelSelectPanel.AddThemeStyleboxOverride("panel", style);
+
+        var vbox = new VBoxContainer();
+        vbox.AddThemeConstantOverride("separation", 12);
+
+        var title = new Label();
+        title.Text = "Select AI Model";
+        title.AddThemeFontSizeOverride("font_size", 22);
+        title.HorizontalAlignment = HorizontalAlignment.Center;
+        vbox.AddChild(title);
+
+        var sep = new HSeparator();
+        vbox.AddChild(sep);
+
+        var btnOpus = new Button();
+        btnOpus.Text = "Claude Opus 4.6";
+        btnOpus.CustomMinimumSize = new Vector2(0, 40);
+        btnOpus.Pressed += () => OnModelSelected(AdvisorModel.ClaudeOpus);
+        vbox.AddChild(btnOpus);
+
+        var btnSonnet = new Button();
+        btnSonnet.Text = "Claude Sonnet 4.6";
+        btnSonnet.CustomMinimumSize = new Vector2(0, 40);
+        btnSonnet.Pressed += () => OnModelSelected(AdvisorModel.ClaudeSonnet);
+        vbox.AddChild(btnSonnet);
+
+        var btnOllama = new Button();
+        btnOllama.Text = "Ollama - gemma4:31b-cloud";
+        btnOllama.CustomMinimumSize = new Vector2(0, 40);
+        btnOllama.Pressed += () => OnModelSelected(AdvisorModel.OllamaGemma);
+        vbox.AddChild(btnOllama);
+
+        _modelSelectPanel.AddChild(vbox);
+        AddChild(_modelSelectPanel);
+
+        _modelSelectPanel.Position = new Vector2(
+            (viewportSize.X - _modelSelectPanel.CustomMinimumSize.X) / 2,
+            (viewportSize.Y - _modelSelectPanel.CustomMinimumSize.Y) / 2
+        );
+
+        _modelSelectPanel.Hide();
+    }
+
+    private void OnModelSelected(AdvisorModel model)
+    {
+        _selectedModel = model;
+        _modelSelected = true;
+        _waitingForModelSelection = false;
+        _modelSelectPanel?.Hide();
+
+        string modelName = model switch
+        {
+            AdvisorModel.ClaudeOpus => "Claude Opus 4.6",
+            AdvisorModel.ClaudeSonnet => "Claude Sonnet 4.6",
+            AdvisorModel.OllamaGemma => "Ollama gemma4:31b-cloud",
+            _ => "Unknown"
+        };
+        GD.Print($"[STS2 Advisor] Model selected: {modelName}");
+
+        // Resume the pending advice request if there is one
+        if (_pendingAdviceType != null)
+        {
+            string adviceType = _pendingAdviceType;
+            _pendingAdviceType = null;
+            RequestAdvice(adviceType);
+        }
+    }
+
+    private void ShowModelSelection(string pendingAdviceType)
+    {
+        _waitingForModelSelection = true;
+        _pendingAdviceType = pendingAdviceType;
+        _modelSelectPanel?.Show();
     }
 
     public override void _Input(InputEvent @event)
@@ -260,9 +365,10 @@ public partial class AdvisorOverlay : CanvasLayer
         _sessionKey = null;
         _sessionCreated = false;
         _currentRunId = null;
+        _modelSelected = false;
         GD.Print("[STS2 Advisor] Session reset - next request will start fresh context");
         ShowOverlay();
-        SetText("[color=green]Session reset![/color]\n\nNext advice request will start with fresh context.\nThis happens automatically when you start a new run.");
+        SetText("[color=green]Session reset![/color]\n\nNext advice request will start with fresh context and model selection.\nThis happens automatically when you start a new run.");
     }
 
     private void OnChatSubmitted(string text)
@@ -282,11 +388,31 @@ public partial class AdvisorOverlay : CanvasLayer
     }
 
     /// <summary>
+    /// Invoke the selected AI model with the given prompt.
+    /// Routes to Claude CLI or Ollama based on the current model selection.
+    /// Ollama calls ignore sessionId — Ollama has no CLI session concept here.
+    /// </summary>
+    private static async Task<string> InvokeModel(string prompt, string? sessionId)
+    {
+        return _selectedModel switch
+        {
+            AdvisorModel.OllamaGemma => await InvokeOllama(prompt),
+            _ => await InvokeClaude(prompt, sessionId),
+        };
+    }
+
+    /// <summary>
     /// Invoke Claude Code CLI with the given prompt, using --session-id for context persistence.
     /// Returns the CLI's stdout as the response.
     /// </summary>
     private static async Task<string> InvokeClaude(string prompt, string? sessionId = null)
     {
+        string modelId = _selectedModel switch
+        {
+            AdvisorModel.ClaudeSonnet => "claude-sonnet-4-6",
+            _ => "claude-opus-4-6",
+        };
+
         var psi = new ProcessStartInfo
         {
             FileName = "claude",
@@ -298,6 +424,8 @@ public partial class AdvisorOverlay : CanvasLayer
 
         psi.ArgumentList.Add("-p");
         psi.ArgumentList.Add("--dangerously-skip-permissions");
+        psi.ArgumentList.Add("--model");
+        psi.ArgumentList.Add(modelId);
 
         if (!string.IsNullOrEmpty(sessionId))
         {
@@ -350,6 +478,51 @@ public partial class AdvisorOverlay : CanvasLayer
         return stdout.ToString().Trim();
     }
 
+    /// <summary>
+    /// Invoke Ollama with gemma4:31b-cloud model via its HTTP API.
+    /// </summary>
+    private static async Task<string> InvokeOllama(string prompt)
+    {
+        try
+        {
+            var requestBody = new
+            {
+                model = "gemma4:31b-cloud",
+                prompt = prompt,
+                stream = false,
+            };
+
+            var json = JsonSerializer.Serialize(requestBody);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            using var cts = new System.Threading.CancellationTokenSource(TimeSpan.FromSeconds(120));
+            var response = await _httpClient.PostAsync("http://localhost:11434/api/generate", content, cts.Token);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                return $"[Ollama error (HTTP {(int)response.StatusCode})]\n{await response.Content.ReadAsStringAsync()}";
+            }
+
+            var responseJson = await response.Content.ReadAsStringAsync();
+            var responseDoc = JsonSerializer.Deserialize<JsonElement>(responseJson);
+
+            if (responseDoc.TryGetProperty("response", out var responseProp))
+            {
+                return responseProp.GetString() ?? "[Empty response from Ollama]";
+            }
+
+            return "[Unexpected Ollama response format]";
+        }
+        catch (TaskCanceledException)
+        {
+            return "[Ollama request timed out after 120 seconds]";
+        }
+        catch (System.Net.Http.HttpRequestException ex)
+        {
+            return $"[Ollama connection failed - is Ollama running?]\n{ex.Message}";
+        }
+    }
+
     private async void SendFollowUp(string message)
     {
         if (_chatInput != null)
@@ -361,8 +534,8 @@ public partial class AdvisorOverlay : CanvasLayer
 
         try
         {
-            GD.Print($"[STS2 Advisor] Sending follow-up via Claude CLI (session: {_sessionKey})");
-            var advice = await InvokeClaude(message, _sessionKey);
+            GD.Print($"[STS2 Advisor] Sending follow-up via {GetModelDisplayName()} (session: {_sessionKey})");
+            var advice = await InvokeModel(message, _sessionKey);
             SetText(advice);
         }
         catch (Exception ex)
@@ -373,6 +546,9 @@ public partial class AdvisorOverlay : CanvasLayer
 
     private async void RequestAdvice(string adviceType)
     {
+        // If waiting for model selection, ignore new requests
+        if (_waitingForModelSelection) return;
+
         _currentAdviceType = adviceType;
         ShowOverlay();
         SetText($"[i]Fetching {adviceType} advice...[/i]");
@@ -404,6 +580,14 @@ public partial class AdvisorOverlay : CanvasLayer
                 _currentRunId = runId;
                 _sessionKey = null;
                 _sessionCreated = false;
+                _modelSelected = false;
+            }
+
+            // Prompt for model selection at the start of each new run
+            if (!_modelSelected)
+            {
+                ShowModelSelection(adviceType);
+                return;
             }
 
             // Generate session key if needed
@@ -413,7 +597,7 @@ public partial class AdvisorOverlay : CanvasLayer
             }
 
             // Get character for tier list context
-            var character = runState.TryGetProperty("character", out var charProp) ? charProp.GetString() ?? "Unknown" : "Unknown";
+            var character = runState.TryGetProperty("player", out var playerObj) && playerObj.TryGetProperty("character", out var charProp) ? charProp.GetString() ?? "Unknown" : "Unknown";
 
             // Get the current game state from local API
             string endpoint = adviceType switch
@@ -441,16 +625,30 @@ public partial class AdvisorOverlay : CanvasLayer
                 _ => $"Slay the Spire 2 - General advice.\nCharacter: {character}\n\nGame State:\n{stateResponse}\n\nConsult the tier lists and reference data. Keep advice brief."
             };
 
-            GD.Print($"[STS2 Advisor] Sending {adviceType} request via Claude CLI (session: {_sessionKey})");
-            SetText($"[i]Analyzing {adviceType}...[/i]");
+            GD.Print($"[STS2 Advisor] Sending {adviceType} request via {GetModelDisplayName()} (session: {_sessionKey})");
+            SetText($"[i]Analyzing {adviceType} ({GetModelDisplayName()})...[/i]");
 
-            var advice = await InvokeClaude(prompt, _sessionKey);
+            var advice = await InvokeModel(prompt, _sessionKey);
             SetText(advice);
         }
         catch (Exception ex)
         {
             SetText($"[color=red]Error[/color]\n\n{ex.Message}");
         }
+    }
+
+    /// <summary>
+    /// Returns the display name for the currently selected model.
+    /// </summary>
+    private static string GetModelDisplayName()
+    {
+        return _selectedModel switch
+        {
+            AdvisorModel.ClaudeOpus => "Opus 4.6",
+            AdvisorModel.ClaudeSonnet => "Sonnet 4.6",
+            AdvisorModel.OllamaGemma => "gemma4:31b-cloud",
+            _ => "Unknown"
+        };
     }
 
     /// <summary>
@@ -470,7 +668,7 @@ public partial class AdvisorOverlay : CanvasLayer
             var relicsResponse = await _httpClient.GetStringAsync($"http://localhost:{Advisor.DefaultPort}/relics");
 
             var runState = JsonSerializer.Deserialize<JsonElement>(stateResponse);
-            var character = runState.TryGetProperty("character", out var charProp) ? charProp.GetString() ?? "Unknown" : "Unknown";
+            var character = runState.TryGetProperty("player", out var playerObj) && playerObj.TryGetProperty("character", out var charProp) ? charProp.GetString() ?? "Unknown" : "Unknown";
 
             // Find the run-notes.md path
             string home = System.Environment.GetFolderPath(System.Environment.SpecialFolder.UserProfile);
@@ -492,13 +690,14 @@ public partial class AdvisorOverlay : CanvasLayer
             GD.Print("[STS2 Advisor] Recording run results...");
             SetText("[i]Analyzing run and recording lessons learned...[/i]");
 
-            var advice = await InvokeClaude(prompt, _sessionKey);
+            var advice = await InvokeModel(prompt, _sessionKey);
             SetText($"[color=green]Run Recorded![/color]\n\n{advice}");
 
             // Reset session after recording
             _currentRunId = null;
             _sessionKey = null;
             _sessionCreated = false;
+            _modelSelected = false;
             GD.Print("[STS2 Advisor] Run recorded and session reset");
         }
         catch (Exception ex)
