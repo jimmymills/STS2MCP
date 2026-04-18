@@ -32,10 +32,10 @@ public partial class AdvisorOverlay : CanvasLayer
 
     // Session key for persistent context during a run
     private static string? _sessionKey = null;
+    private static bool _sessionCreated = false;
 
     // Track the current run_id so we can detect new runs
     private static string? _currentRunId = null;
-    private static bool _runInitialized = false;
 
     private bool _isVisible = false;
     private string _currentAdviceType = "";
@@ -258,8 +258,8 @@ public partial class AdvisorOverlay : CanvasLayer
     public void ResetSession()
     {
         _sessionKey = null;
+        _sessionCreated = false;
         _currentRunId = null;
-        _runInitialized = false;
         GD.Print("[STS2 Advisor] Session reset - next request will start fresh context");
         ShowOverlay();
         SetText("[color=green]Session reset![/color]\n\nNext advice request will start with fresh context.\nThis happens automatically when you start a new run.");
@@ -285,17 +285,38 @@ public partial class AdvisorOverlay : CanvasLayer
     /// Invoke Claude Code CLI with the given prompt, using --session-id for context persistence.
     /// Returns the CLI's stdout as the response.
     /// </summary>
-    private static async Task<string> InvokeClaude(string prompt, string sessionId)
+    private static async Task<string> InvokeClaude(string prompt, string? sessionId = null)
     {
         var psi = new ProcessStartInfo
         {
             FileName = "claude",
-            ArgumentList = { "-p", "--dangerously-skip-permissions", prompt },
             RedirectStandardOutput = true,
             RedirectStandardError = true,
             UseShellExecute = false,
             CreateNoWindow = true,
         };
+
+        psi.ArgumentList.Add("-p");
+        psi.ArgumentList.Add("--dangerously-skip-permissions");
+
+        if (!string.IsNullOrEmpty(sessionId))
+        {
+            if (_sessionCreated)
+            {
+                // Resume an existing session
+                psi.ArgumentList.Add("--resume");
+                psi.ArgumentList.Add(sessionId);
+            }
+            else
+            {
+                // Create a new session with this ID
+                psi.ArgumentList.Add("--session-id");
+                psi.ArgumentList.Add(sessionId);
+                _sessionCreated = true;
+            }
+        }
+
+        psi.ArgumentList.Add(prompt);
 
         // Inherit PATH so claude CLI is found
         psi.Environment["PATH"] = System.Environment.GetEnvironmentVariable("PATH") ?? "/usr/local/bin:/usr/bin:/bin";
@@ -338,12 +359,6 @@ public partial class AdvisorOverlay : CanvasLayer
 
         SetText($"[i]Sending: {message}...[/i]");
 
-        // Ensure we have a session key
-        if (string.IsNullOrEmpty(_sessionKey))
-        {
-            _sessionKey = Guid.NewGuid().ToString();
-        }
-
         try
         {
             GD.Print($"[STS2 Advisor] Sending follow-up via Claude CLI (session: {_sessionKey})");
@@ -356,37 +371,6 @@ public partial class AdvisorOverlay : CanvasLayer
         }
     }
 
-    /// <summary>
-    /// Initializes a new run by invoking the slay-the-spire-2 skill trigger.
-    /// Called automatically on the first advice request of a new run.
-    /// </summary>
-    private async Task<bool> EnsureRunInitialized(string character)
-    {
-        if (_runInitialized) return true;
-
-        GD.Print($"[STS2 Advisor] Initializing new {character} run via skill...");
-        SetText($"[i]Starting {character} run advisor...[/i]");
-
-        // Trigger the skill by using its trigger phrase
-        string initPrompt = $"Start a {character} run in Slay the Spire 2. " +
-            "Load the appropriate tier lists and reference files for this character. " +
-            "Initialize deck tracking with the starter deck. " +
-            "Give a brief overview of early game priorities and archetypes to watch for. " +
-            "Keep it concise (5-6 sentences max).";
-
-        var response = await InvokeClaude(initPrompt, _sessionKey ?? "");
-        if (response.StartsWith("[Claude CLI error") || response.StartsWith("[Request timed out"))
-        {
-            SetText($"[color=red]Failed to initialize run:[/color]\n\n{response}");
-            return false;
-        }
-
-        _runInitialized = true;
-        SetText(response);
-        GD.Print("[STS2 Advisor] Run initialized successfully");
-        return true;
-    }
-
     private async void RequestAdvice(string adviceType)
     {
         _currentAdviceType = adviceType;
@@ -395,7 +379,7 @@ public partial class AdvisorOverlay : CanvasLayer
 
         try
         {
-            // Get run state first to establish session key
+            // Get run state to check if we're in a run
             var runStateResponse = await _httpClient.GetStringAsync($"http://localhost:{Advisor.DefaultPort}/state");
             var runState = JsonSerializer.Deserialize<JsonElement>(runStateResponse);
 
@@ -413,13 +397,13 @@ public partial class AdvisorOverlay : CanvasLayer
                 runId = runIdProp.GetString();
             }
 
-            // If run_id changed, this is a new run - reset and re-initialize
+            // If run_id changed, this is a new run - reset session
             if (!string.IsNullOrEmpty(runId) && runId != _currentRunId)
             {
                 GD.Print($"[STS2 Advisor] New run detected (id: {runId}), resetting session");
                 _currentRunId = runId;
                 _sessionKey = null;
-                _runInitialized = false;
+                _sessionCreated = false;
             }
 
             // Generate session key if needed
@@ -430,17 +414,6 @@ public partial class AdvisorOverlay : CanvasLayer
 
             // Get character for tier list context
             var character = runState.TryGetProperty("character", out var charProp) ? charProp.GetString() ?? "Unknown" : "Unknown";
-
-            // Initialize the run (loads skill, tier lists, etc.) on first request
-            if (!_runInitialized)
-            {
-                bool initialized = await EnsureRunInitialized(character);
-                if (!initialized) return;
-
-                // If the user just wanted to start, show the init response
-                // Otherwise, continue to fetch the specific advice they asked for
-                SetText($"[i]Run initialized! Now fetching {adviceType} advice...[/i]");
-            }
 
             // Get the current game state from local API
             string endpoint = adviceType switch
@@ -460,18 +433,18 @@ public partial class AdvisorOverlay : CanvasLayer
             // Build the prompt
             string prompt = adviceType switch
             {
-                "card" => $"STS2 Advisor Request - Card Choice\nCharacter: {character}\n\nCard choices:\n{stateResponse}\n\nMy deck:\n{deckResponse}\n\nMy relics:\n{relicsResponse}\n\nUse your STS2 skill knowledge and tier lists. Recommend one card or skip, with a one-line reason. Keep advice brief (2-3 sentences).",
-                "shop" => $"STS2 Advisor Request - Shop\nCharacter: {character}\n\nShop items:\n{stateResponse}\n\nMy deck:\n{deckResponse}\n\nMy relics:\n{relicsResponse}\n\nUse your STS2 skill knowledge and tier lists. What's worth buying? Keep advice brief (2-3 sentences).",
-                "event" => $"STS2 Advisor Request - Event\nCharacter: {character}\n\nEvent:\n{stateResponse}\n\nMy deck:\n{deckResponse}\n\nMy relics:\n{relicsResponse}\n\nUse your STS2 skill knowledge and tier lists. Which option and why? Keep advice brief (2-3 sentences).",
-                "combat" => $"STS2 Advisor Request - Combat\nCharacter: {character}\n\nCombat state:\n{stateResponse}\n\nMy deck:\n{deckResponse}\n\nMy relics:\n{relicsResponse}\n\nUse your STS2 skill knowledge and tier lists. Brief tactical suggestion (2-3 sentences).",
-                "rest" => $"STS2 Advisor Request - Rest Site\nCharacter: {character}\nHP: {(runState.TryGetProperty("player", out var playerProp) && playerProp.TryGetProperty("hp", out var hpProp) ? hpProp.ToString() : "?")}/{(playerProp.TryGetProperty("max_hp", out var maxHpProp) ? maxHpProp.ToString() : "?")}\n\nRest site options:\n{stateResponse}\n\nMy deck:\n{deckResponse}\n\nMy relics:\n{relicsResponse}\n\nUse your STS2 skill knowledge. Should I rest, upgrade, or use another option? Which card to upgrade if upgrading? Keep advice brief (2-3 sentences).",
-                _ => $"STS2 Advisor Request\nCharacter: {character}\n\nSTS2 Game State:\n{stateResponse}\n\nUse your STS2 skill knowledge. Keep advice brief."
+                "card" => $"Slay the Spire 2 - Help me pick cards.\nCharacter: {character}\n\nCard choices:\n{stateResponse}\n\nMy deck:\n{deckResponse}\n\nMy relics:\n{relicsResponse}\n\nConsult the tier lists and reference data. Recommend one card or skip, with a one-line reason. Keep advice brief (2-3 sentences).",
+                "shop" => $"Slay the Spire 2 - Shop advice.\nCharacter: {character}\n\nShop items:\n{stateResponse}\n\nMy deck:\n{deckResponse}\n\nMy relics:\n{relicsResponse}\n\nConsult the tier lists and reference data. What's worth buying? Keep advice brief (2-3 sentences).",
+                "event" => $"Slay the Spire 2 - Event advice.\nCharacter: {character}\n\nEvent:\n{stateResponse}\n\nMy deck:\n{deckResponse}\n\nMy relics:\n{relicsResponse}\n\nConsult the tier lists and reference data. Which option and why? Keep advice brief (2-3 sentences).",
+                "combat" => $"Slay the Spire 2 - Combat advice.\nCharacter: {character}\n\nCombat state:\n{stateResponse}\n\nMy deck:\n{deckResponse}\n\nMy relics:\n{relicsResponse}\n\nConsult the tier lists and reference data. Brief tactical suggestion (2-3 sentences).",
+                "rest" => $"Slay the Spire 2 - Rest site advice.\nCharacter: {character}\nHP: {(runState.TryGetProperty("player", out var playerProp) && playerProp.TryGetProperty("hp", out var hpProp) ? hpProp.ToString() : "?")}/{(playerProp.TryGetProperty("max_hp", out var maxHpProp) ? maxHpProp.ToString() : "?")}\n\nRest site options:\n{stateResponse}\n\nMy deck:\n{deckResponse}\n\nMy relics:\n{relicsResponse}\n\nConsult the tier lists and reference data. Should I rest, upgrade, or use another option? Which card to upgrade if upgrading? Keep advice brief (2-3 sentences).",
+                _ => $"Slay the Spire 2 - General advice.\nCharacter: {character}\n\nGame State:\n{stateResponse}\n\nConsult the tier lists and reference data. Keep advice brief."
             };
 
             GD.Print($"[STS2 Advisor] Sending {adviceType} request via Claude CLI (session: {_sessionKey})");
             SetText($"[i]Analyzing {adviceType}...[/i]");
 
-            var advice = await InvokeClaude(prompt, _sessionKey ?? "");
+            var advice = await InvokeClaude(prompt, _sessionKey);
             SetText(advice);
         }
         catch (Exception ex)
@@ -519,13 +492,13 @@ public partial class AdvisorOverlay : CanvasLayer
             GD.Print("[STS2 Advisor] Recording run results...");
             SetText("[i]Analyzing run and recording lessons learned...[/i]");
 
-            var advice = await InvokeClaude(prompt, _sessionKey ?? "");
+            var advice = await InvokeClaude(prompt, _sessionKey);
             SetText($"[color=green]Run Recorded![/color]\n\n{advice}");
 
             // Reset session after recording
             _currentRunId = null;
             _sessionKey = null;
-            _runInitialized = false;
+            _sessionCreated = false;
             GD.Print("[STS2 Advisor] Run recorded and session reset");
         }
         catch (Exception ex)
