@@ -64,4 +64,13 @@
     <Copy SourceFiles="@(SkillFiles)" DestinationFiles="@(SkillFiles->'$(ModsPath)\skills\slay-the-spire-2\%(RecursiveDir)%(Filename)%(Extension)')" />
     <Message Importance="High" Text="Copied skill files to $(ModsPath)\skills\" />
   </Target>
+
+  <!-- Also copy skill files to ~/.claude/skills/ so Claude CLI always has the latest -->
+  <Target Name="CopySkillsToHome" AfterTargets="CopySkills">
+    <PropertyGroup>
+      <HomeSkillsPath>$(USERPROFILE)\.claude\skills\slay-the-spire-2</HomeSkillsPath>
+    </PropertyGroup>
+    <Copy SourceFiles="@(SkillFiles)" DestinationFiles="@(SkillFiles->'$(HomeSkillsPath)\%(RecursiveDir)%(Filename)%(Extension)')" />
+    <Message Importance="High" Text="Copied skill files to $(HomeSkillsPath)" />
+  </Target>
 </Project>
