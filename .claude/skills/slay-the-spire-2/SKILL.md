@@ -12,6 +12,16 @@ description: |
 
 Help players build optimal decks by tracking picks, suggesting cards, and identifying synergies.
 
+## CRITICAL: No Fabrication — Reference Files Are the Source of Truth
+
+**NEVER make up, guess, or hallucinate any game information.** This includes card names, card effects, card costs, damage/block numbers, relic effects, potion effects, enemy stats, keyword mechanics, upgrade effects, or any other game data.
+
+- **Before stating ANY game fact**, look it up in the reference files listed below. If you haven't loaded the relevant reference file yet, load it first.
+- **If you cannot find something in the references**, say so honestly. Do NOT invent plausible-sounding stats or effects.
+- **Card numbers change between patches.** Never rely on memory — always read the CSV for current values.
+- **This rule applies to ALL advice**, not just direct lookups. When recommending a card, verify its cost, damage, block, and effects from the CSV before quoting them. When discussing a relic or enemy, confirm the details from the reference files first.
+- **When in doubt, grep.** A quick `grep -ri "term" .claude/skills/slay-the-spire-2/references/` is always better than guessing.
+
 ## Reference Files
 
 ### Always Load (Universal)
@@ -100,6 +110,7 @@ grep -ri "item_name" .claude/skills/slay-the-spire-2/references/
    - A transformed/upgraded variant
 
 4. **Never say "I don't have this in my database"** without searching first. The data is there — find it.
+5. **Never fabricate a card description, cost, or effect.** If you can't find it, say "I need to look this up" and search. Getting a number wrong is worse than admitting uncertainty.
 
 ## Starting a Run
 
